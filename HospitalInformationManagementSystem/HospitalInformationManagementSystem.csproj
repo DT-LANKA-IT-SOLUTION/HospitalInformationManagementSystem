@@ -55,6 +55,9 @@
     <Compile Include="Other\ODBC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +66,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -81,6 +85,66 @@
     <Folder Include="BLL\" />
     <Folder Include="DAL\" />
     <Folder Include="PL\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menublue3030.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconInterface.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconInterface1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconInterface2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PowerBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SettingsBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MixMin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maxim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconInterface3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Patient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Visitor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Appoinment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Postal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Complaints.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reports.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Staff.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
