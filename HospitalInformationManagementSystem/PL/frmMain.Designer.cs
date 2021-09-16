@@ -1,4 +1,4 @@
-﻿namespace HospitalInformationManagementSystem
+﻿namespace HospitalInformationManagementSystem.PL
 {
     partial class frmMain
     {
@@ -28,7 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlMenuVertical = new System.Windows.Forms.Panel();
+            this.pnlContent = new System.Windows.Forms.Panel();
+            this.pnlNavBar = new System.Windows.Forms.Panel();
+            this.btnMaximizer = new System.Windows.Forms.PictureBox();
+            this.btnMin = new System.Windows.Forms.PictureBox();
+            this.btnRestore = new System.Windows.Forms.PictureBox();
+            this.btnSettings = new System.Windows.Forms.PictureBox();
+            this.btnShutdown = new System.Windows.Forms.PictureBox();
+            this.btnSlide = new System.Windows.Forms.PictureBox();
+            this.pnlSlider = new System.Windows.Forms.Panel();
             this.btnStaff = new System.Windows.Forms.Button();
             this.btnReports = new System.Windows.Forms.Button();
             this.btnComplaints = new System.Windows.Forms.Button();
@@ -38,42 +46,138 @@
             this.btnPatient = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pnlHeadder = new System.Windows.Forms.Panel();
-            this.btnMaximizer = new System.Windows.Forms.PictureBox();
-            this.btnMin = new System.Windows.Forms.PictureBox();
-            this.btnRestore = new System.Windows.Forms.PictureBox();
-            this.btnSettings = new System.Windows.Forms.PictureBox();
-            this.btnShutdown = new System.Windows.Forms.PictureBox();
-            this.btnSlide = new System.Windows.Forms.PictureBox();
-            this.pnlContent = new System.Windows.Forms.Panel();
-            this.pnlMenuVertical.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.pnlHeadder.SuspendLayout();
+            this.pnlNavBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnShutdown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSlide)).BeginInit();
+            this.pnlSlider.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnlMenuVertical
+            // pnlContent
             // 
-            this.pnlMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(29)))), ((int)(((byte)(71)))));
-            this.pnlMenuVertical.Controls.Add(this.btnStaff);
-            this.pnlMenuVertical.Controls.Add(this.btnReports);
-            this.pnlMenuVertical.Controls.Add(this.btnComplaints);
-            this.pnlMenuVertical.Controls.Add(this.btnPostal);
-            this.pnlMenuVertical.Controls.Add(this.btnAppointment);
-            this.pnlMenuVertical.Controls.Add(this.btnVisitors);
-            this.pnlMenuVertical.Controls.Add(this.btnPatient);
-            this.pnlMenuVertical.Controls.Add(this.btnDashboard);
-            this.pnlMenuVertical.Controls.Add(this.pictureBox1);
-            this.pnlMenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlMenuVertical.Location = new System.Drawing.Point(0, 0);
-            this.pnlMenuVertical.Name = "pnlMenuVertical";
-            this.pnlMenuVertical.Size = new System.Drawing.Size(260, 780);
-            this.pnlMenuVertical.TabIndex = 0;
+            this.pnlContent.AutoScroll = true;
+            this.pnlContent.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnlContent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.pnlContent.Location = new System.Drawing.Point(260, 50);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(1040, 730);
+            this.pnlContent.TabIndex = 5;
+            // 
+            // pnlNavBar
+            // 
+            this.pnlNavBar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlNavBar.Controls.Add(this.btnMaximizer);
+            this.pnlNavBar.Controls.Add(this.btnMin);
+            this.pnlNavBar.Controls.Add(this.btnRestore);
+            this.pnlNavBar.Controls.Add(this.btnSettings);
+            this.pnlNavBar.Controls.Add(this.btnShutdown);
+            this.pnlNavBar.Controls.Add(this.btnSlide);
+            this.pnlNavBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlNavBar.Location = new System.Drawing.Point(260, 0);
+            this.pnlNavBar.Name = "pnlNavBar";
+            this.pnlNavBar.Size = new System.Drawing.Size(1040, 50);
+            this.pnlNavBar.TabIndex = 4;
+            // 
+            // btnMaximizer
+            // 
+            this.btnMaximizer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMaximizer.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMaximizer.Image = global::HospitalInformationManagementSystem.Properties.Resources.Maxim;
+            this.btnMaximizer.Location = new System.Drawing.Point(940, 7);
+            this.btnMaximizer.Name = "btnMaximizer";
+            this.btnMaximizer.Size = new System.Drawing.Size(35, 35);
+            this.btnMaximizer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMaximizer.TabIndex = 5;
+            this.btnMaximizer.TabStop = false;
+            this.btnMaximizer.Click += new System.EventHandler(this.btnMaximizer_Click);
+            // 
+            // btnMin
+            // 
+            this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMin.Image = global::HospitalInformationManagementSystem.Properties.Resources.minimize;
+            this.btnMin.Location = new System.Drawing.Point(888, 7);
+            this.btnMin.Name = "btnMin";
+            this.btnMin.Size = new System.Drawing.Size(35, 35);
+            this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMin.TabIndex = 4;
+            this.btnMin.TabStop = false;
+            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
+            // 
+            // btnRestore
+            // 
+            this.btnRestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRestore.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestore.Image = global::HospitalInformationManagementSystem.Properties.Resources.restore1;
+            this.btnRestore.Location = new System.Drawing.Point(940, 7);
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Size = new System.Drawing.Size(35, 35);
+            this.btnRestore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRestore.TabIndex = 3;
+            this.btnRestore.TabStop = false;
+            this.btnRestore.Visible = false;
+            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSettings.Image = global::HospitalInformationManagementSystem.Properties.Resources.SettingsBlue;
+            this.btnSettings.Location = new System.Drawing.Point(806, 7);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(35, 35);
+            this.btnSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSettings.TabIndex = 2;
+            this.btnSettings.TabStop = false;
+            // 
+            // btnShutdown
+            // 
+            this.btnShutdown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnShutdown.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnShutdown.Image = global::HospitalInformationManagementSystem.Properties.Resources.PowerBlue;
+            this.btnShutdown.Location = new System.Drawing.Point(993, 7);
+            this.btnShutdown.Name = "btnShutdown";
+            this.btnShutdown.Size = new System.Drawing.Size(35, 35);
+            this.btnShutdown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnShutdown.TabIndex = 1;
+            this.btnShutdown.TabStop = false;
+            this.btnShutdown.Click += new System.EventHandler(this.btnShutdown_Click);
+            // 
+            // btnSlide
+            // 
+            this.btnSlide.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSlide.Image = global::HospitalInformationManagementSystem.Properties.Resources.Menublue3030;
+            this.btnSlide.Location = new System.Drawing.Point(9, 7);
+            this.btnSlide.Name = "btnSlide";
+            this.btnSlide.Size = new System.Drawing.Size(35, 35);
+            this.btnSlide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSlide.TabIndex = 0;
+            this.btnSlide.TabStop = false;
+            this.btnSlide.Click += new System.EventHandler(this.btnSlide_Click);
+            // 
+            // pnlSlider
+            // 
+            this.pnlSlider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(29)))), ((int)(((byte)(71)))));
+            this.pnlSlider.Controls.Add(this.btnStaff);
+            this.pnlSlider.Controls.Add(this.btnReports);
+            this.pnlSlider.Controls.Add(this.btnComplaints);
+            this.pnlSlider.Controls.Add(this.btnPostal);
+            this.pnlSlider.Controls.Add(this.btnAppointment);
+            this.pnlSlider.Controls.Add(this.btnVisitors);
+            this.pnlSlider.Controls.Add(this.btnPatient);
+            this.pnlSlider.Controls.Add(this.btnDashboard);
+            this.pnlSlider.Controls.Add(this.pictureBox1);
+            this.pnlSlider.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlSlider.Location = new System.Drawing.Point(0, 0);
+            this.pnlSlider.Name = "pnlSlider";
+            this.pnlSlider.Size = new System.Drawing.Size(260, 780);
+            this.pnlSlider.TabIndex = 3;
             // 
             // btnStaff
             // 
@@ -230,155 +334,50 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // pnlHeadder
-            // 
-            this.pnlHeadder.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlHeadder.Controls.Add(this.btnMaximizer);
-            this.pnlHeadder.Controls.Add(this.btnMin);
-            this.pnlHeadder.Controls.Add(this.btnRestore);
-            this.pnlHeadder.Controls.Add(this.btnSettings);
-            this.pnlHeadder.Controls.Add(this.btnShutdown);
-            this.pnlHeadder.Controls.Add(this.btnSlide);
-            this.pnlHeadder.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeadder.Location = new System.Drawing.Point(260, 0);
-            this.pnlHeadder.Name = "pnlHeadder";
-            this.pnlHeadder.Size = new System.Drawing.Size(1040, 50);
-            this.pnlHeadder.TabIndex = 1;
-            this.pnlHeadder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlHeadder_MouseDown);
-            // 
-            // btnMaximizer
-            // 
-            this.btnMaximizer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaximizer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMaximizer.Image = global::HospitalInformationManagementSystem.Properties.Resources.Maxim;
-            this.btnMaximizer.Location = new System.Drawing.Point(940, 7);
-            this.btnMaximizer.Name = "btnMaximizer";
-            this.btnMaximizer.Size = new System.Drawing.Size(35, 35);
-            this.btnMaximizer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMaximizer.TabIndex = 5;
-            this.btnMaximizer.TabStop = false;
-            this.btnMaximizer.Click += new System.EventHandler(this.btnMaximizer_Click);
-            // 
-            // btnMin
-            // 
-            this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMin.Image = global::HospitalInformationManagementSystem.Properties.Resources.minimize;
-            this.btnMin.Location = new System.Drawing.Point(888, 7);
-            this.btnMin.Name = "btnMin";
-            this.btnMin.Size = new System.Drawing.Size(35, 35);
-            this.btnMin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMin.TabIndex = 4;
-            this.btnMin.TabStop = false;
-            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
-            // 
-            // btnRestore
-            // 
-            this.btnRestore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRestore.Image = global::HospitalInformationManagementSystem.Properties.Resources.restore1;
-            this.btnRestore.Location = new System.Drawing.Point(940, 7);
-            this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Size = new System.Drawing.Size(35, 35);
-            this.btnRestore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnRestore.TabIndex = 3;
-            this.btnRestore.TabStop = false;
-            this.btnRestore.Visible = false;
-            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
-            // 
-            // btnSettings
-            // 
-            this.btnSettings.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSettings.Image = global::HospitalInformationManagementSystem.Properties.Resources.SettingsBlue;
-            this.btnSettings.Location = new System.Drawing.Point(806, 7);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(35, 35);
-            this.btnSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSettings.TabIndex = 2;
-            this.btnSettings.TabStop = false;
-            // 
-            // btnShutdown
-            // 
-            this.btnShutdown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnShutdown.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnShutdown.Image = global::HospitalInformationManagementSystem.Properties.Resources.PowerBlue;
-            this.btnShutdown.Location = new System.Drawing.Point(993, 7);
-            this.btnShutdown.Name = "btnShutdown";
-            this.btnShutdown.Size = new System.Drawing.Size(35, 35);
-            this.btnShutdown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnShutdown.TabIndex = 1;
-            this.btnShutdown.TabStop = false;
-            this.btnShutdown.Click += new System.EventHandler(this.btnShutdown_Click);
-            // 
-            // btnSlide
-            // 
-            this.btnSlide.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSlide.Image = global::HospitalInformationManagementSystem.Properties.Resources.Menublue3030;
-            this.btnSlide.Location = new System.Drawing.Point(9, 7);
-            this.btnSlide.Name = "btnSlide";
-            this.btnSlide.Size = new System.Drawing.Size(35, 35);
-            this.btnSlide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSlide.TabIndex = 0;
-            this.btnSlide.TabStop = false;
-            this.btnSlide.Click += new System.EventHandler(this.btnSlide_Click);
-            // 
-            // pnlContent
-            // 
-            this.pnlContent.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlContent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
-            this.pnlContent.Location = new System.Drawing.Point(260, 50);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1040, 730);
-            this.pnlContent.TabIndex = 2;
-            // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1300, 780);
             this.Controls.Add(this.pnlContent);
-            this.Controls.Add(this.pnlHeadder);
-            this.Controls.Add(this.pnlMenuVertical);
+            this.Controls.Add(this.pnlNavBar);
+            this.Controls.Add(this.pnlSlider);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.pnlMenuVertical.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.pnlHeadder.ResumeLayout(false);
+            this.TopMost = true;
+            this.pnlNavBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnShutdown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSlide)).EndInit();
+            this.pnlSlider.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlMenuVertical;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel pnlHeadder;
-        private System.Windows.Forms.PictureBox btnSlide;
-        private System.Windows.Forms.Panel pnlContent;
-        private System.Windows.Forms.PictureBox btnSettings;
-        private System.Windows.Forms.PictureBox btnShutdown;
-        private System.Windows.Forms.PictureBox btnMin;
-        private System.Windows.Forms.PictureBox btnRestore;
-        private System.Windows.Forms.PictureBox btnMaximizer;
-        private System.Windows.Forms.Button btnDashboard;
-        private System.Windows.Forms.Button btnPatient;
-        private System.Windows.Forms.Button btnStaff;
-        private System.Windows.Forms.Button btnReports;
-        private System.Windows.Forms.Button btnComplaints;
-        private System.Windows.Forms.Button btnPostal;
         private System.Windows.Forms.Button btnAppointment;
         private System.Windows.Forms.Button btnVisitors;
+        private System.Windows.Forms.Button btnPatient;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox btnMaximizer;
+        private System.Windows.Forms.PictureBox btnMin;
+        private System.Windows.Forms.PictureBox btnRestore;
+        private System.Windows.Forms.PictureBox btnSettings;
+        private System.Windows.Forms.Button btnComplaints;
+        private System.Windows.Forms.Button btnPostal;
+        private System.Windows.Forms.PictureBox btnShutdown;
+        private System.Windows.Forms.PictureBox btnSlide;
+        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.Panel pnlContent;
+        private System.Windows.Forms.Panel pnlNavBar;
+        private System.Windows.Forms.Panel pnlSlider;
+        private System.Windows.Forms.Button btnStaff;
+        private System.Windows.Forms.Button btnReports;
     }
 }
-

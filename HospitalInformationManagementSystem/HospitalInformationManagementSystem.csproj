@@ -53,10 +53,28 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Other\ODBC.cs" />
+    <Compile Include="PL\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Patient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\Patient.Designer.cs">
+      <DependentUpon>Patient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Patient.resx">
+      <DependentUpon>Patient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -84,7 +102,6 @@
   <ItemGroup>
     <Folder Include="BLL\" />
     <Folder Include="DAL\" />
-    <Folder Include="PL\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Menublue3030.png" />
@@ -145,6 +162,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CloseWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\patientwww.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HospitalInformationManagementSystem.PL;
 
 namespace HospitalInformationManagementSystem
 {
@@ -16,7 +17,7 @@ namespace HospitalInformationManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(new PL.frmMain());
         }
     }
 }
