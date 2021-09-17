@@ -30,13 +30,13 @@
         {
             this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlHeadder = new System.Windows.Forms.Panel();
-            this.pnlMenuVertical = new System.Windows.Forms.Panel();
             this.btnMaximizer = new System.Windows.Forms.PictureBox();
             this.btnMin = new System.Windows.Forms.PictureBox();
             this.btnRestore = new System.Windows.Forms.PictureBox();
             this.btnSettings = new System.Windows.Forms.PictureBox();
             this.btnShutdown = new System.Windows.Forms.PictureBox();
             this.btnSlide = new System.Windows.Forms.PictureBox();
+            this.pnlMenuVertical = new System.Windows.Forms.Panel();
             this.btnStaff = new System.Windows.Forms.Button();
             this.btnReports = new System.Windows.Forms.Button();
             this.btnComplaints = new System.Windows.Forms.Button();
@@ -47,13 +47,13 @@
             this.btnDashboard = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlHeadder.SuspendLayout();
-            this.pnlMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnShutdown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSlide)).BeginInit();
+            this.pnlMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,24 +83,6 @@
             this.pnlHeadder.Size = new System.Drawing.Size(1024, 50);
             this.pnlHeadder.TabIndex = 4;
             this.pnlHeadder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PnlHeadder_MouseDown);
-            // 
-            // pnlMenuVertical
-            // 
-            this.pnlMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(29)))), ((int)(((byte)(71)))));
-            this.pnlMenuVertical.Controls.Add(this.btnStaff);
-            this.pnlMenuVertical.Controls.Add(this.btnReports);
-            this.pnlMenuVertical.Controls.Add(this.btnComplaints);
-            this.pnlMenuVertical.Controls.Add(this.btnPostal);
-            this.pnlMenuVertical.Controls.Add(this.btnAppointment);
-            this.pnlMenuVertical.Controls.Add(this.btnVisitors);
-            this.pnlMenuVertical.Controls.Add(this.btnPatient);
-            this.pnlMenuVertical.Controls.Add(this.btnDashboard);
-            this.pnlMenuVertical.Controls.Add(this.pictureBox1);
-            this.pnlMenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlMenuVertical.Location = new System.Drawing.Point(0, 0);
-            this.pnlMenuVertical.Name = "pnlMenuVertical";
-            this.pnlMenuVertical.Size = new System.Drawing.Size(260, 741);
-            this.pnlMenuVertical.TabIndex = 3;
             // 
             // btnMaximizer
             // 
@@ -179,6 +161,24 @@
             this.btnSlide.TabStop = false;
             this.btnSlide.Click += new System.EventHandler(this.BtnSlide_Click);
             // 
+            // pnlMenuVertical
+            // 
+            this.pnlMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(29)))), ((int)(((byte)(71)))));
+            this.pnlMenuVertical.Controls.Add(this.btnStaff);
+            this.pnlMenuVertical.Controls.Add(this.btnReports);
+            this.pnlMenuVertical.Controls.Add(this.btnComplaints);
+            this.pnlMenuVertical.Controls.Add(this.btnPostal);
+            this.pnlMenuVertical.Controls.Add(this.btnAppointment);
+            this.pnlMenuVertical.Controls.Add(this.btnVisitors);
+            this.pnlMenuVertical.Controls.Add(this.btnPatient);
+            this.pnlMenuVertical.Controls.Add(this.btnDashboard);
+            this.pnlMenuVertical.Controls.Add(this.pictureBox1);
+            this.pnlMenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlMenuVertical.Location = new System.Drawing.Point(0, 0);
+            this.pnlMenuVertical.Name = "pnlMenuVertical";
+            this.pnlMenuVertical.Size = new System.Drawing.Size(260, 741);
+            this.pnlMenuVertical.TabIndex = 3;
+            // 
             // btnStaff
             // 
             this.btnStaff.FlatAppearance.BorderSize = 0;
@@ -190,7 +190,7 @@
             this.btnStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStaff.Location = new System.Drawing.Point(1, 582);
             this.btnStaff.Name = "btnStaff";
-            this.btnStaff.Padding = new System.Windows.Forms.Padding(15, 0, 93, 0);
+            this.btnStaff.Padding = new System.Windows.Forms.Padding(15, 0, 96, 0);
             this.btnStaff.Size = new System.Drawing.Size(258, 45);
             this.btnStaff.TabIndex = 8;
             this.btnStaff.Text = "Staff";
@@ -227,7 +227,7 @@
             this.btnComplaints.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnComplaints.Location = new System.Drawing.Point(1, 462);
             this.btnComplaints.Name = "btnComplaints";
-            this.btnComplaints.Padding = new System.Windows.Forms.Padding(15, 0, 20, 0);
+            this.btnComplaints.Padding = new System.Windows.Forms.Padding(15, 0, 33, 0);
             this.btnComplaints.Size = new System.Drawing.Size(258, 45);
             this.btnComplaints.TabIndex = 6;
             this.btnComplaints.Text = "Complaints";
@@ -264,7 +264,7 @@
             this.btnAppointment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAppointment.Location = new System.Drawing.Point(1, 342);
             this.btnAppointment.Name = "btnAppointment";
-            this.btnAppointment.Padding = new System.Windows.Forms.Padding(15, 0, 6, 0);
+            this.btnAppointment.Padding = new System.Windows.Forms.Padding(15, 0, 16, 0);
             this.btnAppointment.Size = new System.Drawing.Size(258, 45);
             this.btnAppointment.TabIndex = 4;
             this.btnAppointment.Text = "Appointment";
@@ -301,7 +301,7 @@
             this.btnPatient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPatient.Location = new System.Drawing.Point(1, 222);
             this.btnPatient.Name = "btnPatient";
-            this.btnPatient.Padding = new System.Windows.Forms.Padding(15, 0, 68, 0);
+            this.btnPatient.Padding = new System.Windows.Forms.Padding(15, 0, 70, 0);
             this.btnPatient.Size = new System.Drawing.Size(258, 45);
             this.btnPatient.TabIndex = 2;
             this.btnPatient.Text = "Patient";
@@ -320,7 +320,7 @@
             this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboard.Location = new System.Drawing.Point(1, 162);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Padding = new System.Windows.Forms.Padding(15, 0, 27, 0);
+            this.btnDashboard.Padding = new System.Windows.Forms.Padding(15, 0, 35, 0);
             this.btnDashboard.Size = new System.Drawing.Size(258, 45);
             this.btnDashboard.TabIndex = 1;
             this.btnDashboard.Text = "Dashboard";
@@ -351,13 +351,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard_PL";
             this.pnlHeadder.ResumeLayout(false);
-            this.pnlMenuVertical.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSettings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnShutdown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSlide)).EndInit();
+            this.pnlMenuVertical.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
