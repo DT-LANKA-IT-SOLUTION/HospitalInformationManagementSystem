@@ -1,28 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace HospitalInformationManagementSystem.Other
 {
+
     internal class ODBC
     {
+        //Initialize SQL Server database connection
         private static SqlConnection con;
 
         public static SqlConnection GetConnection()
         {
             if (con == null)
             {
-                string connectionString = "Data Source = (local); Initial Catalog = schooldb; Integrated Security = true";
-
-                con = new SqlConnection(connectionString);
+                string ConnectionString = @"Data Source=DESKTOP-8SB6J5K;Initial Catalog=CRUD;Integrated Security=True";
+                con = new SqlConnection(ConnectionString);
             }
             return con;
         }
 
+
+        //Open SQL Server database connection open
         private static void OpenConnection()
         {
             if (GetConnection().State == ConnectionState.Open)
@@ -32,7 +34,10 @@ namespace HospitalInformationManagementSystem.Other
             GetConnection().Open();
         }
 
-        public static DataTable GetData(string sql, SqlParameter[] mysqlParm = null)
+
+
+        //select data as a table 
+        public static DataTable GetData(string sql, SqlParameter[] sqlParm = null)
         {
             OpenConnection();
             using (SqlCommand cmd = GetConnection().CreateCommand())
@@ -42,8 +47,8 @@ namespace HospitalInformationManagementSystem.Other
                 try
                 {
                     cmd.CommandText = sql;
-                    if (mysqlParm != null)
-                        cmd.Parameters.AddRange(mysqlParm);
+                    if (sqlParm != null)
+                        cmd.Parameters.AddRange(sqlParm);
 
                     cmd.ExecuteNonQuery();
                     adp.SelectCommand = cmd;
@@ -57,8 +62,48 @@ namespace HospitalInformationManagementSystem.Other
             }
         }
 
+        public static SqlDataReader GetData_reader(string sql, SqlParameter[] sqlParm = null)
+        {
+            OpenConnection();
+            using (SqlCommand cmd = GetConnection().CreateCommand())
+            {
+                try
+                {
+                    cmd.CommandText = sql;
+                    if (sqlParm != null)
+                        cmd.Parameters.AddRange(sqlParm);
+                    return cmd.ExecuteReader();
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
 
-        public static string ExecuteFunction(string function, SqlParameter[] mysqlParameter = null)
+            }
+        }
+
+        //function for execute SQL Server insert/update/delete query
+        public static int SetData(String sql, SqlParameter[] SqlParameter = null)
+        {
+            OpenConnection();
+            using (SqlCommand cmd = GetConnection().CreateCommand())
+            {
+                try
+                {
+                    cmd.CommandText = sql;
+                    if (SqlParameter != null)
+                        cmd.Parameters.AddRange(SqlParameter);
+
+                    return cmd.ExecuteNonQuery();
+                }
+                catch (SqlException)
+                {
+                    throw;
+                }
+            }
+        }
+        //this function for sql functions
+        public static string ExecuteFunction(string function, SqlParameter[] SqlParameter = null)
         {
             OpenConnection();
             using (SqlCommand cmd = GetConnection().CreateCommand())
@@ -66,8 +111,8 @@ namespace HospitalInformationManagementSystem.Other
                 try
                 {
                     cmd.CommandText = function;
-                    if (mysqlParameter != null)
-                        cmd.Parameters.AddRange(mysqlParameter);
+                    if (SqlParameter != null)
+                        cmd.Parameters.AddRange(SqlParameter);
 
                     if (cmd.ExecuteScalar() != DBNull.Value)
                         return Convert.ToString(cmd.ExecuteScalar());
@@ -81,3 +126,4 @@ namespace HospitalInformationManagementSystem.Other
         }
     }
 }
+
