@@ -87,5 +87,17 @@ namespace HospitalInformationManagementSystem.PL
             ucVisitors_PL ucVisitor = new ucVisitors_PL();
             FormControl.showControls(ucVisitor,pnlContent);
         }
+
+        private void btnComplaints_Click(object sender, EventArgs e)
+        {
+            ucComplaint_PL ucComplaint = new ucComplaint_PL();
+            FormControl.showControls(ucComplaint, pnlContent);
+        }
+
+        private void btnStaff_Click(object sender, EventArgs e)
+        {
+            ucStaff_PL ucStaff = new ucStaff_PL();
+            FormControl.showControls(ucStaff, pnlContent);
+        }
     }
 }
