@@ -162,38 +162,13 @@
             this.label9.TabIndex = 14;
             this.label9.Text = "Blood Group";
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(344, 549);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 47);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Delete Patient";
-            this.button3.UseVisualStyleBackColor = false;
-
-            // 
             // textBox6
             // 
-
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.Location = new System.Drawing.Point(102, 312);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(145, 24);
             this.textBox6.TabIndex = 16;
-
-            this.button2.BackColor = System.Drawing.Color.Yellow;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(190, 549);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 47);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Edit Patient";
-            this.button2.UseVisualStyleBackColor = false;
-
             // 
             // label9
             // 
