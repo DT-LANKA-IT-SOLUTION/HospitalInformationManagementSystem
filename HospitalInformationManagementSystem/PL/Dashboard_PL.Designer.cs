@@ -190,7 +190,7 @@
             this.btnStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStaff.Location = new System.Drawing.Point(1, 582);
             this.btnStaff.Name = "btnStaff";
-            this.btnStaff.Padding = new System.Windows.Forms.Padding(15, 0, 93, 0);
+            this.btnStaff.Padding = new System.Windows.Forms.Padding(15, 0, 96, 0);
             this.btnStaff.Size = new System.Drawing.Size(258, 45);
             this.btnStaff.TabIndex = 8;
             this.btnStaff.Text = "Staff";
@@ -227,7 +227,7 @@
             this.btnComplaints.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnComplaints.Location = new System.Drawing.Point(1, 462);
             this.btnComplaints.Name = "btnComplaints";
-            this.btnComplaints.Padding = new System.Windows.Forms.Padding(15, 0, 20, 0);
+            this.btnComplaints.Padding = new System.Windows.Forms.Padding(15, 0, 33, 0);
             this.btnComplaints.Size = new System.Drawing.Size(258, 45);
             this.btnComplaints.TabIndex = 6;
             this.btnComplaints.Text = "Complaints";
@@ -264,7 +264,7 @@
             this.btnAppointment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAppointment.Location = new System.Drawing.Point(1, 342);
             this.btnAppointment.Name = "btnAppointment";
-            this.btnAppointment.Padding = new System.Windows.Forms.Padding(15, 0, 6, 0);
+            this.btnAppointment.Padding = new System.Windows.Forms.Padding(15, 0, 16, 0);
             this.btnAppointment.Size = new System.Drawing.Size(258, 45);
             this.btnAppointment.TabIndex = 4;
             this.btnAppointment.Text = "Appointment";
@@ -301,7 +301,7 @@
             this.btnPatient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPatient.Location = new System.Drawing.Point(1, 222);
             this.btnPatient.Name = "btnPatient";
-            this.btnPatient.Padding = new System.Windows.Forms.Padding(15, 0, 68, 0);
+            this.btnPatient.Padding = new System.Windows.Forms.Padding(15, 0, 70, 0);
             this.btnPatient.Size = new System.Drawing.Size(258, 45);
             this.btnPatient.TabIndex = 2;
             this.btnPatient.Text = "Patient";
@@ -320,7 +320,7 @@
             this.btnDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDashboard.Location = new System.Drawing.Point(1, 162);
             this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Padding = new System.Windows.Forms.Padding(15, 0, 27, 0);
+            this.btnDashboard.Padding = new System.Windows.Forms.Padding(15, 0, 35, 0);
             this.btnDashboard.Size = new System.Drawing.Size(258, 45);
             this.btnDashboard.TabIndex = 1;
             this.btnDashboard.Text = "Dashboard";
