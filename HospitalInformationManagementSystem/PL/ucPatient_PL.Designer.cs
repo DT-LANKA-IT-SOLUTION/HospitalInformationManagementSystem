@@ -36,9 +36,11 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+
             this.btnDeletePatient = new System.Windows.Forms.Button();
             this.btnEditPatient = new System.Windows.Forms.Button();
             this.btnAddPatient = new System.Windows.Forms.Button();
+
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -136,14 +138,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(386, 110);
             this.textBox7.TabIndex = 17;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(102, 312);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(145, 24);
-            this.textBox6.TabIndex = 16;
+            
             // 
             // label10
             // 
@@ -155,6 +150,50 @@
             this.label10.Size = new System.Drawing.Size(63, 18);
             this.label10.TabIndex = 15;
             this.label10.Text = "Allergies";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(6, 315);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(93, 18);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Blood Group";
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Red;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Location = new System.Drawing.Point(344, 549);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(112, 47);
+            this.button3.TabIndex = 13;
+            this.button3.Text = "Delete Patient";
+            this.button3.UseVisualStyleBackColor = false;
+
+            // 
+            // textBox6
+            // 
+
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(102, 312);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(145, 24);
+            this.textBox6.TabIndex = 16;
+
+            this.button2.BackColor = System.Drawing.Color.Yellow;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(190, 549);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(112, 47);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Edit Patient";
+            this.button2.UseVisualStyleBackColor = false;
+
             // 
             // label9
             // 
@@ -202,6 +241,7 @@
             this.btnAddPatient.TabIndex = 13;
             this.btnAddPatient.Text = "Add Patient";
             this.btnAddPatient.UseVisualStyleBackColor = false;
+
             // 
             // comboBox2
             // 
@@ -330,6 +370,7 @@
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(343, 76);
+            this.textBox3.MaxLength = 10;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(145, 24);
             this.textBox3.TabIndex = 1;
