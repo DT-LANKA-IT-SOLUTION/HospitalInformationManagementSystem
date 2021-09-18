@@ -56,8 +56,10 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\AuthModel.cs" />
+    <Compile Include="Model\PermisionsModel.cs" />
     <Compile Include="Other\EncryptionLab.cs" />
     <Compile Include="Other\FormControl.cs" />
+    <Compile Include="Other\GrantUserPermission.cs" />
     <Compile Include="Other\ODBC.cs" />
     <Compile Include="Other\SqlParameterFormat.cs" />
     <Compile Include="PL\Dashboard_PL.cs">

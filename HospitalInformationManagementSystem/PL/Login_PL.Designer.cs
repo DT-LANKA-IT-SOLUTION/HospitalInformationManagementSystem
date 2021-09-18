@@ -51,6 +51,7 @@
             this.btnShutdown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnShutdown.TabIndex = 2;
             this.btnShutdown.TabStop = false;
+            this.btnShutdown.Click += new System.EventHandler(this.BtnShutdown_Click);
             // 
             // lblName
             // 
@@ -108,6 +109,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(224, 31);
             this.txtPassword.TabIndex = 9;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // btnLogin
             // 
