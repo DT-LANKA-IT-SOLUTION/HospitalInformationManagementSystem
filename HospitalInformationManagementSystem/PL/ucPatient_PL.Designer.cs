@@ -36,9 +36,11 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+
+            this.btnDeletePatient = new System.Windows.Forms.Button();
+            this.btnEditPatient = new System.Windows.Forms.Button();
+            this.btnAddPatient = new System.Windows.Forms.Button();
+
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -101,9 +103,9 @@
             this.groupBox1.Controls.Add(this.textBox6);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnDeletePatient);
+            this.groupBox1.Controls.Add(this.btnEditPatient);
+            this.groupBox1.Controls.Add(this.btnAddPatient);
             this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.textBox5);
@@ -136,14 +138,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(386, 110);
             this.textBox7.TabIndex = 17;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(102, 312);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(145, 24);
-            this.textBox6.TabIndex = 16;
+            
             // 
             // label10
             // 
@@ -167,41 +162,61 @@
             this.label9.TabIndex = 14;
             this.label9.Text = "Blood Group";
             // 
-            // button3
+            // textBox6
             // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(344, 549);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 47);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Delete Patient";
-            this.button3.UseVisualStyleBackColor = false;
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(102, 312);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(145, 24);
+            this.textBox6.TabIndex = 16;
             // 
-            // button2
+            // label9
             // 
-            this.button2.BackColor = System.Drawing.Color.Yellow;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(190, 549);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 47);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Edit Patient";
-            this.button2.UseVisualStyleBackColor = false;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(6, 315);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(93, 18);
+            this.label9.TabIndex = 14;
+            this.label9.Text = "Blood Group";
             // 
-            // button1
+            // btnDeletePatient
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(36, 549);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 47);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Add Patient";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnDeletePatient.BackColor = System.Drawing.Color.Red;
+            this.btnDeletePatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeletePatient.ForeColor = System.Drawing.Color.Black;
+            this.btnDeletePatient.Location = new System.Drawing.Point(344, 549);
+            this.btnDeletePatient.Name = "btnDeletePatient";
+            this.btnDeletePatient.Size = new System.Drawing.Size(112, 47);
+            this.btnDeletePatient.TabIndex = 13;
+            this.btnDeletePatient.Text = "Delete Patient";
+            this.btnDeletePatient.UseVisualStyleBackColor = false;
+            // 
+            // btnEditPatient
+            // 
+            this.btnEditPatient.BackColor = System.Drawing.Color.Yellow;
+            this.btnEditPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditPatient.ForeColor = System.Drawing.Color.Black;
+            this.btnEditPatient.Location = new System.Drawing.Point(190, 549);
+            this.btnEditPatient.Name = "btnEditPatient";
+            this.btnEditPatient.Size = new System.Drawing.Size(112, 47);
+            this.btnEditPatient.TabIndex = 13;
+            this.btnEditPatient.Text = "Edit Patient";
+            this.btnEditPatient.UseVisualStyleBackColor = false;
+            // 
+            // btnAddPatient
+            // 
+            this.btnAddPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddPatient.ForeColor = System.Drawing.Color.Black;
+            this.btnAddPatient.Location = new System.Drawing.Point(36, 549);
+            this.btnAddPatient.Name = "btnAddPatient";
+            this.btnAddPatient.Size = new System.Drawing.Size(112, 47);
+            this.btnAddPatient.TabIndex = 13;
+            this.btnAddPatient.Text = "Add Patient";
+            this.btnAddPatient.UseVisualStyleBackColor = false;
+
             // 
             // comboBox2
             // 
@@ -404,9 +419,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDeletePatient;
+        private System.Windows.Forms.Button btnEditPatient;
+        private System.Windows.Forms.Button btnAddPatient;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label10;

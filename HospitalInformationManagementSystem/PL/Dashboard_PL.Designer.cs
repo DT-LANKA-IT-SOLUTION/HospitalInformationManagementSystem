@@ -350,6 +350,7 @@
             this.Name = "Dashboard_PL";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard_PL";
+            this.Load += new System.EventHandler(this.Dashboard_PL_Load);
             this.pnlHeadder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).EndInit();

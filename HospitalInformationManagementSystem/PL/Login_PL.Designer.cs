@@ -60,6 +60,7 @@
             this.btnShutdown.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnShutdown.TabIndex = 2;
             this.btnShutdown.TabStop = false;
+            this.btnShutdown.Click += new System.EventHandler(this.BtnShutdown_Click);
             // 
             // panel1
             // 
@@ -132,6 +133,7 @@
             // 
             // label5
             // 
+
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(29)))), ((int)(((byte)(71)))));
             this.label5.Location = new System.Drawing.Point(732, 528);
@@ -140,6 +142,7 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Forgot your password?";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+
             // 
             // label6
             // 

@@ -17,7 +17,7 @@ namespace HospitalInformationManagementSystem.Other
         {
             if (con == null)
             {
-                string ConnectionString = @"Data Source=DESKTOP-8SB6J5K;Initial Catalog=CRUD;Integrated Security=True";
+                string ConnectionString = @"Data Source=DESKTOP-E51SEQV;Initial Catalog=HMSDB;Integrated Security=True";
                 con = new SqlConnection(ConnectionString);
             }
             return con;

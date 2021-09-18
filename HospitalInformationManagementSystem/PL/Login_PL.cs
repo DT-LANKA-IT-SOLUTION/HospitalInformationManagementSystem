@@ -1,5 +1,6 @@
 ﻿using HospitalInformationManagementSystem.BLL;
 using HospitalInformationManagementSystem.Model;
+using HospitalInformationManagementSystem.Other;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,22 +20,31 @@ namespace HospitalInformationManagementSystem.PL
             InitializeComponent();
         }
 
+        Auth_BLL auth = new Auth_BLL();
+
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            if (this.isFormValid())
+            if (this.IsFormValid())
             {
                 AuthModel _authModel = new AuthModel();
                 _authModel.Username = txtUsername.Text.Trim();
                 _authModel.Password = txtPassword.Text.Trim();
-                //Auth_BLL.getUserAuthentication(_authModel);
+                List<string> data = auth.GetUserAuthentication(_authModel);
+                if (data[1] == "true")
+                {
+                    MessageBox.Show(data[0], "Message");
+                    this.Hide();
+                    Dashboard_PL dashboard = new Dashboard_PL();
+                    dashboard.Show();
+                }
             }
         }
 
-        private bool isFormValid()
+        private bool IsFormValid()
         {
             if (txtUsername.Text.Trim() == string.Empty)
             {
-                MessageBox.Show("Username Required","Validation Error",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Username Required", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtUsername.Focus();
                 return false;
             }
@@ -47,6 +57,19 @@ namespace HospitalInformationManagementSystem.PL
             }
 
             return true;
+        }
+
+        private void BtnShutdown_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Do you really need to shutdown", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+
+            }
         }
     }
 }
