@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -45,6 +48,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\Auth_BLL.cs" />
@@ -80,6 +86,12 @@
     <Compile Include="PL\ucComplaint_PL.Designer.cs">
       <DependentUpon>ucComplaint_PL.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\ucDashboard_PL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\ucDashboard_PL.Designer.cs">
+      <DependentUpon>ucDashboard_PL.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\ucPatient_PL.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -112,6 +124,9 @@
     <EmbeddedResource Include="PL\ucComplaint_PL.resx">
       <DependentUpon>ucComplaint_PL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\ucDashboard_PL.resx">
+      <DependentUpon>ucDashboard_PL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\ucPatient_PL.resx">
       <DependentUpon>ucPatient_PL.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,6 +146,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
