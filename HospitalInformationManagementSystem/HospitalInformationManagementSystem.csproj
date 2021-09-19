@@ -80,6 +80,12 @@
     <Compile Include="PL\Login_PL.Designer.cs">
       <DependentUpon>Login_PL.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\ucAppointment_PL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\ucAppointment_PL.Designer.cs">
+      <DependentUpon>ucAppointment_PL.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\ucComplaint_PL.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Login_PL.resx">
       <DependentUpon>Login_PL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\ucAppointment_PL.resx">
+      <DependentUpon>ucAppointment_PL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\ucComplaint_PL.resx">
       <DependentUpon>ucComplaint_PL.cs</DependentUpon>
