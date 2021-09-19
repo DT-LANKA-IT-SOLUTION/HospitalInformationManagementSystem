@@ -270,6 +270,7 @@
             this.btnAppointment.Text = "Appointment";
             this.btnAppointment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAppointment.UseVisualStyleBackColor = true;
+            this.btnAppointment.Click += new System.EventHandler(this.btnAppointment_Click);
             // 
             // btnVisitors
             // 

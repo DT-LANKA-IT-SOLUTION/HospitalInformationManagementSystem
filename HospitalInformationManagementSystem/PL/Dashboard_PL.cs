@@ -107,5 +107,11 @@ namespace HospitalInformationManagementSystem.PL
         {
             AuthModel authModel = new AuthModel();
         }
+
+        private void btnAppointment_Click(object sender, EventArgs e)
+        {
+            ucAppointment_PL ucAppointment = new ucAppointment_PL();
+            FormControl.showControls(ucAppointment,pnlContent);
+        }
     }
 }
