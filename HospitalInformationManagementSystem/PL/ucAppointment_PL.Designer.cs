@@ -30,6 +30,9 @@ namespace HospitalInformationManagementSystem.PL
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -47,9 +50,6 @@ namespace HospitalInformationManagementSystem.PL
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -76,6 +76,7 @@ namespace HospitalInformationManagementSystem.PL
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(505, 685);
@@ -83,6 +84,41 @@ namespace HospitalInformationManagementSystem.PL
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Appointment Form";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(126, 272);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(341, 24);
+            this.textBox4.TabIndex = 13;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Available",
+            "Pending",
+            "Confirmed",
+            "Rejected"});
+            this.comboBox1.Location = new System.Drawing.Point(126, 429);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(143, 26);
+            this.comboBox1.TabIndex = 12;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Magenta;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.Black;
+            this.button4.Location = new System.Drawing.Point(147, 614);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(197, 47);
+            this.button4.TabIndex = 11;
+            this.button4.Text = "View Appointments";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Visible = false;
             // 
             // button3
             // 
@@ -253,6 +289,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.Black;
             this.groupBox3.Location = new System.Drawing.Point(517, 3);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(505, 677);
@@ -269,41 +306,6 @@ namespace HospitalInformationManagementSystem.PL
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(499, 649);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Magenta;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(147, 614);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(197, 47);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "View Appointments";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Visible = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Available",
-            "Pending",
-            "Confirmed",
-            "Rejected"});
-            this.comboBox1.Location = new System.Drawing.Point(126, 429);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(143, 26);
-            this.comboBox1.TabIndex = 12;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(126, 272);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(341, 24);
-            this.textBox4.TabIndex = 13;
             // 
             // ucAppointment_PL
             // 

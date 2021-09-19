@@ -105,6 +105,12 @@
     <Compile Include="PL\ucPatient_PL.Designer.cs">
       <DependentUpon>ucPatient_PL.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\ucPostals_PL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\ucPostals_PL.Designer.cs">
+      <DependentUpon>ucPostals_PL.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\ucStaff_PL.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\ucPatient_PL.resx">
       <DependentUpon>ucPatient_PL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\ucPostals_PL.resx">
+      <DependentUpon>ucPostals_PL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\ucStaff_PL.resx">
       <DependentUpon>ucStaff_PL.cs</DependentUpon>
