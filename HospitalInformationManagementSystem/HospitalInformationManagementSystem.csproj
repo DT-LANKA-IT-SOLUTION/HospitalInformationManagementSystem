@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="BLL\Auth_BLL.cs" />
     <Compile Include="DAL\Auth_DLL.cs" />
+    <Compile Include="DAL\Patient_DLL.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,6 +57,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\AuthModel.cs" />
+    <Compile Include="Model\PatientModel.cs" />
     <Compile Include="Model\PermisionsModel.cs" />
     <Compile Include="Other\EncryptionLab.cs" />
     <Compile Include="Other\FormControl.cs" />
