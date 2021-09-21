@@ -252,6 +252,7 @@
             this.btnPostal.Text = "Postal";
             this.btnPostal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPostal.UseVisualStyleBackColor = true;
+            this.btnPostal.Click += new System.EventHandler(this.btnPostal_Click);
             // 
             // btnAppointment
             // 
@@ -270,6 +271,7 @@
             this.btnAppointment.Text = "Appointment";
             this.btnAppointment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAppointment.UseVisualStyleBackColor = true;
+            this.btnAppointment.Click += new System.EventHandler(this.btnAppointment_Click);
             // 
             // btnVisitors
             // 
