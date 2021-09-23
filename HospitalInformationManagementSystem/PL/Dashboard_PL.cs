@@ -113,5 +113,11 @@ namespace HospitalInformationManagementSystem.PL
             ucAppointment_PL ucAppointment = new ucAppointment_PL();
             FormControl.showControls(ucAppointment,pnlContent);
         }
+
+        private void btnPostal_Click(object sender, EventArgs e)
+        {
+            ucPostals_PL ucPostals = new ucPostals_PL();
+            FormControl.showControls(ucPostals, pnlContent);
+        }
     }
 }

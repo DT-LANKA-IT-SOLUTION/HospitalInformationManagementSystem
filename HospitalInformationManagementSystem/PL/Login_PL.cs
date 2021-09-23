@@ -24,19 +24,26 @@ namespace HospitalInformationManagementSystem.PL
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            if (this.IsFormValid())
+            try
             {
-                AuthModel _authModel = new AuthModel();
-                _authModel.Username = txtUsername.Text.Trim();
-                _authModel.Password = txtPassword.Text.Trim();
-                List<string> data = auth.GetUserAuthentication(_authModel);
-                if (data[1] == "true")
+                if (this.IsFormValid())
                 {
-                    MessageBox.Show(data[0], "Message");
-                    this.Hide();
-                    Dashboard_PL dashboard = new Dashboard_PL();
-                    dashboard.Show();
+                    AuthModel _authModel = new AuthModel();
+                    _authModel.Username = txtUsername.Text.Trim();
+                    _authModel.Password = txtPassword.Text.Trim();
+                    List<string> data = auth.GetUserAuthentication(_authModel);
+                    if (data[1] == "true")
+                    {
+                        MessageBox.Show(data[0], "Message");
+                        this.Hide();
+                        Dashboard_PL dashboard = new Dashboard_PL();
+                        dashboard.Show();
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(),"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 

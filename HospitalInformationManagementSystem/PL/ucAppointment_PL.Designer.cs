@@ -77,7 +77,9 @@ namespace HospitalInformationManagementSystem.PL
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.groupBox1.ForeColor = System.Drawing.Color.White;
+
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(505, 685);
@@ -93,24 +95,29 @@ namespace HospitalInformationManagementSystem.PL
             this.textBox4.Location = new System.Drawing.Point(179, 253);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(313, 30);
+
             this.textBox4.TabIndex = 13;
             // 
             // comboBox1
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Available",
             "Pending",
             "Confirmed",
             "Rejected"});
+
             this.comboBox1.Location = new System.Drawing.Point(179, 409);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(143, 28);
+
             this.comboBox1.TabIndex = 12;
             // 
             // button4
             // 
+
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(29)))), ((int)(((byte)(71)))));
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
             this.button4.FlatAppearance.BorderSize = 0;
@@ -122,6 +129,7 @@ namespace HospitalInformationManagementSystem.PL
             this.button4.Size = new System.Drawing.Size(106, 50);
             this.button4.TabIndex = 11;
             this.button4.Text = "View";
+
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Visible = false;
             // 
@@ -308,7 +316,9 @@ namespace HospitalInformationManagementSystem.PL
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(150)))));
             this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+
             this.groupBox3.ForeColor = System.Drawing.Color.White;
+
             this.groupBox3.Location = new System.Drawing.Point(517, 3);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(505, 677);
