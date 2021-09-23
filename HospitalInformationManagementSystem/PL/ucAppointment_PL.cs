@@ -36,5 +36,7 @@ namespace HospitalInformationManagementSystem.PL
         {
 
         }
+
+       
     }
 }
