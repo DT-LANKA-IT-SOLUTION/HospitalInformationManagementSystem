@@ -28,20 +28,47 @@ namespace HospitalInformationManagementSystem.DAL
         {
             try
             {
-                string sql = string.Format("INSERT INTO Patient(EmpName,EmpAddress,EmpQualification,EmpGender,EmpCountryId,Active,CreatedDate)" +
-                "VALUES(@EmpName,@EmpAddress,@EmpQualification,@EmpGender,@EmpCountryId,@Active,@CreatedDate)");
+                string sql = string.Format("INSERT INTO Users(user_name,password,f_name,l_name,gender,phone_no,nic_no,dob,address,marital_status,user_type)" +
+                "VALUES(@user_name,@password,@f_name,@l_name,@gender,@phone_no,@nic_no,@dob,@address,@marital_status,@user_type)");
 
-                SqlParameter[] _sql = new SqlParameter[7];
+                SqlParameter[] _sql = new SqlParameter[11];
 
-                _sql[0] = SqlParameterFormat.Format("@EmpName", patientModel.EmpName);
-                _sql[1] = SqlParameterFormat.Format("@EmpAddress", patientModel.EmpAddress);
-                _sql[2] = SqlParameterFormat.Format("@EmpQualification", patientModel.EmpQualification);
-                _sql[3] = SqlParameterFormat.Format("@EmpGender", patientModel.EmpGender);
-                _sql[4] = SqlParameterFormat.Format("@EmpCountryId", patientModel.EmpCountryId);
-                _sql[5] = SqlParameterFormat.Format("@Active", patientModel.Active);
-                _sql[6] = SqlParameterFormat.Format("@CreatedDate", patientModel.CreatedDate);
+                _sql[0] = SqlParameterFormat.Format("@user_name", patientModel.user_name);
+                _sql[1] = SqlParameterFormat.Format("@password", patientModel.password);
+                _sql[2] = SqlParameterFormat.Format("@f_name", patientModel.first_name);
+                _sql[3] = SqlParameterFormat.Format("@l_name", patientModel.last_name);
+                _sql[4] = SqlParameterFormat.Format("@gender", patientModel.gender);
+                _sql[5] = SqlParameterFormat.Format("@phone_no", patientModel.phone_no);
+                _sql[6] = SqlParameterFormat.Format("@nic_no", patientModel.nic_no);
+                _sql[7] = SqlParameterFormat.Format("@dob", patientModel.dob);
+                _sql[8] = SqlParameterFormat.Format("@address", patientModel.address);
+                _sql[9] = SqlParameterFormat.Format("@marital_status", patientModel.marital_status);
+                _sql[10] = SqlParameterFormat.Format("@user_type", patientModel.user_type);
 
-                return ODBC.SetData(sql, _sql);
+                if (ODBC.SetData(sql, _sql) > 0)
+                {
+                    sql = string.Format("SELECT IDENT_CURRENT('Users')");
+                    int user_id = Int32.Parse(ODBC.ExecuteFunction(sql));
+                    if (user_id > 0)
+                    {
+                        sql = string.Format("INSERT INTO Patients(user_id,blood_group,allergies)VALUES(@user_id,@blood_group,@allergies)");
+
+                        _sql = new SqlParameter[3];
+                        _sql[0] = SqlParameterFormat.Format("@user_id", user_id);
+                        _sql[1] = SqlParameterFormat.Format("@blood_group", patientModel.blood_group);
+                        _sql[2] = SqlParameterFormat.Format("@allergies", patientModel.allergies);
+
+                        return ODBC.SetData(sql, _sql);
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                }
+                else
+                {
+                    return 0;
+                }
             }
             catch (Exception)
             {
@@ -53,29 +80,53 @@ namespace HospitalInformationManagementSystem.DAL
         {
             try
             {
-                string sql = string.Format("UPDATE TblPatient SET" +
-                    "EmpName=@EmpName," +
-                    "EmpAddress=@EmpAddress," +
-                    "EmpQualification=@EmpQualification," +
-                    "EmpGender=@EmpGender," +
-                    "EmpCountryId=@EmpCountryId," +
-                    "Active=@Active," +
-                    "UpdatedDate=@UpdatedDate" +
-                    "WHERE EmpId=@EmpId"
+                string sql = string.Format("UPDATE Users SET user_name =@user_name," +
+                      "password =@password," +
+                      "f_name = @f_name," +
+                      "l_name = @l_name," +
+                      "gender = @gender," +
+                      "phone_no = @phone_no," +
+                      "nic_no = @nic_no," +
+                      "dob = @dob," +
+                      "address = @address," +
+                      "marital_status = @marital_status," +
+                      "user_type = @user_type" +
+                      "WHERE user_id = @user_id"
+                 );
+
+                SqlParameter[] _sql = new SqlParameter[12];
+
+                _sql[0] = SqlParameterFormat.Format("@user_name", patientModel.user_name);
+                _sql[1] = SqlParameterFormat.Format("@password", patientModel.password);
+                _sql[2] = SqlParameterFormat.Format("@f_name", patientModel.first_name);
+                _sql[3] = SqlParameterFormat.Format("@l_name", patientModel.last_name);
+                _sql[4] = SqlParameterFormat.Format("@gender", patientModel.gender);
+                _sql[5] = SqlParameterFormat.Format("@phone_no", patientModel.phone_no);
+                _sql[6] = SqlParameterFormat.Format("@nic_no", patientModel.nic_no);
+                _sql[7] = SqlParameterFormat.Format("@dob", patientModel.dob);
+                _sql[8] = SqlParameterFormat.Format("@address", patientModel.address);
+                _sql[9] = SqlParameterFormat.Format("@marital_status", patientModel.marital_status);
+                _sql[10] = SqlParameterFormat.Format("@user_type", patientModel.user_type);
+                _sql[11] = SqlParameterFormat.Format("@user_id", patientModel.user_id);
+
+                if (ODBC.SetData(sql, _sql) > 0)
+                {
+                    sql = string.Format("UPDATE Patients SET " +
+                        "blood_group=@blood_group,allergies=@allergies" +
+                        " WHERE user_id=@user_id"
                     );
 
-                SqlParameter[] _sql = new SqlParameter[8];
+                    _sql = new SqlParameter[3];
+                    _sql[0] = SqlParameterFormat.Format("@user_id", patientModel.user_id);
+                    _sql[1] = SqlParameterFormat.Format("@blood_group", patientModel.blood_group);
+                    _sql[2] = SqlParameterFormat.Format("@allergies", patientModel.allergies);
 
-                _sql[0] = SqlParameterFormat.Format("@EmpName", tblPatient.EmpName);
-                _sql[1] = SqlParameterFormat.Format("@EmpAddress", tblPatient.EmpAddress);
-                _sql[2] = SqlParameterFormat.Format("@EmpQualification", tblPatient.EmpQualification);
-                _sql[3] = SqlParameterFormat.Format("@EmpGender", tblPatient.EmpGender);
-                _sql[4] = SqlParameterFormat.Format("@EmpCountryId", tblPatient.EmpCountryId);
-                _sql[5] = SqlParameterFormat.Format("@Active", tblPatient.Active);
-                _sql[6] = SqlParameterFormat.Format("@UpdatedDate", tblPatient.UpdatedDate);
-                _sql[6] = SqlParameterFormat.Format("@EmpId", tblPatient.EmpID);
-
-                return ODBC.SetData(sql, _sql);
+                    return ODBC.SetData(sql, _sql);
+                }
+                else
+                {
+                    return 0;
+                }
             }
             catch (Exception)
             {
@@ -83,19 +134,19 @@ namespace HospitalInformationManagementSystem.DAL
             }
         }
 
-        public static int DeletePatient(bool Active, int EmpID)
+        public static int DeletePatient(bool Active, int user_id)
         {
             try
             {
-                string sql = string.Format("UPDATE TblPatient SET" +
-                    "Active=@Active," +
-                    "WHERE EmpId=@EmpId"
+                string sql = string.Format("UPDATE Users SET" +
+                    "IsActive=@Active," +
+                    "WHERE user_id=@user_id"
                     );
 
                 SqlParameter[] _sql = new SqlParameter[2];
 
                 _sql[5] = SqlParameterFormat.Format("@Active", Active);
-                _sql[6] = SqlParameterFormat.Format("@EmpId", EmpID);
+                _sql[6] = SqlParameterFormat.Format("@user_id", user_id);
 
                 return ODBC.SetData(sql, _sql);
             }

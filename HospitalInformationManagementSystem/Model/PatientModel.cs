@@ -8,6 +8,7 @@ namespace HospitalInformationManagementSystem.Model
 {
     class PatientModel
     {
+        public int user_id { get; set; }
         public string user_name { get; set; }
         public string password { get; set; }
         public string first_name { get; set; }
@@ -19,6 +20,7 @@ namespace HospitalInformationManagementSystem.Model
         public string address { get; set; }
         public string marital_status { get; set; }
         public string user_type { get; set; }
+        public Boolean IsActive { get; set; }
         public string blood_group { get; set; }
         public string allergies { get; set; }
     }

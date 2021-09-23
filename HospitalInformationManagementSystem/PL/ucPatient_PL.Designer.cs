@@ -28,37 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlPatient = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dtgPatient = new System.Windows.Forms.DataGridView();
+            this.dgvPatient = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.cmbBloadGroup = new System.Windows.Forms.ComboBox();
+            this.txtAllergies = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btnDeletePatient = new System.Windows.Forms.Button();
             this.btnEditPatient = new System.Windows.Forms.Button();
             this.btnAddPatient = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.cmbMaritalStatus = new System.Windows.Forms.ComboBox();
+            this.dtpBirthDay = new System.Windows.Forms.DateTimePicker();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNIC = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.f_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.l_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nic_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.allergies = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.blood_group = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.epPatient = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlPatient.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgPatient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epPatient)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlPatient
@@ -73,7 +84,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dtgPatient);
+            this.groupBox2.Controls.Add(this.dgvPatient);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(516, 3);
@@ -83,42 +94,72 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Patient Data";
             // 
-            // dtgPatient
+            // dgvPatient
             // 
-            this.dtgPatient.AllowUserToAddRows = false;
-            this.dtgPatient.AllowUserToDeleteRows = false;
-            this.dtgPatient.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dtgPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgPatient.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgPatient.Location = new System.Drawing.Point(3, 25);
-            this.dtgPatient.Name = "dtgPatient";
-            this.dtgPatient.ReadOnly = true;
-            this.dtgPatient.Size = new System.Drawing.Size(499, 657);
-            this.dtgPatient.TabIndex = 0;
+            this.dgvPatient.AllowUserToAddRows = false;
+            this.dgvPatient.AllowUserToDeleteRows = false;
+            this.dgvPatient.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            this.dgvPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPatient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.f_name,
+            this.l_name,
+            this.nic_no,
+            this.allergies,
+            this.blood_group});
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPatient.DefaultCellStyle = dataGridViewCellStyle23;
+            this.dgvPatient.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPatient.Location = new System.Drawing.Point(3, 25);
+            this.dgvPatient.Name = "dgvPatient";
+            this.dgvPatient.ReadOnly = true;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatient.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            this.dgvPatient.Size = new System.Drawing.Size(499, 657);
+            this.dgvPatient.TabIndex = 0;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.cmbBloadGroup);
+            this.groupBox1.Controls.Add(this.txtAllergies);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.btnDeletePatient);
             this.groupBox1.Controls.Add(this.btnEditPatient);
             this.groupBox1.Controls.Add(this.btnAddPatient);
-            this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.cmbMaritalStatus);
+            this.groupBox1.Controls.Add(this.dtpBirthDay);
+            this.groupBox1.Controls.Add(this.txtAddress);
+            this.groupBox1.Controls.Add(this.txtPhone);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.cmbGender);
+            this.groupBox1.Controls.Add(this.txtLastName);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtNIC);
+            this.groupBox1.Controls.Add(this.txtFirstName);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -130,10 +171,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Patient Form";
             // 
-            // comboBox3
+            // cmbBloadGroup
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.cmbBloadGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBloadGroup.ForeColor = System.Drawing.Color.Black;
+            this.cmbBloadGroup.FormattingEnabled = true;
+            this.cmbBloadGroup.Items.AddRange(new object[] {
             "A+",
             "A-",
             "B+",
@@ -142,19 +185,20 @@
             "O-",
             "AB+",
             "AB-"});
-            this.comboBox3.Location = new System.Drawing.Point(102, 308);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(200, 32);
-            this.comboBox3.TabIndex = 18;
+            this.cmbBloadGroup.Location = new System.Drawing.Point(102, 308);
+            this.cmbBloadGroup.Name = "cmbBloadGroup";
+            this.cmbBloadGroup.Size = new System.Drawing.Size(200, 26);
+            this.cmbBloadGroup.TabIndex = 9;
+            this.cmbBloadGroup.Validating += new System.ComponentModel.CancelEventHandler(this.CmbBloadGroup_Validating);
             // 
-            // textBox7
+            // txtAllergies
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(102, 349);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(386, 110);
-            this.textBox7.TabIndex = 17;
+            this.txtAllergies.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAllergies.Location = new System.Drawing.Point(102, 349);
+            this.txtAllergies.Multiline = true;
+            this.txtAllergies.Name = "txtAllergies";
+            this.txtAllergies.Size = new System.Drawing.Size(386, 110);
+            this.txtAllergies.TabIndex = 10;
             // 
             // label10
             // 
@@ -198,7 +242,7 @@
             this.btnEditPatient.Location = new System.Drawing.Point(190, 549);
             this.btnEditPatient.Name = "btnEditPatient";
             this.btnEditPatient.Size = new System.Drawing.Size(112, 47);
-            this.btnEditPatient.TabIndex = 13;
+            this.btnEditPatient.TabIndex = 12;
             this.btnEditPatient.Text = "Edit Patient";
             this.btnEditPatient.UseVisualStyleBackColor = false;
             // 
@@ -210,46 +254,50 @@
             this.btnAddPatient.Location = new System.Drawing.Point(36, 549);
             this.btnAddPatient.Name = "btnAddPatient";
             this.btnAddPatient.Size = new System.Drawing.Size(112, 47);
-            this.btnAddPatient.TabIndex = 13;
+            this.btnAddPatient.TabIndex = 11;
             this.btnAddPatient.Text = "Add Patient";
             this.btnAddPatient.UseVisualStyleBackColor = false;
+            this.btnAddPatient.Click += new System.EventHandler(this.BtnAddPatient_Click);
             // 
-            // comboBox2
+            // cmbMaritalStatus
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbMaritalStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMaritalStatus.FormattingEnabled = true;
+            this.cmbMaritalStatus.Items.AddRange(new object[] {
             "Married",
             "Unmarried"});
-            this.comboBox2.Location = new System.Drawing.Point(361, 126);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(127, 26);
-            this.comboBox2.TabIndex = 12;
+            this.cmbMaritalStatus.Location = new System.Drawing.Point(361, 126);
+            this.cmbMaritalStatus.Name = "cmbMaritalStatus";
+            this.cmbMaritalStatus.Size = new System.Drawing.Size(127, 26);
+            this.cmbMaritalStatus.TabIndex = 6;
+            this.cmbMaritalStatus.Validating += new System.ComponentModel.CancelEventHandler(this.CmbMaritalStatus_Validating);
             // 
-            // dateTimePicker1
+            // dtpBirthDay
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(102, 265);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 24);
-            this.dateTimePicker1.TabIndex = 11;
+            this.dtpBirthDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBirthDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBirthDay.Location = new System.Drawing.Point(102, 265);
+            this.dtpBirthDay.Name = "dtpBirthDay";
+            this.dtpBirthDay.Size = new System.Drawing.Size(200, 24);
+            this.dtpBirthDay.TabIndex = 8;
             // 
-            // textBox5
+            // txtAddress
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(92, 172);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(396, 68);
-            this.textBox5.TabIndex = 10;
+            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(92, 172);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(396, 68);
+            this.txtAddress.TabIndex = 7;
             // 
-            // textBox4
+            // txtPhone
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(93, 126);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(145, 24);
-            this.textBox4.TabIndex = 9;
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(93, 126);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(145, 24);
+            this.txtPhone.TabIndex = 5;
+            this.txtPhone.Validating += new System.ComponentModel.CancelEventHandler(this.TxtPhone_Validating);
             // 
             // label7
             // 
@@ -306,25 +354,26 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "NIC";
             // 
-            // comboBox1
+            // cmbGender
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.comboBox1.Location = new System.Drawing.Point(93, 76);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(145, 26);
-            this.comboBox1.TabIndex = 4;
+            this.cmbGender.Location = new System.Drawing.Point(93, 76);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(145, 26);
+            this.cmbGender.TabIndex = 3;
+            this.cmbGender.Validating += new System.ComponentModel.CancelEventHandler(this.CmbGender_Validating);
             // 
-            // textBox2
+            // txtLastName
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(343, 35);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(145, 24);
-            this.textBox2.TabIndex = 3;
+            this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.Location = new System.Drawing.Point(343, 35);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(145, 24);
+            this.txtLastName.TabIndex = 2;
             // 
             // label2
             // 
@@ -337,22 +386,23 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Last Name";
             // 
-            // textBox3
+            // txtNIC
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(343, 76);
-            this.textBox3.MaxLength = 10;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(145, 24);
-            this.textBox3.TabIndex = 1;
+            this.txtNIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNIC.Location = new System.Drawing.Point(343, 76);
+            this.txtNIC.MaxLength = 10;
+            this.txtNIC.Name = "txtNIC";
+            this.txtNIC.Size = new System.Drawing.Size(145, 24);
+            this.txtNIC.TabIndex = 4;
+            this.txtNIC.Validating += new System.ComponentModel.CancelEventHandler(this.TxtNIC_Validating);
             // 
-            // textBox1
+            // txtFirstName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(93, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(145, 24);
-            this.textBox1.TabIndex = 1;
+            this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName.Location = new System.Drawing.Point(93, 35);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(145, 24);
+            this.txtFirstName.TabIndex = 0;
             // 
             // label3
             // 
@@ -376,6 +426,45 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "First Name";
             // 
+            // f_name
+            // 
+            this.f_name.DataPropertyName = "f_name";
+            this.f_name.HeaderText = "First Name";
+            this.f_name.Name = "f_name";
+            this.f_name.ReadOnly = true;
+            // 
+            // l_name
+            // 
+            this.l_name.DataPropertyName = "l_name";
+            this.l_name.HeaderText = "Last Name";
+            this.l_name.Name = "l_name";
+            this.l_name.ReadOnly = true;
+            // 
+            // nic_no
+            // 
+            this.nic_no.DataPropertyName = "nic_no";
+            this.nic_no.HeaderText = "NIC";
+            this.nic_no.Name = "nic_no";
+            this.nic_no.ReadOnly = true;
+            // 
+            // allergies
+            // 
+            this.allergies.DataPropertyName = "allergies";
+            this.allergies.HeaderText = "Allergies";
+            this.allergies.Name = "allergies";
+            this.allergies.ReadOnly = true;
+            // 
+            // blood_group
+            // 
+            this.blood_group.DataPropertyName = "blood_group";
+            this.blood_group.HeaderText = "Blood Group";
+            this.blood_group.Name = "blood_group";
+            this.blood_group.ReadOnly = true;
+            // 
+            // epPatient
+            // 
+            this.epPatient.ContainerControl = this;
+            // 
             // ucPatient_PL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,11 +473,13 @@
             this.Controls.Add(this.pnlPatient);
             this.Name = "ucPatient_PL";
             this.Size = new System.Drawing.Size(1024, 691);
+            this.Load += new System.EventHandler(this.UcPatient_PL_Load);
             this.pnlPatient.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgPatient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epPatient)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -398,29 +489,35 @@
         private System.Windows.Forms.Panel pnlPatient;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dtgPatient;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DataGridView dgvPatient;
+        private System.Windows.Forms.DateTimePicker dtpBirthDay;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox cmbGender;
+        private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNIC;
+        private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbMaritalStatus;
         private System.Windows.Forms.Button btnDeletePatient;
         private System.Windows.Forms.Button btnEditPatient;
         private System.Windows.Forms.Button btnAddPatient;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtAllergies;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbBloadGroup;
+        private System.Windows.Forms.DataGridViewTextBoxColumn f_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn l_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nic_no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn allergies;
+        private System.Windows.Forms.DataGridViewTextBoxColumn blood_group;
+        private System.Windows.Forms.ErrorProvider epPatient;
     }
 }
