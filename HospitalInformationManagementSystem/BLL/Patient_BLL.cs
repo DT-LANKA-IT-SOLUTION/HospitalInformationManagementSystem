@@ -25,6 +25,19 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
+        public string CheckPatientByUsername(PatientModel patientModel)
+        {
+            try
+            {
+               
+                return Patient_DLL.GetPatientByUsername(patientModel);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public int AddPatient(PatientModel patientModel)
         {
             try
@@ -49,11 +62,11 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
-        public int DeletePatient(bool Active, int EmpID)
+        public int DeletePatient(bool Active, int user_id)
         {
             try
             {
-                return Patient_DLL.DeletePatient(Active, EmpID);
+                return Patient_DLL.DeletePatient(Active, user_id);
             }
             catch (Exception)
             {
