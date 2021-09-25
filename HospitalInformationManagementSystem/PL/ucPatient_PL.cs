@@ -387,5 +387,45 @@ namespace HospitalInformationManagementSystem.PL
                 throw;
             }
         }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSearchByNIC.Text))
+            {
+                epPatient.SetError(txtSearchByNIC, "Please Fill NIC");
+                txtSearchByNIC.Focus();
+            }
+            else
+            {
+                epPatient.Clear();
+                this.FilDGVSearchPatient(txtSearchByNIC.Text.Trim());
+            }
+        }
+
+        private void FilDGVSearchPatient(string nic)
+        {
+            try
+            {
+                _patient_BLL.LoadPatientByNICGridView(dgvPatient,nic);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TxtSearchByNIC_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSearchByNIC.Text))
+            {
+                epPatient.SetError(txtSearchByNIC, "Please Fill NIC");
+                txtSearchByNIC.Focus();
+            }
+            else
+            {
+                epPatient.Clear();
+                this.FilDGVSearchPatient(txtSearchByNIC.Text.Trim());
+            }
+        }
     }
 }

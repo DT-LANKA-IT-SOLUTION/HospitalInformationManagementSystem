@@ -16,7 +16,6 @@ namespace HospitalInformationManagementSystem.DAL
         {
             try
             {
-                //return ODBC.GetData("SELECT * FROM Patients,Users WHERE Patients.user_id = Users.user_id");
                 string sql = string.Format("SELECT * FROM Patients,Users WHERE Patients.user_id = Users.user_id AND Users.IsActive=@IsActive");
 
                 SqlParameter[] _sql = new SqlParameter[1];
@@ -30,11 +29,16 @@ namespace HospitalInformationManagementSystem.DAL
             }
         }
 
-        public static DataTable GetPatientByID()
+        public static DataTable GetPatientByNIC(string nic)
         {
             try
             {
-                return ODBC.GetData("SELECT * FROM Patients,Users WHERE Patients.user_id = Users.user_id");
+                string sql = string.Format("SELECT * FROM Patients,Users WHERE Patients.user_id = Users.user_id AND Users.nic_no LIKE @nic");
+
+                SqlParameter[] _sql = new SqlParameter[1];
+                _sql[0] = SqlParameterFormat.Format("@nic", "%"+nic+"%");
+
+                return ODBC.GetData(sql, _sql);
             }
             catch (Exception)
             {

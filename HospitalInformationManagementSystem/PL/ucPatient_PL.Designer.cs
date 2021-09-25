@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlPatient = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -39,7 +39,22 @@
             this.txtSearchByNIC = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dgvPatient = new System.Windows.Forms.DataGridView();
+            this.f_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.User_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.l_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nic_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.allergies = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.blood_group = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marital_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.txtUserID = new System.Windows.Forms.TextBox();
             this.btnCheck = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -69,21 +84,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.epPatient = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtUserID = new System.Windows.Forms.TextBox();
-            this.f_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.User_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.l_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nic_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.allergies = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.blood_group = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marital_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnClear = new System.Windows.Forms.Button();
             this.pnlPatient.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -134,6 +134,7 @@
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // txtSearchByNIC
             // 
@@ -142,6 +143,7 @@
             this.txtSearchByNIC.Name = "txtSearchByNIC";
             this.txtSearchByNIC.Size = new System.Drawing.Size(259, 24);
             this.txtSearchByNIC.TabIndex = 2;
+            this.txtSearchByNIC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtSearchByNIC_KeyPress);
             // 
             // label11
             // 
@@ -159,14 +161,14 @@
             this.dgvPatient.AllowUserToAddRows = false;
             this.dgvPatient.AllowUserToDeleteRows = false;
             this.dgvPatient.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPatient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.f_name,
@@ -182,29 +184,128 @@
             this.dob,
             this.address,
             this.marital_status});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPatient.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPatient.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvPatient.Location = new System.Drawing.Point(6, 77);
             this.dgvPatient.Name = "dgvPatient";
             this.dgvPatient.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatient.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatient.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvPatient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPatient.Size = new System.Drawing.Size(493, 602);
             this.dgvPatient.TabIndex = 0;
             this.dgvPatient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPatient_CellClick);
+            // 
+            // f_name
+            // 
+            this.f_name.DataPropertyName = "f_name";
+            this.f_name.HeaderText = "First Name";
+            this.f_name.Name = "f_name";
+            this.f_name.ReadOnly = true;
+            // 
+            // User_ID
+            // 
+            this.User_ID.DataPropertyName = "user_id";
+            this.User_ID.HeaderText = "User ID";
+            this.User_ID.Name = "User_ID";
+            this.User_ID.ReadOnly = true;
+            this.User_ID.Visible = false;
+            // 
+            // l_name
+            // 
+            this.l_name.DataPropertyName = "l_name";
+            this.l_name.HeaderText = "Last Name";
+            this.l_name.Name = "l_name";
+            this.l_name.ReadOnly = true;
+            // 
+            // nic_no
+            // 
+            this.nic_no.DataPropertyName = "nic_no";
+            this.nic_no.HeaderText = "NIC";
+            this.nic_no.Name = "nic_no";
+            this.nic_no.ReadOnly = true;
+            // 
+            // allergies
+            // 
+            this.allergies.DataPropertyName = "allergies";
+            this.allergies.HeaderText = "Allergies";
+            this.allergies.Name = "allergies";
+            this.allergies.ReadOnly = true;
+            // 
+            // blood_group
+            // 
+            this.blood_group.DataPropertyName = "blood_group";
+            this.blood_group.HeaderText = "Blood Group";
+            this.blood_group.Name = "blood_group";
+            this.blood_group.ReadOnly = true;
+            // 
+            // Username
+            // 
+            this.Username.DataPropertyName = "user_name";
+            this.Username.HeaderText = "Username";
+            this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
+            this.Username.Visible = false;
+            // 
+            // password
+            // 
+            this.password.DataPropertyName = "password";
+            this.password.HeaderText = "Password";
+            this.password.Name = "password";
+            this.password.ReadOnly = true;
+            this.password.Visible = false;
+            // 
+            // gender
+            // 
+            this.gender.DataPropertyName = "gender";
+            this.gender.HeaderText = "Gender";
+            this.gender.Name = "gender";
+            this.gender.ReadOnly = true;
+            this.gender.Visible = false;
+            // 
+            // phone_no
+            // 
+            this.phone_no.DataPropertyName = "phone_no";
+            this.phone_no.HeaderText = "Phone No";
+            this.phone_no.Name = "phone_no";
+            this.phone_no.ReadOnly = true;
+            this.phone_no.Visible = false;
+            // 
+            // dob
+            // 
+            this.dob.DataPropertyName = "dob";
+            this.dob.HeaderText = "Birth Day";
+            this.dob.Name = "dob";
+            this.dob.ReadOnly = true;
+            this.dob.Visible = false;
+            // 
+            // address
+            // 
+            this.address.DataPropertyName = "address";
+            this.address.HeaderText = "Address";
+            this.address.Name = "address";
+            this.address.ReadOnly = true;
+            this.address.Visible = false;
+            // 
+            // marital_status
+            // 
+            this.marital_status.DataPropertyName = "marital_status";
+            this.marital_status.HeaderText = "Marital Status";
+            this.marital_status.Name = "marital_status";
+            this.marital_status.ReadOnly = true;
+            this.marital_status.Visible = false;
             // 
             // groupBox1
             // 
@@ -246,6 +347,27 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Patient Form";
+            // 
+            // btnClear
+            // 
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.Location = new System.Drawing.Point(344, 626);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(112, 47);
+            this.btnClear.TabIndex = 22;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
+            // 
+            // txtUserID
+            // 
+            this.txtUserID.Enabled = false;
+            this.txtUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserID.Location = new System.Drawing.Point(308, 521);
+            this.txtUserID.Name = "txtUserID";
+            this.txtUserID.Size = new System.Drawing.Size(180, 24);
+            this.txtUserID.TabIndex = 21;
+            this.txtUserID.Visible = false;
             // 
             // btnCheck
             // 
@@ -554,126 +676,6 @@
             // epPatient
             // 
             this.epPatient.ContainerControl = this;
-            // 
-            // txtUserID
-            // 
-            this.txtUserID.Enabled = false;
-            this.txtUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserID.Location = new System.Drawing.Point(308, 521);
-            this.txtUserID.Name = "txtUserID";
-            this.txtUserID.Size = new System.Drawing.Size(180, 24);
-            this.txtUserID.TabIndex = 21;
-            this.txtUserID.Visible = false;
-            // 
-            // f_name
-            // 
-            this.f_name.DataPropertyName = "f_name";
-            this.f_name.HeaderText = "First Name";
-            this.f_name.Name = "f_name";
-            this.f_name.ReadOnly = true;
-            // 
-            // User_ID
-            // 
-            this.User_ID.DataPropertyName = "user_id";
-            this.User_ID.HeaderText = "User ID";
-            this.User_ID.Name = "User_ID";
-            this.User_ID.ReadOnly = true;
-            this.User_ID.Visible = false;
-            // 
-            // l_name
-            // 
-            this.l_name.DataPropertyName = "l_name";
-            this.l_name.HeaderText = "Last Name";
-            this.l_name.Name = "l_name";
-            this.l_name.ReadOnly = true;
-            // 
-            // nic_no
-            // 
-            this.nic_no.DataPropertyName = "nic_no";
-            this.nic_no.HeaderText = "NIC";
-            this.nic_no.Name = "nic_no";
-            this.nic_no.ReadOnly = true;
-            // 
-            // allergies
-            // 
-            this.allergies.DataPropertyName = "allergies";
-            this.allergies.HeaderText = "Allergies";
-            this.allergies.Name = "allergies";
-            this.allergies.ReadOnly = true;
-            // 
-            // blood_group
-            // 
-            this.blood_group.DataPropertyName = "blood_group";
-            this.blood_group.HeaderText = "Blood Group";
-            this.blood_group.Name = "blood_group";
-            this.blood_group.ReadOnly = true;
-            // 
-            // Username
-            // 
-            this.Username.DataPropertyName = "user_name";
-            this.Username.HeaderText = "Username";
-            this.Username.Name = "Username";
-            this.Username.ReadOnly = true;
-            this.Username.Visible = false;
-            // 
-            // password
-            // 
-            this.password.DataPropertyName = "password";
-            this.password.HeaderText = "Password";
-            this.password.Name = "password";
-            this.password.ReadOnly = true;
-            this.password.Visible = false;
-            // 
-            // gender
-            // 
-            this.gender.DataPropertyName = "gender";
-            this.gender.HeaderText = "Gender";
-            this.gender.Name = "gender";
-            this.gender.ReadOnly = true;
-            this.gender.Visible = false;
-            // 
-            // phone_no
-            // 
-            this.phone_no.DataPropertyName = "phone_no";
-            this.phone_no.HeaderText = "Phone No";
-            this.phone_no.Name = "phone_no";
-            this.phone_no.ReadOnly = true;
-            this.phone_no.Visible = false;
-            // 
-            // dob
-            // 
-            this.dob.DataPropertyName = "dob";
-            this.dob.HeaderText = "Birth Day";
-            this.dob.Name = "dob";
-            this.dob.ReadOnly = true;
-            this.dob.Visible = false;
-            // 
-            // address
-            // 
-            this.address.DataPropertyName = "address";
-            this.address.HeaderText = "Address";
-            this.address.Name = "address";
-            this.address.ReadOnly = true;
-            this.address.Visible = false;
-            // 
-            // marital_status
-            // 
-            this.marital_status.DataPropertyName = "marital_status";
-            this.marital_status.HeaderText = "Marital Status";
-            this.marital_status.Name = "marital_status";
-            this.marital_status.ReadOnly = true;
-            this.marital_status.Visible = false;
-            // 
-            // btnClear
-            // 
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(344, 626);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(112, 47);
-            this.btnClear.TabIndex = 22;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
             // ucPatient_PL
             // 

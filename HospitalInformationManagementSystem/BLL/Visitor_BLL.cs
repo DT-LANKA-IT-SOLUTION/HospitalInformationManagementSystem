@@ -41,7 +41,7 @@ namespace HospitalInformationManagementSystem.BLL
         {
             try
             {
-                return Visitor_DLL.
+                return 0;
             }
             catch (Exception)
             {

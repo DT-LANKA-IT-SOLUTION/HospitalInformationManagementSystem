@@ -25,6 +25,19 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
+        public void LoadPatientByNICGridView(DataGridView dgvPatient,string nic)
+        {
+            try
+            {
+                dgvPatient.AutoGenerateColumns = false;
+                dgvPatient.DataSource = Patient_DLL.GetPatientByNIC(nic);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public string CheckPatientByUsername(PatientModel patientModel)
         {
             try
