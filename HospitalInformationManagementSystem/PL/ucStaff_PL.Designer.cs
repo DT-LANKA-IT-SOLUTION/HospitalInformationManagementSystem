@@ -30,45 +30,45 @@ namespace HospitalInformationManagementSystem.PL
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dtgPatient = new System.Windows.Forms.DataGridView();
+            this.dgvStaff = new System.Windows.Forms.DataGridView();
+            this.f_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.l_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.join_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbUserType = new System.Windows.Forms.ComboBox();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpBirthDay = new System.Windows.Forms.DateTimePicker();
+            this.dtpJoinedDate = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtNIC = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgPatient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dtgPatient);
+            this.groupBox2.Controls.Add(this.dgvStaff);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(516, 3);
@@ -78,46 +78,75 @@ namespace HospitalInformationManagementSystem.PL
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Staff Data";
             // 
-            // dtgPatient
+            // dgvStaff
             // 
-            this.dtgPatient.AllowUserToAddRows = false;
-            this.dtgPatient.AllowUserToDeleteRows = false;
-            this.dtgPatient.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dtgPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgPatient.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgPatient.Location = new System.Drawing.Point(3, 25);
-            this.dtgPatient.Name = "dtgPatient";
-            this.dtgPatient.ReadOnly = true;
-            this.dtgPatient.Size = new System.Drawing.Size(499, 657);
-            this.dtgPatient.TabIndex = 0;
+            this.dgvStaff.AllowUserToAddRows = false;
+            this.dgvStaff.AllowUserToDeleteRows = false;
+            this.dgvStaff.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.f_name,
+            this.l_name,
+            this.gender,
+            this.join_date});
+            this.dgvStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvStaff.Location = new System.Drawing.Point(3, 25);
+            this.dgvStaff.Name = "dgvStaff";
+            this.dgvStaff.ReadOnly = true;
+            this.dgvStaff.Size = new System.Drawing.Size(499, 657);
+            this.dgvStaff.TabIndex = 0;
+            // 
+            // f_name
+            // 
+            this.f_name.DataPropertyName = "f_name";
+            this.f_name.HeaderText = "First Name";
+            this.f_name.Name = "f_name";
+            this.f_name.ReadOnly = true;
+            // 
+            // l_name
+            // 
+            this.l_name.DataPropertyName = "l_name";
+            this.l_name.HeaderText = "Last Name";
+            this.l_name.Name = "l_name";
+            this.l_name.ReadOnly = true;
+            // 
+            // gender
+            // 
+            this.gender.DataPropertyName = "gender";
+            this.gender.HeaderText = "Gender";
+            this.gender.Name = "gender";
+            this.gender.ReadOnly = true;
+            // 
+            // join_date
+            // 
+            this.join_date.DataPropertyName = "join_date";
+            this.join_date.HeaderText = "Joined Date";
+            this.join_date.Name = "join_date";
+            this.join_date.ReadOnly = true;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.comboBox2);
-            this.groupBox1.Controls.Add(this.comboBox4);
-            this.groupBox1.Controls.Add(this.comboBox3);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbUserType);
+            this.groupBox1.Controls.Add(this.cmbGender);
+            this.groupBox1.Controls.Add(this.cmbStatus);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dtpBirthDay);
+            this.groupBox1.Controls.Add(this.dtpJoinedDate);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.txtAddress);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtPhone);
+            this.groupBox1.Controls.Add(this.txtNIC);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtLastName);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtFirstName);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
@@ -168,45 +197,45 @@ namespace HospitalInformationManagementSystem.PL
             this.comboBox2.TabIndex = 14;
             this.comboBox2.Visible = false;
             // 
-            // comboBox4
+            // cmbUserType
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.ItemHeight = 18;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.cmbUserType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.cmbUserType.FormattingEnabled = true;
+            this.cmbUserType.ItemHeight = 18;
+            this.cmbUserType.Items.AddRange(new object[] {
             "Administrator",
             "Receptionist",
             "Medical Officer"});
-            this.comboBox4.Location = new System.Drawing.Point(128, 501);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(360, 26);
-            this.comboBox4.TabIndex = 14;
+            this.cmbUserType.Location = new System.Drawing.Point(128, 501);
+            this.cmbUserType.Name = "cmbUserType";
+            this.cmbUserType.Size = new System.Drawing.Size(360, 26);
+            this.cmbUserType.TabIndex = 14;
             // 
-            // comboBox3
+            // cmbGender
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.ItemHeight = 18;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.cmbGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.ItemHeight = 18;
+            this.cmbGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.comboBox3.Location = new System.Drawing.Point(128, 156);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(360, 26);
-            this.comboBox3.TabIndex = 14;
+            this.cmbGender.Location = new System.Drawing.Point(128, 156);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(360, 26);
+            this.cmbGender.TabIndex = 14;
             // 
-            // comboBox1
+            // cmbStatus
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ItemHeight = 18;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.ItemHeight = 18;
+            this.cmbStatus.Items.AddRange(new object[] {
             "Married",
             "Single"});
-            this.comboBox1.Location = new System.Drawing.Point(128, 196);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(360, 26);
-            this.comboBox1.TabIndex = 14;
+            this.cmbStatus.Location = new System.Drawing.Point(128, 196);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(360, 26);
+            this.cmbStatus.TabIndex = 14;
             // 
             // button3
             // 
@@ -244,23 +273,23 @@ namespace HospitalInformationManagementSystem.PL
             this.button1.Text = "Add Staff";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // dateTimePicker2
+            // dtpBirthDay
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(128, 239);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(186, 24);
-            this.dateTimePicker2.TabIndex = 11;
+            this.dtpBirthDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpBirthDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBirthDay.Location = new System.Drawing.Point(128, 239);
+            this.dtpBirthDay.Name = "dtpBirthDay";
+            this.dtpBirthDay.Size = new System.Drawing.Size(186, 24);
+            this.dtpBirthDay.TabIndex = 11;
             // 
-            // dateTimePicker1
+            // dtpJoinedDate
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(128, 450);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(186, 24);
-            this.dateTimePicker1.TabIndex = 11;
+            this.dtpJoinedDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpJoinedDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpJoinedDate.Location = new System.Drawing.Point(128, 450);
+            this.dtpJoinedDate.Name = "dtpJoinedDate";
+            this.dtpJoinedDate.Size = new System.Drawing.Size(186, 24);
+            this.dtpJoinedDate.TabIndex = 11;
             // 
             // label8
             // 
@@ -273,51 +302,14 @@ namespace HospitalInformationManagementSystem.PL
             this.label8.TabIndex = 8;
             this.label8.Text = "Birth Date";
             // 
-            // textBox6
+            // txtAddress
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(128, 364);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(360, 24);
-            this.textBox6.TabIndex = 9;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(128, 322);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(360, 24);
-            this.textBox5.TabIndex = 9;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(18, 367);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(105, 18);
-            this.label13.TabIndex = 7;
-            this.label13.Text = "Address Line 3";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(128, 280);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(360, 24);
-            this.textBox4.TabIndex = 9;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(18, 325);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(105, 18);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "Address Line 2";
+            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.Location = new System.Drawing.Point(128, 283);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(360, 105);
+            this.txtAddress.TabIndex = 9;
             // 
             // label7
             // 
@@ -337,9 +329,9 @@ namespace HospitalInformationManagementSystem.PL
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(18, 283);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 18);
+            this.label6.Size = new System.Drawing.Size(66, 18);
             this.label6.TabIndex = 7;
-            this.label6.Text = "Address Line 1";
+            this.label6.Text = "Address ";
             // 
             // label11
             // 
@@ -364,21 +356,21 @@ namespace HospitalInformationManagementSystem.PL
             this.label5.Text = "Speciality Area";
             this.label5.Visible = false;
             // 
-            // textBox8
+            // txtPhone
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(128, 407);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(360, 24);
-            this.textBox8.TabIndex = 1;
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(128, 407);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(360, 24);
+            this.txtPhone.TabIndex = 1;
             // 
-            // textBox2
+            // txtNIC
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(128, 116);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(360, 24);
-            this.textBox2.TabIndex = 1;
+            this.txtNIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNIC.Location = new System.Drawing.Point(128, 116);
+            this.txtNIC.Name = "txtNIC";
+            this.txtNIC.Size = new System.Drawing.Size(360, 24);
+            this.txtNIC.TabIndex = 1;
             // 
             // label10
             // 
@@ -391,13 +383,13 @@ namespace HospitalInformationManagementSystem.PL
             this.label10.TabIndex = 0;
             this.label10.Text = "Marital Status";
             // 
-            // textBox3
+            // txtLastName
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(128, 76);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(360, 24);
-            this.textBox3.TabIndex = 1;
+            this.txtLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.Location = new System.Drawing.Point(128, 76);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(360, 24);
+            this.txtLastName.TabIndex = 1;
             // 
             // label4
             // 
@@ -410,13 +402,13 @@ namespace HospitalInformationManagementSystem.PL
             this.label4.TabIndex = 0;
             this.label4.Text = "Gender";
             // 
-            // textBox1
+            // txtFirstName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(128, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(360, 24);
-            this.textBox1.TabIndex = 1;
+            this.txtFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName.Location = new System.Drawing.Point(128, 35);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(360, 24);
+            this.txtFirstName.TabIndex = 1;
             // 
             // label9
             // 
@@ -470,8 +462,9 @@ namespace HospitalInformationManagementSystem.PL
             this.Controls.Add(this.groupBox1);
             this.Name = "ucStaff_PL";
             this.Size = new System.Drawing.Size(1024, 691);
+            this.Load += new System.EventHandler(this.ucStaff_PL_Load);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgPatient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -481,36 +474,36 @@ namespace HospitalInformationManagementSystem.PL
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dtgPatient;
+        private System.Windows.Forms.DataGridView dgvStaff;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.DateTimePicker dtpJoinedDate;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpBirthDay;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNIC;
+        private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cmbUserType;
+        private System.Windows.Forms.ComboBox cmbGender;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn f_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn l_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn join_date;
     }
 }
