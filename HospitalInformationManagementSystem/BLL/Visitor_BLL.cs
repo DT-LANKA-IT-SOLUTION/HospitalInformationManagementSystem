@@ -1,4 +1,5 @@
 ﻿using HospitalInformationManagementSystem.DAL;
+using HospitalInformationManagementSystem.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,33 @@ namespace HospitalInformationManagementSystem.BLL
                 throw;
             }
         }
+
+        public int AddVisitor(VisitorModel visitorModel)
+        {
+            try
+            {
+                return Visitor_DLL.AddVisitors(visitorModel);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public int UpdateVisitor(VisitorModel visitor)
+        {
+            try
+            {
+                return Visitor_DLL.
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
 
         
     }

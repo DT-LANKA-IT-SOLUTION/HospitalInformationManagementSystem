@@ -61,8 +61,7 @@ namespace HospitalInformationManagementSystem.DAL
         {
             try
             {
-                string sql = string.Format("INSERT INTO Visitors(purpose,name,phone_no,nic_no,date,in_time,out_time,note,attachment_type,attachment_data,user_id)" +
-                    "VALUES(@purpose,@vis_name,@phone_no,@nic_no,@date,@in_time,@out_time,@note,@attachment_type,@attachment_data,@user_id)");
+                string sql = string.Format("UPDATE Visitors S");
 
                 SqlParameter[] _sql = new SqlParameter[11];
 
