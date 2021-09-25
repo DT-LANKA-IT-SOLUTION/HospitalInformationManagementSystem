@@ -58,7 +58,9 @@
     <Compile Include="BLL\Patient_BLL.cs" />
     <Compile Include="BLL\Visitor_BLL.cs" />
     <Compile Include="DAL\Auth_DLL.cs" />
+    <Compile Include="DAL\LogingDetails_DLL.cs" />
     <Compile Include="DAL\Patient_DLL.cs" />
+    <Compile Include="DAL\Visitor_DLL.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
