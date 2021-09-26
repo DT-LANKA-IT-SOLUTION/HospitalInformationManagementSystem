@@ -125,7 +125,6 @@ namespace HospitalInformationManagementSystem.Other
                 return null;
             }
         }
-
     }
 }
 
