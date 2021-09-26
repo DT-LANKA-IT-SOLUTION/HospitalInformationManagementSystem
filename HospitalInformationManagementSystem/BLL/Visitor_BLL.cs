@@ -37,11 +37,11 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
-        public int UpdateVisitor(VisitorModel visitor)
+        public int UpdateVisitor(VisitorModel visitorModel)
         {
             try
             {
-                return 0;
+                return Visitor_DLL.UpdateVisitors(visitorModel);
             }
             catch (Exception)
             {
@@ -50,7 +50,17 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
+        public int DeleteVisitor(bool Active, int VisitorID)
+        {
+            try
+            {
+                return Visitor_DLL.DeleteVisitor(Active, VisitorID);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
-        
     }
 }
