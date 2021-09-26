@@ -48,7 +48,7 @@ namespace HospitalInformationManagementSystem.DAL
                 _sql[10] = SqlParameterFormat.Format("@attachment_data", visitorModel.attachment_data);
                 _sql[11] = SqlParameterFormat.Format("@user_id", PermisionsModel.user_id);
 
-                return ODBC.SetData(sql,_sql);
+                return ODBC.SetData(sql, _sql);
             }
             catch (Exception)
             {
@@ -75,7 +75,7 @@ namespace HospitalInformationManagementSystem.DAL
                     "attachment_type = @attachment_type," +
                     "attachment_data = @attachement_date," +
                     "user_id = @user_id"
-                    
+
                     );
 
                 SqlParameter[] _sql = new SqlParameter[12];
