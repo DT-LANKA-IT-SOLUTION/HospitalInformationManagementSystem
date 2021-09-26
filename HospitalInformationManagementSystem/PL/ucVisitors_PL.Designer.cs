@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.grpBVisitor = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -57,8 +59,6 @@
             this.nic_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.purpose = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.grpBVisitor.SuspendLayout();
             this.grpBVisitorGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitor)).BeginInit();
@@ -97,6 +97,25 @@
             this.grpBVisitor.TabIndex = 2;
             this.grpBVisitor.TabStop = false;
             this.grpBVisitor.Text = "Visitor";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(139, 444);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(360, 24);
+            this.textBox1.TabIndex = 16;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(18, 447);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(118, 18);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Attachment Type";
             // 
             // txtFirstName
             // 
@@ -377,25 +396,6 @@
             this.purpose.HeaderText = "Porpose";
             this.purpose.Name = "purpose";
             this.purpose.ReadOnly = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(139, 444);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(360, 24);
-            this.textBox1.TabIndex = 16;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(18, 447);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 18);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Attachment Type";
             // 
             // ucVisitors_PL
             // 
