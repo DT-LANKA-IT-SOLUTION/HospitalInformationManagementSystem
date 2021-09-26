@@ -159,22 +159,22 @@ namespace HospitalInformationManagementSystem.Other
                         else if (ch == 'C')
                         {
                             x += 36;
-                            y += 549;
+                            y += 573;
 
                             btnAdd.Visible = true;
                             btnAdd.Location = new Point(x, y);
-                        }
-                        else if (ch == 'D')
-                        {
-                            x += 154;
-                            btnDelete.Visible = true;
-                            btnDelete.Location = new Point(x, y);
                         }
                         else if (ch == 'M')
                         {
                             x += 154;
                             btnEdit.Visible = true;
                             btnEdit.Location = new Point(x, y);
+                        }
+                        else if (ch == 'D')
+                        {
+                            x += 154;
+                            btnDelete.Visible = true;
+                            btnDelete.Location = new Point(x, y);
                         }
                     }
 
