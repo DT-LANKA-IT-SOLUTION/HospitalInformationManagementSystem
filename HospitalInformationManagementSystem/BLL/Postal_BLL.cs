@@ -9,15 +9,14 @@ using System.Windows.Forms;
 
 namespace HospitalInformationManagementSystem.BLL
 {
-    class Patient_BLL
+    class Postal_BLL
     {
-
-        public void LoadAllPatientGridView(DataGridView dgvPatient)
+        public void LoadAllPostalGridView(DataGridView dgvPostal)
         {
             try
             {
-                dgvPatient.AutoGenerateColumns = false;
-                dgvPatient.DataSource = Patient_DLL.GetAllPatient();
+                dgvPostal.AutoGenerateColumns = false;
+                dgvPostal.DataSource = Postal_DLL.GetAllPostal();
             }
             catch (Exception)
             {
@@ -25,11 +24,11 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
-        public int AddPatient(PatientModel patientModel)
+        public int AddPostal(PostalModel postaltModel)
         {
             try
             {
-                return Patient_DLL.AddPatient(patientModel);
+                return Postal_DLL.AddPostal(postaltModel);
             }
             catch (Exception)
             {
@@ -37,11 +36,11 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
-        public int UpdatePatient(PatientModel patientModel)
+        public int UpdatePostal(PostalModel postalModel)
         {
             try
             {
-                return Patient_DLL.UpdatePatient(patientModel);
+                return Postal_DLL.UpdatePostal(postalModel);
             }
             catch (Exception)
             {
@@ -49,11 +48,11 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
-        public int DeletePatient(bool Active, int EmpID)
+        public int DeletePostal(int PostalID)
         {
             try
             {
-                return Patient_DLL.DeletePatient(Active, EmpID);
+                return Postal_DLL.DeletePostal(PostalID);
             }
             catch (Exception)
             {
@@ -61,5 +60,4 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
     }
-
 }
