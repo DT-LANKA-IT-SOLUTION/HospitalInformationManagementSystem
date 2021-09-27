@@ -16,7 +16,46 @@ namespace HospitalInformationManagementSystem.DAL
         {
             try
             {
-                return ODBC.GetData("SELECT * FROM Patients,Users WHERE Patients.user_id = Users.user_id");
+                string sql = string.Format("SELECT * FROM Patients,Users WHERE Patients.user_id = Users.user_id AND Users.IsActive=@IsActive");
+
+                SqlParameter[] _sql = new SqlParameter[1];
+                _sql[0] = SqlParameterFormat.Format("@IsActive", true);
+
+                return ODBC.GetData(sql, _sql);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static DataTable GetPatientByNIC(string nic)
+        {
+            try
+            {
+                string sql = string.Format("SELECT * FROM Patients,Users WHERE Patients.user_id = Users.user_id AND Users.nic_no LIKE @nic");
+
+                SqlParameter[] _sql = new SqlParameter[1];
+                _sql[0] = SqlParameterFormat.Format("@nic", "%"+nic+"%");
+
+                return ODBC.GetData(sql, _sql);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static string GetPatientByUsername(PatientModel patientModel)
+        {
+            try
+            {
+                string sql = string.Format("SELECT user_name FROM Users WHERE user_name = @username");
+                
+                SqlParameter[] _sql = new SqlParameter[1];
+                _sql[0] = SqlParameterFormat.Format("@username", patientModel.user_name);
+
+                return ODBC.ExecuteFunction(sql,_sql);
             }
             catch (Exception)
             {
@@ -91,7 +130,7 @@ namespace HospitalInformationManagementSystem.DAL
                       "address = @address," +
                       "marital_status = @marital_status," +
                       "user_type = @user_type" +
-                      "WHERE user_id = @user_id"
+                      " WHERE user_id = @user_id"
                  );
 
                 SqlParameter[] _sql = new SqlParameter[12];
@@ -139,14 +178,14 @@ namespace HospitalInformationManagementSystem.DAL
             try
             {
                 string sql = string.Format("UPDATE Users SET" +
-                    "IsActive=@Active," +
-                    "WHERE user_id=@user_id"
+                    " IsActive=@Active" +
+                    " WHERE user_id=@user_id"
                     );
 
                 SqlParameter[] _sql = new SqlParameter[2];
 
-                _sql[5] = SqlParameterFormat.Format("@Active", Active);
-                _sql[6] = SqlParameterFormat.Format("@user_id", user_id);
+                _sql[0] = SqlParameterFormat.Format("@Active", Active);
+                _sql[1] = SqlParameterFormat.Format("@user_id", user_id);
 
                 return ODBC.SetData(sql, _sql);
             }

@@ -1,4 +1,5 @@
 ﻿using HospitalInformationManagementSystem.DAL;
+using HospitalInformationManagementSystem.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,20 @@ namespace HospitalInformationManagementSystem.BLL
 
                 throw;
             }
+        }
+
+        public int AddStaff(StaffModel staffModel)
+        {
+
+            try
+            {
+                return Staff_DLL.AddStaff(staffModel);
+            }
+            catch (Exception)
+            {
+
+                throw;
+
         }
     }
 }
