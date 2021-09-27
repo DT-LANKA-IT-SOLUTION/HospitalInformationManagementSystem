@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace HospitalInformationManagementSystem.Other
 {
@@ -17,7 +18,7 @@ namespace HospitalInformationManagementSystem.Other
         {
             if (con == null)
             {
-                string ConnectionString = @"Data Source=DESKTOP-8SB6J5K;Initial Catalog=CRUD;Integrated Security=True";
+                string ConnectionString = ConfigurationManager.ConnectionStrings["HIMS"].ConnectionString;
                 con = new SqlConnection(ConnectionString);
             }
             return con;

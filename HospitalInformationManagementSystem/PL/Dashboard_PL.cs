@@ -1,4 +1,5 @@
-﻿using HospitalInformationManagementSystem.Other;
+﻿using HospitalInformationManagementSystem.Model;
+using HospitalInformationManagementSystem.Other;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,11 @@ namespace HospitalInformationManagementSystem.PL
 {
     public partial class Dashboard_PL : Form
     {
+        GrantUserPermission _GrantUserPermission = new GrantUserPermission();
         public Dashboard_PL()
         {
             InitializeComponent();
+            _GrantUserPermission.GrantMenuPermission(btnDashboard, btnPatient, btnVisitors, btnAppointment, btnPostal, btnComplaints, btnReports, btnStaff);
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -98,6 +101,23 @@ namespace HospitalInformationManagementSystem.PL
         {
             ucStaff_PL ucStaff = new ucStaff_PL();
             FormControl.showControls(ucStaff, pnlContent);
+        }
+
+        private void Dashboard_PL_Load(object sender, EventArgs e)
+        {
+            AuthModel authModel = new AuthModel();
+        }
+
+        private void btnAppointment_Click(object sender, EventArgs e)
+        {
+            ucAppointment_PL ucAppointment = new ucAppointment_PL();
+            FormControl.showControls(ucAppointment,pnlContent);
+        }
+
+        private void btnPostal_Click(object sender, EventArgs e)
+        {
+            ucPostals_PL ucPostals = new ucPostals_PL();
+            FormControl.showControls(ucPostals, pnlContent);
         }
     }
 }

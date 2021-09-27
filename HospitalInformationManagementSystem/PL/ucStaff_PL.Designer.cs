@@ -33,6 +33,8 @@ namespace HospitalInformationManagementSystem.PL
             this.dtgPatient = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -40,7 +42,11 @@ namespace HospitalInformationManagementSystem.PL
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -55,12 +61,6 @@ namespace HospitalInformationManagementSystem.PL
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPatient)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -70,6 +70,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.groupBox2.Controls.Add(this.dtgPatient);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(516, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(505, 685);
@@ -122,6 +123,7 @@ namespace HospitalInformationManagementSystem.PL
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(507, 685);
@@ -134,16 +136,73 @@ namespace HospitalInformationManagementSystem.PL
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.ItemHeight = 18;
-            this.comboBox2.Location = new System.Drawing.Point(128, 494);
+            this.comboBox2.Items.AddRange(new object[] {
+            "Allergists/Immunologists",
+            "Anesthesiologists",
+            "Cardiologists",
+            "Colon and Rectal Surgeons",
+            "Critical Care Medicine Specialists",
+            "Dermatologists",
+            "Endocrinologists",
+            "Emergency Medicine Specialists",
+            "Pediatricians",
+            "Gastroenterologists",
+            "Geriatric Medicine Specialists",
+            "Hematologists",
+            "Infectious Disease Specialists",
+            "Internists",
+            "Medical Geneticists",
+            "Nephrologists",
+            "Neurologists",
+            "Gynecologists",
+            "Oncologists",
+            "Ophthalmologists",
+            "Pathologists",
+            "Physiatrists",
+            "Psychiatrists",
+            "Radiologists",
+            "Rheumatologists"});
+            this.comboBox2.Location = new System.Drawing.Point(128, 552);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(360, 26);
             this.comboBox2.TabIndex = 14;
+            this.comboBox2.Visible = false;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.ItemHeight = 18;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Administrator",
+            "Receptionist",
+            "Medical Officer"});
+            this.comboBox4.Location = new System.Drawing.Point(128, 501);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(360, 26);
+            this.comboBox4.TabIndex = 14;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.ItemHeight = 18;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.comboBox3.Location = new System.Drawing.Point(128, 156);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(360, 26);
+            this.comboBox3.TabIndex = 14;
             // 
             // comboBox1
             // 
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.ItemHeight = 18;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Married",
+            "Single"});
             this.comboBox1.Location = new System.Drawing.Point(128, 196);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(360, 26);
@@ -154,7 +213,7 @@ namespace HospitalInformationManagementSystem.PL
             this.button3.BackColor = System.Drawing.Color.Red;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(376, 602);
+            this.button3.Location = new System.Drawing.Point(313, 602);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(112, 47);
             this.button3.TabIndex = 13;
@@ -166,7 +225,7 @@ namespace HospitalInformationManagementSystem.PL
             this.button2.BackColor = System.Drawing.Color.Yellow;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(252, 602);
+            this.button2.Location = new System.Drawing.Point(189, 602);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(112, 47);
             this.button2.TabIndex = 13;
@@ -178,7 +237,7 @@ namespace HospitalInformationManagementSystem.PL
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(128, 602);
+            this.button1.Location = new System.Drawing.Point(65, 602);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 47);
             this.button1.TabIndex = 13;
@@ -214,6 +273,33 @@ namespace HospitalInformationManagementSystem.PL
             this.label8.TabIndex = 8;
             this.label8.Text = "Birth Date";
             // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(128, 364);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(360, 24);
+            this.textBox6.TabIndex = 9;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(128, 322);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(360, 24);
+            this.textBox5.TabIndex = 9;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(18, 367);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(105, 18);
+            this.label13.TabIndex = 7;
+            this.label13.Text = "Address Line 3";
+            // 
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -221,6 +307,17 @@ namespace HospitalInformationManagementSystem.PL
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(360, 24);
             this.textBox4.TabIndex = 9;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(18, 325);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(105, 18);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "Address Line 2";
             // 
             // label7
             // 
@@ -249,7 +346,7 @@ namespace HospitalInformationManagementSystem.PL
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(18, 542);
+            this.label11.Location = new System.Drawing.Point(18, 504);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(76, 18);
             this.label11.TabIndex = 6;
@@ -260,11 +357,12 @@ namespace HospitalInformationManagementSystem.PL
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(18, 497);
+            this.label5.Location = new System.Drawing.Point(18, 555);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 18);
             this.label5.TabIndex = 6;
             this.label5.Text = "Speciality Area";
+            this.label5.Visible = false;
             // 
             // textBox8
             // 
@@ -363,64 +461,6 @@ namespace HospitalInformationManagementSystem.PL
             this.label1.Size = new System.Drawing.Size(81, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "First Name";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.ItemHeight = 18;
-            this.comboBox3.Location = new System.Drawing.Point(128, 156);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(360, 26);
-            this.comboBox3.TabIndex = 14;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(18, 325);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(105, 18);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "Address Line 2";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(128, 322);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(360, 24);
-            this.textBox5.TabIndex = 9;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(18, 367);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(105, 18);
-            this.label13.TabIndex = 7;
-            this.label13.Text = "Address Line 3";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(128, 364);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(360, 24);
-            this.textBox6.TabIndex = 9;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.ItemHeight = 18;
-            this.comboBox4.Location = new System.Drawing.Point(128, 539);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(360, 26);
-            this.comboBox4.TabIndex = 14;
             // 
             // ucStaff_PL
             // 
