@@ -36,6 +36,7 @@ namespace HospitalInformationManagementSystem.BLL
             {
 
                 throw;
+            }
 
         }
     }
