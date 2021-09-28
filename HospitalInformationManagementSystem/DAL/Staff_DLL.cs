@@ -77,5 +77,59 @@ namespace HospitalInformationManagementSystem.DAL
                 throw;
             }
         }
+
+        public static int UpdateStaff(StaffModel staffModel)
+        {
+            try
+            {
+                string sql = string.Format("UPDATE Users SET f_name = @f_name,"
+                    + "l_name = @l_name,"
+                    + "gender = @gender,"
+                    + "phone_no = @phone_no,"
+                    + "nic_no = @nic_no,"
+                    + "dob = @dob,"
+                    + "address = @address,"
+                    + "marital_status = @marital_status"
+                    + " WHERE user_id = @user_id"
+                    );
+
+                SqlParameter[] _sql = new SqlParameter[9];
+
+                _sql[0] = SqlParameterFormat.Format("@f_name", staffModel.first_name);
+                _sql[1] = SqlParameterFormat.Format("@l_name", staffModel.last_name);
+                _sql[2] = SqlParameterFormat.Format("@gender", staffModel.gender);
+                _sql[3] = SqlParameterFormat.Format("@phone_no", staffModel.phone_no);
+                _sql[4] = SqlParameterFormat.Format("@nic_no", staffModel.nic);
+                _sql[5] = SqlParameterFormat.Format("@dob", staffModel.birth_date);
+                _sql[6] = SqlParameterFormat.Format("@address", staffModel.address);
+                _sql[7] = SqlParameterFormat.Format("@marital_status", staffModel.marital_status);
+                _sql[8] = SqlParameterFormat.Format("@user_id", staffModel.user_id);
+
+                if(ODBC.SetData(sql,_sql) > 0)
+                {
+                    sql = string.Format("UPDATE Staff_Members SET staff_id = @staff_id,"
+                        + "staff_email = @staff_email,"
+                        + "join_date = @join_date"
+                        + " WHERE user_id = @user_id"
+                        );
+                    _sql = new SqlParameter[4];
+                    _sql[0] = SqlParameterFormat.Format("staff_id", staffModel.staff_id);
+                    _sql[1] = SqlParameterFormat.Format("user_id", staffModel.user_id);
+                    _sql[2] = SqlParameterFormat.Format("staff_email", staffModel.staff_email);
+                    _sql[3] = SqlParameterFormat.Format("join_date", staffModel.joined_date);
+
+                    return ODBC.SetData(sql,_sql);
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

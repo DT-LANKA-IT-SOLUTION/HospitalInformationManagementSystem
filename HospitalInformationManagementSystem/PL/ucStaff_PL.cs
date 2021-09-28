@@ -44,6 +44,23 @@ namespace HospitalInformationManagementSystem.PL
             }
         }
 
+        public void Clear()
+        {
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+            txtPhone.Text = "";
+            txtNIC.Text = "";
+            txtAddress.Text = "";
+            txtStaffID.Text = "";
+            txtStaffEmail.Text = "";
+
+            dtpBirthDay.Text = "";
+            dtpJoinedDate.Text = "";
+
+            cmbGender.SelectedIndex = -1;
+            cmbStatus.SelectedIndex = -1;
+        }
+
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
             try
@@ -82,6 +99,73 @@ namespace HospitalInformationManagementSystem.PL
                 staffModel.IsActive = true;
 
                 return _staff_BLL.AddStaff(staffModel);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvStaff.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                dgvStaff.CurrentRow.Selected = true;
+
+                txtFirstName.Text = dgvStaff.Rows[e.RowIndex].Cells["f_name"].FormattedValue.ToString();
+                txtLastName.Text = dgvStaff.Rows[e.RowIndex].Cells["l_name"].FormattedValue.ToString();
+                txtNIC.Text = dgvStaff.Rows[e.RowIndex].Cells["nic_no"].FormattedValue.ToString();
+                txtPhone.Text = dgvStaff.Rows[e.RowIndex].Cells["phone_no"].FormattedValue.ToString();
+                txtAddress.Text = dgvStaff.Rows[e.RowIndex].Cells["address"].FormattedValue.ToString();
+                dtpBirthDay.Text = dgvStaff.Rows[e.RowIndex].Cells["dob"].FormattedValue.ToString();
+                txtStaffID.Text = dgvStaff.Rows[e.RowIndex].Cells["staff_id"].FormattedValue.ToString();
+                txtStaffEmail.Text = dgvStaff.Rows[e.RowIndex].Cells["staff_email"].FormattedValue.ToString();
+                dtpJoinedDate.Text = dgvStaff.Rows[e.RowIndex].Cells["join_date"].FormattedValue.ToString();
+
+                cmbGender.Text = dgvStaff.Rows[e.RowIndex].Cells["gender"].FormattedValue.ToString();
+                cmbStatus.Text = dgvStaff.Rows[e.RowIndex].Cells["marital_status"].FormattedValue.ToString();
+
+                txtUserID.Text = dgvStaff.Rows[e.RowIndex].Cells["user_id"].FormattedValue.ToString();
+            }
+        }
+
+        private void btnEditStaff_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(UpdateStaff() > 0)
+                {
+                    MessageBox.Show("Staff update sucessfull", "Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    this.filDGVStaff();
+                    this.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public int UpdateStaff()
+        {
+            try
+            {
+                staffModel.first_name = (string.IsNullOrEmpty(txtFirstName.Text)) ? "N/A" : txtFirstName.Text.Trim();
+                staffModel.last_name = (string.IsNullOrEmpty(txtLastName.Text)) ? "N/A" : txtLastName.Text.Trim();
+                staffModel.gender = (cmbGender.SelectedItem == null) ? "N/A" : cmbGender.SelectedItem.ToString();
+                staffModel.phone_no = (string.IsNullOrEmpty(txtPhone.Text)) ? 00000000 : Int32.Parse(txtPhone.Text.Trim());
+                staffModel.nic = (string.IsNullOrEmpty(txtNIC.Text)) ? "N/A" : txtNIC.Text.Trim();
+                staffModel.birth_date = (string.IsNullOrEmpty(dtpBirthDay.Text)) ? DateTime.Now : Convert.ToDateTime(dtpBirthDay.Text.Trim());
+                staffModel.address = (string.IsNullOrEmpty(txtAddress.Text)) ? "N/A" : txtAddress.Text.Trim();
+                staffModel.marital_status = (cmbStatus.SelectedItem == null) ? "N/A" : cmbStatus.SelectedItem.ToString();
+                staffModel.staff_id = (string.IsNullOrEmpty(txtStaffID.Text)) ? "N/A" : txtStaffID.Text.Trim();
+                staffModel.staff_email = (string.IsNullOrEmpty(txtStaffEmail.Text)) ? "N/A" : txtStaffEmail.Text.Trim();
+                staffModel.joined_date = (string.IsNullOrEmpty(dtpJoinedDate.Text)) ? DateTime.Now : Convert.ToDateTime(dtpJoinedDate.Text.Trim());
+
+                staffModel.user_id = Int32.Parse(txtUserID.Text.Trim());
+
+                return _staff_BLL.UpdateStaff(staffModel);             
             }
             catch (Exception)
             {

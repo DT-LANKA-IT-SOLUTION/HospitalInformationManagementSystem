@@ -31,25 +31,39 @@ namespace HospitalInformationManagementSystem.PL
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvStaff = new System.Windows.Forms.DataGridView();
+            this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.user_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.f_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.l_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nic_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marital_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staff_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staff_email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.join_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnEditStaff = new System.Windows.Forms.Button();
             this.btnAddStaff = new System.Windows.Forms.Button();
             this.dtpBirthDay = new System.Windows.Forms.DateTimePicker();
             this.dtpJoinedDate = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
+            this.txtStaffEmail = new System.Windows.Forms.TextBox();
+            this.txtStaffID = new System.Windows.Forms.TextBox();
             this.txtNIC = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtLastName = new System.Windows.Forms.TextBox();
@@ -59,10 +73,7 @@ namespace HospitalInformationManagementSystem.PL
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtStaffID = new System.Windows.Forms.TextBox();
-            this.txtStaffEmail = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.txtUserID = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -87,9 +98,19 @@ namespace HospitalInformationManagementSystem.PL
             this.dgvStaff.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.user_id,
+            this.user_name,
+            this.password,
             this.f_name,
             this.l_name,
             this.gender,
+            this.phone_no,
+            this.nic_no,
+            this.dob,
+            this.address,
+            this.marital_status,
+            this.staff_id,
+            this.staff_email,
             this.join_date});
             this.dgvStaff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvStaff.Location = new System.Drawing.Point(3, 25);
@@ -97,6 +118,31 @@ namespace HospitalInformationManagementSystem.PL
             this.dgvStaff.ReadOnly = true;
             this.dgvStaff.Size = new System.Drawing.Size(499, 657);
             this.dgvStaff.TabIndex = 0;
+            this.dgvStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellClick);
+            // 
+            // user_id
+            // 
+            this.user_id.DataPropertyName = "user_id";
+            this.user_id.HeaderText = "User ID";
+            this.user_id.Name = "user_id";
+            this.user_id.ReadOnly = true;
+            this.user_id.Visible = false;
+            // 
+            // user_name
+            // 
+            this.user_name.DataPropertyName = "user_name";
+            this.user_name.HeaderText = "User Name";
+            this.user_name.Name = "user_name";
+            this.user_name.ReadOnly = true;
+            this.user_name.Visible = false;
+            // 
+            // password
+            // 
+            this.password.DataPropertyName = "password";
+            this.password.HeaderText = "Password";
+            this.password.Name = "password";
+            this.password.ReadOnly = true;
+            this.password.Visible = false;
             // 
             // f_name
             // 
@@ -119,6 +165,62 @@ namespace HospitalInformationManagementSystem.PL
             this.gender.Name = "gender";
             this.gender.ReadOnly = true;
             // 
+            // phone_no
+            // 
+            this.phone_no.DataPropertyName = "phone_no";
+            this.phone_no.HeaderText = "Phone No";
+            this.phone_no.Name = "phone_no";
+            this.phone_no.ReadOnly = true;
+            this.phone_no.Visible = false;
+            // 
+            // nic_no
+            // 
+            this.nic_no.DataPropertyName = "nic_no";
+            this.nic_no.HeaderText = "NIC No";
+            this.nic_no.Name = "nic_no";
+            this.nic_no.ReadOnly = true;
+            this.nic_no.Visible = false;
+            // 
+            // dob
+            // 
+            this.dob.DataPropertyName = "dob";
+            this.dob.HeaderText = "Birth Date";
+            this.dob.Name = "dob";
+            this.dob.ReadOnly = true;
+            this.dob.Visible = false;
+            // 
+            // address
+            // 
+            this.address.DataPropertyName = "address";
+            this.address.HeaderText = "Address";
+            this.address.Name = "address";
+            this.address.ReadOnly = true;
+            this.address.Visible = false;
+            // 
+            // marital_status
+            // 
+            this.marital_status.DataPropertyName = "marital_status";
+            this.marital_status.HeaderText = "Marital Status";
+            this.marital_status.Name = "marital_status";
+            this.marital_status.ReadOnly = true;
+            this.marital_status.Visible = false;
+            // 
+            // staff_id
+            // 
+            this.staff_id.DataPropertyName = "staff_id";
+            this.staff_id.HeaderText = "Staff ID";
+            this.staff_id.Name = "staff_id";
+            this.staff_id.ReadOnly = true;
+            this.staff_id.Visible = false;
+            // 
+            // staff_email
+            // 
+            this.staff_email.DataPropertyName = "staff_email";
+            this.staff_email.HeaderText = "Staff Email";
+            this.staff_email.Name = "staff_email";
+            this.staff_email.ReadOnly = true;
+            this.staff_email.Visible = false;
+            // 
             // join_date
             // 
             this.join_date.DataPropertyName = "join_date";
@@ -128,11 +230,12 @@ namespace HospitalInformationManagementSystem.PL
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtUserID);
             this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.cmbGender);
             this.groupBox1.Controls.Add(this.cmbStatus);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnEditStaff);
             this.groupBox1.Controls.Add(this.btnAddStaff);
             this.groupBox1.Controls.Add(this.dtpBirthDay);
             this.groupBox1.Controls.Add(this.dtpJoinedDate);
@@ -239,17 +342,18 @@ namespace HospitalInformationManagementSystem.PL
             this.button3.Text = "Delete Staff";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnEditStaff
             // 
-            this.button2.BackColor = System.Drawing.Color.Yellow;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(190, 622);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 47);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Edit Staff";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnEditStaff.BackColor = System.Drawing.Color.Yellow;
+            this.btnEditStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditStaff.ForeColor = System.Drawing.Color.Black;
+            this.btnEditStaff.Location = new System.Drawing.Point(190, 622);
+            this.btnEditStaff.Name = "btnEditStaff";
+            this.btnEditStaff.Size = new System.Drawing.Size(112, 47);
+            this.btnEditStaff.TabIndex = 13;
+            this.btnEditStaff.Text = "Edit Staff";
+            this.btnEditStaff.UseVisualStyleBackColor = false;
+            this.btnEditStaff.Click += new System.EventHandler(this.btnEditStaff_Click);
             // 
             // btnAddStaff
             // 
@@ -313,6 +417,28 @@ namespace HospitalInformationManagementSystem.PL
             this.label7.TabIndex = 8;
             this.label7.Text = "Joined Date";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(18, 530);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(79, 18);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Staff Email";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(18, 500);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(56, 18);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Staff ID";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -343,6 +469,22 @@ namespace HospitalInformationManagementSystem.PL
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(360, 24);
             this.txtPhone.TabIndex = 1;
+            // 
+            // txtStaffEmail
+            // 
+            this.txtStaffEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStaffEmail.Location = new System.Drawing.Point(128, 527);
+            this.txtStaffEmail.Name = "txtStaffEmail";
+            this.txtStaffEmail.Size = new System.Drawing.Size(360, 24);
+            this.txtStaffEmail.TabIndex = 1;
+            // 
+            // txtStaffID
+            // 
+            this.txtStaffID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStaffID.Location = new System.Drawing.Point(128, 497);
+            this.txtStaffID.Name = "txtStaffID";
+            this.txtStaffID.Size = new System.Drawing.Size(360, 24);
+            this.txtStaffID.TabIndex = 1;
             // 
             // txtNIC
             // 
@@ -434,43 +576,14 @@ namespace HospitalInformationManagementSystem.PL
             this.label1.TabIndex = 0;
             this.label1.Text = "First Name";
             // 
-            // label12
+            // txtUserID
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(18, 500);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(56, 18);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "Staff ID";
-            // 
-            // txtStaffID
-            // 
-            this.txtStaffID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStaffID.Location = new System.Drawing.Point(128, 497);
-            this.txtStaffID.Name = "txtStaffID";
-            this.txtStaffID.Size = new System.Drawing.Size(360, 24);
-            this.txtStaffID.TabIndex = 1;
-            // 
-            // txtStaffEmail
-            // 
-            this.txtStaffEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStaffEmail.Location = new System.Drawing.Point(128, 527);
-            this.txtStaffEmail.Name = "txtStaffEmail";
-            this.txtStaffEmail.Size = new System.Drawing.Size(360, 24);
-            this.txtStaffEmail.TabIndex = 1;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(18, 530);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(79, 18);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Staff Email";
+            this.txtUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserID.Location = new System.Drawing.Point(388, 456);
+            this.txtUserID.Name = "txtUserID";
+            this.txtUserID.Size = new System.Drawing.Size(100, 20);
+            this.txtUserID.TabIndex = 15;
+            this.txtUserID.Visible = false;
             // 
             // ucStaff_PL
             // 
@@ -495,7 +608,7 @@ namespace HospitalInformationManagementSystem.PL
         private System.Windows.Forms.DataGridView dgvStaff;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnEditStaff;
         private System.Windows.Forms.Button btnAddStaff;
         private System.Windows.Forms.DateTimePicker dtpJoinedDate;
         private System.Windows.Forms.Label label7;
@@ -517,13 +630,24 @@ namespace HospitalInformationManagementSystem.PL
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cmbGender;
         private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn f_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn l_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn join_date;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtStaffID;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtStaffEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn user_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn user_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn password;
+        private System.Windows.Forms.DataGridViewTextBoxColumn f_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn l_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone_no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nic_no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dob;
+        private System.Windows.Forms.DataGridViewTextBoxColumn address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marital_status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staff_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staff_email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn join_date;
+        private System.Windows.Forms.TextBox txtUserID;
     }
 }

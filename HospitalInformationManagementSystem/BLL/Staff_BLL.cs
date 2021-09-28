@@ -39,5 +39,18 @@ namespace HospitalInformationManagementSystem.BLL
             }
 
         }
+
+        public int UpdateStaff(StaffModel staffModel)
+        {
+            try
+            {
+                return Staff_DLL.UpdateStaff(staffModel);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
