@@ -70,11 +70,11 @@ namespace HospitalInformationManagementSystem.PL
                 visitorModel.lname = txtLastName.Text.Trim();
                 visitorModel.phone_no = Int32.Parse(txtPhone.Text.Trim());
                 visitorModel.nic_no = txtNic.Text.Trim();
-                visitorModel.date = dtpDate.Value;
-                visitorModel.in_time = dtpInTime.Value;
-                visitorModel.out_time = dtpOutTime.Value;
+                visitorModel.date = Convert.ToDateTime(dtpDate.Text.Trim());
+                visitorModel.in_time = Convert.ToDateTime(dtpInTime.Text.Trim());
+                visitorModel.out_time = Convert.ToDateTime(dtpOutTime.Text.Trim());
                 visitorModel.note = txtNote.Text.Trim();
-                //visitorModel.attachment_type = 
+            //    visitorModel.attachment_data = 
 
 
                 visitorModel.IsActive = true;
@@ -84,6 +84,25 @@ namespace HospitalInformationManagementSystem.PL
             {
 
                 throw;
+            }
+        }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ofdVisitor.InitialDirectory = @"C:\";
+                ofdVisitor.RestoreDirectory = true;
+                ofdVisitor.Title = "Browse Text Files";
+                if (ofdVisitor.ShowDialog() == DialogResult.OK)
+                {
+                    visitorModel.attachment_data = ofdVisitor.FileName;
+                    visitorModel.attachment_type = ofdVisitor.GetType().ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

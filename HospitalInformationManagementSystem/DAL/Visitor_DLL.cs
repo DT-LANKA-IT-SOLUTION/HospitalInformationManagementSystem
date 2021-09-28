@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -33,6 +34,15 @@ namespace HospitalInformationManagementSystem.DAL
                 string sql = string.Format("INSERT INTO Visitors(purpose,name,phone_no,nic_no,date,in_time,out_time,note,attachment_type,attachment_data,user_id)" +
                     "VALUES(@purpose,@vis_name,@phone_no,@nic_no,@date,@in_time,@out_time,@note,@attachment_type,@attachment_data,@user_id)");
 
+                byte[] file;
+                using (var stream = new FileStream(visitorModel.attachment_data, FileMode.Open, FileAccess.Read))
+                {
+                    using (var reader = new BinaryReader(stream))
+                    {
+                        file = reader.ReadBytes((int)stream.Length);
+                    }
+                }
+
                 SqlParameter[] _sql = new SqlParameter[12];
 
                 _sql[0] = SqlParameterFormat.Format("@purpose", visitorModel.purpose);
@@ -45,8 +55,8 @@ namespace HospitalInformationManagementSystem.DAL
                 _sql[7] = SqlParameterFormat.Format("@out_time", visitorModel.out_time);
                 _sql[8] = SqlParameterFormat.Format("@note", visitorModel.note);
                 _sql[9] = SqlParameterFormat.Format("@attachment_type", visitorModel.attachment_type);
-                _sql[10] = SqlParameterFormat.Format("@attachment_data", visitorModel.attachment_data);
-                _sql[11] = SqlParameterFormat.Format("@user_id", PermisionsModel.user_id);
+                _sql[10] = SqlParameterFormat.Format("@attachment_data", file);
+                _sql[11] = SqlParameterFormat.Format("@user_id", visitorModel.user_id);
 
                 return ODBC.SetData(sql, _sql);
             }
@@ -62,8 +72,7 @@ namespace HospitalInformationManagementSystem.DAL
         {
             try
             {
-                string sql = string.Format("UPDATE Visitors SET visitor_id= @visitor_id" +
-                    "purpose = @purpose," +
+                string sql = string.Format("UPDATE Visitors SET purpose = @purpose," +
                     "fname = @vis_fname," +
                     "lname = @vis_lname," +
                     "phone_no = @phone_no," +
@@ -74,7 +83,8 @@ namespace HospitalInformationManagementSystem.DAL
                     "note = @note," +
                     "attachment_type = @attachment_type," +
                     "attachment_data = @attachement_date," +
-                    "user_id = @user_id"
+                    "user_id = @user_id" +
+                    "WHERE visitor_id = @visitor_id"
 
                     );
 

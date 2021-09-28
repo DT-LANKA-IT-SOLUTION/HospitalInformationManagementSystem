@@ -20,7 +20,7 @@ namespace HospitalInformationManagementSystem.Model
         public DateTime out_time { get; set; }
         public String note { get; set; }
         public String attachment_type { get; set; }
-        public DateTime attachment_data { get; set; }
+        public String attachment_data { get; set; }
         public Boolean IsActive { get; set; }
     }
 }
