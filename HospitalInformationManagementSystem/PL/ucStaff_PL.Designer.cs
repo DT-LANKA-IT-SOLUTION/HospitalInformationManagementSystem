@@ -46,10 +46,11 @@ namespace HospitalInformationManagementSystem.PL
             this.staff_email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.join_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtUserID = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnDeleteStaff = new System.Windows.Forms.Button();
             this.btnEditStaff = new System.Windows.Forms.Button();
             this.btnAddStaff = new System.Windows.Forms.Button();
             this.dtpBirthDay = new System.Windows.Forms.DateTimePicker();
@@ -73,7 +74,6 @@ namespace HospitalInformationManagementSystem.PL
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtUserID = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -234,7 +234,7 @@ namespace HospitalInformationManagementSystem.PL
             this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.cmbGender);
             this.groupBox1.Controls.Add(this.cmbStatus);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.btnDeleteStaff);
             this.groupBox1.Controls.Add(this.btnEditStaff);
             this.groupBox1.Controls.Add(this.btnAddStaff);
             this.groupBox1.Controls.Add(this.dtpBirthDay);
@@ -266,6 +266,15 @@ namespace HospitalInformationManagementSystem.PL
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Staff Form";
+            // 
+            // txtUserID
+            // 
+            this.txtUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserID.Location = new System.Drawing.Point(388, 456);
+            this.txtUserID.Name = "txtUserID";
+            this.txtUserID.Size = new System.Drawing.Size(100, 20);
+            this.txtUserID.TabIndex = 15;
+            this.txtUserID.Visible = false;
             // 
             // comboBox2
             // 
@@ -330,17 +339,18 @@ namespace HospitalInformationManagementSystem.PL
             this.cmbStatus.Size = new System.Drawing.Size(360, 26);
             this.cmbStatus.TabIndex = 14;
             // 
-            // button3
+            // btnDeleteStaff
             // 
-            this.button3.BackColor = System.Drawing.Color.Red;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(313, 622);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 47);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Delete Staff";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnDeleteStaff.BackColor = System.Drawing.Color.Red;
+            this.btnDeleteStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteStaff.ForeColor = System.Drawing.Color.Black;
+            this.btnDeleteStaff.Location = new System.Drawing.Point(313, 622);
+            this.btnDeleteStaff.Name = "btnDeleteStaff";
+            this.btnDeleteStaff.Size = new System.Drawing.Size(112, 47);
+            this.btnDeleteStaff.TabIndex = 13;
+            this.btnDeleteStaff.Text = "Delete Staff";
+            this.btnDeleteStaff.UseVisualStyleBackColor = false;
+            this.btnDeleteStaff.Click += new System.EventHandler(this.btnDeleteStaff_Click);
             // 
             // btnEditStaff
             // 
@@ -576,15 +586,6 @@ namespace HospitalInformationManagementSystem.PL
             this.label1.TabIndex = 0;
             this.label1.Text = "First Name";
             // 
-            // txtUserID
-            // 
-            this.txtUserID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserID.Location = new System.Drawing.Point(388, 456);
-            this.txtUserID.Name = "txtUserID";
-            this.txtUserID.Size = new System.Drawing.Size(100, 20);
-            this.txtUserID.TabIndex = 15;
-            this.txtUserID.Visible = false;
-            // 
             // ucStaff_PL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -607,7 +608,7 @@ namespace HospitalInformationManagementSystem.PL
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvStaff;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnDeleteStaff;
         private System.Windows.Forms.Button btnEditStaff;
         private System.Windows.Forms.Button btnAddStaff;
         private System.Windows.Forms.DateTimePicker dtpJoinedDate;

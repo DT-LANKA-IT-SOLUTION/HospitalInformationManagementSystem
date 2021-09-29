@@ -16,7 +16,13 @@ namespace HospitalInformationManagementSystem.DAL
         {
             try
             {
-                return ODBC.GetData("SELECT * FROM Staff_Members,Users WHERE Staff_Members.user_id = Users.user_id");
+                string sql = string.Format("SELECT * FROM Staff_Members,Users WHERE Staff_Members.user_id = Users.user_id AND Users.IsActive = @IsActive");
+
+                SqlParameter[] _sql = new SqlParameter[1];
+                _sql[0] = SqlParameterFormat.Format("@IsActive", true);
+
+                return ODBC.GetData(sql, _sql);
+                //return ODBC.GetData("SELECT * FROM Staff_Members,Users WHERE Staff_Members.user_id = Users.user_id AND Users.IsActive = @IsActive");
             }
             catch (Exception)
             {
@@ -124,6 +130,29 @@ namespace HospitalInformationManagementSystem.DAL
                 {
                     return 0;
                 }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public static int DeleteStaff(bool Active, int user_id)
+        {
+            try
+            {
+                string sql = string.Format("UPDATE Users SET"
+                    + " IsActive = @Active"
+                    + " WHERE user_id = @user_id"
+                    );
+
+                SqlParameter[] _sql = new SqlParameter[2];
+
+                _sql[0] = SqlParameterFormat.Format("@Active", Active);
+                _sql[1] = SqlParameterFormat.Format("user_id",user_id);
+
+                return ODBC.SetData(sql,_sql);
             }
             catch (Exception)
             {

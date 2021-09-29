@@ -52,5 +52,18 @@ namespace HospitalInformationManagementSystem.BLL
                 throw;
             }
         }
+
+        public int DeleteStaff(bool Active, int user_id)
+        {
+            try
+            {
+                return Staff_DLL.DeleteStaff(Active, user_id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

@@ -173,5 +173,36 @@ namespace HospitalInformationManagementSystem.PL
                 throw;
             }
         }
+
+        private void btnDeleteStaff_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (DeleteStaff() > 0)
+                {
+                    MessageBox.Show("Staff delete sucessfull", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.filDGVStaff();
+                    this.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
+            }
+        }
+
+        public int DeleteStaff()
+        {
+            try
+            {
+                return _staff_BLL.DeleteStaff(false, Int32.Parse(txtUserID.Text.Trim()));
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
