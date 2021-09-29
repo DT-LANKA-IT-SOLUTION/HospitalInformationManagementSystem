@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HospitalInformationManagementSystem.BLL;
 using HospitalInformationManagementSystem.Model;
+using HospitalInformationManagementSystem.Other;
+using System.Globalization;
 
 namespace HospitalInformationManagementSystem.PL
 {
     public partial class ucVisitors_PL : UserControl
     {
-        //GrantUserPermission _grantUserPermission = new GrantUserPermission();
+        GrantUserPermission _grantUserPermission = new GrantUserPermission();
 
         Visitor_BLL _visitor_BLL = new Visitor_BLL();
 
@@ -28,7 +30,7 @@ namespace HospitalInformationManagementSystem.PL
         private void UcVisitor_PL_Load(object sender, EventArgs e)
         {
             this.FillDGVVisitor();
-
+            epVisitor.Clear();
         }
 
         private void FillDGVVisitor()
@@ -68,15 +70,16 @@ namespace HospitalInformationManagementSystem.PL
             {
                 visitorModel.fname = txtFirstName.Text.Trim();
                 visitorModel.lname = txtLastName.Text.Trim();
-                visitorModel.phone_no = Int32.Parse(txtPhone.Text.Trim());
+                visitorModel.phone_no = txtPhone.Text.Trim();
                 visitorModel.nic_no = txtNic.Text.Trim();
                 visitorModel.date = Convert.ToDateTime(dtpDate.Text.Trim());
-                visitorModel.in_time = Convert.ToDateTime(dtpInTime.Text.Trim());
+                //   visitorModel.in_time = Convert.ToDateTime(dtpInTime.Text.Trim());
                 visitorModel.out_time = Convert.ToDateTime(dtpOutTime.Text.Trim());
+                //visitorModel.out_time = DateTime.ParseExact(dtpOutTime.Text.Trim(), "HH:mm:ss", CultureInfo.InvariantCulture);
                 visitorModel.note = txtNote.Text.Trim();
-            //    visitorModel.attachment_data = 
-
-
+                visitorModel.purpose = txtPurpose.Text.Trim();
+                visitorModel.attachment_type = txtAttachmentType.Text.Trim();
+                
                 visitorModel.IsActive = true;
                 return _visitor_BLL.AddVisitor(visitorModel);
             }
@@ -104,6 +107,15 @@ namespace HospitalInformationManagementSystem.PL
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+        private void Clear()
+        {
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+            txtPhone.Text = "";
+            txtNic.Text = "";
+            dtpDate.Value = DateTime.Now;
+
         }
     }
 }

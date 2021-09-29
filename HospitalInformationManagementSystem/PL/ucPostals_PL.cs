@@ -19,7 +19,7 @@ namespace HospitalInformationManagementSystem.PL
     public partial class ucPostals_PL : UserControl
     {
         
-        OpenFileDialog attachment;
+  //      OpenFileDialog attachment;
         string FN = "";
 
         GrantUserPermission _grantUserPermission = new GrantUserPermission();

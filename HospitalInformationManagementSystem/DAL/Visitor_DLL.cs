@@ -31,8 +31,8 @@ namespace HospitalInformationManagementSystem.DAL
         {
             try
             {
-                string sql = string.Format("INSERT INTO Visitors(purpose,name,phone_no,nic_no,date,in_time,out_time,note,attachment_type,attachment_data,user_id)" +
-                    "VALUES(@purpose,@vis_name,@phone_no,@nic_no,@date,@in_time,@out_time,@note,@attachment_type,@attachment_data,@user_id)");
+                string sql = string.Format("INSERT INTO Visitors(purpose,fname,lname,phone_no,nic_no,date,out_time,note,attachment_type,attachment_data,user_id)" +
+                    "VALUES(@purpose,@fname,@lname,@phone_no,@nic_no,@date,@out_time,@note,@attachment_type,@attachment_data,@user_id)");
 
                 byte[] file;
                 using (var stream = new FileStream(visitorModel.attachment_data, FileMode.Open, FileAccess.Read))
@@ -43,20 +43,20 @@ namespace HospitalInformationManagementSystem.DAL
                     }
                 }
 
-                SqlParameter[] _sql = new SqlParameter[12];
+                SqlParameter[] _sql = new SqlParameter[11];
 
                 _sql[0] = SqlParameterFormat.Format("@purpose", visitorModel.purpose);
-                _sql[1] = SqlParameterFormat.Format("@vis_fname", visitorModel.fname);
-                _sql[2] = SqlParameterFormat.Format("@vis_lname", visitorModel.lname);
+                _sql[1] = SqlParameterFormat.Format("@fname", visitorModel.fname);
+                _sql[2] = SqlParameterFormat.Format("@lname", visitorModel.lname);
                 _sql[3] = SqlParameterFormat.Format("@phone_no", visitorModel.phone_no);
                 _sql[4] = SqlParameterFormat.Format("@nic_no", visitorModel.nic_no);
                 _sql[5] = SqlParameterFormat.Format("@date", visitorModel.date);
-                _sql[6] = SqlParameterFormat.Format("@in_time", visitorModel.in_time);
-                _sql[7] = SqlParameterFormat.Format("@out_time", visitorModel.out_time);
-                _sql[8] = SqlParameterFormat.Format("@note", visitorModel.note);
-                _sql[9] = SqlParameterFormat.Format("@attachment_type", visitorModel.attachment_type);
-                _sql[10] = SqlParameterFormat.Format("@attachment_data", file);
-                _sql[11] = SqlParameterFormat.Format("@user_id", visitorModel.user_id);
+               // _sql[6] = SqlParameterFormat.Format("@in_time", visitorModel.in_time);
+                _sql[6] = SqlParameterFormat.Format("@out_time", visitorModel.out_time);
+                _sql[7] = SqlParameterFormat.Format("@note", visitorModel.note);
+                _sql[8] = SqlParameterFormat.Format("@attachment_type", visitorModel.attachment_type);
+                _sql[9] = SqlParameterFormat.Format("@attachment_data", file);
+                _sql[10] = SqlParameterFormat.Format("@user_id", PermisionsModel.user_id);
 
                 return ODBC.SetData(sql, _sql);
             }
@@ -72,13 +72,14 @@ namespace HospitalInformationManagementSystem.DAL
         {
             try
             {
-                string sql = string.Format("UPDATE Visitors SET purpose = @purpose," +
+                string sql = string.Format("UPDATE Visitors SET +" +
+                    "purpose = @purpose," +
                     "fname = @vis_fname," +
                     "lname = @vis_lname," +
                     "phone_no = @phone_no," +
                     "nic_no = @nic_no," +
                     "date = @date," +
-                    "in_time = @in_time," +
+                  //  "in_time = @in_time," +
                     "out_time = @out_time," +
                     "note = @note," +
                     "attachment_type = @attachment_type," +
@@ -88,20 +89,20 @@ namespace HospitalInformationManagementSystem.DAL
 
                     );
 
-                SqlParameter[] _sql = new SqlParameter[12];
+                SqlParameter[] _sql = new SqlParameter[11];
 
                 _sql[0] = SqlParameterFormat.Format("@purpose", visitorModel.purpose);
-                _sql[1] = SqlParameterFormat.Format("@vis_fname", visitorModel.fname);
-                _sql[2] = SqlParameterFormat.Format("@vis_lname", visitorModel.lname);
+                _sql[1] = SqlParameterFormat.Format("@fname", visitorModel.fname);
+                _sql[2] = SqlParameterFormat.Format("@lname", visitorModel.lname);
                 _sql[3] = SqlParameterFormat.Format("@phone_no", visitorModel.phone_no);
                 _sql[4] = SqlParameterFormat.Format("@nic_no", visitorModel.nic_no);
                 _sql[5] = SqlParameterFormat.Format("@date", visitorModel.date);
-                _sql[6] = SqlParameterFormat.Format("@in_time", visitorModel.in_time);
-                _sql[7] = SqlParameterFormat.Format("@out_time", visitorModel.out_time);
-                _sql[8] = SqlParameterFormat.Format("@note", visitorModel.note);
-                _sql[9] = SqlParameterFormat.Format("@attachment_type", visitorModel.attachment_type);
-                _sql[10] = SqlParameterFormat.Format("@attachment_data", visitorModel.attachment_data);
-                _sql[11] = SqlParameterFormat.Format("@user_id", PermisionsModel.user_id);
+        //        _sql[6] = SqlParameterFormat.Format("@in_time", visitorModel.in_time);
+                _sql[6] = SqlParameterFormat.Format("@out_time", visitorModel.out_time);
+                _sql[7] = SqlParameterFormat.Format("@note", visitorModel.note);
+                _sql[8] = SqlParameterFormat.Format("@attachment_type", visitorModel.attachment_type);
+                _sql[9] = SqlParameterFormat.Format("@attachment_data", visitorModel.attachment_data);
+                _sql[10] = SqlParameterFormat.Format("@user_id", PermisionsModel.user_id);
 
                 return ODBC.SetData(sql, _sql);
             }

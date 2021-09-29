@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpBVisitor = new System.Windows.Forms.GroupBox();
+            this.btnBrowse = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
             this.btnEdit = new MetroFramework.Controls.MetroButton();
             this.btnAdd = new MetroFramework.Controls.MetroButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAttachmentType = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
@@ -58,16 +60,17 @@
             this.txtNic = new System.Windows.Forms.TextBox();
             this.grpBVisitorGridView = new System.Windows.Forms.GroupBox();
             this.dgvVisitor = new MetroFramework.Controls.MetroGrid();
+            this.epVisitor = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ofdVisitor = new System.Windows.Forms.OpenFileDialog();
             this.fname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nic_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Porpose = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnBrowse = new MetroFramework.Controls.MetroButton();
-            this.ofdVisitor = new System.Windows.Forms.SaveFileDialog();
             this.grpBVisitor.SuspendLayout();
             this.grpBVisitorGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epVisitor)).BeginInit();
             this.SuspendLayout();
             // 
             // grpBVisitor
@@ -77,7 +80,7 @@
             this.grpBVisitor.Controls.Add(this.btnEdit);
             this.grpBVisitor.Controls.Add(this.btnAdd);
             this.grpBVisitor.Controls.Add(this.label2);
-            this.grpBVisitor.Controls.Add(this.textBox1);
+            this.grpBVisitor.Controls.Add(this.txtAttachmentType);
             this.grpBVisitor.Controls.Add(this.label1);
             this.grpBVisitor.Controls.Add(this.txtFirstName);
             this.grpBVisitor.Controls.Add(this.lblFirstName);
@@ -105,6 +108,17 @@
             this.grpBVisitor.TabIndex = 2;
             this.grpBVisitor.TabStop = false;
             this.grpBVisitor.Text = "Visitor";
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnBrowse.Location = new System.Drawing.Point(139, 511);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(245, 23);
+            this.btnBrowse.TabIndex = 21;
+            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.UseSelectable = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // btnDelete
             // 
@@ -158,13 +172,13 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "Source";
             // 
-            // textBox1
+            // txtAttachmentType
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(139, 444);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(360, 24);
-            this.textBox1.TabIndex = 16;
+            this.txtAttachmentType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAttachmentType.Location = new System.Drawing.Point(139, 444);
+            this.txtAttachmentType.Name = "txtAttachmentType";
+            this.txtAttachmentType.Size = new System.Drawing.Size(360, 24);
+            this.txtAttachmentType.TabIndex = 16;
             // 
             // label1
             // 
@@ -414,40 +428,43 @@
             this.dgvVisitor.Size = new System.Drawing.Size(496, 651);
             this.dgvVisitor.TabIndex = 1;
             // 
+            // epVisitor
+            // 
+            this.epVisitor.ContainerControl = this;
+            // 
+            // ofdVisitor
+            // 
+            this.ofdVisitor.FileName = "ofdVisitor";
+            // 
             // fname
             // 
+            this.fname.DataPropertyName = "fname";
             this.fname.HeaderText = "First Name";
             this.fname.Name = "fname";
             // 
             // lname
             // 
+            this.lname.DataPropertyName = "lname";
             this.lname.HeaderText = "Last Name";
             this.lname.Name = "lname";
             // 
             // nic_no
             // 
+            this.nic_no.DataPropertyName = "nic_no";
             this.nic_no.HeaderText = "Nic";
             this.nic_no.Name = "nic_no";
             // 
             // date
             // 
+            this.date.DataPropertyName = "date";
             this.date.HeaderText = "Date";
             this.date.Name = "date";
             // 
             // Porpose
             // 
-            this.Porpose.HeaderText = "purpose";
+            this.Porpose.DataPropertyName = "purpose";
+            this.Porpose.HeaderText = "Purpose";
             this.Porpose.Name = "Porpose";
-            // 
-            // btnBrowse
-            // 
-            this.btnBrowse.Location = new System.Drawing.Point(139, 511);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(245, 23);
-            this.btnBrowse.TabIndex = 21;
-            this.btnBrowse.Text = "Browse";
-            this.btnBrowse.UseSelectable = true;
-            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // ucVisitors_PL
             // 
@@ -461,6 +478,7 @@
             this.grpBVisitor.PerformLayout();
             this.grpBVisitorGridView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epVisitor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -487,19 +505,20 @@
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.TextBox txtPurpose;
         private System.Windows.Forms.Label lblPurpose;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAttachmentType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private MetroFramework.Controls.MetroButton btnDelete;
         private MetroFramework.Controls.MetroButton btnEdit;
         private MetroFramework.Controls.MetroButton btnAdd;
         private MetroFramework.Controls.MetroGrid dgvVisitor;
+        private MetroFramework.Controls.MetroButton btnBrowse;
+        private System.Windows.Forms.ErrorProvider epVisitor;
+        private System.Windows.Forms.OpenFileDialog ofdVisitor;
         private System.Windows.Forms.DataGridViewTextBoxColumn fname;
         private System.Windows.Forms.DataGridViewTextBoxColumn lname;
         private System.Windows.Forms.DataGridViewTextBoxColumn nic_no;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Porpose;
-        private MetroFramework.Controls.MetroButton btnBrowse;
-        private System.Windows.Forms.SaveFileDialog ofdVisitor;
     }
 }
