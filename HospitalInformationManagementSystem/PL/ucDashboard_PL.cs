@@ -15,10 +15,6 @@ namespace HospitalInformationManagementSystem.PL
         public ucDashboard_PL()
         {
             InitializeComponent();
-        }
-
-        
-
-        
+        }        
     }
 }

@@ -16,6 +16,7 @@ namespace HospitalInformationManagementSystem.PL
 {
     public partial class ucVisitors_PL : UserControl
     {
+        
         GrantUserPermission _grantUserPermission = new GrantUserPermission();
 
         Visitor_BLL _visitor_BLL = new Visitor_BLL();
@@ -46,6 +47,111 @@ namespace HospitalInformationManagementSystem.PL
             }
         }
 
+        private bool IsValid(string type)
+        {
+            if (string.IsNullOrEmpty(txtFirstName.Text))
+            {
+                epVisitor.SetError(txtFirstName, "Please Fill First Name");
+                txtFirstName.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(txtLastName.Text))
+            {
+                epVisitor.SetError(txtLastName, "Please Fill Last Name");
+                txtLastName.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(txtLastName.Text))
+            {
+                epVisitor.SetError(txtNic, "Please Fill National Identity Card Number");
+                txtLastName.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(txtLastName.Text))
+            {
+                epVisitor.SetError(txtPhone, "Please Fill Phone Number");
+                txtLastName.Focus();
+                return false;
+            }
+
+        //    if (string.IsNullOrEmpty(txtPassword.Text))
+        //    {
+        //        epPatient.SetError(txtPassword, "Please Fill Password");
+        //        txtPassword.Focus();
+        //        return false;
+        //    }
+
+        //    if (string.IsNullOrEmpty(txtNIC.Text))
+        //    {
+        //        epPatient.SetError(txtNIC, "Please Fill NIC");
+        //        txtNIC.Focus();
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        Regex reg = new Regex(@"^([0-9]{9}[x|X|v|V]|[0-9]{12})$");
+
+        //        bool result = reg.IsMatch(txtNIC.Text.Trim());
+
+        //        if (result)
+        //        {
+        //            epPatient.Clear();
+        //        }
+        //        else
+        //        {
+        //            epPatient.SetError(txtNIC, "This NIC number is invalid...!");
+        //            txtNIC.Focus();
+        //            return false;
+        //        }
+        //    }
+
+        //    if (string.IsNullOrEmpty(txtPhone.Text))
+        //    {
+        //        epPatient.SetError(txtPhone, "Please Fill Phone");
+        //        txtPhone.Focus();
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        Regex reg = new Regex(@"^(?:7|0|(?:\+94))[0-9]{9,10}$");
+
+        //        bool result = reg.IsMatch(txtPhone.Text.Trim());
+
+        //        if (result)
+        //        {
+        //            epPatient.Clear();
+        //        }
+        //        else
+        //        {
+        //            epPatient.SetError(txtPhone, "This Phone Number is invalid...!");
+        //            txtPhone.Focus();
+        //            return false;
+        //        }
+        //    }
+
+            epVisitor.Clear();
+            return true;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -74,7 +180,9 @@ namespace HospitalInformationManagementSystem.PL
                 visitorModel.phone_no = txtPhone.Text.Trim();
                 visitorModel.nic_no = txtNic.Text.Trim();
                 visitorModel.date = Convert.ToDateTime(dtpDate.Text.Trim());
-                visitorModel.in_time = Convert.ToDateTime(dtpInTime.Text.Trim());
+
+                string dtpInTime = DateTime.Now.ToString("h:mm:ss tt");
+                visitorModel.in_time = Convert.ToDateTime(dtpInTime);
                 visitorModel.out_time = Convert.ToDateTime(dtpOutTime.Text.Trim());
                 visitorModel.note = txtNote.Text.Trim();
                 visitorModel.purpose = txtPurpose.Text.Trim();
@@ -116,6 +224,54 @@ namespace HospitalInformationManagementSystem.PL
             txtNic.Text = "";
             dtpDate.Value = DateTime.Now;
 
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (UpdateVisitor() > 0)
+                {
+                    MessageBox.Show("Patient update sucessfull", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.FillDGVVisitor();
+                    this.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private int UpdateVisitor()
+        {
+            try
+            {
+                if(IsValid("update"))
+                {
+                    visitorModel.fname = txtFirstName.Text.Trim();
+                    visitorModel.lname = txtLastName.Text.Trim();
+                    visitorModel.phone_no = txtPhone.Text.Trim();
+                    visitorModel.nic_no = txtNic.Text.Trim();
+                    visitorModel.date = Convert.ToDateTime(dtpDate.Text.Trim());
+                    string dtpInTime = DateTime.Now.ToString("h:mm:ss tt");
+                    visitorModel.in_time = Convert.ToDateTime(dtpInTime);
+                    visitorModel.out_time = Convert.ToDateTime(dtpOutTime.Text.Trim());
+                    visitorModel.note = txtNote.Text.Trim();
+                    visitorModel.purpose = txtPurpose.Text.Trim();
+                    visitorModel.attachment_type = txtAttachmentType.Text.Trim();
+
+                    visitorModel.IsActive = true;
+                    return _visitor_BLL.AddVisitor(visitorModel);
+                }
+                return 0;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }
