@@ -25,6 +25,7 @@ namespace HospitalInformationManagementSystem.PL
         public ucVisitors_PL()
         {
             InitializeComponent();
+            _grantUserPermission.GrantButtonPermission("visitor", btnAdd, btnEdit, btnDelete);
         }
 
         private void UcVisitor_PL_Load(object sender, EventArgs e)
@@ -73,9 +74,8 @@ namespace HospitalInformationManagementSystem.PL
                 visitorModel.phone_no = txtPhone.Text.Trim();
                 visitorModel.nic_no = txtNic.Text.Trim();
                 visitorModel.date = Convert.ToDateTime(dtpDate.Text.Trim());
-                //   visitorModel.in_time = Convert.ToDateTime(dtpInTime.Text.Trim());
+                visitorModel.in_time = Convert.ToDateTime(dtpInTime.Text.Trim());
                 visitorModel.out_time = Convert.ToDateTime(dtpOutTime.Text.Trim());
-                //visitorModel.out_time = DateTime.ParseExact(dtpOutTime.Text.Trim(), "HH:mm:ss", CultureInfo.InvariantCulture);
                 visitorModel.note = txtNote.Text.Trim();
                 visitorModel.purpose = txtPurpose.Text.Trim();
                 visitorModel.attachment_type = txtAttachmentType.Text.Trim();
