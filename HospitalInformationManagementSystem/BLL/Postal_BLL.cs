@@ -9,14 +9,14 @@ using System.Windows.Forms;
 
 namespace HospitalInformationManagementSystem.BLL
 {
-    class Visitor_BLL
+    class Postal_BLL
     {
-        public void LoadAllVisitorGridView(DataGridView dtgVisitor)
+        public void LoadAllPostalGridView(DataGridView dgvPostal)
         {
             try
             {
-                dtgVisitor.AutoGenerateColumns = false;
-                dtgVisitor.DataSource = Visitor_DLL.GetAllVisitor();
+                dgvPostal.AutoGenerateColumns = false;
+                dgvPostal.DataSource = Postal_DLL.GetAllPostal();
             }
             catch (Exception)
             {
@@ -24,37 +24,11 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
-        public int AddVisitor(VisitorModel visitorModel)
+        public int AddPostal(PostalModel postaltModel)
         {
             try
             {
-                return Visitor_DLL.AddVisitors(visitorModel);
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
-        public int UpdateVisitor(VisitorModel visitorModel)
-        {
-            try
-            {
-                return Visitor_DLL.UpdateVisitors(visitorModel);
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-
-        public int DeleteVisitor(bool Active, int VisitorID)
-        {
-            try
-            {
-                return Visitor_DLL.DeleteVisitor(Active, VisitorID);
+                return Postal_DLL.AddPostal(postaltModel);
             }
             catch (Exception)
             {
@@ -62,5 +36,28 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
+        public int UpdatePostal(PostalModel postalModel)
+        {
+            try
+            {
+                return Postal_DLL.UpdatePostal(postalModel);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public int DeletePostal(int PostalID)
+        {
+            try
+            {
+                return Postal_DLL.DeletePostal(PostalID);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

@@ -9,26 +9,14 @@ using System.Windows.Forms;
 
 namespace HospitalInformationManagementSystem.BLL
 {
-    class Visitor_BLL
+    class Staff_BLL
     {
-        public void LoadAllVisitorGridView(DataGridView dtgVisitor)
+        public void LoadAllStaffGridView(DataGridView dgvStaff)
         {
             try
             {
-                dtgVisitor.AutoGenerateColumns = false;
-                dtgVisitor.DataSource = Visitor_DLL.GetAllVisitor();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-        public int AddVisitor(VisitorModel visitorModel)
-        {
-            try
-            {
-                return Visitor_DLL.AddVisitors(visitorModel);
+                dgvStaff.AutoGenerateColumns = false;
+                dgvStaff.DataSource = Staff_DLL.GetAllStaff();
             }
             catch (Exception)
             {
@@ -37,11 +25,26 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
-        public int UpdateVisitor(VisitorModel visitorModel)
+        public int AddStaff(StaffModel staffModel)
+        {
+
+            try
+            {
+                return Staff_DLL.AddStaff(staffModel);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+        public int UpdateStaff(StaffModel staffModel)
         {
             try
             {
-                return Visitor_DLL.UpdateVisitors(visitorModel);
+                return Staff_DLL.UpdateStaff(staffModel);
             }
             catch (Exception)
             {
@@ -50,17 +53,17 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
-        public int DeleteVisitor(bool Active, int VisitorID)
+        public int DeleteStaff(bool Active, int user_id)
         {
             try
             {
-                return Visitor_DLL.DeleteVisitor(Active, VisitorID);
+                return Staff_DLL.DeleteStaff(Active, user_id);
             }
             catch (Exception)
             {
+
                 throw;
             }
         }
-
     }
 }
