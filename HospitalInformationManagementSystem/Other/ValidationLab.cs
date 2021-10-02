@@ -3,15 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
 
 namespace HospitalInformationManagementSystem.Other
 {
     class ValidationLab
     {
         // Text Box Validation
-        public static bool TextBoxValidation(TextBox textBox,ErrorProvider errorProvider,string regx = null)
+        public static bool TextBoxValidation(TextBox textBox, ErrorProvider errorProvider, string regx = null)
         {
             if (string.IsNullOrEmpty(textBox.Text))
             {
@@ -23,7 +21,7 @@ namespace HospitalInformationManagementSystem.Other
             {
                 if (regx != null)
                 {
-                    Regex reg = new Regex(@""+regx);
+                    Regex reg = new Regex(@"" + regx);
 
                     bool result = reg.IsMatch(textBox.Text.Trim());
 
