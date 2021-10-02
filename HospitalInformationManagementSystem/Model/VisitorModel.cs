@@ -15,7 +15,7 @@ namespace HospitalInformationManagementSystem.Model
         public string phone_no { get; set; }
         public string nic_no { get; set; }
         public DateTime date { get; set; }
-       // public DateTime in_time { get; set; }
+        public DateTime in_time { get; set; }
         public DateTime out_time { get; set; }
         public String note { get; set; }
         public String attachment_type { get; set; }

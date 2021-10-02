@@ -18,6 +18,9 @@ namespace HospitalInformationManagementSystem.PL
         GrantUserPermission _GrantUserPermission = new GrantUserPermission();
         public Dashboard_PL()
         {
+            //ucDashboard_PL ucDashboard = new ucDashboard_PL();
+            //FormControl.showControls(ucDashboard, pnlContent);
+
             InitializeComponent();
             _GrantUserPermission.GrantMenuPermission(btnDashboard, btnPatient, btnVisitors, btnAppointment, btnPostal, btnComplaints, btnReports, btnStaff);
         }

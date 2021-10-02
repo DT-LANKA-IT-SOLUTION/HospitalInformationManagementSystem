@@ -43,14 +43,12 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.dtpOutTime = new System.Windows.Forms.DateTimePicker();
-            this.dtpInTime = new System.Windows.Forms.DateTimePicker();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.txtPurpose = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.lblOutTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
-            this.lblInTime = new System.Windows.Forms.Label();
             this.lblPurpose = new System.Windows.Forms.Label();
             this.lblNote = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
@@ -60,13 +58,13 @@
             this.txtNic = new System.Windows.Forms.TextBox();
             this.grpBVisitorGridView = new System.Windows.Forms.GroupBox();
             this.dgvVisitor = new MetroFramework.Controls.MetroGrid();
-            this.epVisitor = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ofdVisitor = new System.Windows.Forms.OpenFileDialog();
             this.fname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nic_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Porpose = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.epVisitor = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ofdVisitor = new System.Windows.Forms.OpenFileDialog();
             this.grpBVisitor.SuspendLayout();
             this.grpBVisitorGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitor)).BeginInit();
@@ -85,14 +83,12 @@
             this.grpBVisitor.Controls.Add(this.txtFirstName);
             this.grpBVisitor.Controls.Add(this.lblFirstName);
             this.grpBVisitor.Controls.Add(this.dtpOutTime);
-            this.grpBVisitor.Controls.Add(this.dtpInTime);
             this.grpBVisitor.Controls.Add(this.dtpDate);
             this.grpBVisitor.Controls.Add(this.txtNote);
             this.grpBVisitor.Controls.Add(this.txtPurpose);
             this.grpBVisitor.Controls.Add(this.txtPhone);
             this.grpBVisitor.Controls.Add(this.lblOutTime);
             this.grpBVisitor.Controls.Add(this.lblDate);
-            this.grpBVisitor.Controls.Add(this.lblInTime);
             this.grpBVisitor.Controls.Add(this.lblPurpose);
             this.grpBVisitor.Controls.Add(this.lblNote);
             this.grpBVisitor.Controls.Add(this.lblPhone);
@@ -139,13 +135,14 @@
             this.btnEdit.BackColor = System.Drawing.Color.Snow;
             this.btnEdit.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btnEdit.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.btnEdit.Location = new System.Drawing.Point(188, 577);
+            this.btnEdit.Location = new System.Drawing.Point(192, 577);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(117, 48);
             this.btnEdit.TabIndex = 19;
             this.btnEdit.Text = "Edit Visitor";
             this.btnEdit.UseCustomBackColor = true;
             this.btnEdit.UseSelectable = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -214,19 +211,11 @@
             // 
             this.dtpOutTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpOutTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpOutTime.Location = new System.Drawing.Point(372, 207);
+            this.dtpOutTime.Location = new System.Drawing.Point(139, 207);
             this.dtpOutTime.Name = "dtpOutTime";
-            this.dtpOutTime.Size = new System.Drawing.Size(125, 24);
+            this.dtpOutTime.Size = new System.Drawing.Size(358, 24);
             this.dtpOutTime.TabIndex = 6;
-            // 
-            // dtpInTime
-            // 
-            this.dtpInTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpInTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpInTime.Location = new System.Drawing.Point(139, 207);
-            this.dtpInTime.Name = "dtpInTime";
-            this.dtpInTime.Size = new System.Drawing.Size(125, 24);
-            this.dtpInTime.TabIndex = 5;
+            this.dtpOutTime.Value = new System.DateTime(2021, 10, 1, 12, 0, 0, 0);
             // 
             // dtpDate
             // 
@@ -267,7 +256,7 @@
             this.lblOutTime.AutoSize = true;
             this.lblOutTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOutTime.ForeColor = System.Drawing.Color.Black;
-            this.lblOutTime.Location = new System.Drawing.Point(281, 211);
+            this.lblOutTime.Location = new System.Drawing.Point(18, 213);
             this.lblOutTime.Name = "lblOutTime";
             this.lblOutTime.Size = new System.Drawing.Size(69, 18);
             this.lblOutTime.TabIndex = 7;
@@ -283,17 +272,6 @@
             this.lblDate.Size = new System.Drawing.Size(39, 18);
             this.lblDate.TabIndex = 8;
             this.lblDate.Text = "Date";
-            // 
-            // lblInTime
-            // 
-            this.lblInTime.AutoSize = true;
-            this.lblInTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInTime.ForeColor = System.Drawing.Color.Black;
-            this.lblInTime.Location = new System.Drawing.Point(18, 212);
-            this.lblInTime.Name = "lblInTime";
-            this.lblInTime.Size = new System.Drawing.Size(56, 18);
-            this.lblInTime.TabIndex = 7;
-            this.lblInTime.Text = "In Time";
             // 
             // lblPurpose
             // 
@@ -428,14 +406,6 @@
             this.dgvVisitor.Size = new System.Drawing.Size(496, 651);
             this.dgvVisitor.TabIndex = 1;
             // 
-            // epVisitor
-            // 
-            this.epVisitor.ContainerControl = this;
-            // 
-            // ofdVisitor
-            // 
-            this.ofdVisitor.FileName = "ofdVisitor";
-            // 
             // fname
             // 
             this.fname.DataPropertyName = "fname";
@@ -466,6 +436,14 @@
             this.Porpose.HeaderText = "Purpose";
             this.Porpose.Name = "Porpose";
             // 
+            // epVisitor
+            // 
+            this.epVisitor.ContainerControl = this;
+            // 
+            // ofdVisitor
+            // 
+            this.ofdVisitor.FileName = "ofdVisitor";
+            // 
             // ucVisitors_PL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -490,7 +468,6 @@
         private System.Windows.Forms.TextBox txtNote;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.Label lblInTime;
         private System.Windows.Forms.Label lblNote;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblNic;
@@ -498,7 +475,6 @@
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.TextBox txtNic;
         private System.Windows.Forms.DateTimePicker dtpOutTime;
-        private System.Windows.Forms.DateTimePicker dtpInTime;
         private System.Windows.Forms.Label lblOutTime;
         private System.Windows.Forms.GroupBox grpBVisitorGridView;
         private System.Windows.Forms.TextBox txtFirstName;
