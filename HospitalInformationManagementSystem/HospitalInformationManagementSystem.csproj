@@ -138,6 +138,12 @@
     <Compile Include="PL\ucPostals_PL.Designer.cs">
       <DependentUpon>ucPostals_PL.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\ucReport_PL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\ucReport_PL.Designer.cs">
+      <DependentUpon>ucReport_PL.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\ucSendEmail_PL.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -161,6 +167,12 @@
     </Compile>
     <Compile Include="PL\ucVisitors_PL.Designer.cs">
       <DependentUpon>ucVisitors_PL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\usReportViewer_PL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\usReportViewer_PL.Designer.cs">
+      <DependentUpon>usReportViewer_PL.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -188,6 +200,9 @@
     <EmbeddedResource Include="PL\ucPostals_PL.resx">
       <DependentUpon>ucPostals_PL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\ucReport_PL.resx">
+      <DependentUpon>ucReport_PL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\ucSendEmail_PL.resx">
       <DependentUpon>ucSendEmail_PL.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\ucVisitors_PL.resx">
       <DependentUpon>ucVisitors_PL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\usReportViewer_PL.resx">
+      <DependentUpon>usReportViewer_PL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

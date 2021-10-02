@@ -46,14 +46,14 @@ namespace HospitalInformationManagementSystem.DAL
             }
         }
 
-        public static string GetPatientByUsername(PatientModel patientModel)
+        public static string GetPatientByUsername(string username)
         {
             try
             {
                 string sql = string.Format("SELECT user_name FROM Users WHERE user_name = @username");
                 
                 SqlParameter[] _sql = new SqlParameter[1];
-                _sql[0] = SqlParameterFormat.Format("@username", patientModel.user_name);
+                _sql[0] = SqlParameterFormat.Format("@username", username);
 
                 return ODBC.ExecuteFunction(sql,_sql);
             }
@@ -90,6 +90,71 @@ namespace HospitalInformationManagementSystem.DAL
                     int user_id = Int32.Parse(ODBC.ExecuteFunction(sql));
                     if (user_id > 0)
                     {
+                        sql = string.Format("INSERT INTO User_Permisions(permision_id,user_id,status)VALUES(@permision_id,@user_id,@status)");
+
+                        for (int i = 1; i < 9; i++)
+                        {
+                            switch (i)
+                            {
+                                case 1:
+                                    _sql = new SqlParameter[3];
+                                    _sql[0] = SqlParameterFormat.Format("@permision_id", i);
+                                    _sql[1] = SqlParameterFormat.Format("@user_id", user_id);
+                                    _sql[2] = SqlParameterFormat.Format("@status", "A");
+                                    ODBC.SetData(sql, _sql);
+                                    break;
+                                case 2:
+                                    _sql = new SqlParameter[3];
+                                    _sql[0] = SqlParameterFormat.Format("@permision_id", i);
+                                    _sql[1] = SqlParameterFormat.Format("@user_id", user_id);
+                                    _sql[2] = SqlParameterFormat.Format("@status", "DENIED");
+                                    ODBC.SetData(sql, _sql);
+                                    break;
+                                case 3:
+                                    _sql = new SqlParameter[3];
+                                    _sql[0] = SqlParameterFormat.Format("@permision_id", i);
+                                    _sql[1] = SqlParameterFormat.Format("@user_id", user_id);
+                                    _sql[2] = SqlParameterFormat.Format("@status", "DENIED");
+                                    ODBC.SetData(sql, _sql);
+                                    break;
+                                case 4:
+                                    _sql = new SqlParameter[3];
+                                    _sql[0] = SqlParameterFormat.Format("@permision_id", i);
+                                    _sql[1] = SqlParameterFormat.Format("@user_id", user_id);
+                                    _sql[2] = SqlParameterFormat.Format("@status", "AC");
+                                    ODBC.SetData(sql, _sql);
+                                    break;
+                                case 5:
+                                    _sql = new SqlParameter[3];
+                                    _sql[0] = SqlParameterFormat.Format("@permision_id", i);
+                                    _sql[1] = SqlParameterFormat.Format("@user_id", user_id);
+                                    _sql[2] = SqlParameterFormat.Format("@status", "DENIED");
+                                    ODBC.SetData(sql, _sql);
+                                    break;
+                                case 6:
+                                    _sql = new SqlParameter[3];
+                                    _sql[0] = SqlParameterFormat.Format("@permision_id", i);
+                                    _sql[1] = SqlParameterFormat.Format("@user_id", user_id);
+                                    _sql[2] = SqlParameterFormat.Format("@status", "AC");
+                                    ODBC.SetData(sql, _sql);
+                                    break;
+                                case 7:
+                                    _sql = new SqlParameter[3];
+                                    _sql[0] = SqlParameterFormat.Format("@permision_id", i);
+                                    _sql[1] = SqlParameterFormat.Format("@user_id", user_id);
+                                    _sql[2] = SqlParameterFormat.Format("@status", "DENIED");
+                                    ODBC.SetData(sql, _sql);
+                                    break;
+                                case 8:
+                                    _sql = new SqlParameter[3];
+                                    _sql[0] = SqlParameterFormat.Format("@permision_id", i);
+                                    _sql[1] = SqlParameterFormat.Format("@user_id", user_id);
+                                    _sql[2] = SqlParameterFormat.Format("@status", "DENIED");
+                                    ODBC.SetData(sql, _sql);
+                                    break;
+                            }
+                        }
+
                         sql = string.Format("INSERT INTO Patients(user_id,blood_group,allergies)VALUES(@user_id,@blood_group,@allergies)");
 
                         _sql = new SqlParameter[3];

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HospitalInformationManagementSystem.PL
 {
-    public partial class ucAppointment_PL : UserControl
+    public partial class ucReport_PL : UserControl
     {
-        public ucAppointment_PL()
+        public ucReport_PL()
         {
             InitializeComponent();
         }
