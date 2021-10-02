@@ -10,6 +10,7 @@ namespace HospitalInformationManagementSystem.Other
 {
     class ValidationLab
     {
+        // Text Box Validation
         public static bool TextBoxValidation(TextBox textBox,ErrorProvider errorProvider,string regx = null)
         {
             if (string.IsNullOrEmpty(textBox.Text))
@@ -45,6 +46,7 @@ namespace HospitalInformationManagementSystem.Other
             }
         }
 
+        // Combo Box Validation
         public static bool ComboBoxValidation(ComboBox comboBox, ErrorProvider errorProvider)
         {
             if (comboBox.SelectedItem == null)
@@ -59,6 +61,7 @@ namespace HospitalInformationManagementSystem.Other
             }
         }
 
+        // Check Box Validation
         public static bool CheckBoxValidation(CheckBox checkBox, ErrorProvider errorProvider)
         {
             if (comboBox.Checked == null)
@@ -73,6 +76,7 @@ namespace HospitalInformationManagementSystem.Other
             }
         }
 
+        // Check List Box Validation
         public static bool CheckListBoxValidation(CheckedListBox checkedListBox, ErrorProvider errorProvider)
         {
             if (checkedListBox.CheckedItems == null)
