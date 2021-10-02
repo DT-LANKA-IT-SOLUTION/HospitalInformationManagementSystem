@@ -24,6 +24,19 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
+        public void LoadPostalByRefNoGridView(DataGridView dgvPostal, string refno)
+        {
+            try
+            {
+                dgvPostal.AutoGenerateColumns = false;
+                dgvPostal.DataSource = Postal_DLL.GetPostalByRefNo(refno);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public int AddPostal(PostalModel postaltModel)
         {
             try

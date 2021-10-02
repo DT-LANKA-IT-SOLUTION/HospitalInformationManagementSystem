@@ -83,6 +83,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\AppointmentModel.cs" />
     <Compile Include="Model\AuthModel.cs" />
     <Compile Include="Model\ComplaintModel.cs" />
     <Compile Include="Model\PatientModel.cs" />
