@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpBVisitor = new System.Windows.Forms.GroupBox();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.btnBrowse = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
             this.btnEdit = new MetroFramework.Controls.MetroButton();
@@ -73,6 +74,7 @@
             // 
             // grpBVisitor
             // 
+            this.grpBVisitor.Controls.Add(this.metroComboBox1);
             this.grpBVisitor.Controls.Add(this.btnBrowse);
             this.grpBVisitor.Controls.Add(this.btnDelete);
             this.grpBVisitor.Controls.Add(this.btnEdit);
@@ -104,6 +106,19 @@
             this.grpBVisitor.TabIndex = 2;
             this.grpBVisitor.TabStop = false;
             this.grpBVisitor.Text = "Visitor";
+            // 
+            // metroComboBox1
+            // 
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Items.AddRange(new object[] {
+            "Image",
+            "Document"});
+            this.metroComboBox1.Location = new System.Drawing.Point(139, 440);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.Size = new System.Drawing.Size(358, 29);
+            this.metroComboBox1.TabIndex = 22;
+            this.metroComboBox1.UseSelectable = true;
             // 
             // btnBrowse
             // 
@@ -172,7 +187,7 @@
             // txtAttachmentType
             // 
             this.txtAttachmentType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAttachmentType.Location = new System.Drawing.Point(139, 444);
+            this.txtAttachmentType.Location = new System.Drawing.Point(139, 481);
             this.txtAttachmentType.Name = "txtAttachmentType";
             this.txtAttachmentType.Size = new System.Drawing.Size(360, 24);
             this.txtAttachmentType.TabIndex = 16;
@@ -359,19 +374,20 @@
             // dgvVisitor
             // 
             this.dgvVisitor.AllowUserToResizeRows = false;
+            this.dgvVisitor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVisitor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dgvVisitor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvVisitor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvVisitor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvVisitor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvVisitor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvVisitor.ColumnHeadersHeight = 35;
+            this.dgvVisitor.ColumnHeadersHeight = 20;
             this.dgvVisitor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fname,
             this.lname,
@@ -382,21 +398,25 @@
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvVisitor.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVisitor.EnableHeadersVisualStyles = false;
             this.dgvVisitor.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.dgvVisitor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvVisitor.HighLightPercentage = 1F;
+            this.epVisitor.SetIconAlignment(this.dgvVisitor, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
+            this.dgvVisitor.ImeMode = System.Windows.Forms.ImeMode.On;
             this.dgvVisitor.Location = new System.Drawing.Point(6, 25);
             this.dgvVisitor.Name = "dgvVisitor";
+            this.dgvVisitor.ReadOnly = true;
             this.dgvVisitor.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(226)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvVisitor.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
@@ -404,37 +424,46 @@
             this.dgvVisitor.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvVisitor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVisitor.Size = new System.Drawing.Size(496, 651);
+            this.dgvVisitor.Style = MetroFramework.MetroColorStyle.Blue;
             this.dgvVisitor.TabIndex = 1;
+            this.dgvVisitor.UseCustomForeColor = true;
+            this.dgvVisitor.UseStyleColors = true;
+            this.dgvVisitor.VirtualMode = true;
             // 
             // fname
             // 
             this.fname.DataPropertyName = "fname";
             this.fname.HeaderText = "First Name";
             this.fname.Name = "fname";
+            this.fname.ReadOnly = true;
             // 
             // lname
             // 
             this.lname.DataPropertyName = "lname";
             this.lname.HeaderText = "Last Name";
             this.lname.Name = "lname";
+            this.lname.ReadOnly = true;
             // 
             // nic_no
             // 
             this.nic_no.DataPropertyName = "nic_no";
             this.nic_no.HeaderText = "Nic";
             this.nic_no.Name = "nic_no";
+            this.nic_no.ReadOnly = true;
             // 
             // date
             // 
             this.date.DataPropertyName = "date";
             this.date.HeaderText = "Date";
             this.date.Name = "date";
+            this.date.ReadOnly = true;
             // 
             // Porpose
             // 
             this.Porpose.DataPropertyName = "purpose";
             this.Porpose.HeaderText = "Purpose";
             this.Porpose.Name = "Porpose";
+            this.Porpose.ReadOnly = true;
             // 
             // epVisitor
             // 
@@ -452,6 +481,7 @@
             this.Controls.Add(this.grpBVisitor);
             this.Name = "ucVisitors_PL";
             this.Size = new System.Drawing.Size(1024, 691);
+            this.Load += new System.EventHandler(this.ucVisitors_PL_Load);
             this.grpBVisitor.ResumeLayout(false);
             this.grpBVisitor.PerformLayout();
             this.grpBVisitorGridView.ResumeLayout(false);
@@ -487,7 +517,6 @@
         private MetroFramework.Controls.MetroButton btnDelete;
         private MetroFramework.Controls.MetroButton btnEdit;
         private MetroFramework.Controls.MetroButton btnAdd;
-        private MetroFramework.Controls.MetroGrid dgvVisitor;
         private MetroFramework.Controls.MetroButton btnBrowse;
         private System.Windows.Forms.ErrorProvider epVisitor;
         private System.Windows.Forms.OpenFileDialog ofdVisitor;
@@ -496,5 +525,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nic_no;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Porpose;
+        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroGrid dgvVisitor;
     }
 }
