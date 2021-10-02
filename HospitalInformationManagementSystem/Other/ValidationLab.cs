@@ -64,15 +64,15 @@ namespace HospitalInformationManagementSystem.Other
         // Check Box Validation
         public static bool CheckBoxValidation(CheckBox checkBox, ErrorProvider errorProvider)
         {
-            if (checkBox.Checked == null)
+            if (checkBox.Checked)
+            {
+                return true;
+            }
+            else
             {
                 errorProvider.SetError(checkBox, "Please Fill the Field...!");
                 checkBox.Focus();
                 return false;
-            }
-            else
-            {
-                return true;
             }
         }
 
