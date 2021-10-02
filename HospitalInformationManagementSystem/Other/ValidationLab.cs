@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace HospitalInformationManagementSystem.Other
 {
@@ -62,10 +64,10 @@ namespace HospitalInformationManagementSystem.Other
         // Check Box Validation
         public static bool CheckBoxValidation(CheckBox checkBox, ErrorProvider errorProvider)
         {
-            if (comboBox.Checked == null)
+            if (checkBox.Checked == null)
             {
-                errorProvider.SetError(comboBox, "Please Fill the Field...!");
-                comboBox.Focus();
+                errorProvider.SetError(checkBox, "Please Fill the Field...!");
+                checkBox.Focus();
                 return false;
             }
             else
