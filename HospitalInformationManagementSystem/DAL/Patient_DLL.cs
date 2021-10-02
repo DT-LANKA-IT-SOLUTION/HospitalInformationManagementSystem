@@ -67,10 +67,10 @@ namespace HospitalInformationManagementSystem.DAL
         {
             try
             {
-                string sql = string.Format("INSERT INTO Users(user_name,password,f_name,l_name,gender,phone_no,nic_no,dob,address,marital_status,user_type)" +
-                "VALUES(@user_name,@password,@f_name,@l_name,@gender,@phone_no,@nic_no,@dob,@address,@marital_status,@user_type)");
+                string sql = string.Format("INSERT INTO Users(user_name,password,f_name,l_name,gender,phone_no,nic_no,dob,address,marital_status,user_type,IsActive)" +
+                "VALUES(@user_name,@password,@f_name,@l_name,@gender,@phone_no,@nic_no,@dob,@address,@marital_status,@user_type,@IsActive)");
 
-                SqlParameter[] _sql = new SqlParameter[11];
+                SqlParameter[] _sql = new SqlParameter[12];
 
                 _sql[0] = SqlParameterFormat.Format("@user_name", patientModel.user_name);
                 _sql[1] = SqlParameterFormat.Format("@password", patientModel.password);
@@ -83,6 +83,7 @@ namespace HospitalInformationManagementSystem.DAL
                 _sql[8] = SqlParameterFormat.Format("@address", patientModel.address);
                 _sql[9] = SqlParameterFormat.Format("@marital_status", patientModel.marital_status);
                 _sql[10] = SqlParameterFormat.Format("@user_type", patientModel.user_type);
+                _sql[11] = SqlParameterFormat.Format("@IsActive", patientModel.IsActive);
 
                 if (ODBC.SetData(sql, _sql) > 0)
                 {
