@@ -17,10 +17,10 @@ namespace HospitalInformationManagementSystem.Model
         public DateTime date { get; set; }
         public DateTime in_time { get; set; }
         public DateTime out_time { get; set; }
-        public String note { get; set; }
-        public String attachment_type { get; set; }
-        public String attachment_data { get; set; }
-        public int user_id { get; set; }
+        public string note { get; set; }
+        public string attachment_type { get; set; }
+        public string attachment_data { get; set; }
+       // public int user_id { get; set; }
         public Boolean IsActive { get; set; }
     }
 }

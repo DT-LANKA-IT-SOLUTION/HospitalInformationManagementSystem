@@ -18,7 +18,11 @@ namespace HospitalInformationManagementSystem.DAL
         {
             try
             {
-                return ODBC.GetData("SELECT * FROM Visitors");
+                string sql = string.Format("SELECT * FROM Visitors WHERE Visitors.IsActive=@IsActive");
+                SqlParameter[] _sql = new SqlParameter[1];
+                _sql[0] = SqlParameterFormat.Format("@IsActive", true);
+
+                return ODBC.GetData(sql, _sql);
             }
             catch (Exception)
             {

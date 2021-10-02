@@ -17,10 +17,7 @@ namespace HospitalInformationManagementSystem.PL
     {
         GrantUserPermission _GrantUserPermission = new GrantUserPermission();
         public Dashboard_PL()
-        {
-            //ucDashboard_PL ucDashboard = new ucDashboard_PL();
-            //FormControl.showControls(ucDashboard, pnlContent);
-
+        { 
             InitializeComponent();
             _GrantUserPermission.GrantMenuPermission(btnDashboard, btnPatient, btnVisitors, btnAppointment, btnPostal, btnComplaints, btnReports, btnStaff);
         }
@@ -109,6 +106,9 @@ namespace HospitalInformationManagementSystem.PL
         private void Dashboard_PL_Load(object sender, EventArgs e)
         {
             AuthModel authModel = new AuthModel();
+
+            ucDashboard_PL ucDashboard = new ucDashboard_PL();
+            FormControl.showControls(ucDashboard, pnlContent);
         }
 
         private void btnAppointment_Click(object sender, EventArgs e)
