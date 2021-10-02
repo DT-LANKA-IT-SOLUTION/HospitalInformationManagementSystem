@@ -61,7 +61,7 @@ namespace HospitalInformationManagementSystem.Other
 
         public static bool CheckBoxValidation(CheckBox checkBox, ErrorProvider errorProvider)
         {
-            if (comboBox.SelectedItem == null)
+            if (comboBox.Checked == null)
             {
                 errorProvider.SetError(comboBox, "Please Fill the Field...!");
                 comboBox.Focus();
@@ -75,10 +75,10 @@ namespace HospitalInformationManagementSystem.Other
 
         public static bool CheckListBoxValidation(CheckedListBox checkedListBox, ErrorProvider errorProvider)
         {
-            if (comboBox.SelectedItem == null)
+            if (checkedListBox.CheckedItems == null)
             {
-                errorProvider.SetError(comboBox, "Please Fill the Field...!");
-                comboBox.Focus();
+                errorProvider.SetError(checkedListBox, "Please Fill the Field...!");
+                checkedListBox.Focus();
                 return false;
             }
             else
