@@ -173,6 +173,16 @@ namespace HospitalInformationManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Logonew {
+            get {
+                object obj = ResourceManager.GetObject("Logonew", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Maxim {
             get {
                 object obj = ResourceManager.GetObject("Maxim", resourceCulture);
@@ -253,6 +263,26 @@ namespace HospitalInformationManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Pulse171px {
+            get {
+                object obj = ResourceManager.GetObject("Pulse171px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Pulse200px {
+            get {
+                object obj = ResourceManager.GetObject("Pulse200px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Reports {
             get {
                 object obj = ResourceManager.GetObject("Reports", resourceCulture);
@@ -286,6 +316,56 @@ namespace HospitalInformationManagementSystem.Properties {
         internal static System.Drawing.Bitmap SettingsBlue {
             get {
                 object obj = ResourceManager.GetObject("SettingsBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Spinner170px {
+            get {
+                object obj = ResourceManager.GetObject("Spinner170px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Spinner190px {
+            get {
+                object obj = ResourceManager.GetObject("Spinner190px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Spinner191px {
+            get {
+                object obj = ResourceManager.GetObject("Spinner191px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Spinner197px {
+            get {
+                object obj = ResourceManager.GetObject("Spinner197px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Spinner200px {
+            get {
+                object obj = ResourceManager.GetObject("Spinner200px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
