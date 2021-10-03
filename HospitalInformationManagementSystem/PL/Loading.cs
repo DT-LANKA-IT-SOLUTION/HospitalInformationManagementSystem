@@ -39,9 +39,15 @@ namespace HospitalInformationManagementSystem.PL
                 {
                     lblProgressInformation.Text = "Gathering information";
                 }
-                else if (counter > 150 && counter < 350)
+                
+                else if (counter > 151 && counter <= 200)
                 {
                     lblProgressInformation.Text = "Connecting to the database";
+                }
+                
+                else if (counter > 200 && counter <= 325)
+                {
+                    
                    
                     if (dbconnection.CheckDbConnection(ConfigurationManager.ConnectionStrings["HIMS"].ConnectionString))
                     {
@@ -54,7 +60,7 @@ namespace HospitalInformationManagementSystem.PL
                     }
 
                 }
-                else if (counter > 350 && counter < 400)
+                else if (counter > 326 && counter <= 400)
                 {
                     lblProgressInformation.Text = "Welcome To the HIMS";
 
@@ -62,8 +68,8 @@ namespace HospitalInformationManagementSystem.PL
                 
                 else if(counter > 401)
                 {
-                    Dashboard_PL dashboard = new Dashboard_PL();
-                    dashboard.Show();
+                    Login_PL login = new Login_PL();
+                    login.Show();
                     tmrLoading.Stop();
                     this.Hide();
                 }

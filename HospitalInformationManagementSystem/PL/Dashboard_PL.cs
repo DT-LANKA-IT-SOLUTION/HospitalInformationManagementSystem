@@ -29,8 +29,9 @@ namespace HospitalInformationManagementSystem.PL
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         private void BtnDashboard_Click(object sender, EventArgs e)
         {
-            ucPatient_PL ucPatient = new ucPatient_PL();
-            
+            ucDashboard_PL ucDashboard = new ucDashboard_PL();
+            FormControl.showControls(ucDashboard, pnlContent);
+
         }
 
         private void BtnPatient_Click(object sender, EventArgs e)
