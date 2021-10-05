@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace HospitalInformationManagementSystem.PL
 {
-    public partial class usReportViewer_PL : UserControl
+    public partial class ucReportViwer_PL : UserControl
     {
-        public usReportViewer_PL()
+        public ucReportViwer_PL()
         {
             InitializeComponent();
+        }
+
+        private void RptReportView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

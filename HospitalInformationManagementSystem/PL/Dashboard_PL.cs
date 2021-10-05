@@ -16,10 +16,13 @@ namespace HospitalInformationManagementSystem.PL
     public partial class Dashboard_PL : Form
     {
         GrantUserPermission _GrantUserPermission = new GrantUserPermission();
+        //ucReport_PL ucReport_PL = new ucReport_PL();
         public Dashboard_PL()
         { 
             InitializeComponent();
             _GrantUserPermission.GrantMenuPermission(btnDashboard, btnPatient, btnVisitors, btnAppointment, btnPostal, btnComplaints, btnReports, btnStaff);
+            
+            //this.ucReport_PL.ParentForm = this;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -121,6 +124,12 @@ namespace HospitalInformationManagementSystem.PL
         {
             ucPostals_PL ucPostals = new ucPostals_PL();
             FormControl.showControls(ucPostals, pnlContent);
+        }
+
+        private void BtnReports_Click(object sender, EventArgs e)
+        {
+            ucReport_PL ucReport = new ucReport_PL();
+            FormControl.showControls(ucReport, pnlContent);
         }
     }
 }

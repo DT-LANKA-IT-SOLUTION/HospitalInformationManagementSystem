@@ -215,6 +215,7 @@
             this.btnReports.Text = "Reports";
             this.btnReports.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReports.UseVisualStyleBackColor = true;
+            this.btnReports.Click += new System.EventHandler(this.BtnReports_Click);
             // 
             // btnComplaints
             // 
@@ -367,8 +368,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnlContent;
         private System.Windows.Forms.Button btnStaff;
         private System.Windows.Forms.Button btnReports;
         private System.Windows.Forms.Button btnComplaints;
@@ -386,5 +385,6 @@
         private System.Windows.Forms.PictureBox btnSlide;
         private System.Windows.Forms.Panel pnlMenuVertical;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Panel pnlContent;
     }
 }
