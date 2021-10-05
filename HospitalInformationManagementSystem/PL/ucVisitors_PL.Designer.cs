@@ -33,13 +33,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpBVisitor = new System.Windows.Forms.GroupBox();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.cmbAttachmentType = new MetroFramework.Controls.MetroComboBox();
             this.btnBrowse = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
             this.btnEdit = new MetroFramework.Controls.MetroButton();
             this.btnAdd = new MetroFramework.Controls.MetroButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtAttachmentType = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
@@ -74,13 +73,13 @@
             // 
             // grpBVisitor
             // 
-            this.grpBVisitor.Controls.Add(this.metroComboBox1);
+            this.grpBVisitor.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.grpBVisitor.Controls.Add(this.cmbAttachmentType);
             this.grpBVisitor.Controls.Add(this.btnBrowse);
             this.grpBVisitor.Controls.Add(this.btnDelete);
             this.grpBVisitor.Controls.Add(this.btnEdit);
             this.grpBVisitor.Controls.Add(this.btnAdd);
             this.grpBVisitor.Controls.Add(this.label2);
-            this.grpBVisitor.Controls.Add(this.txtAttachmentType);
             this.grpBVisitor.Controls.Add(this.label1);
             this.grpBVisitor.Controls.Add(this.txtFirstName);
             this.grpBVisitor.Controls.Add(this.lblFirstName);
@@ -107,18 +106,18 @@
             this.grpBVisitor.TabStop = false;
             this.grpBVisitor.Text = "Visitor";
             // 
-            // metroComboBox1
+            // cmbAttachmentType
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Items.AddRange(new object[] {
+            this.cmbAttachmentType.FormattingEnabled = true;
+            this.cmbAttachmentType.ItemHeight = 23;
+            this.cmbAttachmentType.Items.AddRange(new object[] {
             "Image",
             "Document"});
-            this.metroComboBox1.Location = new System.Drawing.Point(139, 440);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(358, 29);
-            this.metroComboBox1.TabIndex = 22;
-            this.metroComboBox1.UseSelectable = true;
+            this.cmbAttachmentType.Location = new System.Drawing.Point(139, 440);
+            this.cmbAttachmentType.Name = "cmbAttachmentType";
+            this.cmbAttachmentType.Size = new System.Drawing.Size(358, 29);
+            this.cmbAttachmentType.TabIndex = 22;
+            this.cmbAttachmentType.UseSelectable = true;
             // 
             // btnBrowse
             // 
@@ -183,14 +182,6 @@
             this.label2.Size = new System.Drawing.Size(56, 18);
             this.label2.TabIndex = 17;
             this.label2.Text = "Source";
-            // 
-            // txtAttachmentType
-            // 
-            this.txtAttachmentType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAttachmentType.Location = new System.Drawing.Point(139, 481);
-            this.txtAttachmentType.Name = "txtAttachmentType";
-            this.txtAttachmentType.Size = new System.Drawing.Size(360, 24);
-            this.txtAttachmentType.TabIndex = 16;
             // 
             // label1
             // 
@@ -361,6 +352,7 @@
             // 
             // grpBVisitorGridView
             // 
+            this.grpBVisitorGridView.BackColor = System.Drawing.Color.WhiteSmoke;
             this.grpBVisitorGridView.Controls.Add(this.dgvVisitor);
             this.grpBVisitorGridView.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpBVisitorGridView.ForeColor = System.Drawing.Color.Black;
@@ -429,6 +421,7 @@
             this.dgvVisitor.UseCustomForeColor = true;
             this.dgvVisitor.UseStyleColors = true;
             this.dgvVisitor.VirtualMode = true;
+            this.dgvVisitor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVisitorsCellClick);
             // 
             // fname
             // 
@@ -477,6 +470,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.grpBVisitorGridView);
             this.Controls.Add(this.grpBVisitor);
             this.Name = "ucVisitors_PL";
@@ -511,7 +505,6 @@
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.TextBox txtPurpose;
         private System.Windows.Forms.Label lblPurpose;
-        private System.Windows.Forms.TextBox txtAttachmentType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private MetroFramework.Controls.MetroButton btnDelete;
@@ -525,7 +518,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nic_no;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Porpose;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroComboBox cmbAttachmentType;
         private MetroFramework.Controls.MetroGrid dgvVisitor;
     }
 }
