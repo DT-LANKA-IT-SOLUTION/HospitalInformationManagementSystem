@@ -100,6 +100,7 @@
     <Compile Include="Model\StaffModel.cs" />
     <Compile Include="Model\PostalModel.cs" />
     <Compile Include="Model\VisitorModel.cs" />
+    <Compile Include="Other\DatabaseConnectionCheck.cs" />
     <Compile Include="Other\EncryptionLab.cs" />
     <Compile Include="Other\FormControl.cs" />
     <Compile Include="Other\GrantUserPermission.cs" />
@@ -111,6 +112,12 @@
     </Compile>
     <Compile Include="PL\Dashboard_PL.Designer.cs">
       <DependentUpon>Dashboard_PL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\Login_PL.cs">
       <SubType>Form</SubType>
@@ -197,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Dashboard_PL.resx">
       <DependentUpon>Dashboard_PL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Login_PL.resx">
       <DependentUpon>Login_PL.cs</DependentUpon>
@@ -335,7 +345,32 @@
     <None Include="Resources\Complaints100.png" />
   </ItemGroup>
   <ItemGroup>
+
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+
+    <None Include="Resources\Logonew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spinner170px.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spinner197px.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spinner200px.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spinner190px.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spinner191px.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pulse200px.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pulse171px.gif" />
+
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
