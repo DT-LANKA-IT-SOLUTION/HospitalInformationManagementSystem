@@ -58,13 +58,19 @@
             this.txtNic = new System.Windows.Forms.TextBox();
             this.grpBVisitorGridView = new System.Windows.Forms.GroupBox();
             this.dgvVisitor = new MetroFramework.Controls.MetroGrid();
+            this.epVisitor = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ofdVisitor = new System.Windows.Forms.OpenFileDialog();
+            this.btnDownload = new MetroFramework.Controls.MetroButton();
             this.fname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OutTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AttachmentType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Source = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nic_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Porpose = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.epVisitor = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ofdVisitor = new System.Windows.Forms.OpenFileDialog();
             this.grpBVisitor.SuspendLayout();
             this.grpBVisitorGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitor)).BeginInit();
@@ -74,6 +80,7 @@
             // grpBVisitor
             // 
             this.grpBVisitor.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.grpBVisitor.Controls.Add(this.btnDownload);
             this.grpBVisitor.Controls.Add(this.cmbAttachmentType);
             this.grpBVisitor.Controls.Add(this.btnBrowse);
             this.grpBVisitor.Controls.Add(this.btnDelete);
@@ -382,6 +389,11 @@
             this.dgvVisitor.ColumnHeadersHeight = 20;
             this.dgvVisitor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fname,
+            this.Phone,
+            this.OutTime,
+            this.Note,
+            this.AttachmentType,
+            this.Source,
             this.lname,
             this.nic_no,
             this.date,
@@ -423,12 +435,66 @@
             this.dgvVisitor.VirtualMode = true;
             this.dgvVisitor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVisitorsCellClick);
             // 
+            // epVisitor
+            // 
+            this.epVisitor.ContainerControl = this;
+            // 
+            // ofdVisitor
+            // 
+            this.ofdVisitor.FileName = "ofdVisitor";
+            // 
+            // btnDownload
+            // 
+            this.btnDownload.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDownload.BackgroundImage = global::HospitalInformationManagementSystem.Properties.Resources.Download;
+            this.btnDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDownload.Location = new System.Drawing.Point(415, 501);
+            this.btnDownload.Name = "btnDownload";
+            this.btnDownload.Size = new System.Drawing.Size(55, 43);
+            this.btnDownload.TabIndex = 23;
+            this.btnDownload.UseSelectable = true;
+            this.btnDownload.Visible = false;
+            // 
             // fname
             // 
             this.fname.DataPropertyName = "fname";
             this.fname.HeaderText = "First Name";
             this.fname.Name = "fname";
             this.fname.ReadOnly = true;
+            // 
+            // Phone
+            // 
+            this.Phone.DataPropertyName = "phone_no";
+            this.Phone.HeaderText = "Phone";
+            this.Phone.Name = "Phone";
+            this.Phone.ReadOnly = true;
+            // 
+            // OutTime
+            // 
+            this.OutTime.DataPropertyName = "out_time";
+            this.OutTime.HeaderText = "Out Time";
+            this.OutTime.Name = "OutTime";
+            this.OutTime.ReadOnly = true;
+            // 
+            // Note
+            // 
+            this.Note.DataPropertyName = "note";
+            this.Note.HeaderText = "Note";
+            this.Note.Name = "Note";
+            this.Note.ReadOnly = true;
+            // 
+            // AttachmentType
+            // 
+            this.AttachmentType.DataPropertyName = "attachment_type";
+            this.AttachmentType.HeaderText = "Attachment Type";
+            this.AttachmentType.Name = "AttachmentType";
+            this.AttachmentType.ReadOnly = true;
+            // 
+            // Source
+            // 
+            this.Source.HeaderText = "Source";
+            this.Source.Name = "Source";
+            this.Source.ReadOnly = true;
             // 
             // lname
             // 
@@ -457,14 +523,6 @@
             this.Porpose.HeaderText = "Purpose";
             this.Porpose.Name = "Porpose";
             this.Porpose.ReadOnly = true;
-            // 
-            // epVisitor
-            // 
-            this.epVisitor.ContainerControl = this;
-            // 
-            // ofdVisitor
-            // 
-            this.ofdVisitor.FileName = "ofdVisitor";
             // 
             // ucVisitors_PL
             // 
@@ -513,12 +571,18 @@
         private MetroFramework.Controls.MetroButton btnBrowse;
         private System.Windows.Forms.ErrorProvider epVisitor;
         private System.Windows.Forms.OpenFileDialog ofdVisitor;
+        private MetroFramework.Controls.MetroComboBox cmbAttachmentType;
+        private MetroFramework.Controls.MetroGrid dgvVisitor;
+        private MetroFramework.Controls.MetroButton btnDownload;
         private System.Windows.Forms.DataGridViewTextBoxColumn fname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OutTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Note;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AttachmentType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Source;
         private System.Windows.Forms.DataGridViewTextBoxColumn lname;
         private System.Windows.Forms.DataGridViewTextBoxColumn nic_no;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Porpose;
-        private MetroFramework.Controls.MetroComboBox cmbAttachmentType;
-        private MetroFramework.Controls.MetroGrid dgvVisitor;
     }
 }

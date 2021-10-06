@@ -228,28 +228,26 @@ namespace HospitalInformationManagementSystem.PL
 
         private void dgvVisitorsCellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (dgvVisitor.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
-            //{
-            //    dgvVisitor.CurrentRow.Selected = true;
 
-            //    txtFirstName.Text = dgvVisitor.Rows[e.RowIndex].Cells["f_name"].FormattedValue.ToString();
-            //    txtLastName.Text = dgvVisitor.Rows[e.RowIndex].Cells["l_name"].FormattedValue.ToString();
-            //    txtNIC.Text = dgvVisitor.Rows[e.RowIndex].Cells["nic_no"].FormattedValue.ToString();
-            //    txtPhone.Text = dgvVisitor.Rows[e.RowIndex].Cells["phone_no"].FormattedValue.ToString();
-            //    txtAddress.Text = dgvVisitor.Rows[e.RowIndex].Cells["address"].FormattedValue.ToString();
-            //    dtpBirthDay.Text = dgvVisitor.Rows[e.RowIndex].Cells["dob"].FormattedValue.ToString();
-            //    txtAllergies.Text = dgvPatient.Rows[e.RowIndex].Cells["allergies"].FormattedValue.ToString();
-            //    txtUsername.Text = dgvPatient.Rows[e.RowIndex].Cells["Username"].FormattedValue.ToString();
-            //    txtPassword.Text = EncryptionLab.DecryptText(dgvPatient.Rows[e.RowIndex].Cells["password"].FormattedValue.ToString());
+            if (dgvVisitor.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                btnDownload.Visible = true;
+                dgvVisitor.CurrentRow.Selected = true;
+                
+                txtFirstName.Text = dgvVisitor.Rows[e.RowIndex].Cells["fname"].FormattedValue.ToString();
+                txtLastName.Text = dgvVisitor.Rows[e.RowIndex].Cells["lname"].FormattedValue.ToString();
+                txtNic.Text = dgvVisitor.Rows[e.RowIndex].Cells["nic_no"].FormattedValue.ToString();
+                txtPhone.Text = dgvVisitor.Rows[e.RowIndex].Cells["phone_no"].FormattedValue.ToString();
+                dtpOutTime.Text = dgvVisitor.Rows[e.RowIndex].Cells["out_time"].FormattedValue.ToString();
+                txtPurpose.Text = dgvVisitor.Rows[e.RowIndex].Cells["purpose"].FormattedValue.ToString();
+                dtpDate.Text = dgvVisitor.Rows[e.RowIndex].Cells["date"].FormattedValue.ToString();
+                txtNote.Text = dgvVisitor.Rows[e.RowIndex].Cells["note"].FormattedValue.ToString();
+                cmbAttachmentType.Text = dgvVisitor.Rows[e.RowIndex].Cells["attachment_type"].FormattedValue.ToString();
+                cmbAttachmentType.Text = dgvVisitor.Rows[e.RowIndex].Cells["attachment_data"].FormattedValue.ToString();
+                            
 
-            //    cmbBloadGroup.Text = dgvPatient.Rows[e.RowIndex].Cells["blood_group"].FormattedValue.ToString();
-            //    cmbMaritalStatus.Text = dgvPatient.Rows[e.RowIndex].Cells["marital_status"].FormattedValue.ToString();
-            //    cmbGender.Text = dgvPatient.Rows[e.RowIndex].Cells["gender"].FormattedValue.ToString();
-
-            //    txtUserID.Text = dgvPatient.Rows[e.RowIndex].Cells["user_id"].FormattedValue.ToString();
-
-            //    //btnAddPatient.Enabled = false;
-            //}
+                //btnAddPatient.Enabled = false;
+            }
         }
     }
 }

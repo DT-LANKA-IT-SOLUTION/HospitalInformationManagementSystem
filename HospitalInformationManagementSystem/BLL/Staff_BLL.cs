@@ -65,5 +65,18 @@ namespace HospitalInformationManagementSystem.BLL
                 throw;
             }
         }
+
+        public string CheckUserByUsername(StaffModel staffModel)
+        {
+            try
+            {
+                return Staff_DLL.GetUserByUsername(staffModel);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

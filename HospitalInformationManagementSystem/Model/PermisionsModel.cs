@@ -25,5 +25,6 @@ namespace HospitalInformationManagementSystem.Model
         public static string reports { get; set; }
         public static string staff { get; set; }
         public static bool islogin { get; set; }
+        
     }
 }

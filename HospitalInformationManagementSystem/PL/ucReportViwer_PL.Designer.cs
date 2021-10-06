@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rptReportView = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            //this.rptReportView = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.SuspendLayout();
             // 
             // rptReportView
             // 
-            this.rptReportView.ActiveViewIndex = -1;
-            this.rptReportView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rptReportView.Cursor = System.Windows.Forms.Cursors.Default;
-            this.rptReportView.Location = new System.Drawing.Point(0, 209);
-            this.rptReportView.Name = "rptReportView";
-            this.rptReportView.Size = new System.Drawing.Size(803, 482);
-            this.rptReportView.TabIndex = 0;
-            this.rptReportView.Load += new System.EventHandler(this.RptReportView_Load);
+            //this.rptReportView.ActiveViewIndex = -1;
+            //this.rptReportView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            //this.rptReportView.Cursor = System.Windows.Forms.Cursors.Default;
+            //this.rptReportView.Location = new System.Drawing.Point(0, 209);
+            //this.rptReportView.Name = "rptReportView";
+            //this.rptReportView.Size = new System.Drawing.Size(803, 482);
+            //this.rptReportView.TabIndex = 0;
+            //this.rptReportView.Load += new System.EventHandler(this.RptReportView_Load);
             // 
             // ucReportViwer_PL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.rptReportView);
+            //this.Controls.Add(this.rptReportView);
             this.Name = "ucReportViwer_PL";
             this.Size = new System.Drawing.Size(1024, 691);
             this.ResumeLayout(false);
@@ -55,6 +55,6 @@
 
         #endregion
 
-        public CrystalDecisions.Windows.Forms.CrystalReportViewer rptReportView;
+       // public CrystalDecisions.Windows.Forms.CrystalReportViewer rptReportView;
     }
 }
