@@ -1,4 +1,5 @@
 ﻿using HospitalInformationManagementSystem.DAL;
+using HospitalInformationManagementSystem.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,42 @@ namespace HospitalInformationManagementSystem.BLL
             catch (Exception)
             {
 
+                throw;
+            }
+        }
+
+        public int AddComplaints(ComplaintModel complaintModel)
+        {
+            try
+            {
+                return Complaint_DLL.AddComplaints(complaintModel);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public int UpdateComplaints(ComplaintModel complaintModel)
+        {
+            try
+            {
+                return Complaint_DLL.UpdateComplaints(complaintModel);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public int DeleteComplaints(bool Active, int comp_id)
+        {
+            try
+            {
+                return Complaint_DLL.DeleteComplaints(Active,comp_id);
+            }
+            catch (Exception)
+            {
                 throw;
             }
         }

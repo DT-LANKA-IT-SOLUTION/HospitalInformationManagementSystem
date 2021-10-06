@@ -29,6 +29,7 @@ namespace HospitalInformationManagementSystem.PL
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvComplaints = new System.Windows.Forms.DataGridView();
             this.comp_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +42,8 @@ namespace HospitalInformationManagementSystem.PL
             this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnComplaintBrowse = new MetroFramework.Controls.MetroButton();
+            this.label10 = new System.Windows.Forms.Label();
             this.btnDeleteComplaint = new System.Windows.Forms.Button();
             this.btnEditComplaint = new System.Windows.Forms.Button();
             this.btnAddComplaint = new System.Windows.Forms.Button();
@@ -62,9 +65,12 @@ namespace HospitalInformationManagementSystem.PL
             this.txtComplaintBy = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ofdComplaints = new System.Windows.Forms.OpenFileDialog();
+            this.epComplaints = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComplaints)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epComplaints)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -99,8 +105,10 @@ namespace HospitalInformationManagementSystem.PL
             this.dgvComplaints.Location = new System.Drawing.Point(3, 25);
             this.dgvComplaints.Name = "dgvComplaints";
             this.dgvComplaints.ReadOnly = true;
+            this.dgvComplaints.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvComplaints.Size = new System.Drawing.Size(499, 657);
             this.dgvComplaints.TabIndex = 0;
+            this.dgvComplaints.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvComplaints_CellClick);
             // 
             // comp_id
             // 
@@ -170,6 +178,8 @@ namespace HospitalInformationManagementSystem.PL
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnComplaintBrowse);
+            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.btnDeleteComplaint);
             this.groupBox1.Controls.Add(this.btnEditComplaint);
             this.groupBox1.Controls.Add(this.btnAddComplaint);
@@ -200,12 +210,33 @@ namespace HospitalInformationManagementSystem.PL
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Complaint Form";
             // 
+            // btnComplaintBrowse
+            // 
+            this.btnComplaintBrowse.Location = new System.Drawing.Point(151, 573);
+            this.btnComplaintBrowse.Name = "btnComplaintBrowse";
+            this.btnComplaintBrowse.Size = new System.Drawing.Size(141, 32);
+            this.btnComplaintBrowse.TabIndex = 15;
+            this.btnComplaintBrowse.Text = "Browse";
+            this.btnComplaintBrowse.UseSelectable = true;
+            this.btnComplaintBrowse.Click += new System.EventHandler(this.BtnComplaintBrowse_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(6, 578);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 18);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Attachment";
+            // 
             // btnDeleteComplaint
             // 
             this.btnDeleteComplaint.BackColor = System.Drawing.Color.Red;
             this.btnDeleteComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteComplaint.ForeColor = System.Drawing.Color.Black;
-            this.btnDeleteComplaint.Location = new System.Drawing.Point(347, 560);
+            this.btnDeleteComplaint.Location = new System.Drawing.Point(347, 625);
             this.btnDeleteComplaint.Name = "btnDeleteComplaint";
             this.btnDeleteComplaint.Size = new System.Drawing.Size(141, 47);
             this.btnDeleteComplaint.TabIndex = 13;
@@ -217,7 +248,7 @@ namespace HospitalInformationManagementSystem.PL
             this.btnEditComplaint.BackColor = System.Drawing.Color.Yellow;
             this.btnEditComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditComplaint.ForeColor = System.Drawing.Color.Black;
-            this.btnEditComplaint.Location = new System.Drawing.Point(183, 560);
+            this.btnEditComplaint.Location = new System.Drawing.Point(183, 625);
             this.btnEditComplaint.Name = "btnEditComplaint";
             this.btnEditComplaint.Size = new System.Drawing.Size(141, 47);
             this.btnEditComplaint.TabIndex = 13;
@@ -229,12 +260,13 @@ namespace HospitalInformationManagementSystem.PL
             this.btnAddComplaint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAddComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddComplaint.ForeColor = System.Drawing.Color.Black;
-            this.btnAddComplaint.Location = new System.Drawing.Point(19, 560);
+            this.btnAddComplaint.Location = new System.Drawing.Point(19, 625);
             this.btnAddComplaint.Name = "btnAddComplaint";
             this.btnAddComplaint.Size = new System.Drawing.Size(141, 47);
             this.btnAddComplaint.TabIndex = 13;
             this.btnAddComplaint.Text = "Add Complaint";
             this.btnAddComplaint.UseVisualStyleBackColor = false;
+            this.btnAddComplaint.Click += new System.EventHandler(this.BtnAddComplaint_Click);
             // 
             // dtpDate
             // 
@@ -248,7 +280,7 @@ namespace HospitalInformationManagementSystem.PL
             // txtNote
             // 
             this.txtNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNote.Location = new System.Drawing.Point(151, 447);
+            this.txtNote.Location = new System.Drawing.Point(151, 466);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(337, 90);
@@ -287,7 +319,7 @@ namespace HospitalInformationManagementSystem.PL
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(6, 450);
+            this.label2.Location = new System.Drawing.Point(6, 469);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 18);
             this.label2.TabIndex = 7;
@@ -309,7 +341,7 @@ namespace HospitalInformationManagementSystem.PL
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(6, 407);
+            this.label9.Location = new System.Drawing.Point(6, 402);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(94, 18);
             this.label9.TabIndex = 6;
@@ -350,10 +382,6 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.cmbComplaintType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbComplaintType.FormattingEnabled = true;
-            this.cmbComplaintType.Items.AddRange(new object[] {
-            "Management",
-            "Clinical",
-            "Relationships & Behavior"});
             this.cmbComplaintType.Location = new System.Drawing.Point(151, 76);
             this.cmbComplaintType.Name = "cmbComplaintType";
             this.cmbComplaintType.Size = new System.Drawing.Size(337, 26);
@@ -363,9 +391,10 @@ namespace HospitalInformationManagementSystem.PL
             // txtActionTaken
             // 
             this.txtActionTaken.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtActionTaken.Location = new System.Drawing.Point(151, 404);
+            this.txtActionTaken.Location = new System.Drawing.Point(151, 399);
+            this.txtActionTaken.Multiline = true;
             this.txtActionTaken.Name = "txtActionTaken";
-            this.txtActionTaken.Size = new System.Drawing.Size(337, 24);
+            this.txtActionTaken.Size = new System.Drawing.Size(337, 56);
             this.txtActionTaken.TabIndex = 1;
             // 
             // txtPhone
@@ -417,6 +446,14 @@ namespace HospitalInformationManagementSystem.PL
             this.label1.TabIndex = 0;
             this.label1.Text = "Complaint By";
             // 
+            // ofdComplaints
+            // 
+            this.ofdComplaints.FileName = "ofdComplaints";
+            // 
+            // epComplaints
+            // 
+            this.epComplaints.ContainerControl = this;
+            // 
             // ucComplaint_PL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -430,6 +467,7 @@ namespace HospitalInformationManagementSystem.PL
             ((System.ComponentModel.ISupportInitialize)(this.dgvComplaints)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.epComplaints)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -469,5 +507,9 @@ namespace HospitalInformationManagementSystem.PL
         private System.Windows.Forms.DataGridViewTextBoxColumn user_id;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtActionTaken;
+        private System.Windows.Forms.Label label10;
+        private MetroFramework.Controls.MetroButton btnComplaintBrowse;
+        private System.Windows.Forms.OpenFileDialog ofdComplaints;
+        private System.Windows.Forms.ErrorProvider epComplaints;
     }
 }

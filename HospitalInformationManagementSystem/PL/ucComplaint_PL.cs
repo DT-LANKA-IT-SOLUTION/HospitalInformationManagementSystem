@@ -1,5 +1,6 @@
 ﻿using HospitalInformationManagementSystem.BLL;
 using HospitalInformationManagementSystem.Model;
+using HospitalInformationManagementSystem.Other;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,8 @@ namespace HospitalInformationManagementSystem.PL
     {
         Complaint_BLL _complaint_BLL = new Complaint_BLL();
 
+        Reference_BLL _reference_BLL = new Reference_BLL();
+
         ComplaintModel complaintModel = new ComplaintModel();
 
         public ucComplaint_PL()
@@ -26,6 +29,20 @@ namespace HospitalInformationManagementSystem.PL
         private void ucComplaint_PL_Load(object sender, EventArgs e)
         {
             this.FilDGVComplaints();
+            this.LoadComboBoxComplaintType();
+            cmbComplaintType.SelectedIndex = -1;
+        }
+
+        private void LoadComboBoxComplaintType()
+        {
+            try
+            {
+                _reference_BLL.GetComplaintTypes(cmbComplaintType);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void FilDGVComplaints()
@@ -37,18 +54,17 @@ namespace HospitalInformationManagementSystem.PL
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
             }
         }
 
 
         private void cmbComplaintType_SelectedValueChanged(object sender, EventArgs e)
         {
-            string[] comCategory = new string[15] { 
-                "Environment", 
-                "Finances & Billing", 
-                "Service Issues", 
-                "Access & Admissions", 
+            string[] comCategory = new string[15] {
+                "Environment",
+                "Finances & Billing",
+                "Service Issues",
+                "Access & Admissions",
                 "Delays",
                 "Treatment",
                 "Quality of Care",
@@ -62,17 +78,21 @@ namespace HospitalInformationManagementSystem.PL
                 "Confidentiality"
             };
 
-            if (cmbComplaintType.SelectedItem.Equals("Management"))
+            if (cmbComplaintType.SelectedValue == null)
+            {
+                cmbComplaintCategory.Items.Clear();
+            }
+            else if (cmbComplaintType.SelectedValue.ToString().Equals("Management"))
             {
                 cmbComplaintCategory.Items.Clear();
 
-                for(int i = 0; i < 5; i++)
+                for (int i = 0; i < 5; i++)
                 {
                     cmbComplaintCategory.Items.Add(comCategory[i]);
                 }
-                
+
             }
-            else if (cmbComplaintType.SelectedItem.Equals("Clinical"))
+            else if (cmbComplaintType.SelectedValue.ToString().Equals("Clinical"))
             {
                 cmbComplaintCategory.Items.Clear();
 
@@ -81,7 +101,7 @@ namespace HospitalInformationManagementSystem.PL
                     cmbComplaintCategory.Items.Add(comCategory[i]);
                 }
             }
-            else if (cmbComplaintType.SelectedItem.Equals("Relationships & Behavior"))
+            else if (cmbComplaintType.SelectedValue.ToString().Equals("Relationships & Behavior"))
             {
                 cmbComplaintCategory.Items.Clear();
 
@@ -90,8 +110,108 @@ namespace HospitalInformationManagementSystem.PL
                     cmbComplaintCategory.Items.Add(comCategory[i]);
                 }
             }
+            
         }
 
-        
+        private void BtnComplaintBrowse_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ofdComplaints.Title = "Browse Files";
+                if (ofdComplaints.ShowDialog() == DialogResult.OK)
+                {
+                    complaintModel.attachment_data = ofdComplaints.FileName;
+                    complaintModel.attachment_type = ofdComplaints.GetType().ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnAddComplaint_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (AddComplaint() > 0)
+                {
+                    MessageBox.Show("Complaint Add Sucessfull");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private int AddComplaint()
+        {
+            try
+            {
+                if (IsValide())
+                {
+                    complaintModel.complaint_by = txtComplaintBy.Text.Trim();
+                    complaintModel.complaint_type = cmbComplaintType.Text.Trim();
+                    complaintModel.complaintCategory = cmbComplaintCategory.Text.Trim();
+                    complaintModel.description = txtDescription.Text.Trim();
+                    complaintModel.date = Convert.ToDateTime(dtpDate.Text.Trim());
+                    complaintModel.nic_no = txtNIC.Text.Trim();
+                    complaintModel.phone_no = Int32.Parse(txtPhone.Text.Trim());
+                    complaintModel.action_taken = txtActionTaken.Text.Trim();
+                    complaintModel.note = txtNote.Text.Trim();
+                    complaintModel.IsActive = true;
+
+                    return _complaint_BLL.AddComplaints(complaintModel);
+                }
+                return 0;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private bool IsValide()
+        {
+            try
+            {
+                if (ValidationLab.ComboBoxValidation(cmbComplaintType, epComplaints) == false)
+                {
+                    return false;
+                }
+
+                if (ValidationLab.ComboBoxValidation(cmbComplaintCategory, epComplaints) == false)
+                {
+                    return false;
+                }
+
+                if (ValidationLab.TextBoxValidation(txtDescription, epComplaints) == false)
+                {
+                    return false;
+                }
+
+                if (ValidationLab.TextBoxValidation(txtActionTaken, epComplaints) == false)
+                {
+                    return false;
+                }
+
+                if (ValidationLab.TextBoxValidation(txtNote, epComplaints) == false)
+                {
+                    return false;
+                }
+
+                return true;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void DgvComplaints_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -23,7 +23,7 @@ namespace HospitalInformationManagementSystem.Other
             {
                 if (regx != null)
                 {
-                    Regex reg = new Regex(@"" + regx);
+                    Regex reg = new Regex(regx);
 
                     bool result = reg.IsMatch(textBox.Text.Trim());
 

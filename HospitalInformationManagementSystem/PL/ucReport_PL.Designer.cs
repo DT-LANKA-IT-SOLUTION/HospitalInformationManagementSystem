@@ -29,30 +29,24 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.btnAppointmentReport = new MetroFramework.Controls.MetroButton();
             this.dtpAppointmentTo = new MetroFramework.Controls.MetroDateTime();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpAppointmentFrom = new MetroFramework.Controls.MetroDateTime();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnUserLogReport = new MetroFramework.Controls.MetroButton();
-            this.dtpUserTo = new MetroFramework.Controls.MetroDateTime();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dtpUserFrom = new MetroFramework.Controls.MetroDateTime();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnPatientLoginReport = new MetroFramework.Controls.MetroButton();
-            this.dtpPatientTo = new MetroFramework.Controls.MetroDateTime();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dtpPatientFrom = new MetroFramework.Controls.MetroDateTime();
-            this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.rptReportViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btnAppointmentReport);
             this.groupBox1.Controls.Add(this.dtpAppointmentTo);
             this.groupBox1.Controls.Add(this.label2);
@@ -61,16 +55,40 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(13, 15);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(999, 100);
+            this.groupBox1.Size = new System.Drawing.Size(999, 78);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Appointment Report";
+            this.groupBox1.Text = "Report";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Appointment Report",
+            "User Log",
+            "Patient Login Credential"});
+            this.comboBox1.Location = new System.Drawing.Point(111, 36);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(185, 26);
+            this.comboBox1.TabIndex = 6;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(12, 39);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 18);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Report Type";
             // 
             // btnAppointmentReport
             // 
             this.btnAppointmentReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAppointmentReport.ForeColor = System.Drawing.Color.Black;
-            this.btnAppointmentReport.Location = new System.Drawing.Point(445, 44);
+            this.btnAppointmentReport.Location = new System.Drawing.Point(780, 31);
             this.btnAppointmentReport.Name = "btnAppointmentReport";
             this.btnAppointmentReport.Size = new System.Drawing.Size(153, 29);
             this.btnAppointmentReport.TabIndex = 4;
@@ -81,7 +99,7 @@
             // dtpAppointmentTo
             // 
             this.dtpAppointmentTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpAppointmentTo.Location = new System.Drawing.Point(281, 44);
+            this.dtpAppointmentTo.Location = new System.Drawing.Point(602, 31);
             this.dtpAppointmentTo.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtpAppointmentTo.Name = "dtpAppointmentTo";
             this.dtpAppointmentTo.Size = new System.Drawing.Size(105, 29);
@@ -92,7 +110,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(216, 48);
+            this.label2.Location = new System.Drawing.Point(543, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 18);
             this.label2.TabIndex = 2;
@@ -101,7 +119,7 @@
             // dtpAppointmentFrom
             // 
             this.dtpAppointmentFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpAppointmentFrom.Location = new System.Drawing.Point(71, 44);
+            this.dtpAppointmentFrom.Location = new System.Drawing.Point(395, 31);
             this.dtpAppointmentFrom.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtpAppointmentFrom.Name = "dtpAppointmentFrom";
             this.dtpAppointmentFrom.Size = new System.Drawing.Size(105, 29);
@@ -112,159 +130,54 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(6, 48);
+            this.label1.Location = new System.Drawing.Point(315, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "From";
             // 
-            // groupBox2
+            // panel1
             // 
-            this.groupBox2.Controls.Add(this.btnUserLogReport);
-            this.groupBox2.Controls.Add(this.dtpUserTo);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.dtpUserFrom);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(13, 145);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(999, 100);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "User Log";
+            this.panel1.Controls.Add(this.crystalReportViewer1);
+            this.panel1.Controls.Add(this.rptReportViewer);
+            this.panel1.Location = new System.Drawing.Point(13, 109);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(999, 569);
+            this.panel1.TabIndex = 1;
             // 
-            // btnUserLogReport
+            // crystalReportViewer1
             // 
-            this.btnUserLogReport.BackColor = System.Drawing.Color.YellowGreen;
-            this.btnUserLogReport.ForeColor = System.Drawing.Color.Black;
-            this.btnUserLogReport.Location = new System.Drawing.Point(445, 47);
-            this.btnUserLogReport.Name = "btnUserLogReport";
-            this.btnUserLogReport.Size = new System.Drawing.Size(153, 29);
-            this.btnUserLogReport.TabIndex = 8;
-            this.btnUserLogReport.Text = "Generate Reports";
-            this.btnUserLogReport.UseSelectable = true;
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(999, 569);
+            this.crystalReportViewer1.TabIndex = 1;
             // 
-            // dtpUserTo
+            // rptReportViewer
             // 
-            this.dtpUserTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpUserTo.Location = new System.Drawing.Point(281, 47);
-            this.dtpUserTo.MinimumSize = new System.Drawing.Size(0, 29);
-            this.dtpUserTo.Name = "dtpUserTo";
-            this.dtpUserTo.Size = new System.Drawing.Size(105, 29);
-            this.dtpUserTo.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(216, 51);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 18);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "To";
-            // 
-            // dtpUserFrom
-            // 
-            this.dtpUserFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpUserFrom.Location = new System.Drawing.Point(71, 47);
-            this.dtpUserFrom.MinimumSize = new System.Drawing.Size(0, 29);
-            this.dtpUserFrom.Name = "dtpUserFrom";
-            this.dtpUserFrom.Size = new System.Drawing.Size(105, 29);
-            this.dtpUserFrom.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(6, 51);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 18);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "From";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.btnPatientLoginReport);
-            this.groupBox3.Controls.Add(this.dtpPatientTo);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.dtpPatientFrom);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(13, 276);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(999, 100);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Patient Login Credential";
-            // 
-            // btnPatientLoginReport
-            // 
-            this.btnPatientLoginReport.BackColor = System.Drawing.Color.YellowGreen;
-            this.btnPatientLoginReport.ForeColor = System.Drawing.Color.Black;
-            this.btnPatientLoginReport.Location = new System.Drawing.Point(445, 47);
-            this.btnPatientLoginReport.Name = "btnPatientLoginReport";
-            this.btnPatientLoginReport.Size = new System.Drawing.Size(153, 29);
-            this.btnPatientLoginReport.TabIndex = 12;
-            this.btnPatientLoginReport.Text = "Generate Reports";
-            this.btnPatientLoginReport.UseSelectable = true;
-            // 
-            // dtpPatientTo
-            // 
-            this.dtpPatientTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpPatientTo.Location = new System.Drawing.Point(281, 47);
-            this.dtpPatientTo.MinimumSize = new System.Drawing.Size(0, 29);
-            this.dtpPatientTo.Name = "dtpPatientTo";
-            this.dtpPatientTo.Size = new System.Drawing.Size(105, 29);
-            this.dtpPatientTo.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(216, 51);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 18);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "To";
-            // 
-            // dtpPatientFrom
-            // 
-            this.dtpPatientFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpPatientFrom.Location = new System.Drawing.Point(71, 47);
-            this.dtpPatientFrom.MinimumSize = new System.Drawing.Size(0, 29);
-            this.dtpPatientFrom.Name = "dtpPatientFrom";
-            this.dtpPatientFrom.Size = new System.Drawing.Size(105, 29);
-            this.dtpPatientFrom.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(6, 51);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 18);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "From";
+            this.rptReportViewer.ActiveViewIndex = -1;
+            this.rptReportViewer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rptReportViewer.Cursor = System.Windows.Forms.Cursors.Default;
+            this.rptReportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rptReportViewer.Location = new System.Drawing.Point(0, 0);
+            this.rptReportViewer.Name = "rptReportViewer";
+            this.rptReportViewer.Size = new System.Drawing.Size(999, 569);
+            this.rptReportViewer.TabIndex = 0;
             // 
             // ucReport_PL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Name = "ucReport_PL";
             this.Size = new System.Drawing.Size(1024, 691);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -272,22 +185,15 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
         private MetroFramework.Controls.MetroButton btnAppointmentReport;
         private MetroFramework.Controls.MetroDateTime dtpAppointmentTo;
         private System.Windows.Forms.Label label2;
         private MetroFramework.Controls.MetroDateTime dtpAppointmentFrom;
         private System.Windows.Forms.Label label1;
-        private MetroFramework.Controls.MetroButton btnUserLogReport;
-        private MetroFramework.Controls.MetroDateTime dtpUserTo;
-        private System.Windows.Forms.Label label4;
-        private MetroFramework.Controls.MetroDateTime dtpUserFrom;
-        private System.Windows.Forms.Label label3;
-        private MetroFramework.Controls.MetroButton btnPatientLoginReport;
-        private MetroFramework.Controls.MetroDateTime dtpPatientTo;
-        private System.Windows.Forms.Label label6;
-        private MetroFramework.Controls.MetroDateTime dtpPatientFrom;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel1;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer rptReportViewer;
     }
 }
