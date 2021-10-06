@@ -130,9 +130,6 @@ namespace HospitalInformationManagementSystem.PL
             this.label15 = new System.Windows.Forms.Label();
             this.txtSearchByNIC = new System.Windows.Forms.TextBox();
             this.dgvStaff = new MetroFramework.Controls.MetroGrid();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.epStaff = new System.Windows.Forms.ErrorProvider(this.components);
             this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.user_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -150,6 +147,9 @@ namespace HospitalInformationManagementSystem.PL
             this.staff_email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.join_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.photo_data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.epStaff = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel14.SuspendLayout();
@@ -1308,32 +1308,6 @@ namespace HospitalInformationManagementSystem.PL
             this.dgvStaff.TabIndex = 2;
             this.dgvStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellClick);
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(416, 14);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(78, 30);
-            this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // panel13
-            // 
-            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel13.Controls.Add(this.dgvStaff);
-            this.panel13.Controls.Add(this.btnSearch);
-            this.panel13.Controls.Add(this.txtSearchByNIC);
-            this.panel13.Controls.Add(this.label15);
-            this.panel13.Location = new System.Drawing.Point(484, 14);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(521, 210);
-            this.panel13.TabIndex = 22;
-            // 
-            // epStaff
-            // 
-            this.epStaff.ContainerControl = this;
-            // 
             // user_id
             // 
             this.user_id.DataPropertyName = "user_id";
@@ -1463,6 +1437,32 @@ namespace HospitalInformationManagementSystem.PL
             this.photo_data.Name = "photo_data";
             this.photo_data.ReadOnly = true;
             this.photo_data.Visible = false;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.Location = new System.Drawing.Point(416, 14);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(78, 30);
+            this.btnSearch.TabIndex = 3;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // panel13
+            // 
+            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel13.Controls.Add(this.dgvStaff);
+            this.panel13.Controls.Add(this.btnSearch);
+            this.panel13.Controls.Add(this.txtSearchByNIC);
+            this.panel13.Controls.Add(this.label15);
+            this.panel13.Location = new System.Drawing.Point(484, 14);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(521, 210);
+            this.panel13.TabIndex = 22;
+            // 
+            // epStaff
+            // 
+            this.epStaff.ContainerControl = this;
             // 
             // ucStaff_PL
             // 

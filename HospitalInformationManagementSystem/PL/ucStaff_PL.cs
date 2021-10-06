@@ -24,6 +24,7 @@ namespace HospitalInformationManagementSystem.PL
         public ucStaff_PL()
         {
             InitializeComponent();
+            _grantUserPermission.GrantButtonPermission("staff", btnAddStaff, btnEditStaff, btnDeleteStaff);
         }
 
         private void ucStaff_PL_Load(object sender, EventArgs e)
