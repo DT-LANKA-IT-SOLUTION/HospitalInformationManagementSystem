@@ -18,7 +18,7 @@ namespace HospitalInformationManagementSystem.DAL
         {
             try
             {
-                string sql = string.Format("SELECT * FROM Visitors WHERE Visitors.IsActive=@IsActive");
+                string sql = string.Format("SELECT * FROM Visitors"); //WHERE Visitors.IsActive = @IsActive
                 SqlParameter[] _sql = new SqlParameter[1];
                 _sql[0] = SqlParameterFormat.Format("@IsActive", true);
 
@@ -58,7 +58,7 @@ namespace HospitalInformationManagementSystem.DAL
                // _sql[6] = SqlParameterFormat.Format("@in_time", visitorModel.in_time);
                 _sql[6] = SqlParameterFormat.Format("@out_time", visitorModel.out_time);
                 _sql[7] = SqlParameterFormat.Format("@note", visitorModel.note);
-                _sql[8] = SqlParameterFormat.Format("@attachment_type", visitorModel.attachment_type);
+                _sql[8] = SqlParameterFormat.Format("@attachment_type", visitorModel.cmbAttachmentType);
                 _sql[9] = SqlParameterFormat.Format("@attachment_data", file);
                 _sql[10] = SqlParameterFormat.Format("@user_id", PermisionsModel.user_id);
 
@@ -104,7 +104,7 @@ namespace HospitalInformationManagementSystem.DAL
         //        _sql[6] = SqlParameterFormat.Format("@in_time", visitorModel.in_time);
                 _sql[6] = SqlParameterFormat.Format("@out_time", visitorModel.out_time);
                 _sql[7] = SqlParameterFormat.Format("@note", visitorModel.note);
-                _sql[8] = SqlParameterFormat.Format("@attachment_type", visitorModel.attachment_type);
+                _sql[8] = SqlParameterFormat.Format("@attachment_type", visitorModel.cmbAttachmentType);
                 _sql[9] = SqlParameterFormat.Format("@attachment_data", visitorModel.attachment_data);
                 _sql[10] = SqlParameterFormat.Format("@user_id", PermisionsModel.user_id);
 

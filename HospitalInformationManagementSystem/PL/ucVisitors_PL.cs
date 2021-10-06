@@ -127,10 +127,11 @@ namespace HospitalInformationManagementSystem.PL
                     visitorModel.out_time = Convert.ToDateTime(dtpOutTime.Text.Trim());
                     visitorModel.note = txtNote.Text.Trim();
                     visitorModel.purpose = txtPurpose.Text.Trim();
-                    visitorModel.attachment_type = txtAttachmentType.Text.Trim();
+                    visitorModel.cmbAttachmentType = cmbAttachmentType.Text.Trim();
 
                     visitorModel.IsActive = true;
                     return _visitor_BLL.AddVisitor(visitorModel);
+                    epVisitor.Clear();
                 }
 
                 return 0;
@@ -152,7 +153,7 @@ namespace HospitalInformationManagementSystem.PL
                 if (ofdVisitor.ShowDialog() == DialogResult.OK)
                 {
                     visitorModel.attachment_data = ofdVisitor.FileName;
-                    visitorModel.attachment_type = ofdVisitor.GetType().ToString();
+                    visitorModel.cmbAttachmentType = ofdVisitor.GetType().ToString();
                 }
             }
             catch (Exception ex)
@@ -204,7 +205,7 @@ namespace HospitalInformationManagementSystem.PL
                     visitorModel.out_time = Convert.ToDateTime(dtpOutTime.Text.Trim());
                     visitorModel.note = txtNote.Text.Trim();
                     visitorModel.purpose = txtPurpose.Text.Trim();
-                    visitorModel.attachment_type = txtAttachmentType.Text.Trim();
+                    visitorModel.cmbAttachmentType = cmbAttachmentType.Text.Trim();
 
                     visitorModel.IsActive = true;
                     return _visitor_BLL.AddVisitor(visitorModel);
@@ -223,6 +224,30 @@ namespace HospitalInformationManagementSystem.PL
         {
             this.FillDGVVisitor();
             epVisitor.Clear();
+        }
+
+        private void dgvVisitorsCellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (dgvVisitor.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                btnDownload.Visible = true;
+                dgvVisitor.CurrentRow.Selected = true;
+                
+                txtFirstName.Text = dgvVisitor.Rows[e.RowIndex].Cells["fname"].FormattedValue.ToString();
+                txtLastName.Text = dgvVisitor.Rows[e.RowIndex].Cells["lname"].FormattedValue.ToString();
+                txtNic.Text = dgvVisitor.Rows[e.RowIndex].Cells["nic_no"].FormattedValue.ToString();
+                txtPhone.Text = dgvVisitor.Rows[e.RowIndex].Cells["phone_no"].FormattedValue.ToString();
+                dtpOutTime.Text = dgvVisitor.Rows[e.RowIndex].Cells["out_time"].FormattedValue.ToString();
+                txtPurpose.Text = dgvVisitor.Rows[e.RowIndex].Cells["purpose"].FormattedValue.ToString();
+                dtpDate.Text = dgvVisitor.Rows[e.RowIndex].Cells["date"].FormattedValue.ToString();
+                txtNote.Text = dgvVisitor.Rows[e.RowIndex].Cells["note"].FormattedValue.ToString();
+                cmbAttachmentType.Text = dgvVisitor.Rows[e.RowIndex].Cells["attachment_type"].FormattedValue.ToString();
+                cmbAttachmentType.Text = dgvVisitor.Rows[e.RowIndex].Cells["attachment_data"].FormattedValue.ToString();
+                            
+
+                //btnAddPatient.Enabled = false;
+            }
         }
     }
 }
