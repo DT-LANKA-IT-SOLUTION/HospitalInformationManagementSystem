@@ -125,12 +125,6 @@
     <Compile Include="PL\Login_PL.Designer.cs">
       <DependentUpon>Login_PL.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\rptAppointment.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rptAppointment.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="PL\ucAppointment_PL.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -210,10 +204,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Login_PL.resx">
       <DependentUpon>Login_PL.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PL\rptAppointment.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rptAppointment.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\ucAppointment_PL.resx">
       <DependentUpon>ucAppointment_PL.cs</DependentUpon>
@@ -345,9 +335,7 @@
     <None Include="Resources\Complaints100.png" />
   </ItemGroup>
   <ItemGroup>
-
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
-
     <None Include="Resources\Logonew.png" />
   </ItemGroup>
   <ItemGroup>
@@ -370,7 +358,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Pulse171px.gif" />
-
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
