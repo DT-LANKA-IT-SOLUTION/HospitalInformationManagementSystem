@@ -345,9 +345,7 @@
     <None Include="Resources\Complaints100.png" />
   </ItemGroup>
   <ItemGroup>
-
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
-
     <None Include="Resources\Logonew.png" />
   </ItemGroup>
   <ItemGroup>
@@ -370,7 +368,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Pulse171px.gif" />
-
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Download.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using HospitalInformationManagementSystem.Other;
 using System.Configuration;
+using System.Data.SqlClient;
 
 namespace HospitalInformationManagementSystem.PL
 {
@@ -74,7 +75,7 @@ namespace HospitalInformationManagementSystem.PL
                     this.Hide();
                 }
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
                 MessageBox.Show(ex.ToString(),"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
