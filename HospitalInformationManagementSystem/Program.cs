@@ -16,7 +16,7 @@ namespace HospitalInformationManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PL.Loading());
+            Application.Run(new PL.Dashboard_PL());
             
         }
     }
