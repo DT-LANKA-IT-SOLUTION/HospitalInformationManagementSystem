@@ -31,6 +31,7 @@ namespace HospitalInformationManagementSystem.PL
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_clear = new System.Windows.Forms.Button();
             this.txt_postal_id = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_postal_delete = new System.Windows.Forms.Button();
@@ -56,6 +57,8 @@ namespace HospitalInformationManagementSystem.PL
             this.txtSearchByRefNo = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dgvPostal = new System.Windows.Forms.DataGridView();
+            this.epPostal = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ofdVisitor = new System.Windows.Forms.OpenFileDialog();
             this.postal_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Postal_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ref_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,9 +67,6 @@ namespace HospitalInformationManagementSystem.PL
             this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.attachment_data = new System.Windows.Forms.DataGridViewImageColumn();
-            this.epPostal = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ofdVisitor = new System.Windows.Forms.OpenFileDialog();
-            this.btn_clear = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -104,6 +104,17 @@ namespace HospitalInformationManagementSystem.PL
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Postals Form";
+            // 
+            // btn_clear
+            // 
+            this.btn_clear.BackColor = System.Drawing.Color.Silver;
+            this.btn_clear.Location = new System.Drawing.Point(267, 577);
+            this.btn_clear.Name = "btn_clear";
+            this.btn_clear.Size = new System.Drawing.Size(112, 47);
+            this.btn_clear.TabIndex = 17;
+            this.btn_clear.Text = "Clear";
+            this.btn_clear.UseVisualStyleBackColor = false;
+            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // txt_postal_id
             // 
@@ -369,10 +380,18 @@ namespace HospitalInformationManagementSystem.PL
             this.dgvPostal.TabIndex = 1;
             this.dgvPostal.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPostal_CellContentClick);
             // 
+            // epPostal
+            // 
+            this.epPostal.ContainerControl = this;
+            // 
+            // ofdVisitor
+            // 
+            this.ofdVisitor.FileName = "ofdVisitor";
+            // 
             // postal_id
             // 
             this.postal_id.DataPropertyName = "postal_id";
-            this.postal_id.HeaderText = "ID";
+            this.postal_id.HeaderText = "Postal ID";
             this.postal_id.Name = "postal_id";
             this.postal_id.ReadOnly = true;
             // 
@@ -427,25 +446,6 @@ namespace HospitalInformationManagementSystem.PL
             this.attachment_data.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.attachment_data.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // epPostal
-            // 
-            this.epPostal.ContainerControl = this;
-            // 
-            // ofdVisitor
-            // 
-            this.ofdVisitor.FileName = "ofdVisitor";
-            // 
-            // btn_clear
-            // 
-            this.btn_clear.BackColor = System.Drawing.Color.Silver;
-            this.btn_clear.Location = new System.Drawing.Point(267, 577);
-            this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(112, 47);
-            this.btn_clear.TabIndex = 17;
-            this.btn_clear.Text = "Clear";
-            this.btn_clear.UseVisualStyleBackColor = false;
-            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
-            // 
             // ucPostals_PL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -454,6 +454,7 @@ namespace HospitalInformationManagementSystem.PL
             this.Controls.Add(this.groupBox1);
             this.Name = "ucPostals_PL";
             this.Size = new System.Drawing.Size(1024, 691);
+            this.Load += new System.EventHandler(this.ucPostals_PL_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -495,6 +496,7 @@ namespace HospitalInformationManagementSystem.PL
         private System.Windows.Forms.TextBox txtSearchByRefNo;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txt_postal_id;
+        private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.DataGridViewTextBoxColumn postal_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Postal_type;
         private System.Windows.Forms.DataGridViewTextBoxColumn ref_no;
@@ -503,6 +505,5 @@ namespace HospitalInformationManagementSystem.PL
         private System.Windows.Forms.DataGridViewTextBoxColumn note;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewImageColumn attachment_data;
-        private System.Windows.Forms.Button btn_clear;
     }
 }

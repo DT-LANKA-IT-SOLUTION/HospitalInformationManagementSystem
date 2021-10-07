@@ -161,14 +161,13 @@ namespace HospitalInformationManagementSystem.PL
             {
                 dgvPostal.CurrentRow.Selected = true;
 
+                txt_postal_id.Text = dgvPostal.Rows[e.RowIndex].Cells["postal_id"].FormattedValue.ToString();
                 comboBox_postal_type.Text = dgvPostal.Rows[e.RowIndex].Cells["postal_type"].FormattedValue.ToString();
                 txt_refno.Text = dgvPostal.Rows[e.RowIndex].Cells["ref_no"].FormattedValue.ToString();
                 txt_from_to_name.Text = dgvPostal.Rows[e.RowIndex].Cells["from_name"].FormattedValue.ToString();
                 txt_from_to_address.Text = dgvPostal.Rows[e.RowIndex].Cells["address"].FormattedValue.ToString();
                 txt_note.Text = dgvPostal.Rows[e.RowIndex].Cells["note"].FormattedValue.ToString();
                 dateTimePicker1.Text = dgvPostal.Rows[e.RowIndex].Cells["date"].FormattedValue.ToString();
-
-                txt_postal_id.Text = dgvPostal.Rows[e.RowIndex].Cells["postal_id"].FormattedValue.ToString();
 
                 //txtPassword.Text = EncryptionLab.DecryptText(dgvPatient.Rows[e.RowIndex].Cells["password"].FormattedValue.ToString());
                 //btnAddPostal.Enabled = false;
@@ -194,11 +193,11 @@ namespace HospitalInformationManagementSystem.PL
             }
         }
 
-        private void FilDGVSearchPostal(string nic)
+        private void FilDGVSearchPostal(string refno)
         {
             try
             {
-                _postal_BLL.LoadPostalByRefNoGridView(dgvPostal, nic);
+                _postal_BLL.LoadPostalByRefNoGridView(dgvPostal, refno);
             }
             catch (Exception ex)
             {
@@ -212,7 +211,7 @@ namespace HospitalInformationManagementSystem.PL
             {
                 if (UpdatePostal() > 0)
                 {
-                    MessageBox.Show("Postal update sucessfull", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Postal update successfull", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.FilDGVPostal();
                     this.Clear();
                 }
@@ -266,7 +265,7 @@ namespace HospitalInformationManagementSystem.PL
             {
                 if (DeletePostal() > 0)
                 {
-                    MessageBox.Show("Postal delete sucessfull", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Postal delete successfull", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.FilDGVPostal();
                     this.Clear();
                 }
@@ -288,6 +287,11 @@ namespace HospitalInformationManagementSystem.PL
             {
                 throw;
             }
+        }
+
+        private void ucPostals_PL_Load(object sender, EventArgs e)
+        {
+            this.FilDGVPostal();
         }
     }
 }
