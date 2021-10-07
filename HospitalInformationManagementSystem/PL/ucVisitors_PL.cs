@@ -14,7 +14,7 @@ using System.Globalization;
 
 namespace HospitalInformationManagementSystem.PL
 {
-    public partial class ucVisitors_PL : UserControl
+    public partial class ucVisitors_PL : MetroFramework.Controls.MetroUserControl
     {
         
         GrantUserPermission _grantUserPermission = new GrantUserPermission();
