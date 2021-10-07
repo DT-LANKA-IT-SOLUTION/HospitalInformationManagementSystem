@@ -22,11 +22,11 @@ namespace HospitalInformationManagementSystem.BLL
         {
             try
             {
-                rptAppointment rptAppointment = new rptAppointment();
-                rptAppointment.Load(@"D:\uovt\C# 2\Project\HospitalInformationManagementSystem\PL\rptAppointment.rpt");
-                rptAppointment.SetDataSource(report_DLL.GetAppointmentReport(reportModel));
+                //rptAppointment rptAppointment = new rptAppointment();
+                //rptAppointment.Load(@"D:\uovt\C# 2\Project\HospitalInformationManagementSystem\PL\rptAppointment.rpt");
+                //rptAppointment.SetDataSource(report_DLL.GetAppointmentReport(reportModel));
 
-                crystalReportViewer.ReportSource = rptAppointment;
+                //crystalReportViewer.ReportSource = rptAppointment;
                 crystalReportViewer.Refresh();
             }
             catch (Exception)
