@@ -12,25 +12,27 @@ namespace HospitalInformationManagementSystem.DAL
 {
     class Report_DLL
     {
-        public DataTable GetAppointmentReport(ReportModel reportModel)
+        public DataSet GetAppointmentReport(ReportModel reportModel)
         {
             try
             {
-                string sql = string.Format("SELECT * FROM Appointments WHERE app_date BETWEEN @fromDate AND @toDate");
+                //string sql = string.Format("SELECT * FROM Appointments WHERE app_date BETWEEN @fromDate AND @toDate");
+                string sql = string.Format("SELECT * FROM Appointments");
 
-                SqlParameter[] _sql = new SqlParameter[2];
+                //SqlParameter[] _sql = new SqlParameter[2];
 
-                _sql[0] = SqlParameterFormat.Format("@fromDate", reportModel.AppointmentFormDate);
-                _sql[1] = SqlParameterFormat.Format("@toDate", reportModel.AppointmentToDate);
+                //_sql[0] = SqlParameterFormat.Format("@fromDate", reportModel.AppointmentFormDate);
+                //_sql[1] = SqlParameterFormat.Format("@toDate", reportModel.AppointmentToDate);
 
-                return ODBC.GetData(sql,_sql);
+                //return ODBC.ReportFunction(sql,_sql);
+                return ODBC.ReportFunction(sql);
             }
             catch (Exception)
             {
                 throw;
             }
         }
-        public DataTable GetUserReport(ReportModel reportModel)
+        public DataSet GetUserReport(ReportModel reportModel)
         {
             try
             {
@@ -43,14 +45,14 @@ namespace HospitalInformationManagementSystem.DAL
                 //_sql[1] = SqlParameterFormat.Format("@toDate", reportModel.UserToDate);
 
                 //return ODBC.ReportFunction(sql, _sql);
-                return ODBC.GetData(sql);
+                return ODBC.ReportFunction(sql);
             }
             catch (Exception)
             {
                 throw;
             }
         }
-        public DataTable GetPatientReport(ReportModel reportModel)
+        public DataSet GetPatientReport(ReportModel reportModel)
         {
             try
             {
@@ -61,7 +63,7 @@ namespace HospitalInformationManagementSystem.DAL
                 _sql[0] = SqlParameterFormat.Format("@fromDate", reportModel.PatientFormDate);
                 _sql[1] = SqlParameterFormat.Format("@toDate", reportModel.PatientToDate);
 
-                return ODBC.GetData(sql, _sql);
+                return ODBC.ReportFunction(sql, _sql);
             }
             catch (Exception)
             {

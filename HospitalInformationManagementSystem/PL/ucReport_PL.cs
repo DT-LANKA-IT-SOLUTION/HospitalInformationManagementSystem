@@ -34,7 +34,7 @@ namespace HospitalInformationManagementSystem.PL
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(),"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -42,26 +42,18 @@ namespace HospitalInformationManagementSystem.PL
         {
             try
             {
-                //reportModel.AppointmentFormDate = Convert.ToDateTime(dtpAppointmentFrom.Text.Trim());
-                //reportModel.AppointmentToDate = Convert.ToDateTime(dtpAppointmentTo.Text.Trim());
-                //Dashboard_PL dashboard_PL = new Dashboard_PL();
-                //var myForm = dashboard_PL.pnlContent.FindForm();
-                ucReportViwer_PL ucReportViwer_PL = new ucReportViwer_PL();
-                //Dashboard_PL dashboard_PL = new Dashboard_PL();
+                reportModel.AppointmentFormDate = Convert.ToDateTime(dtpAppointmentFrom.Text.Trim());
+                reportModel.AppointmentToDate = Convert.ToDateTime(dtpAppointmentTo.Text.Trim());
+                
+                report_BLL.GetAppointmentReport(reportModel, rptReportViewer);
 
-                //report_BLL.GetAppointmentReport(reportModel, ucReportViwer_PL.rptReportView);
-
-                if (ParentForm == null)
-                    return;
-
-                Panel pnlContent = (this.Parent as Dashboard_PL).Controls["pnlContent"] as Panel;
-
-                FormControl.showControls(ucReportViwer_PL, pnlContent);
+                
             }
             catch (Exception)
             {
                 throw;
             }
+
         }
     }
 }

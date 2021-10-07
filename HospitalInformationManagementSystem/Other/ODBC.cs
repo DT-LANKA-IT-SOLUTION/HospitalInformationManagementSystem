@@ -126,30 +126,30 @@ namespace HospitalInformationManagementSystem.Other
             }
         }
 
-        //public static DataSet ReportFunction(string sql, SqlParameter[] sqlParm = null)
-        //{
-        //    OpenConnection();
-        //    using (SqlCommand cmd = GetConnection().CreateCommand())
-        //    {
-        //        SqlDataAdapter adp = new SqlDataAdapter();
-        //        DataSet ds = new DataSet();
-        //        try
-        //        {
-        //            cmd.CommandText = sql;
-        //            if (sqlParm != null)
-        //                cmd.Parameters.AddRange(sqlParm);
+        public static DataSet ReportFunction(string sql, SqlParameter[] sqlParm = null)
+        {
+            OpenConnection();
+            using (SqlCommand cmd = GetConnection().CreateCommand())
+            {
+                SqlDataAdapter adp = new SqlDataAdapter();
+                DataSet ds = new DataSet();
+                try
+                {
+                    cmd.CommandText = sql;
+                    if (sqlParm != null)
+                        cmd.Parameters.AddRange(sqlParm);
 
-        //            cmd.ExecuteNonQuery();
-        //            adp.SelectCommand = cmd;
-        //            adp.Fill(ds);
-        //            return ds;
-        //        }
-        //        catch (Exception)
-        //        {
-        //            throw;
-        //        }
-        //    }
-        //}
+                    cmd.ExecuteNonQuery();
+                    adp.SelectCommand = cmd;
+                    adp.Fill(ds);
+                    return ds;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+        }
     }
 }
 

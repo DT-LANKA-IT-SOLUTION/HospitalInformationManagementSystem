@@ -386,21 +386,21 @@ namespace HospitalInformationManagementSystem.Other
                         }
                         else if (ch == 'C')
                         {
-                            x += 36;
-                            y += 549;
+                            x = 501;
+                            y = 641;
 
                             btnAdd.Visible = true;
                             btnAdd.Location = new Point(x, y);
                         }
                         else if (ch == 'D')
                         {
-                            x += 154;
+                            x += 130;
                             btnDelete.Visible = true;
                             btnDelete.Location = new Point(x, y);
                         }
                         else if (ch == 'M')
                         {
-                            x += 154;
+                            x += 130;
                             btnEdit.Visible = true;
                             btnEdit.Location = new Point(x, y);
                         }
