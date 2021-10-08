@@ -243,7 +243,7 @@ namespace HospitalInformationManagementSystem.PL
                 dtpDate.Text = dgvVisitor.Rows[e.RowIndex].Cells["date"].FormattedValue.ToString();
                 txtNote.Text = dgvVisitor.Rows[e.RowIndex].Cells["note"].FormattedValue.ToString();
                 cmbAttachmentType.Text = dgvVisitor.Rows[e.RowIndex].Cells["attachment_type"].FormattedValue.ToString();
-                cmbAttachmentType.Text = dgvVisitor.Rows[e.RowIndex].Cells["attachment_data"].FormattedValue.ToString();
+              //  cmbAttachmentType.Text = dgvVisitor.Rows[e.RowIndex].Cells["attachment_data"].FormattedValue.ToString();
                             
 
                 //btnAddPatient.Enabled = false;

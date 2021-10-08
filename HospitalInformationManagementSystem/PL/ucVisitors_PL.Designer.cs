@@ -60,17 +60,17 @@
             this.grpBVisitorGridView = new System.Windows.Forms.GroupBox();
             this.dgvVisitor = new MetroFramework.Controls.MetroGrid();
             this.fname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OutTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AttachmentType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Source = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nic_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.out_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.purpose = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Porpose = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.attachment_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.epVisitor = new System.Windows.Forms.ErrorProvider(this.components);
             this.ofdVisitor = new System.Windows.Forms.OpenFileDialog();
+            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
             this.grpBVisitor.SuspendLayout();
             this.grpBVisitorGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitor)).BeginInit();
@@ -80,6 +80,7 @@
             // grpBVisitor
             // 
             this.grpBVisitor.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.grpBVisitor.Controls.Add(this.metroDateTime1);
             this.grpBVisitor.Controls.Add(this.btnDownload);
             this.grpBVisitor.Controls.Add(this.cmbAttachmentType);
             this.grpBVisitor.Controls.Add(this.btnBrowse);
@@ -402,15 +403,14 @@
             this.dgvVisitor.ColumnHeadersHeight = 20;
             this.dgvVisitor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fname,
-            this.Phone,
-            this.OutTime,
-            this.Note,
-            this.AttachmentType,
-            this.Source,
             this.lname,
             this.nic_no,
+            this.phone_no,
+            this.out_time,
+            this.purpose,
             this.date,
-            this.Porpose});
+            this.Note,
+            this.attachment_type});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -455,40 +455,6 @@
             this.fname.Name = "fname";
             this.fname.ReadOnly = true;
             // 
-            // Phone
-            // 
-            this.Phone.DataPropertyName = "phone_no";
-            this.Phone.HeaderText = "Phone";
-            this.Phone.Name = "Phone";
-            this.Phone.ReadOnly = true;
-            // 
-            // OutTime
-            // 
-            this.OutTime.DataPropertyName = "out_time";
-            this.OutTime.HeaderText = "Out Time";
-            this.OutTime.Name = "OutTime";
-            this.OutTime.ReadOnly = true;
-            // 
-            // Note
-            // 
-            this.Note.DataPropertyName = "note";
-            this.Note.HeaderText = "Note";
-            this.Note.Name = "Note";
-            this.Note.ReadOnly = true;
-            // 
-            // AttachmentType
-            // 
-            this.AttachmentType.DataPropertyName = "attachment_type";
-            this.AttachmentType.HeaderText = "Attachment Type";
-            this.AttachmentType.Name = "AttachmentType";
-            this.AttachmentType.ReadOnly = true;
-            // 
-            // Source
-            // 
-            this.Source.HeaderText = "Source";
-            this.Source.Name = "Source";
-            this.Source.ReadOnly = true;
-            // 
             // lname
             // 
             this.lname.DataPropertyName = "lname";
@@ -503,6 +469,27 @@
             this.nic_no.Name = "nic_no";
             this.nic_no.ReadOnly = true;
             // 
+            // phone_no
+            // 
+            this.phone_no.DataPropertyName = "phone_no";
+            this.phone_no.HeaderText = "Phone";
+            this.phone_no.Name = "phone_no";
+            this.phone_no.ReadOnly = true;
+            // 
+            // out_time
+            // 
+            this.out_time.DataPropertyName = "out_time";
+            this.out_time.HeaderText = "Out Time";
+            this.out_time.Name = "out_time";
+            this.out_time.ReadOnly = true;
+            // 
+            // purpose
+            // 
+            this.purpose.DataPropertyName = "purpose";
+            this.purpose.HeaderText = "Purpose";
+            this.purpose.Name = "purpose";
+            this.purpose.ReadOnly = true;
+            // 
             // date
             // 
             this.date.DataPropertyName = "date";
@@ -510,12 +497,19 @@
             this.date.Name = "date";
             this.date.ReadOnly = true;
             // 
-            // Porpose
+            // Note
             // 
-            this.Porpose.DataPropertyName = "purpose";
-            this.Porpose.HeaderText = "Purpose";
-            this.Porpose.Name = "Porpose";
-            this.Porpose.ReadOnly = true;
+            this.Note.DataPropertyName = "note";
+            this.Note.HeaderText = "Note";
+            this.Note.Name = "Note";
+            this.Note.ReadOnly = true;
+            // 
+            // attachment_type
+            // 
+            this.attachment_type.DataPropertyName = "attachment_type";
+            this.attachment_type.HeaderText = "Attachment Type";
+            this.attachment_type.Name = "attachment_type";
+            this.attachment_type.ReadOnly = true;
             // 
             // epVisitor
             // 
@@ -524,6 +518,16 @@
             // ofdVisitor
             // 
             this.ofdVisitor.FileName = "ofdVisitor";
+            // 
+            // metroDateTime1
+            // 
+            this.metroDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.metroDateTime1.Location = new System.Drawing.Point(279, 295);
+            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
+            this.metroDateTime1.Name = "metroDateTime1";
+            this.metroDateTime1.Size = new System.Drawing.Size(200, 29);
+            this.metroDateTime1.TabIndex = 24;
+            this.metroDateTime1.Value = new System.DateTime(2022, 4, 27, 0, 0, 0, 0);
             // 
             // ucVisitors_PL
             // 
@@ -578,14 +582,14 @@
         private MetroFramework.Controls.MetroGrid dgvVisitor;
         private MetroFramework.Controls.MetroButton btnDownload;
         private System.Windows.Forms.DataGridViewTextBoxColumn fname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OutTime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Note;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AttachmentType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Source;
         private System.Windows.Forms.DataGridViewTextBoxColumn lname;
         private System.Windows.Forms.DataGridViewTextBoxColumn nic_no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone_no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn out_time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn purpose;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Porpose;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Note;
+        private System.Windows.Forms.DataGridViewTextBoxColumn attachment_type;
+        private MetroFramework.Controls.MetroDateTime metroDateTime1;
     }
 }
