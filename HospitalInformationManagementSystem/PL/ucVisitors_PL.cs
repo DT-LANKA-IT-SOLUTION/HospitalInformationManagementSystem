@@ -129,10 +129,9 @@ namespace HospitalInformationManagementSystem.PL
                     visitorModel.note = txtNote.Text.Trim();
                     visitorModel.purpose = txtPurpose.Text.Trim();
                     visitorModel.cmbAttachmentType = cmbAttachmentType.Text.Trim();
-
-                    visitorModel.IsActive = true;                    
+                    visitorModel.IsActive = true;
+					
                     return _visitor_BLL.AddVisitor(visitorModel);
-                    
                 }
 
                 return 0;

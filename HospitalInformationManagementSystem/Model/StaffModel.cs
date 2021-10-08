@@ -26,11 +26,11 @@ namespace HospitalInformationManagementSystem.Model
         public DateTime join_date { get; set; }
         public Boolean IsActive { get; set; }
         public string photo_data { get; set; }
-
+        //public string photo_type { get; set; }
         public string DashboardValue { get; set; }
         public string PatientValue { get; set; }
         public string VistorsValue { get; set; }
-        public string AppoinmentValue { get; set; }
+        public string AppointmentValue { get; set; }
         public string PostalValue { get; set; }
         public string ComplaintsValue { get; set; }
         public string ReportsValue { get; set; }

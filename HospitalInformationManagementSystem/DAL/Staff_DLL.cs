@@ -79,7 +79,7 @@ namespace HospitalInformationManagementSystem.DAL
                     if (user_id > 0)
                     {
                         sql = string.Format("INSERT INTO User_Permisions(permision_id,user_id,status)VALUES(@permision_id,@user_id,@status)");
-
+                        
                         for(int i = 1; i < 9; i++)
                         {
                             switch (i)
@@ -101,7 +101,7 @@ namespace HospitalInformationManagementSystem.DAL
                                 case 3:
                                     _sql = new SqlParameter[3];
                                     _sql[0] = SqlParameterFormat.Format("@permision_id", i);
-                                    _sql[1] = SqlParameterFormat.Format("@user_id",user_id);
+                                    _sql[1] = SqlParameterFormat.Format("@user_id", user_id);
                                     _sql[2] = SqlParameterFormat.Format("@status", staffModel.VistorsValue);
                                     ODBC.SetData(sql, _sql);
                                     break;
@@ -109,7 +109,7 @@ namespace HospitalInformationManagementSystem.DAL
                                     _sql = new SqlParameter[3];
                                     _sql[0] = SqlParameterFormat.Format("@permision_id", i);
                                     _sql[1] = SqlParameterFormat.Format("@user_id", user_id);
-                                    _sql[2] = SqlParameterFormat.Format("@status", staffModel.AppoinmentValue);
+                                    _sql[2] = SqlParameterFormat.Format("@status", staffModel.AppointmentValue);
                                     ODBC.SetData(sql, _sql);
                                     break;
                                 case 5:
@@ -137,14 +137,13 @@ namespace HospitalInformationManagementSystem.DAL
                                     _sql = new SqlParameter[3];
                                     _sql[0] = SqlParameterFormat.Format("@permision_id", i);
                                     _sql[1] = SqlParameterFormat.Format("@user_id", user_id);
-                                    _sql[2] = SqlParameterFormat.Format("@status",staffModel.StaffValue);
+                                    _sql[2] = SqlParameterFormat.Format("@status", staffModel.StaffValue);
                                     ODBC.SetData(sql, _sql);
                                     break;
-                                
                             }
                         }
 
-
+                        
 
 
                         sql = string.Format("INSERT INTO Staff_Members(staff_id,user_id,staff_email,join_date,speciality_area,photo_data)VALUES(@staff_id,@user_id,@staff_email,@joined_date,@speciality_area,@photo_data)");
@@ -170,7 +169,23 @@ namespace HospitalInformationManagementSystem.DAL
             }
             catch (Exception)
             {
+                throw;
+            }
+        }
 
+        public static SqlDataReader GetStaffPermissions(int user_id)
+        {
+            try
+            {
+                string sql = string.Format("SELECT permision_id, user_id, status FROM User_Permisions WHERE user_id = @user_id");
+
+                SqlParameter[] _sql = new SqlParameter[1];
+                _sql[0] = SqlParameterFormat.Format("@user_id", user_id);
+
+                return ODBC.GetData_reader(sql, _sql);
+            }
+            catch (Exception)
+            {
                 throw;
             }
         }
