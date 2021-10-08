@@ -14,7 +14,7 @@ using System.Globalization;
 
 namespace HospitalInformationManagementSystem.PL
 {
-    public partial class ucVisitors_PL : UserControl
+    public partial class ucVisitors_PL : MetroFramework.Controls.MetroUserControl
     {
         
         GrantUserPermission _grantUserPermission = new GrantUserPermission();
@@ -29,11 +29,7 @@ namespace HospitalInformationManagementSystem.PL
             _grantUserPermission.GrantButtonPermission("visitor", btnAdd, btnEdit, btnDelete);
         }
 
-        private void UcVisitor_PL_Load(object sender, EventArgs e)
-        {
-            this.FillDGVVisitor();
-            epVisitor.Clear();
-        }
+       
 
         private void FillDGVVisitor()
         {
@@ -63,95 +59,37 @@ namespace HospitalInformationManagementSystem.PL
                 return false;
             }
 
-            if (string.IsNullOrEmpty(txtLastName.Text))
+            if (string.IsNullOrEmpty(txtNic.Text))
             {
                 epVisitor.SetError(txtNic, "Please Fill National Identity Card Number");
                 txtLastName.Focus();
                 return false;
             }
 
-            if (string.IsNullOrEmpty(txtLastName.Text))
+            if (string.IsNullOrEmpty(txtPhone.Text))
             {
                 epVisitor.SetError(txtPhone, "Please Fill Phone Number");
                 txtLastName.Focus();
                 return false;
             }
 
-        //    if (string.IsNullOrEmpty(txtPassword.Text))
-        //    {
-        //        epPatient.SetError(txtPassword, "Please Fill Password");
-        //        txtPassword.Focus();
-        //        return false;
-        //    }
+            if (string.IsNullOrEmpty(txtPurpose.Text))
+            {
+                epVisitor.SetError(txtPurpose, "Please Fill Purpose");
+                txtLastName.Focus();
+                return false;
+            }
 
-        //    if (string.IsNullOrEmpty(txtNIC.Text))
-        //    {
-        //        epPatient.SetError(txtNIC, "Please Fill NIC");
-        //        txtNIC.Focus();
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        Regex reg = new Regex(@"^([0-9]{9}[x|X|v|V]|[0-9]{12})$");
-
-        //        bool result = reg.IsMatch(txtNIC.Text.Trim());
-
-        //        if (result)
-        //        {
-        //            epPatient.Clear();
-        //        }
-        //        else
-        //        {
-        //            epPatient.SetError(txtNIC, "This NIC number is invalid...!");
-        //            txtNIC.Focus();
-        //            return false;
-        //        }
-        //    }
-
-        //    if (string.IsNullOrEmpty(txtPhone.Text))
-        //    {
-        //        epPatient.SetError(txtPhone, "Please Fill Phone");
-        //        txtPhone.Focus();
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        Regex reg = new Regex(@"^(?:7|0|(?:\+94))[0-9]{9,10}$");
-
-        //        bool result = reg.IsMatch(txtPhone.Text.Trim());
-
-        //        if (result)
-        //        {
-        //            epPatient.Clear();
-        //        }
-        //        else
-        //        {
-        //            epPatient.SetError(txtPhone, "This Phone Number is invalid...!");
-        //            txtPhone.Focus();
-        //            return false;
-        //        }
-        //    }
+            if (string.IsNullOrEmpty(txtNote.Text))
+            {
+                epVisitor.SetError(txtNote, "Please Fill Note");
+                txtLastName.Focus();
+                return false;
+            }
 
             epVisitor.Clear();
             return true;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -161,6 +99,7 @@ namespace HospitalInformationManagementSystem.PL
                 {
                     MessageBox.Show("Visitor add sucessfull", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.FillDGVVisitor();
+                    epVisitor.Clear();
                 }
             }
             catch (Exception ex)
@@ -169,27 +108,33 @@ namespace HospitalInformationManagementSystem.PL
             }
         }
 
-       
+
 
         private int AddVisitor()
         {
             try
             {
-                visitorModel.fname = txtFirstName.Text.Trim();
-                visitorModel.lname = txtLastName.Text.Trim();
-                visitorModel.phone_no = txtPhone.Text.Trim();
-                visitorModel.nic_no = txtNic.Text.Trim();
-                visitorModel.date = Convert.ToDateTime(dtpDate.Text.Trim());
+                if (IsValid("add"))
+                {
+                    visitorModel.fname = txtFirstName.Text.Trim();
+                    visitorModel.lname = txtLastName.Text.Trim();
+                    visitorModel.phone_no = txtPhone.Text.Trim();
+                    visitorModel.nic_no = txtNic.Text.Trim();
+                    visitorModel.date = Convert.ToDateTime(dtpDate.Text.Trim());
+                    string date = DateTime.Now.ToString("M/d/yyyy");
+                    visitorModel.date = Convert.ToDateTime(date);
+                    string dtpInTime = DateTime.Now.ToString("h:mm:ss tt");
+                    visitorModel.in_time = Convert.ToDateTime(dtpInTime);
+                    visitorModel.out_time = Convert.ToDateTime(dtpOutTime.Text.Trim());
+                    visitorModel.note = txtNote.Text.Trim();
+                    visitorModel.purpose = txtPurpose.Text.Trim();
+                    visitorModel.cmbAttachmentType = cmbAttachmentType.Text.Trim();
+                    visitorModel.IsActive = true;
+					
+                    return _visitor_BLL.AddVisitor(visitorModel);
+                }
 
-                string dtpInTime = DateTime.Now.ToString("h:mm:ss tt");
-                visitorModel.in_time = Convert.ToDateTime(dtpInTime);
-                visitorModel.out_time = Convert.ToDateTime(dtpOutTime.Text.Trim());
-                visitorModel.note = txtNote.Text.Trim();
-                visitorModel.purpose = txtPurpose.Text.Trim();
-                visitorModel.attachment_type = txtAttachmentType.Text.Trim();
-                
-                visitorModel.IsActive = true;
-                return _visitor_BLL.AddVisitor(visitorModel);
+                return 0;
             }
             catch (Exception)
             {
@@ -208,7 +153,7 @@ namespace HospitalInformationManagementSystem.PL
                 if (ofdVisitor.ShowDialog() == DialogResult.OK)
                 {
                     visitorModel.attachment_data = ofdVisitor.FileName;
-                    visitorModel.attachment_type = ofdVisitor.GetType().ToString();
+                    visitorModel.cmbAttachmentType = ofdVisitor.GetType().ToString();
                 }
             }
             catch (Exception ex)
@@ -253,13 +198,14 @@ namespace HospitalInformationManagementSystem.PL
                     visitorModel.lname = txtLastName.Text.Trim();
                     visitorModel.phone_no = txtPhone.Text.Trim();
                     visitorModel.nic_no = txtNic.Text.Trim();
-                    visitorModel.date = Convert.ToDateTime(dtpDate.Text.Trim());
-                    string dtpInTime = DateTime.Now.ToString("h:mm:ss tt");
-                    visitorModel.in_time = Convert.ToDateTime(dtpInTime);
+                    //string date = DateTime.Now.ToString("M/d/yyyy");
+                    //visitorModel.date = Convert.ToDateTime(date);
+                    //string dtpInTime = DateTime.Now.ToString("h:mm:ss tt");
+                    //visitorModel.in_time = Convert.ToDateTime(dtpInTime);
                     visitorModel.out_time = Convert.ToDateTime(dtpOutTime.Text.Trim());
                     visitorModel.note = txtNote.Text.Trim();
                     visitorModel.purpose = txtPurpose.Text.Trim();
-                    visitorModel.attachment_type = txtAttachmentType.Text.Trim();
+                    visitorModel.cmbAttachmentType = cmbAttachmentType.Text.Trim();
 
                     visitorModel.IsActive = true;
                     return _visitor_BLL.AddVisitor(visitorModel);
@@ -271,6 +217,36 @@ namespace HospitalInformationManagementSystem.PL
             {
 
                 throw;
+            }
+        }
+
+        private void ucVisitors_PL_Load(object sender, EventArgs e)
+        {
+            this.FillDGVVisitor();
+            epVisitor.Clear();
+        }
+
+        private void dgvVisitorsCellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (dgvVisitor.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                btnDownload.Visible = true;
+                dgvVisitor.CurrentRow.Selected = true;
+                
+                txtFirstName.Text = dgvVisitor.Rows[e.RowIndex].Cells["fname"].FormattedValue.ToString();
+                txtLastName.Text = dgvVisitor.Rows[e.RowIndex].Cells["lname"].FormattedValue.ToString();
+                txtNic.Text = dgvVisitor.Rows[e.RowIndex].Cells["nic_no"].FormattedValue.ToString();
+                txtPhone.Text = dgvVisitor.Rows[e.RowIndex].Cells["phone_no"].FormattedValue.ToString();
+                dtpOutTime.Text = dgvVisitor.Rows[e.RowIndex].Cells["out_time"].FormattedValue.ToString();
+                txtPurpose.Text = dgvVisitor.Rows[e.RowIndex].Cells["purpose"].FormattedValue.ToString();
+                dtpDate.Text = dgvVisitor.Rows[e.RowIndex].Cells["date"].FormattedValue.ToString();
+                txtNote.Text = dgvVisitor.Rows[e.RowIndex].Cells["note"].FormattedValue.ToString();
+                cmbAttachmentType.Text = dgvVisitor.Rows[e.RowIndex].Cells["attachment_type"].FormattedValue.ToString();
+              //  cmbAttachmentType.Text = dgvVisitor.Rows[e.RowIndex].Cells["attachment_data"].FormattedValue.ToString();
+                            
+
+                //btnAddPatient.Enabled = false;
             }
         }
     }

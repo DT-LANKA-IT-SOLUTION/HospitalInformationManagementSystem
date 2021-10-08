@@ -20,7 +20,7 @@ namespace HospitalInformationManagementSystem.Model
         public string address { get; set; }
         public string marital_status { get; set; }
         public string user_type { get; set; }
-        public Boolean IsActive { get; set; }
+        public bool IsActive { get; set; }
         public string blood_group { get; set; }
         public string allergies { get; set; }
     }

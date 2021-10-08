@@ -51,6 +51,7 @@ namespace HospitalInformationManagementSystem.PL
             this.txt_symptoms = new System.Windows.Forms.TextBox();
             this.txt_patient_name = new System.Windows.Forms.TextBox();
             this.txt_appointment_no = new System.Windows.Forms.TextBox();
+
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -110,6 +111,7 @@ namespace HospitalInformationManagementSystem.PL
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Appointment Form";
+
             // 
             // txt_app_id
             // 
@@ -155,6 +157,7 @@ namespace HospitalInformationManagementSystem.PL
             "Pending",
             "Confirmed",
             "Rejected"});
+
             this.comboBox_status.Location = new System.Drawing.Point(179, 409);
             this.comboBox_status.Name = "comboBox_status";
             this.comboBox_status.Size = new System.Drawing.Size(143, 28);
@@ -256,81 +259,86 @@ namespace HospitalInformationManagementSystem.PL
             this.txt_appointment_no.Name = "txt_appointment_no";
             this.txt_appointment_no.Size = new System.Drawing.Size(313, 30);
             this.txt_appointment_no.TabIndex = 1;
+
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(6, 409);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 34);
+            this.label7.Size = new System.Drawing.Size(59, 26);
             this.label7.TabIndex = 0;
             this.label7.Text = "Status";
+
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(7, 356);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 34);
+            this.label6.Size = new System.Drawing.Size(48, 26);
             this.label6.TabIndex = 0;
             this.label6.Text = "Time";
+
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(8, 307);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 34);
+            this.label5.Size = new System.Drawing.Size(47, 26);
             this.label5.TabIndex = 0;
             this.label5.Text = "Date";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(6, 253);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(159, 34);
+            this.label4.Size = new System.Drawing.Size(125, 26);
             this.label4.TabIndex = 0;
             this.label4.Text = "Medical Officer";
+
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(7, 146);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 34);
+            this.label3.Size = new System.Drawing.Size(92, 26);
             this.label3.TabIndex = 0;
             this.label3.Text = "Symptoms";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(6, 103);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(145, 34);
+            this.label2.Size = new System.Drawing.Size(113, 26);
             this.label2.TabIndex = 0;
             this.label2.Text = "Patient Name";
+
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(6, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(171, 34);
+            this.label1.Size = new System.Drawing.Size(135, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Appointment No";
             // 

@@ -47,7 +47,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lblComplaintCount = new System.Windows.Forms.Label();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.CT_Dashboard = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel5.SuspendLayout();
@@ -56,7 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CT_Dashboard)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,20 +83,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(16, 95);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 42);
+            this.label2.Size = new System.Drawing.Size(87, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "Patient";
             // 
             // lblPatientCount
             // 
             this.lblPatientCount.AutoSize = true;
-            this.lblPatientCount.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPatientCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPatientCount.Location = new System.Drawing.Point(12, 33);
             this.lblPatientCount.Name = "lblPatientCount";
-            this.lblPatientCount.Size = new System.Drawing.Size(69, 62);
+            this.lblPatientCount.Size = new System.Drawing.Size(55, 39);
             this.lblPatientCount.TabIndex = 0;
             this.lblPatientCount.Text = "25";
             // 
@@ -124,40 +124,40 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(16, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(175, 42);
+            this.label3.Size = new System.Drawing.Size(148, 29);
             this.label3.TabIndex = 1;
             this.label3.Text = "Appointment";
             // 
             // lblAppointmentCount
             // 
             this.lblAppointmentCount.AutoSize = true;
-            this.lblAppointmentCount.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppointmentCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAppointmentCount.Location = new System.Drawing.Point(12, 33);
             this.lblAppointmentCount.Name = "lblAppointmentCount";
-            this.lblAppointmentCount.Size = new System.Drawing.Size(69, 62);
+            this.lblAppointmentCount.Size = new System.Drawing.Size(55, 39);
             this.lblAppointmentCount.TabIndex = 0;
             this.lblAppointmentCount.Text = "25";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(16, 95);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 42);
+            this.label5.Size = new System.Drawing.Size(84, 29);
             this.label5.TabIndex = 1;
             this.label5.Text = "Doctor";
             // 
             // lblDoctorCount
             // 
             this.lblDoctorCount.AutoSize = true;
-            this.lblDoctorCount.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDoctorCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDoctorCount.Location = new System.Drawing.Point(12, 33);
             this.lblDoctorCount.Name = "lblDoctorCount";
-            this.lblDoctorCount.Size = new System.Drawing.Size(69, 62);
+            this.lblDoctorCount.Size = new System.Drawing.Size(55, 39);
             this.lblDoctorCount.TabIndex = 0;
             this.lblDoctorCount.Text = "25";
             // 
@@ -206,53 +206,55 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(16, 95);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(158, 42);
+            this.label7.Size = new System.Drawing.Size(134, 29);
             this.label7.TabIndex = 1;
             this.label7.Text = "Complaints";
             // 
             // lblComplaintCount
             // 
             this.lblComplaintCount.AutoSize = true;
-            this.lblComplaintCount.Font = new System.Drawing.Font("Poppins", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComplaintCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblComplaintCount.Location = new System.Drawing.Point(12, 33);
             this.lblComplaintCount.Name = "lblComplaintCount";
-            this.lblComplaintCount.Size = new System.Drawing.Size(69, 62);
+            this.lblComplaintCount.Size = new System.Drawing.Size(55, 39);
             this.lblComplaintCount.TabIndex = 0;
             this.lblComplaintCount.Text = "25";
             // 
-            // chart1
+            // CT_Dashboard
             // 
-            this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.CT_Dashboard.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.CT_Dashboard.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(33, 249);
-            this.chart1.Name = "chart1";
+            this.CT_Dashboard.Legends.Add(legend1);
+            this.CT_Dashboard.Location = new System.Drawing.Point(33, 249);
+            this.CT_Dashboard.Name = "CT_Dashboard";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(958, 410);
-            this.chart1.TabIndex = 6;
-            this.chart1.Text = "chart1";
+            series1.Name = "Appointment";
+            this.CT_Dashboard.Series.Add(series1);
+            this.CT_Dashboard.Size = new System.Drawing.Size(958, 410);
+            this.CT_Dashboard.TabIndex = 6;
+            this.CT_Dashboard.Text = "chart1";
             // 
             // ucDashboard_PL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.chart1);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Controls.Add(this.CT_Dashboard);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
             this.Name = "ucDashboard_PL";
             this.Size = new System.Drawing.Size(1024, 691);
+            this.Load += new System.EventHandler(this.ucDashboard_PL_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -265,7 +267,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CT_Dashboard)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -288,6 +290,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblComplaintCount;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart CT_Dashboard;
     }
 }

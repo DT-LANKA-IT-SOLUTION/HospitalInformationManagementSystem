@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlHeadder = new System.Windows.Forms.Panel();
+            this.lbldate = new System.Windows.Forms.Label();
             this.btnMaximizer = new System.Windows.Forms.PictureBox();
             this.btnMin = new System.Windows.Forms.PictureBox();
             this.btnRestore = new System.Windows.Forms.PictureBox();
@@ -46,6 +48,7 @@
             this.btnPatient = new System.Windows.Forms.Button();
             this.btnDashboard = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pnlHeadder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
@@ -59,10 +62,10 @@
             // 
             // pnlContent
             // 
-            this.pnlContent.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlContent.BackColor = System.Drawing.Color.Transparent;
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlContent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(200)))), ((int)(((byte)(200)))));
+            this.pnlContent.ForeColor = System.Drawing.Color.Black;
             this.pnlContent.Location = new System.Drawing.Point(260, 50);
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Size = new System.Drawing.Size(1024, 691);
@@ -71,6 +74,7 @@
             // pnlHeadder
             // 
             this.pnlHeadder.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlHeadder.Controls.Add(this.lbldate);
             this.pnlHeadder.Controls.Add(this.btnMaximizer);
             this.pnlHeadder.Controls.Add(this.btnMin);
             this.pnlHeadder.Controls.Add(this.btnRestore);
@@ -83,6 +87,17 @@
             this.pnlHeadder.Size = new System.Drawing.Size(1024, 50);
             this.pnlHeadder.TabIndex = 4;
             this.pnlHeadder.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PnlHeadder_MouseDown);
+            // 
+            // lbldate
+            // 
+            this.lbldate.AutoSize = true;
+            this.lbldate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(29)))), ((int)(((byte)(71)))));
+            this.lbldate.Location = new System.Drawing.Point(541, 9);
+            this.lbldate.Name = "lbldate";
+            this.lbldate.Size = new System.Drawing.Size(52, 24);
+            this.lbldate.TabIndex = 6;
+            this.lbldate.Text = "Date";
             // 
             // btnMaximizer
             // 
@@ -215,6 +230,7 @@
             this.btnReports.Text = "Reports";
             this.btnReports.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReports.UseVisualStyleBackColor = true;
+            this.btnReports.Click += new System.EventHandler(this.BtnReports_Click);
             // 
             // btnComplaints
             // 
@@ -340,6 +356,10 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Dashboard_PL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,6 +374,7 @@
             this.Text = "Dashboard_PL";
             this.Load += new System.EventHandler(this.Dashboard_PL_Load);
             this.pnlHeadder.ResumeLayout(false);
+            this.pnlHeadder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestore)).EndInit();
@@ -367,8 +388,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnlContent;
         private System.Windows.Forms.Button btnStaff;
         private System.Windows.Forms.Button btnReports;
         private System.Windows.Forms.Button btnComplaints;
@@ -386,5 +405,8 @@
         private System.Windows.Forms.PictureBox btnSlide;
         private System.Windows.Forms.Panel pnlMenuVertical;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Panel pnlContent;
+        private System.Windows.Forms.Label lbldate;
+        private System.Windows.Forms.Timer timer1;
     }
 }

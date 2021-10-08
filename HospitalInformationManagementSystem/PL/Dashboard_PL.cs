@@ -16,13 +16,14 @@ namespace HospitalInformationManagementSystem.PL
     public partial class Dashboard_PL : Form
     {
         GrantUserPermission _GrantUserPermission = new GrantUserPermission();
+        //ucReport_PL ucReport_PL = new ucReport_PL();
         public Dashboard_PL()
-        {
-            //ucDashboard_PL ucDashboard = new ucDashboard_PL();
-            //FormControl.showControls(ucDashboard, pnlContent);
-
+        { 
             InitializeComponent();
             _GrantUserPermission.GrantMenuPermission(btnDashboard, btnPatient, btnVisitors, btnAppointment, btnPostal, btnComplaints, btnReports, btnStaff);
+
+            timer1.Start();
+            //this.ucReport_PL.ParentForm = this;
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -32,8 +33,9 @@ namespace HospitalInformationManagementSystem.PL
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         private void BtnDashboard_Click(object sender, EventArgs e)
         {
-            ucPatient_PL ucPatient = new ucPatient_PL();
-            
+            ucDashboard_PL ucDashboard = new ucDashboard_PL();
+            FormControl.showControls(ucDashboard, pnlContent);
+
         }
 
         private void BtnPatient_Click(object sender, EventArgs e)
@@ -109,6 +111,11 @@ namespace HospitalInformationManagementSystem.PL
         private void Dashboard_PL_Load(object sender, EventArgs e)
         {
             AuthModel authModel = new AuthModel();
+
+            ucDashboard_PL ucDashboard = new ucDashboard_PL();
+            FormControl.showControls(ucDashboard, pnlContent);
+
+            
         }
 
         private void btnAppointment_Click(object sender, EventArgs e)
@@ -121,6 +128,18 @@ namespace HospitalInformationManagementSystem.PL
         {
             ucPostals_PL ucPostals = new ucPostals_PL();
             FormControl.showControls(ucPostals, pnlContent);
+        }
+
+        private void BtnReports_Click(object sender, EventArgs e)
+        {
+            ucReport_PL ucReport = new ucReport_PL();
+            FormControl.showControls(ucReport, pnlContent);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime d = DateTime.Now;
+            lbldate.Text = d.ToString();
         }
     }
 }
