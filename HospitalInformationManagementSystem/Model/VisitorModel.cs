@@ -11,7 +11,7 @@ namespace HospitalInformationManagementSystem.Model
         public int visitor_id { get; set; }
         public string purpose { get; set; }
         public string fname { get; set; }
-        public string lname { get; set; }      
+        public string lname { get; set; }
         public string phone_no { get; set; }
         public string nic_no { get; set; }
         public DateTime date { get; set; }
@@ -20,7 +20,9 @@ namespace HospitalInformationManagementSystem.Model
         public string note { get; set; }
         public string cmbAttachmentType { get; set; }
         public string attachment_data { get; set; }
-       // public int user_id { get; set; }
+        // public int user_id { get; set; }
         public Boolean IsActive { get; set; }
+
+        public static string viewFile { get; set; }
     }
 }

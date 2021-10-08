@@ -33,7 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpBVisitor = new System.Windows.Forms.GroupBox();
-            this.btnDownload = new MetroFramework.Controls.MetroButton();
+            this.txtVisitorID = new System.Windows.Forms.TextBox();
+            this.btnView = new MetroFramework.Controls.MetroButton();
             this.cmbAttachmentType = new MetroFramework.Controls.MetroComboBox();
             this.btnBrowse = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
@@ -59,9 +60,6 @@
             this.txtNic = new System.Windows.Forms.TextBox();
             this.grpBVisitorGridView = new System.Windows.Forms.GroupBox();
             this.dgvVisitor = new MetroFramework.Controls.MetroGrid();
-            this.epVisitor = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ofdVisitor = new System.Windows.Forms.OpenFileDialog();
-            this.txtVisitorID = new System.Windows.Forms.TextBox();
             this.fname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nic_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,6 +70,9 @@
             this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.attachment_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.visitor_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.epVisitor = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ofdVisitor = new System.Windows.Forms.OpenFileDialog();
+            this.sfdVisitor = new System.Windows.Forms.SaveFileDialog();
             this.grpBVisitor.SuspendLayout();
             this.grpBVisitorGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitor)).BeginInit();
@@ -82,7 +83,7 @@
             // 
             this.grpBVisitor.BackColor = System.Drawing.Color.WhiteSmoke;
             this.grpBVisitor.Controls.Add(this.txtVisitorID);
-            this.grpBVisitor.Controls.Add(this.btnDownload);
+            this.grpBVisitor.Controls.Add(this.btnView);
             this.grpBVisitor.Controls.Add(this.cmbAttachmentType);
             this.grpBVisitor.Controls.Add(this.btnBrowse);
             this.grpBVisitor.Controls.Add(this.btnDelete);
@@ -115,17 +116,27 @@
             this.grpBVisitor.TabStop = false;
             this.grpBVisitor.Text = "Visitor";
             // 
-            // btnDownload
+            // txtVisitorID
             // 
-            this.btnDownload.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDownload.BackgroundImage = global::HospitalInformationManagementSystem.Properties.Resources.Download;
-            this.btnDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDownload.Location = new System.Drawing.Point(415, 501);
-            this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(55, 43);
-            this.btnDownload.TabIndex = 23;
-            this.btnDownload.UseSelectable = true;
-            this.btnDownload.Visible = false;
+            this.txtVisitorID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVisitorID.Location = new System.Drawing.Point(21, 393);
+            this.txtVisitorID.Name = "txtVisitorID";
+            this.txtVisitorID.Size = new System.Drawing.Size(63, 20);
+            this.txtVisitorID.TabIndex = 24;
+            this.txtVisitorID.Visible = false;
+            // 
+            // btnView
+            // 
+            this.btnView.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnView.BackgroundImage = global::HospitalInformationManagementSystem.Properties.Resources.Download;
+            this.btnView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnView.Location = new System.Drawing.Point(415, 501);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(55, 43);
+            this.btnView.TabIndex = 23;
+            this.btnView.UseSelectable = true;
+            this.btnView.Visible = false;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // cmbAttachmentType
             // 
@@ -452,23 +463,6 @@
             this.dgvVisitor.VirtualMode = true;
             this.dgvVisitor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVisitorsCellClick);
             // 
-            // epVisitor
-            // 
-            this.epVisitor.ContainerControl = this;
-            // 
-            // ofdVisitor
-            // 
-            this.ofdVisitor.FileName = "ofdVisitor";
-            // 
-            // txtVisitorID
-            // 
-            this.txtVisitorID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVisitorID.Location = new System.Drawing.Point(21, 393);
-            this.txtVisitorID.Name = "txtVisitorID";
-            this.txtVisitorID.Size = new System.Drawing.Size(63, 20);
-            this.txtVisitorID.TabIndex = 24;
-            this.txtVisitorID.Visible = false;
-            // 
             // fname
             // 
             this.fname.DataPropertyName = "fname";
@@ -482,6 +476,7 @@
             this.lname.HeaderText = "Last Name";
             this.lname.Name = "lname";
             this.lname.ReadOnly = true;
+            this.lname.Visible = false;
             // 
             // nic_no
             // 
@@ -524,6 +519,7 @@
             this.Note.HeaderText = "Note";
             this.Note.Name = "Note";
             this.Note.ReadOnly = true;
+            this.Note.Visible = false;
             // 
             // attachment_type
             // 
@@ -531,6 +527,7 @@
             this.attachment_type.HeaderText = "Attachment Type";
             this.attachment_type.Name = "attachment_type";
             this.attachment_type.ReadOnly = true;
+            this.attachment_type.Visible = false;
             // 
             // visitor_id
             // 
@@ -538,6 +535,20 @@
             this.visitor_id.HeaderText = "Visitor ID";
             this.visitor_id.Name = "visitor_id";
             this.visitor_id.ReadOnly = true;
+            this.visitor_id.Visible = false;
+            // 
+            // epVisitor
+            // 
+            this.epVisitor.ContainerControl = this;
+            // 
+            // ofdVisitor
+            // 
+            this.ofdVisitor.FileName = "ofdVisitor";
+            this.ofdVisitor.Filter = "PDF document (*.pdf)|*.pdf";
+            // 
+            // sfdVisitor
+            // 
+            this.sfdVisitor.Filter = "PDF document (*.pdf)|*.pdf";
             // 
             // ucVisitors_PL
             // 
@@ -589,7 +600,7 @@
         private System.Windows.Forms.OpenFileDialog ofdVisitor;
         private MetroFramework.Controls.MetroComboBox cmbAttachmentType;
         private MetroFramework.Controls.MetroGrid dgvVisitor;
-        private MetroFramework.Controls.MetroButton btnDownload;
+        private MetroFramework.Controls.MetroButton btnView;
         private System.Windows.Forms.TextBox txtVisitorID;
         private System.Windows.Forms.DataGridViewTextBoxColumn fname;
         private System.Windows.Forms.DataGridViewTextBoxColumn lname;
@@ -601,5 +612,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Note;
         private System.Windows.Forms.DataGridViewTextBoxColumn attachment_type;
         private System.Windows.Forms.DataGridViewTextBoxColumn visitor_id;
+        private System.Windows.Forms.SaveFileDialog sfdVisitor;
     }
 }

@@ -104,6 +104,7 @@ namespace HospitalInformationManagementSystem.PL
             txtNic.Text = "";
             dtpDate.Value = DateTime.Now;
             txtPurpose.Text = "";
+            txtNote.Text = "";
 
         }
 
@@ -116,6 +117,7 @@ namespace HospitalInformationManagementSystem.PL
                     MessageBox.Show("Visitor add sucessfull", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.FillDGVVisitor();
                     epVisitor.Clear();
+                    this.Clear();
                 }
             }
             catch (Exception ex)
@@ -187,6 +189,7 @@ namespace HospitalInformationManagementSystem.PL
                     MessageBox.Show("Patient update sucessfull","Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.FillDGVVisitor();
                     this.Clear();
+                    btnAdd.Enabled = true;
                 }
             }
             catch (Exception ex)
@@ -216,7 +219,7 @@ namespace HospitalInformationManagementSystem.PL
                     visitorModel.IsActive = true;
                     visitorModel.visitor_id = Int32.Parse(txtVisitorID.Text.Trim());
 
-                    return _visitor_BLL.AddVisitor(visitorModel);
+                    return _visitor_BLL.UpdateVisitor(visitorModel);
                 
 
             }
@@ -234,7 +237,7 @@ namespace HospitalInformationManagementSystem.PL
 
             if (dgvVisitor.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
-                btnDownload.Visible = true;
+                btnView.Visible = true;
                 dgvVisitor.CurrentRow.Selected = true;
                 
                 txtFirstName.Text = dgvVisitor.Rows[e.RowIndex].Cells["fname"].FormattedValue.ToString();
@@ -282,6 +285,32 @@ namespace HospitalInformationManagementSystem.PL
             {
 
                 throw;
+            }
+        }
+
+        private bool CreateFile()
+        {
+            try
+            {
+                if (_visitor_BLL.GetAttachment(Int32.Parse(txtVisitorID.Text.Trim()), sfdVisitor))
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            if (CreateFile())
+            {
+                wfViewFiles_PL wfViewFiles_PL = new wfViewFiles_PL(VisitorModel.viewFile);
+                wfViewFiles_PL.Show();
             }
         }
     }
