@@ -9,14 +9,14 @@ using System.Windows.Forms;
 
 namespace HospitalInformationManagementSystem.BLL
 {
-    class Postal_BLL
+    class Appointment_BLL
     {
-        public void LoadAllPostalGridView(DataGridView dgvPostal)
+        public void LoadAllAppointmentGridView(DataGridView dgvAppointment)
         {
             try
             {
-                dgvPostal.AutoGenerateColumns = false;
-                dgvPostal.DataSource = Postal_DLL.GetAllPostal();
+                dgvAppointment.AutoGenerateColumns = false;
+                dgvAppointment.DataSource = Appointment_DLL.GetAllAppointment();
             }
             catch (Exception)
             {
@@ -24,12 +24,12 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
-        public void LoadPostalByRefNoGridView(DataGridView dgvPostal, string refno)
+        public void GetAppointmentByAppointmentNo(DataGridView dgvAppointment, string appno)
         {
             try
             {
-                dgvPostal.AutoGenerateColumns = false;
-                dgvPostal.DataSource = Postal_DLL.GetPostalByRefNo(refno);
+                dgvAppointment.AutoGenerateColumns = false;
+                dgvAppointment.DataSource = Appointment_DLL.GetAppointmentByAppointmentNo(appno);
             }
             catch (Exception)
             {
@@ -37,11 +37,11 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
-        public int AddPostal(PostalModel postaltModel)
+        public int AddAppointment(AppointmentModel appointmentModel)
         {
             try
             {
-                return Postal_DLL.AddPostal(postaltModel);
+                return Appointment_DLL.AddAppointment(appointmentModel);
             }
             catch (Exception)
             {
@@ -49,11 +49,11 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
-        public int UpdatePostal(PostalModel postalModel)
+        public int UpdateAppointment(AppointmentModel appointmentModel)
         {
             try
             {
-                return Postal_DLL.UpdatePostal(postalModel);
+                return Appointment_DLL.UpdateAppointment(appointmentModel);
             }
             catch (Exception)
             {
@@ -61,11 +61,11 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
-        public int DeletePostal(int PostalID)
+        public int DeleteAppointment(int AppointmentID)
         {
             try
             {
-                return Postal_DLL.DeletePostal(PostalID);
+                return Appointment_DLL.DeleteAppointment(AppointmentID);
             }
             catch (Exception)
             {

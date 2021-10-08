@@ -33,7 +33,7 @@ namespace HospitalInformationManagementSystem.DAL
         {
             try
             {
-                string sql = string.Format("SELECT Count(isnull(app_id,0)) AS ACount FROM Appointments WHERE status=@IsActive");
+                string sql = string.Format("SELECT Count(isnull(app_id,0)) AS ACount FROM Appointments WHERE IsActive=@IsActive");
 
                 SqlParameter[] _sql = new SqlParameter[1];
                 _sql[0] = SqlParameterFormat.Format("@IsActive", true);

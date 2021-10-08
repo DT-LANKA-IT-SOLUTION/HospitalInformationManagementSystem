@@ -52,16 +52,6 @@ namespace HospitalInformationManagementSystem.PL
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_postal_add_Click(object sender, EventArgs e)
         {
             try
@@ -70,6 +60,7 @@ namespace HospitalInformationManagementSystem.PL
                 {
                     MessageBox.Show("Postal add sucessfull", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.FilDGVPostal();
+                    this.Clear();
                 }
             }
             catch (Exception ex)
@@ -143,9 +134,149 @@ namespace HospitalInformationManagementSystem.PL
             }
         }
 
+        //clear form
+        public void Clear()
+        {
+            comboBox_postal_type.SelectedIndex = -1;
+            txt_refno.Text = "";
+            txt_from_to_name.Text = "";
+            txt_from_to_address.Text = "";
+            txt_note.Text = "";
+            dateTimePicker1.Text = "";
+        }
+
         private void dgvPostal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (dgvPostal.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                dgvPostal.CurrentRow.Selected = true;
 
+                txt_postal_id.Text = dgvPostal.Rows[e.RowIndex].Cells["postal_id"].FormattedValue.ToString();
+                comboBox_postal_type.Text = dgvPostal.Rows[e.RowIndex].Cells["postal_type"].FormattedValue.ToString();
+                txt_refno.Text = dgvPostal.Rows[e.RowIndex].Cells["ref_no"].FormattedValue.ToString();
+                txt_from_to_name.Text = dgvPostal.Rows[e.RowIndex].Cells["from_name"].FormattedValue.ToString();
+                txt_from_to_address.Text = dgvPostal.Rows[e.RowIndex].Cells["address"].FormattedValue.ToString();
+                txt_note.Text = dgvPostal.Rows[e.RowIndex].Cells["note"].FormattedValue.ToString();
+                dateTimePicker1.Text = dgvPostal.Rows[e.RowIndex].Cells["date"].FormattedValue.ToString();
+
+                //txtPassword.Text = EncryptionLab.DecryptText(dgvPatient.Rows[e.RowIndex].Cells["password"].FormattedValue.ToString());
+                //btnAddPostal.Enabled = false;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSearchByRefNo.Text))
+            {
+                epPostal.SetError(txtSearchByRefNo, "Please enter Ref No");
+                txtSearchByRefNo.Focus();
+            }
+            else
+            {
+                epPostal.Clear();
+                this.FilDGVSearchPostal(txtSearchByRefNo.Text.Trim());
+            }
+        }
+
+        private void FilDGVSearchPostal(string refno)
+        {
+            try
+            {
+                _postal_BLL.LoadPostalByRefNoGridView(dgvPostal, refno);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_postal_edit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (UpdatePostal() > 0)
+                {
+                    MessageBox.Show("Postal update successfull", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.FilDGVPostal();
+                    this.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public int UpdatePostal()
+        {
+            try
+            {
+                postalModel.postal_id = Int32.Parse(txt_postal_id.Text.Trim()); 
+                postalModel.postal_type = (comboBox_postal_type.SelectedItem == null) ? "N/A" : comboBox_postal_type.SelectedItem.ToString();
+                postalModel.ref_no = (string.IsNullOrEmpty(txt_refno.Text)) ? "N/A" : txt_refno.Text.Trim();
+                postalModel.from_name = (string.IsNullOrEmpty(txt_from_to_name.Text)) ? "N/A" : txt_from_to_name.Text.Trim();
+                postalModel.address = (string.IsNullOrEmpty(txt_from_to_address.Text)) ? "N/A" : txt_from_to_address.Text.Trim();
+                postalModel.note = (string.IsNullOrEmpty(txt_note.Text)) ? "N/A" : txt_note.Text.Trim();
+                postalModel.to_name = FN;
+                postalModel.date = (string.IsNullOrEmpty(dateTimePicker1.Text)) ? DateTime.Now : Convert.ToDateTime(dateTimePicker1.Text.Trim());
+                //postalModel.attachment_data = 
+                //postalModel.attachment_type =
+                postalModel.user_id = 1;
+
+                return _postal_BLL.UpdatePostal(postalModel);
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); ;
+            }
+        }
+
+        private void btn_postal_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (DeletePostal() > 0)
+                {
+                    MessageBox.Show("Postal delete successfull", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.FilDGVPostal();
+                    this.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public int DeletePostal()
+        {
+            try
+            {
+                int postalId = Int32.Parse(txt_postal_id.Text.Trim());
+                return _postal_BLL.DeletePostal(postalId);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void ucPostals_PL_Load(object sender, EventArgs e)
+        {
+            this.FilDGVPostal();
         }
     }
 }

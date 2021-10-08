@@ -29,18 +29,29 @@ namespace HospitalInformationManagementSystem.PL
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_app_id = new System.Windows.Forms.TextBox();
+            this.txt_medical_officer = new System.Windows.Forms.TextBox();
+            this.btn_clear_appointment = new System.Windows.Forms.Button();
+            this.comboBox_status = new System.Windows.Forms.ComboBox();
+            this.btn_add_appointment = new System.Windows.Forms.Button();
+            this.btn_edit_appointment = new System.Windows.Forms.Button();
+            this.btn_delete_appointment = new System.Windows.Forms.Button();
+            this.dateTimePicker_time = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_date = new System.Windows.Forms.DateTimePicker();
+            this.txt_symptoms = new System.Windows.Forms.TextBox();
+            this.txt_patient_name = new System.Windows.Forms.TextBox();
+            this.txt_appointment_no = new System.Windows.Forms.TextBox();
+
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,26 +60,42 @@ namespace HospitalInformationManagementSystem.PL
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearchByAppNo = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dgvAppointment = new System.Windows.Forms.DataGridView();
+            this.app_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.appointment_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.symptoms = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.medical_officer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.app_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.app_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.epAppointment = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epAppointment)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(150)))));
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txt_app_id);
+            this.groupBox1.Controls.Add(this.txt_medical_officer);
+            this.groupBox1.Controls.Add(this.btn_clear_appointment);
+            this.groupBox1.Controls.Add(this.comboBox_status);
+            this.groupBox1.Controls.Add(this.btn_add_appointment);
+            this.groupBox1.Controls.Add(this.btn_edit_appointment);
+            this.groupBox1.Controls.Add(this.btn_delete_appointment);
+            this.groupBox1.Controls.Add(this.dateTimePicker_time);
+            this.groupBox1.Controls.Add(this.dateTimePicker_date);
+            this.groupBox1.Controls.Add(this.txt_symptoms);
+            this.groupBox1.Controls.Add(this.txt_patient_name);
+            this.groupBox1.Controls.Add(this.txt_appointment_no);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -84,144 +111,155 @@ namespace HospitalInformationManagementSystem.PL
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Appointment Form";
-            
+
             // 
-            // textBox4
+            // txt_app_id
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(179, 253);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(313, 30);
-            this.textBox4.TabIndex = 13;
-            
+            this.txt_app_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_app_id.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_app_id.Location = new System.Drawing.Point(178, 22);
+            this.txt_app_id.Name = "txt_app_id";
+            this.txt_app_id.Size = new System.Drawing.Size(313, 30);
+            this.txt_app_id.TabIndex = 14;
+            this.txt_app_id.Visible = false;
             // 
-            // button4
+            // txt_medical_officer
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(29)))), ((int)(((byte)(71)))));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(366, 533);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(106, 50);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "View";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Visible = false;
+            this.txt_medical_officer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_medical_officer.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_medical_officer.Location = new System.Drawing.Point(179, 253);
+            this.txt_medical_officer.Name = "txt_medical_officer";
+            this.txt_medical_officer.Size = new System.Drawing.Size(313, 30);
+            this.txt_medical_officer.TabIndex = 13;
             // 
-            // comboBox1
+            // btn_clear_appointment
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.btn_clear_appointment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(29)))), ((int)(((byte)(71)))));
+            this.btn_clear_appointment.FlatAppearance.BorderColor = System.Drawing.Color.Blue;
+            this.btn_clear_appointment.FlatAppearance.BorderSize = 0;
+            this.btn_clear_appointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_clear_appointment.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_clear_appointment.ForeColor = System.Drawing.Color.White;
+            this.btn_clear_appointment.Location = new System.Drawing.Point(366, 533);
+            this.btn_clear_appointment.Name = "btn_clear_appointment";
+            this.btn_clear_appointment.Size = new System.Drawing.Size(106, 50);
+            this.btn_clear_appointment.TabIndex = 11;
+            this.btn_clear_appointment.Text = "Clear";
+            this.btn_clear_appointment.UseVisualStyleBackColor = false;
+            this.btn_clear_appointment.Visible = false;
+            // 
+            // comboBox_status
+            // 
+            this.comboBox_status.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_status.FormattingEnabled = true;
+            this.comboBox_status.Items.AddRange(new object[] {
             "Available",
             "Pending",
             "Confirmed",
             "Rejected"});
-            this.comboBox1.Location = new System.Drawing.Point(179, 409);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(143, 34);
-            this.comboBox1.TabIndex = 12;
+
+            this.comboBox_status.Location = new System.Drawing.Point(179, 409);
+            this.comboBox_status.Name = "comboBox_status";
+            this.comboBox_status.Size = new System.Drawing.Size(143, 28);
+            this.comboBox_status.TabIndex = 12;
             // 
-            // button3
+            // btn_add_appointment
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(29)))), ((int)(((byte)(71)))));
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(34, 533);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(102, 50);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Add";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_add_appointment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(29)))), ((int)(((byte)(71)))));
+            this.btn_add_appointment.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_add_appointment.FlatAppearance.BorderSize = 0;
+            this.btn_add_appointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add_appointment.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add_appointment.ForeColor = System.Drawing.Color.White;
+            this.btn_add_appointment.Location = new System.Drawing.Point(34, 533);
+            this.btn_add_appointment.Name = "btn_add_appointment";
+            this.btn_add_appointment.Size = new System.Drawing.Size(102, 50);
+            this.btn_add_appointment.TabIndex = 10;
+            this.btn_add_appointment.Text = "Add";
+            this.btn_add_appointment.UseVisualStyleBackColor = false;
+            this.btn_add_appointment.Click += new System.EventHandler(this.btn_add_appointment_Click);
             // 
-            // button2
+            // btn_edit_appointment
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(29)))), ((int)(((byte)(71)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Green;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(142, 533);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 50);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Edit";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_edit_appointment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(29)))), ((int)(((byte)(71)))));
+            this.btn_edit_appointment.FlatAppearance.BorderColor = System.Drawing.Color.Green;
+            this.btn_edit_appointment.FlatAppearance.BorderSize = 0;
+            this.btn_edit_appointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_edit_appointment.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_edit_appointment.ForeColor = System.Drawing.Color.White;
+            this.btn_edit_appointment.Location = new System.Drawing.Point(142, 533);
+            this.btn_edit_appointment.Name = "btn_edit_appointment";
+            this.btn_edit_appointment.Size = new System.Drawing.Size(106, 50);
+            this.btn_edit_appointment.TabIndex = 9;
+            this.btn_edit_appointment.Text = "Edit";
+            this.btn_edit_appointment.UseVisualStyleBackColor = false;
+            this.btn_edit_appointment.Click += new System.EventHandler(this.btn_edit_appointment_Click);
             // 
-            // button1
+            // btn_delete_appointment
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(29)))), ((int)(((byte)(71)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(254, 533);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 50);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Delete";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_delete_appointment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(29)))), ((int)(((byte)(71)))));
+            this.btn_delete_appointment.FlatAppearance.BorderColor = System.Drawing.Color.Red;
+            this.btn_delete_appointment.FlatAppearance.BorderSize = 0;
+            this.btn_delete_appointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_delete_appointment.Font = new System.Drawing.Font("Poppins", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_delete_appointment.ForeColor = System.Drawing.Color.White;
+            this.btn_delete_appointment.Location = new System.Drawing.Point(254, 533);
+            this.btn_delete_appointment.Name = "btn_delete_appointment";
+            this.btn_delete_appointment.Size = new System.Drawing.Size(106, 50);
+            this.btn_delete_appointment.TabIndex = 8;
+            this.btn_delete_appointment.Text = "Delete";
+            this.btn_delete_appointment.UseVisualStyleBackColor = false;
+            this.btn_delete_appointment.Click += new System.EventHandler(this.btn_delete_appointment_Click);
             // 
-            // dateTimePicker2
+            // dateTimePicker_time
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(179, 356);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(143, 30);
-            this.dateTimePicker2.TabIndex = 5;
-            this.dateTimePicker2.Value = new System.DateTime(2021, 9, 19, 20, 3, 0, 0);
+            this.dateTimePicker_time.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_time.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker_time.Location = new System.Drawing.Point(179, 356);
+            this.dateTimePicker_time.Name = "dateTimePicker_time";
+            this.dateTimePicker_time.Size = new System.Drawing.Size(143, 31);
+            this.dateTimePicker_time.TabIndex = 5;
+            this.dateTimePicker_time.Value = new System.DateTime(2021, 9, 19, 20, 3, 0, 0);
             // 
-            // dateTimePicker1
+            // dateTimePicker_date
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(178, 307);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2021, 9, 19, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(143, 30);
-            this.dateTimePicker1.TabIndex = 4;
-            this.dateTimePicker1.Value = new System.DateTime(2021, 9, 19, 0, 0, 0, 0);
+            this.dateTimePicker_date.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker_date.Location = new System.Drawing.Point(178, 307);
+            this.dateTimePicker_date.MaxDate = new System.DateTime(2021, 9, 19, 0, 0, 0, 0);
+            this.dateTimePicker_date.Name = "dateTimePicker_date";
+            this.dateTimePicker_date.Size = new System.Drawing.Size(143, 31);
+            this.dateTimePicker_date.TabIndex = 4;
+            this.dateTimePicker_date.Value = new System.DateTime(2021, 9, 19, 0, 0, 0, 0);
             // 
-            // textBox3
+            // txt_symptoms
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(178, 146);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(314, 88);
-            this.textBox3.TabIndex = 2;
-            
+            this.txt_symptoms.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_symptoms.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_symptoms.Location = new System.Drawing.Point(178, 146);
+            this.txt_symptoms.Multiline = true;
+            this.txt_symptoms.Name = "txt_symptoms";
+            this.txt_symptoms.Size = new System.Drawing.Size(314, 88);
+            this.txt_symptoms.TabIndex = 2;
             // 
-            // textBox2
+            // txt_patient_name
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(178, 105);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(314, 30);
-            this.textBox2.TabIndex = 1;
-            
+            this.txt_patient_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_patient_name.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_patient_name.Location = new System.Drawing.Point(178, 105);
+            this.txt_patient_name.Name = "txt_patient_name";
+            this.txt_patient_name.Size = new System.Drawing.Size(314, 30);
+            this.txt_patient_name.TabIndex = 1;
             // 
-            // textBox1
+            // txt_appointment_no
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(179, 59);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(313, 30);
-            this.textBox1.TabIndex = 1;
-            
+            this.txt_appointment_no.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_appointment_no.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_appointment_no.Location = new System.Drawing.Point(179, 59);
+            this.txt_appointment_no.Name = "txt_appointment_no";
+            this.txt_appointment_no.Size = new System.Drawing.Size(313, 30);
+            this.txt_appointment_no.TabIndex = 1;
+
             // 
             // label7
             // 
@@ -233,7 +271,7 @@ namespace HospitalInformationManagementSystem.PL
             this.label7.Size = new System.Drawing.Size(59, 26);
             this.label7.TabIndex = 0;
             this.label7.Text = "Status";
-            
+
             // 
             // label6
             // 
@@ -245,7 +283,7 @@ namespace HospitalInformationManagementSystem.PL
             this.label6.Size = new System.Drawing.Size(48, 26);
             this.label6.TabIndex = 0;
             this.label6.Text = "Time";
-            
+
             // 
             // label5
             // 
@@ -257,7 +295,6 @@ namespace HospitalInformationManagementSystem.PL
             this.label5.Size = new System.Drawing.Size(47, 26);
             this.label5.TabIndex = 0;
             this.label5.Text = "Date";
-            
             // 
             // label4
             // 
@@ -269,7 +306,7 @@ namespace HospitalInformationManagementSystem.PL
             this.label4.Size = new System.Drawing.Size(125, 26);
             this.label4.TabIndex = 0;
             this.label4.Text = "Medical Officer";
-            
+
             // 
             // label3
             // 
@@ -281,7 +318,6 @@ namespace HospitalInformationManagementSystem.PL
             this.label3.Size = new System.Drawing.Size(92, 26);
             this.label3.TabIndex = 0;
             this.label3.Text = "Symptoms";
-            
             // 
             // label2
             // 
@@ -293,7 +329,7 @@ namespace HospitalInformationManagementSystem.PL
             this.label2.Size = new System.Drawing.Size(113, 26);
             this.label2.TabIndex = 0;
             this.label2.Text = "Patient Name";
-            
+
             // 
             // label1
             // 
@@ -305,30 +341,160 @@ namespace HospitalInformationManagementSystem.PL
             this.label1.Size = new System.Drawing.Size(135, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Appointment No";
-            
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(150)))));
-            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Controls.Add(this.panel1);
+            this.groupBox3.Controls.Add(this.dgvAppointment);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(517, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(505, 677);
+            this.groupBox3.Size = new System.Drawing.Size(505, 685);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Appointment Schedule";
             // 
-            // dataGridView1
+            // panel1
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(150)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 25);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(499, 649);
-            this.dataGridView1.TabIndex = 0;
+            this.panel1.Controls.Add(this.btnSearch);
+            this.panel1.Controls.Add(this.txtSearchByAppNo);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.ForeColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(6, 28);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(493, 43);
+            this.panel1.TabIndex = 3;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.Silver;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.Black;
+            this.btnSearch.Location = new System.Drawing.Point(357, 3);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(119, 33);
+            this.btnSearch.TabIndex = 3;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearchByAppNo
+            // 
+            this.txtSearchByAppNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearchByAppNo.Location = new System.Drawing.Point(173, 7);
+            this.txtSearchByAppNo.Name = "txtSearchByAppNo";
+            this.txtSearchByAppNo.Size = new System.Drawing.Size(178, 24);
+            this.txtSearchByAppNo.TabIndex = 2;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(14, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(153, 18);
+            this.label11.TabIndex = 1;
+            this.label11.Text = "Enter Appointment No";
+            // 
+            // dgvAppointment
+            // 
+            this.dgvAppointment.AllowUserToDeleteRows = false;
+            this.dgvAppointment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(150)))));
+            this.dgvAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAppointment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.app_id,
+            this.appointment_no,
+            this.patient,
+            this.symptoms,
+            this.medical_officer,
+            this.app_date,
+            this.app_time,
+            this.status});
+            this.dgvAppointment.Location = new System.Drawing.Point(5, 80);
+            this.dgvAppointment.Name = "dgvAppointment";
+            this.dgvAppointment.ReadOnly = true;
+            this.dgvAppointment.Size = new System.Drawing.Size(493, 602);
+            this.dgvAppointment.TabIndex = 1;
+            this.dgvAppointment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAppointment_CellClick);
+            // 
+            // app_id
+            // 
+            this.app_id.DataPropertyName = "app_id";
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.app_id.DefaultCellStyle = dataGridViewCellStyle9;
+            this.app_id.HeaderText = "App ID";
+            this.app_id.Name = "app_id";
+            this.app_id.ReadOnly = true;
+            // 
+            // appointment_no
+            // 
+            this.appointment_no.DataPropertyName = "appointment_no";
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.appointment_no.DefaultCellStyle = dataGridViewCellStyle10;
+            this.appointment_no.HeaderText = "Appointment No";
+            this.appointment_no.Name = "appointment_no";
+            this.appointment_no.ReadOnly = true;
+            // 
+            // patient
+            // 
+            this.patient.DataPropertyName = "patient";
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            this.patient.DefaultCellStyle = dataGridViewCellStyle11;
+            this.patient.HeaderText = "Patient";
+            this.patient.Name = "patient";
+            this.patient.ReadOnly = true;
+            // 
+            // symptoms
+            // 
+            this.symptoms.DataPropertyName = "symptoms";
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            this.symptoms.DefaultCellStyle = dataGridViewCellStyle12;
+            this.symptoms.HeaderText = "Symptoms";
+            this.symptoms.Name = "symptoms";
+            this.symptoms.ReadOnly = true;
+            // 
+            // medical_officer
+            // 
+            this.medical_officer.DataPropertyName = "medical_officer";
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            this.medical_officer.DefaultCellStyle = dataGridViewCellStyle13;
+            this.medical_officer.HeaderText = "Medical Officer";
+            this.medical_officer.Name = "medical_officer";
+            this.medical_officer.ReadOnly = true;
+            // 
+            // app_date
+            // 
+            this.app_date.DataPropertyName = "app_date";
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            this.app_date.DefaultCellStyle = dataGridViewCellStyle14;
+            this.app_date.HeaderText = "Date";
+            this.app_date.Name = "app_date";
+            this.app_date.ReadOnly = true;
+            // 
+            // app_time
+            // 
+            this.app_time.DataPropertyName = "app_time";
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            this.app_time.DefaultCellStyle = dataGridViewCellStyle15;
+            this.app_time.HeaderText = "Time";
+            this.app_time.Name = "app_time";
+            this.app_time.ReadOnly = true;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "status";
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            this.status.DefaultCellStyle = dataGridViewCellStyle16;
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            // 
+            // epAppointment
+            // 
+            this.epAppointment.ContainerControl = this;
             // 
             // ucAppointment_PL
             // 
@@ -339,10 +505,14 @@ namespace HospitalInformationManagementSystem.PL
             this.Controls.Add(this.groupBox1);
             this.Name = "ucAppointment_PL";
             this.Size = new System.Drawing.Size(1024, 691);
+            this.Load += new System.EventHandler(this.ucAppointment_PL_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epAppointment)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -351,24 +521,38 @@ namespace HospitalInformationManagementSystem.PL
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_appointment_no;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox txt_patient_name;
+        private System.Windows.Forms.TextBox txt_symptoms;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_date;
+        private System.Windows.Forms.Button btn_add_appointment;
+        private System.Windows.Forms.Button btn_edit_appointment;
+        private System.Windows.Forms.Button btn_delete_appointment;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_time;
+        private System.Windows.Forms.TextBox txt_medical_officer;
+        private System.Windows.Forms.ComboBox comboBox_status;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvAppointment;
+        private System.Windows.Forms.Button btn_clear_appointment;
+        private System.Windows.Forms.TextBox txt_app_id;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtSearchByAppNo;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ErrorProvider epAppointment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn app_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn appointment_no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patient;
+        private System.Windows.Forms.DataGridViewTextBoxColumn symptoms;
+        private System.Windows.Forms.DataGridViewTextBoxColumn medical_officer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn app_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn app_time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
     }
 }
