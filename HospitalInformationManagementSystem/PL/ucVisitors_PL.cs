@@ -14,7 +14,7 @@ using System.Globalization;
 
 namespace HospitalInformationManagementSystem.PL
 {
-    public partial class ucVisitors_PL : UserControl
+    public partial class ucVisitors_PL : MetroFramework.Controls.MetroUserControl
     {
         
         GrantUserPermission _grantUserPermission = new GrantUserPermission();
@@ -130,7 +130,7 @@ namespace HospitalInformationManagementSystem.PL
                     visitorModel.purpose = txtPurpose.Text.Trim();
                     visitorModel.cmbAttachmentType = cmbAttachmentType.Text.Trim();
                     visitorModel.IsActive = true;
-
+					
                     return _visitor_BLL.AddVisitor(visitorModel);
                 }
 
