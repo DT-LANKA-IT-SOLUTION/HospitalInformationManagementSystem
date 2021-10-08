@@ -18,7 +18,7 @@ namespace HospitalInformationManagementSystem.DAL
         {
             try
             {
-                string sql = string.Format("SELECT * FROM Visitors"); //WHERE Visitors.IsActive = @IsActive
+                string sql = string.Format("SELECT * FROM Visitors WHERE Visitors.IsActive = @IsActive"); 
                 SqlParameter[] _sql = new SqlParameter[1];
                 _sql[0] = SqlParameterFormat.Format("@IsActive", true);
 
@@ -93,7 +93,7 @@ namespace HospitalInformationManagementSystem.DAL
 
                     );
 
-                SqlParameter[] _sql = new SqlParameter[11];
+                SqlParameter[] _sql = new SqlParameter[12];
 
                 _sql[0] = SqlParameterFormat.Format("@purpose", visitorModel.purpose);
                 _sql[1] = SqlParameterFormat.Format("@fname", visitorModel.fname);
@@ -106,9 +106,11 @@ namespace HospitalInformationManagementSystem.DAL
                 _sql[7] = SqlParameterFormat.Format("@note", visitorModel.note);
                 _sql[8] = SqlParameterFormat.Format("@attachment_type", visitorModel.cmbAttachmentType);
                 _sql[9] = SqlParameterFormat.Format("@attachment_data", visitorModel.attachment_data);
-                _sql[10] = SqlParameterFormat.Format("@user_id", PermisionsModel.user_id);
+                _sql[10] = SqlParameterFormat.Format("@visitor_id", PermisionsModel.user_id);
+                _sql[11] = SqlParameterFormat.Format("@visitor_id", visitorModel.visitor_id);
 
                 return ODBC.SetData(sql, _sql);
+
             }
             catch (Exception)
             {
@@ -122,14 +124,14 @@ namespace HospitalInformationManagementSystem.DAL
             try
             {
                 string sql = string.Format("UPDATE Visitors SET" +
-                    "IsActive=@Active," +
-                    "WHERE visitor_id=@visitor_id"
+                    " IsActive=@Active" +
+                    " WHERE visitor_id=@visitor_id"
                     );
 
                 SqlParameter[] _sql = new SqlParameter[2];
 
-                _sql[5] = SqlParameterFormat.Format("@Active", Active);
-                _sql[6] = SqlParameterFormat.Format("@visitor_id", visitor_id);
+                _sql[0] = SqlParameterFormat.Format("@Active", Active);
+                _sql[1] = SqlParameterFormat.Format("@visitor_id", visitor_id);
 
                 return ODBC.SetData(sql, _sql);
             }

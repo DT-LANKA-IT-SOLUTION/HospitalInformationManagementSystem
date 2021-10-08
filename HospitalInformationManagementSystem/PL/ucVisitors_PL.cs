@@ -14,7 +14,7 @@ using System.Globalization;
 
 namespace HospitalInformationManagementSystem.PL
 {
-    public partial class ucVisitors_PL : MetroFramework.Controls.MetroUserControl
+    public partial class ucVisitors_PL : UserControl
     {
         
         GrantUserPermission _grantUserPermission = new GrantUserPermission();
@@ -29,6 +29,11 @@ namespace HospitalInformationManagementSystem.PL
             _grantUserPermission.GrantButtonPermission("visitor", btnAdd, btnEdit, btnDelete);
         }
 
+        private void ucVisitors_PL_Load(object sender, EventArgs e)
+        {
+            this.FillDGVVisitor();
+            epVisitor.Clear();
+        }
        
 
         private void FillDGVVisitor()
@@ -89,6 +94,17 @@ namespace HospitalInformationManagementSystem.PL
 
             epVisitor.Clear();
             return true;
+        }
+
+        private void Clear()
+        {
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+            txtPhone.Text = "";
+            txtNic.Text = "";
+            dtpDate.Value = DateTime.Now;
+            txtPurpose.Text = "";
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -161,23 +177,14 @@ namespace HospitalInformationManagementSystem.PL
                 MessageBox.Show(ex.Message);
             }
         }
-        private void Clear()
-        {
-            txtFirstName.Text = "";
-            txtLastName.Text = "";
-            txtPhone.Text = "";
-            txtNic.Text = "";
-            dtpDate.Value = DateTime.Now;
-
-        }
-
+        
         private void btnEdit_Click(object sender, EventArgs e)
         {
             try
             {
                 if (UpdateVisitor() > 0)
                 {
-                    MessageBox.Show("Patient update sucessfull", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Patient update sucessfull","Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.FillDGVVisitor();
                     this.Clear();
                 }
@@ -192,15 +199,14 @@ namespace HospitalInformationManagementSystem.PL
         {
             try
             {
-                if(IsValid("update"))
-                {
+                
                     visitorModel.fname = txtFirstName.Text.Trim();
                     visitorModel.lname = txtLastName.Text.Trim();
                     visitorModel.phone_no = txtPhone.Text.Trim();
                     visitorModel.nic_no = txtNic.Text.Trim();
-                    //string date = DateTime.Now.ToString("M/d/yyyy");
-                    //visitorModel.date = Convert.ToDateTime(date);
-                    //string dtpInTime = DateTime.Now.ToString("h:mm:ss tt");
+                    string date = DateTime.Now.ToString("M/d/yyyy");
+                    visitorModel.date = Convert.ToDateTime(date);
+                    string dtpInTime = DateTime.Now.ToString("h:mm:ss tt");
                     //visitorModel.in_time = Convert.ToDateTime(dtpInTime);
                     visitorModel.out_time = Convert.ToDateTime(dtpOutTime.Text.Trim());
                     visitorModel.note = txtNote.Text.Trim();
@@ -208,9 +214,10 @@ namespace HospitalInformationManagementSystem.PL
                     visitorModel.cmbAttachmentType = cmbAttachmentType.Text.Trim();
 
                     visitorModel.IsActive = true;
+                    visitorModel.visitor_id = Int32.Parse(txtVisitorID.Text.Trim());
+
                     return _visitor_BLL.AddVisitor(visitorModel);
-                }
-                return 0;
+                
 
             }
             catch (Exception)
@@ -220,11 +227,7 @@ namespace HospitalInformationManagementSystem.PL
             }
         }
 
-        private void ucVisitors_PL_Load(object sender, EventArgs e)
-        {
-            this.FillDGVVisitor();
-            epVisitor.Clear();
-        }
+        
 
         private void dgvVisitorsCellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -243,10 +246,42 @@ namespace HospitalInformationManagementSystem.PL
                 dtpDate.Text = dgvVisitor.Rows[e.RowIndex].Cells["date"].FormattedValue.ToString();
                 txtNote.Text = dgvVisitor.Rows[e.RowIndex].Cells["note"].FormattedValue.ToString();
                 cmbAttachmentType.Text = dgvVisitor.Rows[e.RowIndex].Cells["attachment_type"].FormattedValue.ToString();
+                txtVisitorID.Text = dgvVisitor.Rows[e.RowIndex].Cells["visitor_id"].FormattedValue.ToString();
               //  cmbAttachmentType.Text = dgvVisitor.Rows[e.RowIndex].Cells["attachment_data"].FormattedValue.ToString();
                             
 
-                //btnAddPatient.Enabled = false;
+                btnAdd.Enabled = false;
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (DeleteVisitor() > 0)
+                {
+                    MessageBox.Show("Visitor delete sucessfull", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.FillDGVVisitor();
+                    this.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public int DeleteVisitor()
+        {
+            try
+            {
+                return _visitor_BLL.DeleteVisitor(false, Int32.Parse(txtVisitorID.Text.Trim()));
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }
