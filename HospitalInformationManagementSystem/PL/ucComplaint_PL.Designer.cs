@@ -32,16 +32,8 @@ namespace HospitalInformationManagementSystem.PL
             this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvComplaints = new System.Windows.Forms.DataGridView();
-            this.comp_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comp_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comp_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.action_taken = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCompID = new System.Windows.Forms.TextBox();
             this.btnComplaintBrowse = new MetroFramework.Controls.MetroButton();
             this.label10 = new System.Windows.Forms.Label();
             this.btnDeleteComplaint = new System.Windows.Forms.Button();
@@ -67,6 +59,21 @@ namespace HospitalInformationManagementSystem.PL
             this.label1 = new System.Windows.Forms.Label();
             this.ofdComplaints = new System.Windows.Forms.OpenFileDialog();
             this.epComplaints = new System.Windows.Forms.ErrorProvider(this.components);
+            this.sfdComplaints = new System.Windows.Forms.SaveFileDialog();
+            this.btnComplaintViewFile = new MetroFramework.Controls.MetroButton();
+            this.comp_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.complaint_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.attachment_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.attachment_data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nic_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comp_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comp_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.action_taken = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvComplaints)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -93,6 +100,10 @@ namespace HospitalInformationManagementSystem.PL
             this.dgvComplaints.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvComplaints.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.comp_id,
+            this.complaint_category,
+            this.attachment_type,
+            this.attachment_data,
+            this.nic_no,
             this.comp_by,
             this.comp_type,
             this.phone_no,
@@ -110,13 +121,356 @@ namespace HospitalInformationManagementSystem.PL
             this.dgvComplaints.TabIndex = 0;
             this.dgvComplaints.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvComplaints_CellClick);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnComplaintViewFile);
+            this.groupBox1.Controls.Add(this.txtCompID);
+            this.groupBox1.Controls.Add(this.btnComplaintBrowse);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.btnDeleteComplaint);
+            this.groupBox1.Controls.Add(this.btnEditComplaint);
+            this.groupBox1.Controls.Add(this.btnAddComplaint);
+            this.groupBox1.Controls.Add(this.dtpDate);
+            this.groupBox1.Controls.Add(this.txtNote);
+            this.groupBox1.Controls.Add(this.txtDescription);
+            this.groupBox1.Controls.Add(this.txtNIC);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.cmbComplaintCategory);
+            this.groupBox1.Controls.Add(this.cmbComplaintType);
+            this.groupBox1.Controls.Add(this.txtActionTaken);
+            this.groupBox1.Controls.Add(this.txtPhone);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txtComplaintBy);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(510, 685);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Complaint Form";
+            // 
+            // txtCompID
+            // 
+            this.txtCompID.Location = new System.Drawing.Point(17, 527);
+            this.txtCompID.Name = "txtCompID";
+            this.txtCompID.Size = new System.Drawing.Size(100, 29);
+            this.txtCompID.TabIndex = 16;
+            this.txtCompID.Visible = false;
+            // 
+            // btnComplaintBrowse
+            // 
+            this.btnComplaintBrowse.Location = new System.Drawing.Point(151, 573);
+            this.btnComplaintBrowse.Name = "btnComplaintBrowse";
+            this.btnComplaintBrowse.Size = new System.Drawing.Size(120, 32);
+            this.btnComplaintBrowse.TabIndex = 15;
+            this.btnComplaintBrowse.Text = "Browse";
+            this.btnComplaintBrowse.UseSelectable = true;
+            this.btnComplaintBrowse.Click += new System.EventHandler(this.BtnComplaintBrowse_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(6, 578);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 18);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Attachment";
+            // 
+            // btnDeleteComplaint
+            // 
+            this.btnDeleteComplaint.BackColor = System.Drawing.Color.Red;
+            this.btnDeleteComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteComplaint.ForeColor = System.Drawing.Color.Black;
+            this.btnDeleteComplaint.Location = new System.Drawing.Point(347, 625);
+            this.btnDeleteComplaint.Name = "btnDeleteComplaint";
+            this.btnDeleteComplaint.Size = new System.Drawing.Size(141, 47);
+            this.btnDeleteComplaint.TabIndex = 13;
+            this.btnDeleteComplaint.Text = "Delete Complaint";
+            this.btnDeleteComplaint.UseVisualStyleBackColor = false;
+            this.btnDeleteComplaint.Click += new System.EventHandler(this.BtnDeleteComplaint_Click);
+            // 
+            // btnEditComplaint
+            // 
+            this.btnEditComplaint.BackColor = System.Drawing.Color.Yellow;
+            this.btnEditComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditComplaint.ForeColor = System.Drawing.Color.Black;
+            this.btnEditComplaint.Location = new System.Drawing.Point(183, 625);
+            this.btnEditComplaint.Name = "btnEditComplaint";
+            this.btnEditComplaint.Size = new System.Drawing.Size(141, 47);
+            this.btnEditComplaint.TabIndex = 13;
+            this.btnEditComplaint.Text = "Edit Complaint";
+            this.btnEditComplaint.UseVisualStyleBackColor = false;
+            this.btnEditComplaint.Click += new System.EventHandler(this.BtnEditComplaint_Click);
+            // 
+            // btnAddComplaint
+            // 
+            this.btnAddComplaint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAddComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddComplaint.ForeColor = System.Drawing.Color.Black;
+            this.btnAddComplaint.Location = new System.Drawing.Point(19, 625);
+            this.btnAddComplaint.Name = "btnAddComplaint";
+            this.btnAddComplaint.Size = new System.Drawing.Size(141, 47);
+            this.btnAddComplaint.TabIndex = 13;
+            this.btnAddComplaint.Text = "Add Complaint";
+            this.btnAddComplaint.UseVisualStyleBackColor = false;
+            this.btnAddComplaint.Click += new System.EventHandler(this.BtnAddComplaint_Click);
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDate.Location = new System.Drawing.Point(151, 274);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(111, 24);
+            this.dtpDate.TabIndex = 11;
+            // 
+            // txtNote
+            // 
+            this.txtNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNote.Location = new System.Drawing.Point(151, 466);
+            this.txtNote.Multiline = true;
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(337, 90);
+            this.txtNote.TabIndex = 10;
+            this.txtNote.Visible = false;
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(151, 165);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(337, 90);
+            this.txtDescription.TabIndex = 10;
+            // 
+            // txtNIC
+            // 
+            this.txtNIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNIC.Location = new System.Drawing.Point(151, 317);
+            this.txtNIC.Name = "txtNIC";
+            this.txtNIC.Size = new System.Drawing.Size(337, 24);
+            this.txtNIC.TabIndex = 9;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(6, 279);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(39, 18);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Date";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(6, 469);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 18);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Note";
+            this.label2.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(6, 168);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 18);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Description";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(6, 402);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(94, 18);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Action Taken";
+            this.label9.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(6, 363);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 18);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Phone";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(6, 320);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(33, 18);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "NIC";
+            // 
+            // cmbComplaintCategory
+            // 
+            this.cmbComplaintCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbComplaintCategory.FormattingEnabled = true;
+            this.cmbComplaintCategory.Location = new System.Drawing.Point(151, 120);
+            this.cmbComplaintCategory.Name = "cmbComplaintCategory";
+            this.cmbComplaintCategory.Size = new System.Drawing.Size(337, 26);
+            this.cmbComplaintCategory.TabIndex = 4;
+            // 
+            // cmbComplaintType
+            // 
+            this.cmbComplaintType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbComplaintType.FormattingEnabled = true;
+            this.cmbComplaintType.Location = new System.Drawing.Point(151, 76);
+            this.cmbComplaintType.Name = "cmbComplaintType";
+            this.cmbComplaintType.Size = new System.Drawing.Size(337, 26);
+            this.cmbComplaintType.TabIndex = 4;
+            this.cmbComplaintType.SelectedValueChanged += new System.EventHandler(this.cmbComplaintType_SelectedValueChanged);
+            // 
+            // txtActionTaken
+            // 
+            this.txtActionTaken.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtActionTaken.Location = new System.Drawing.Point(151, 399);
+            this.txtActionTaken.Multiline = true;
+            this.txtActionTaken.Name = "txtActionTaken";
+            this.txtActionTaken.Size = new System.Drawing.Size(337, 56);
+            this.txtActionTaken.TabIndex = 1;
+            this.txtActionTaken.Visible = false;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhone.Location = new System.Drawing.Point(151, 360);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(337, 24);
+            this.txtPhone.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(6, 123);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(139, 18);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Complaint Category";
+            // 
+            // txtComplaintBy
+            // 
+            this.txtComplaintBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComplaintBy.Location = new System.Drawing.Point(151, 35);
+            this.txtComplaintBy.Name = "txtComplaintBy";
+            this.txtComplaintBy.Size = new System.Drawing.Size(337, 24);
+            this.txtComplaintBy.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(6, 79);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 18);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Complaint Type";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(6, 38);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 18);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Complaint By";
+            // 
+            // ofdComplaints
+            // 
+            this.ofdComplaints.FileName = "ofdComplaints";
+            this.ofdComplaints.Filter = "PDF document (*.pdf)|*.pdf";
+            // 
+            // epComplaints
+            // 
+            this.epComplaints.ContainerControl = this;
+            // 
+            // sfdComplaints
+            // 
+            this.sfdComplaints.Filter = "PDF document (*.pdf)|*.pdf";
+            // 
+            // btnComplaintViewFile
+            // 
+            this.btnComplaintViewFile.Location = new System.Drawing.Point(310, 573);
+            this.btnComplaintViewFile.Name = "btnComplaintViewFile";
+            this.btnComplaintViewFile.Size = new System.Drawing.Size(120, 32);
+            this.btnComplaintViewFile.TabIndex = 17;
+            this.btnComplaintViewFile.Text = "View File";
+            this.btnComplaintViewFile.UseSelectable = true;
+            this.btnComplaintViewFile.Visible = false;
+            this.btnComplaintViewFile.Click += new System.EventHandler(this.BtnComplaintViewFile_Click);
+            // 
             // comp_id
             // 
             this.comp_id.DataPropertyName = "comp_id";
             this.comp_id.HeaderText = "Complaint ID";
             this.comp_id.Name = "comp_id";
             this.comp_id.ReadOnly = true;
-            this.comp_id.Visible = false;
+            this.comp_id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // complaint_category
+            // 
+            this.complaint_category.DataPropertyName = "complaint_category";
+            this.complaint_category.HeaderText = "complaint_category";
+            this.complaint_category.Name = "complaint_category";
+            this.complaint_category.ReadOnly = true;
+            this.complaint_category.Visible = false;
+            // 
+            // attachment_type
+            // 
+            this.attachment_type.DataPropertyName = "attachment_type";
+            this.attachment_type.HeaderText = "attachment_type";
+            this.attachment_type.Name = "attachment_type";
+            this.attachment_type.ReadOnly = true;
+            this.attachment_type.Visible = false;
+            // 
+            // attachment_data
+            // 
+            this.attachment_data.DataPropertyName = "attachment_data";
+            this.attachment_data.HeaderText = "attachment_data";
+            this.attachment_data.Name = "attachment_data";
+            this.attachment_data.ReadOnly = true;
+            this.attachment_data.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.attachment_data.Visible = false;
+            // 
+            // nic_no
+            // 
+            this.nic_no.DataPropertyName = "nic_no";
+            this.nic_no.HeaderText = "NIC";
+            this.nic_no.Name = "nic_no";
+            this.nic_no.ReadOnly = true;
+            this.nic_no.Visible = false;
             // 
             // comp_by
             // 
@@ -176,284 +530,6 @@ namespace HospitalInformationManagementSystem.PL
             this.user_id.ReadOnly = true;
             this.user_id.Visible = false;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnComplaintBrowse);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.btnDeleteComplaint);
-            this.groupBox1.Controls.Add(this.btnEditComplaint);
-            this.groupBox1.Controls.Add(this.btnAddComplaint);
-            this.groupBox1.Controls.Add(this.dtpDate);
-            this.groupBox1.Controls.Add(this.txtNote);
-            this.groupBox1.Controls.Add(this.txtDescription);
-            this.groupBox1.Controls.Add(this.txtNIC);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.cmbComplaintCategory);
-            this.groupBox1.Controls.Add(this.cmbComplaintType);
-            this.groupBox1.Controls.Add(this.txtActionTaken);
-            this.groupBox1.Controls.Add(this.txtPhone);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.txtComplaintBy);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(510, 685);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Complaint Form";
-            // 
-            // btnComplaintBrowse
-            // 
-            this.btnComplaintBrowse.Location = new System.Drawing.Point(151, 573);
-            this.btnComplaintBrowse.Name = "btnComplaintBrowse";
-            this.btnComplaintBrowse.Size = new System.Drawing.Size(141, 32);
-            this.btnComplaintBrowse.TabIndex = 15;
-            this.btnComplaintBrowse.Text = "Browse";
-            this.btnComplaintBrowse.UseSelectable = true;
-            this.btnComplaintBrowse.Click += new System.EventHandler(this.BtnComplaintBrowse_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(6, 578);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(82, 18);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "Attachment";
-            // 
-            // btnDeleteComplaint
-            // 
-            this.btnDeleteComplaint.BackColor = System.Drawing.Color.Red;
-            this.btnDeleteComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteComplaint.ForeColor = System.Drawing.Color.Black;
-            this.btnDeleteComplaint.Location = new System.Drawing.Point(347, 625);
-            this.btnDeleteComplaint.Name = "btnDeleteComplaint";
-            this.btnDeleteComplaint.Size = new System.Drawing.Size(141, 47);
-            this.btnDeleteComplaint.TabIndex = 13;
-            this.btnDeleteComplaint.Text = "Delete Complaint";
-            this.btnDeleteComplaint.UseVisualStyleBackColor = false;
-            // 
-            // btnEditComplaint
-            // 
-            this.btnEditComplaint.BackColor = System.Drawing.Color.Yellow;
-            this.btnEditComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditComplaint.ForeColor = System.Drawing.Color.Black;
-            this.btnEditComplaint.Location = new System.Drawing.Point(183, 625);
-            this.btnEditComplaint.Name = "btnEditComplaint";
-            this.btnEditComplaint.Size = new System.Drawing.Size(141, 47);
-            this.btnEditComplaint.TabIndex = 13;
-            this.btnEditComplaint.Text = "Edit Complaint";
-            this.btnEditComplaint.UseVisualStyleBackColor = false;
-            // 
-            // btnAddComplaint
-            // 
-            this.btnAddComplaint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAddComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddComplaint.ForeColor = System.Drawing.Color.Black;
-            this.btnAddComplaint.Location = new System.Drawing.Point(19, 625);
-            this.btnAddComplaint.Name = "btnAddComplaint";
-            this.btnAddComplaint.Size = new System.Drawing.Size(141, 47);
-            this.btnAddComplaint.TabIndex = 13;
-            this.btnAddComplaint.Text = "Add Complaint";
-            this.btnAddComplaint.UseVisualStyleBackColor = false;
-            this.btnAddComplaint.Click += new System.EventHandler(this.BtnAddComplaint_Click);
-            // 
-            // dtpDate
-            // 
-            this.dtpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDate.Location = new System.Drawing.Point(151, 274);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(200, 24);
-            this.dtpDate.TabIndex = 11;
-            // 
-            // txtNote
-            // 
-            this.txtNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNote.Location = new System.Drawing.Point(151, 466);
-            this.txtNote.Multiline = true;
-            this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(337, 90);
-            this.txtNote.TabIndex = 10;
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(151, 165);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(337, 90);
-            this.txtDescription.TabIndex = 10;
-            // 
-            // txtNIC
-            // 
-            this.txtNIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNIC.Location = new System.Drawing.Point(151, 317);
-            this.txtNIC.Name = "txtNIC";
-            this.txtNIC.Size = new System.Drawing.Size(337, 24);
-            this.txtNIC.TabIndex = 9;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(6, 279);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(39, 18);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Date";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(6, 469);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 18);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Note";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(6, 168);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 18);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Description";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(6, 402);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 18);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Action Taken";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(6, 363);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 18);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Phone";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(6, 320);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 18);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "NIC";
-            // 
-            // cmbComplaintCategory
-            // 
-            this.cmbComplaintCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbComplaintCategory.FormattingEnabled = true;
-            this.cmbComplaintCategory.Location = new System.Drawing.Point(151, 120);
-            this.cmbComplaintCategory.Name = "cmbComplaintCategory";
-            this.cmbComplaintCategory.Size = new System.Drawing.Size(337, 26);
-            this.cmbComplaintCategory.TabIndex = 4;
-            // 
-            // cmbComplaintType
-            // 
-            this.cmbComplaintType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbComplaintType.FormattingEnabled = true;
-            this.cmbComplaintType.Location = new System.Drawing.Point(151, 76);
-            this.cmbComplaintType.Name = "cmbComplaintType";
-            this.cmbComplaintType.Size = new System.Drawing.Size(337, 26);
-            this.cmbComplaintType.TabIndex = 4;
-            this.cmbComplaintType.SelectedValueChanged += new System.EventHandler(this.cmbComplaintType_SelectedValueChanged);
-            // 
-            // txtActionTaken
-            // 
-            this.txtActionTaken.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtActionTaken.Location = new System.Drawing.Point(151, 399);
-            this.txtActionTaken.Multiline = true;
-            this.txtActionTaken.Name = "txtActionTaken";
-            this.txtActionTaken.Size = new System.Drawing.Size(337, 56);
-            this.txtActionTaken.TabIndex = 1;
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(151, 360);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(337, 24);
-            this.txtPhone.TabIndex = 1;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(6, 123);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(139, 18);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Complaint Category";
-            // 
-            // txtComplaintBy
-            // 
-            this.txtComplaintBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtComplaintBy.Location = new System.Drawing.Point(151, 35);
-            this.txtComplaintBy.Name = "txtComplaintBy";
-            this.txtComplaintBy.Size = new System.Drawing.Size(337, 24);
-            this.txtComplaintBy.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(6, 79);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 18);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Complaint Type";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(6, 38);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Complaint By";
-            // 
-            // ofdComplaints
-            // 
-            this.ofdComplaints.FileName = "ofdComplaints";
-            // 
-            // epComplaints
-            // 
-            this.epComplaints.ContainerControl = this;
-            // 
             // ucComplaint_PL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -496,7 +572,20 @@ namespace HospitalInformationManagementSystem.PL
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbComplaintCategory;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtActionTaken;
+        private System.Windows.Forms.Label label10;
+        private MetroFramework.Controls.MetroButton btnComplaintBrowse;
+        private System.Windows.Forms.OpenFileDialog ofdComplaints;
+        private System.Windows.Forms.ErrorProvider epComplaints;
+        private System.Windows.Forms.TextBox txtCompID;
+        private System.Windows.Forms.SaveFileDialog sfdComplaints;
+        private MetroFramework.Controls.MetroButton btnComplaintViewFile;
         private System.Windows.Forms.DataGridViewTextBoxColumn comp_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn complaint_category;
+        private System.Windows.Forms.DataGridViewTextBoxColumn attachment_type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn attachment_data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nic_no;
         private System.Windows.Forms.DataGridViewTextBoxColumn comp_by;
         private System.Windows.Forms.DataGridViewTextBoxColumn comp_type;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone_no;
@@ -505,11 +594,5 @@ namespace HospitalInformationManagementSystem.PL
         private System.Windows.Forms.DataGridViewTextBoxColumn action_taken;
         private System.Windows.Forms.DataGridViewTextBoxColumn note;
         private System.Windows.Forms.DataGridViewTextBoxColumn user_id;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtActionTaken;
-        private System.Windows.Forms.Label label10;
-        private MetroFramework.Controls.MetroButton btnComplaintBrowse;
-        private System.Windows.Forms.OpenFileDialog ofdComplaints;
-        private System.Windows.Forms.ErrorProvider epComplaints;
     }
 }

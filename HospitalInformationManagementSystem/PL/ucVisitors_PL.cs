@@ -99,6 +99,7 @@ namespace HospitalInformationManagementSystem.PL
                 {
                     MessageBox.Show("Visitor add sucessfull", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.FillDGVVisitor();
+                    epVisitor.Clear();
                 }
             }
             catch (Exception ex)
@@ -128,10 +129,9 @@ namespace HospitalInformationManagementSystem.PL
                     visitorModel.note = txtNote.Text.Trim();
                     visitorModel.purpose = txtPurpose.Text.Trim();
                     visitorModel.cmbAttachmentType = cmbAttachmentType.Text.Trim();
-
                     visitorModel.IsActive = true;
+
                     return _visitor_BLL.AddVisitor(visitorModel);
-                    epVisitor.Clear();
                 }
 
                 return 0;

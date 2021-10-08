@@ -21,5 +21,6 @@ namespace HospitalInformationManagementSystem.Model
         public string attachment_type { get; set; }
         public string attachment_data { get; set; }
         public bool IsActive { get; set; }
+        public static string viewFile { get; set; }
     }
 }
