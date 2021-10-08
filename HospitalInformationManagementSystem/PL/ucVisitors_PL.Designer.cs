@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpBVisitor = new System.Windows.Forms.GroupBox();
+            this.btnDownload = new MetroFramework.Controls.MetroButton();
             this.cmbAttachmentType = new MetroFramework.Controls.MetroComboBox();
             this.btnBrowse = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
@@ -58,9 +59,6 @@
             this.txtNic = new System.Windows.Forms.TextBox();
             this.grpBVisitorGridView = new System.Windows.Forms.GroupBox();
             this.dgvVisitor = new MetroFramework.Controls.MetroGrid();
-            this.epVisitor = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ofdVisitor = new System.Windows.Forms.OpenFileDialog();
-            this.btnDownload = new MetroFramework.Controls.MetroButton();
             this.fname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OutTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +69,8 @@
             this.nic_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Porpose = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.epVisitor = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ofdVisitor = new System.Windows.Forms.OpenFileDialog();
             this.grpBVisitor.SuspendLayout();
             this.grpBVisitorGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitor)).BeginInit();
@@ -106,12 +106,24 @@
             this.grpBVisitor.Controls.Add(this.txtNic);
             this.grpBVisitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpBVisitor.ForeColor = System.Drawing.Color.Black;
-            this.grpBVisitor.Location = new System.Drawing.Point(3, 3);
+            this.grpBVisitor.Location = new System.Drawing.Point(3, 2);
             this.grpBVisitor.Name = "grpBVisitor";
             this.grpBVisitor.Size = new System.Drawing.Size(507, 685);
             this.grpBVisitor.TabIndex = 2;
             this.grpBVisitor.TabStop = false;
             this.grpBVisitor.Text = "Visitor";
+            // 
+            // btnDownload
+            // 
+            this.btnDownload.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDownload.BackgroundImage = global::HospitalInformationManagementSystem.Properties.Resources.Download;
+            this.btnDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDownload.Location = new System.Drawing.Point(415, 501);
+            this.btnDownload.Name = "btnDownload";
+            this.btnDownload.Size = new System.Drawing.Size(55, 43);
+            this.btnDownload.TabIndex = 23;
+            this.btnDownload.UseSelectable = true;
+            this.btnDownload.Visible = false;
             // 
             // cmbAttachmentType
             // 
@@ -361,11 +373,12 @@
             // 
             this.grpBVisitorGridView.BackColor = System.Drawing.Color.WhiteSmoke;
             this.grpBVisitorGridView.Controls.Add(this.dgvVisitor);
+            this.grpBVisitorGridView.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.grpBVisitorGridView.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpBVisitorGridView.ForeColor = System.Drawing.Color.Black;
-            this.grpBVisitorGridView.Location = new System.Drawing.Point(516, 3);
+            this.grpBVisitorGridView.Location = new System.Drawing.Point(515, 3);
             this.grpBVisitorGridView.Name = "grpBVisitorGridView";
-            this.grpBVisitorGridView.Size = new System.Drawing.Size(505, 685);
+            this.grpBVisitorGridView.Size = new System.Drawing.Size(505, 684);
             this.grpBVisitorGridView.TabIndex = 3;
             this.grpBVisitorGridView.TabStop = false;
             this.grpBVisitorGridView.Text = "Visitor Data";
@@ -434,26 +447,6 @@
             this.dgvVisitor.UseStyleColors = true;
             this.dgvVisitor.VirtualMode = true;
             this.dgvVisitor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVisitorsCellClick);
-            // 
-            // epVisitor
-            // 
-            this.epVisitor.ContainerControl = this;
-            // 
-            // ofdVisitor
-            // 
-            this.ofdVisitor.FileName = "ofdVisitor";
-            // 
-            // btnDownload
-            // 
-            this.btnDownload.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDownload.BackgroundImage = global::HospitalInformationManagementSystem.Properties.Resources.Download;
-            this.btnDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDownload.Location = new System.Drawing.Point(415, 501);
-            this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(55, 43);
-            this.btnDownload.TabIndex = 23;
-            this.btnDownload.UseSelectable = true;
-            this.btnDownload.Visible = false;
             // 
             // fname
             // 
@@ -524,6 +517,14 @@
             this.Porpose.Name = "Porpose";
             this.Porpose.ReadOnly = true;
             // 
+            // epVisitor
+            // 
+            this.epVisitor.ContainerControl = this;
+            // 
+            // ofdVisitor
+            // 
+            this.ofdVisitor.FileName = "ofdVisitor";
+            // 
             // ucVisitors_PL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -531,8 +532,10 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.grpBVisitorGridView);
             this.Controls.Add(this.grpBVisitor);
+            this.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.Name = "ucVisitors_PL";
             this.Size = new System.Drawing.Size(1024, 691);
+            this.Style = MetroFramework.MetroColorStyle.Red;
             this.Load += new System.EventHandler(this.ucVisitors_PL_Load);
             this.grpBVisitor.ResumeLayout(false);
             this.grpBVisitor.PerformLayout();
