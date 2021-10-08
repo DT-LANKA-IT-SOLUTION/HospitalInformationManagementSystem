@@ -20,7 +20,7 @@ namespace HospitalInformationManagementSystem.BLL
 
         public void GetAppointmentReport(ReportModel reportModel,CrystalReportViewer crystalReportViewer)
         {
-            try
+           /*try
             {
                 rptAppointment rptAppointment = new rptAppointment();
                 rptAppointment.Load(@"D:\uovt\C# 2\Project\HospitalInformationManagementSystem\PL\rptAppointment.rpt");
@@ -32,7 +32,7 @@ namespace HospitalInformationManagementSystem.BLL
             catch (Exception)
             {
                 throw;
-            }
+            }*/
         }
         public void GetUserReport(ReportModel reportModel)
         {
