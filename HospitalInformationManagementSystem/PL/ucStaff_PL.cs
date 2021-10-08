@@ -640,18 +640,22 @@ namespace HospitalInformationManagementSystem.PL
                 picBoxUserImage.Image = Base64ToImage(dgvStaff.Rows[e.RowIndex].Cells["photo_data"].FormattedValue.ToString());
                 picBoxUserImage.SizeMode = PictureBoxSizeMode.StretchImage;
 
-                //if(SetStaffPermissions(Int32.Parse(txtUserID.Text.Trim())))
-                //{
+                if (SetStaffPermissions(Int32.Parse(txtUserID.Text.Trim())))
+                {
 
-                //}
-                
+                }
+
             }
         }
 
-        //private bool SetStaffPermissions(int user_id)
-        //{
-        //    //_staff_BLL.GetStaffPermissions(user_id);
-        //}
+        private bool SetStaffPermissions(int user_id)
+        {
+            if(_staff_BLL.GetStaffPermissions(user_id, chkboxA1, chkboxC1, chkboxD1, chkboxM1,chkboxA2, chkboxC2, chkboxD2, chkboxM2,chkboxA3, chkboxC3, chkboxD3, chkboxM3,chkboxA4, chkboxC4, chkboxD4, chkboxM4,chkboxA5, chkboxC5, chkboxD5, chkboxM5,chkboxA6, chkboxC6, chkboxD6, chkboxM6,chkboxA7, chkboxC7, chkboxD7, chkboxM7,chkboxA8, chkboxC8, chkboxD8, chkboxM8))
+            {
+                return true;
+            }
+            return false;
+        }
 
         private void btnReset_Click(object sender, EventArgs e)
         {

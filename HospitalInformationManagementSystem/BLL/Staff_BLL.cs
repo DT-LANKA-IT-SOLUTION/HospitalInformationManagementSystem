@@ -1,5 +1,6 @@
 ﻿using HospitalInformationManagementSystem.DAL;
 using HospitalInformationManagementSystem.Model;
+using HospitalInformationManagementSystem.Other;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -14,6 +15,8 @@ namespace HospitalInformationManagementSystem.BLL
     class Staff_BLL
     {
         SqlDataReader dr;
+
+        StaffPermission staffPermission = new StaffPermission();
         public void LoadAllStaffGridView(DataGridView dgvStaff)
         {
             try
@@ -77,7 +80,7 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
-        public void GetStaffPermissions(int user_id,
+        public bool GetStaffPermissions(int user_id,
             CheckBox cbDashboardA, CheckBox cbDashboardC, CheckBox cbDashboardD, CheckBox cbDashboardM,
             CheckBox cbPatientA, CheckBox cbPatientC, CheckBox cbPatientD, CheckBox cbPatientM,
             CheckBox cbVisitorA, CheckBox cbVisitorC, CheckBox cbVisitorD, CheckBox cbVisitorM,
@@ -96,49 +99,60 @@ namespace HospitalInformationManagementSystem.BLL
 
                 if (dr.Read())
                 {
-                    while(dr.Read())
+                    while (dr.Read())
                     {
-                        if(Int32.Parse(dr["permision_id"].ToString()) == 1)
+                        if (Int32.Parse(dr["permision_id"].ToString()) == 1)
                         {
                             status = dr["status"].ToString();
-                            Regex regex = new Regex(@"([A-Z]{0,4})");
-
-                            Match match = regex.Match(PermisionsModel.patient);
-
-                            if (match.Success)
-                            {
-                                foreach (char ch in match.Value)
-                                {
-                                    if (ch == 'A')
-                                    {
-                                        cbDashboardA.Checked = true;
-                                    }
-                                    else if (ch == 'C')
-                                    {
-                                        cbDashboardC.Checked = true;
-                                    }
-                                    else if (ch == 'D')
-                                    {
-                                        cbDashboardD.Checked = true;
-                                    }
-                                    else if (ch == 'M')
-                                    {
-                                        cbDashboardM.Checked = true;
-                                    }
-                                    else
-                                    {
-                                        cbDashboardA.Checked = false;
-                                        cbDashboardC.Checked = false;
-                                        cbDashboardD.Checked = false;
-                                        cbDashboardM.Checked = false;
-                                    }
-                                }
-
-                            }
+                            staffPermission.SetChechBoxData(status, cbDashboardA, cbDashboardC, cbDashboardD, cbDashboardM);
                         }
+
+                        if (Int32.Parse(dr["permision_id"].ToString()) == 2)
+                        {
+                            status = dr["status"].ToString();
+                            staffPermission.SetChechBoxData(status, cbPatientA, cbPatientC, cbPatientD, cbPatientM);
+                        }
+
+                        if (Int32.Parse(dr["permision_id"].ToString()) == 3)
+                        {
+                            status = dr["status"].ToString();
+                            staffPermission.SetChechBoxData(status, cbVisitorA, cbVisitorC, cbVisitorD, cbVisitorM);
+                        }
+
+                        if (Int32.Parse(dr["permision_id"].ToString()) == 4)
+                        {
+                            status = dr["status"].ToString();
+                            staffPermission.SetChechBoxData(status, cbAppointmentA, cbAppointmentC, cbAppointmentD, cbAppointmentM);
+                        }
+
+                        if (Int32.Parse(dr["permision_id"].ToString()) == 5)
+                        {
+                            status = dr["status"].ToString();
+                            staffPermission.SetChechBoxData(status, cbPostalA, cbPostalC, cbPostalD, cbPostalM);
+                        }
+
+                        if (Int32.Parse(dr["permision_id"].ToString()) == 6)
+                        {
+                            status = dr["status"].ToString();
+                            staffPermission.SetChechBoxData(status, cbComplaintsA, cbComplaintsC, cbComplaintsD, cbComplaintsM);
+                        }
+
+                        if (Int32.Parse(dr["permision_id"].ToString()) == 7)
+                        {
+                            status = dr["status"].ToString();
+                            staffPermission.SetChechBoxData(status, cbReportsA, cbReportsC, cbReportsD, cbReportsM);
+                        }
+
+                        if (Int32.Parse(dr["permision_id"].ToString()) == 8)
+                        {
+                            status = dr["status"].ToString();
+                            staffPermission.SetChechBoxData(status, cbStaffA, cbStaffC, cbStaffD, cbStaffM);
+                        }
+
                     }
+                    return true;
                 }
-                
+                return false;
             }
             catch (Exception)
             {
