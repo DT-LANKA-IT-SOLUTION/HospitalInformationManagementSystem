@@ -143,7 +143,7 @@ namespace HospitalInformationManagementSystem.PL
 
             if (string.IsNullOrEmpty(txtUserName.Text))
             {
-                epStaff.SetError(txtStaffID, "Please fill user name");
+                epStaff.SetError(txtUserName, "Please fill user name");
                 txtUserName.Focus();
                 return false;
             }
@@ -233,253 +233,253 @@ namespace HospitalInformationManagementSystem.PL
                     staffModel.join_date = string.IsNullOrEmpty(dtpJoinedDate.Text) ? DateTime.Now : Convert.ToDateTime(dtpJoinedDate.Text.Trim());
                     staffModel.speciality_area = string.IsNullOrEmpty(cmbSpeciality.Text) ? "N/A" : cmbSpeciality.SelectedItem.ToString();
                     staffModel.photo_data = string.IsNullOrEmpty(ImageToBase64(picBoxUserImage.Image, System.Drawing.Imaging.ImageFormat.Png)) ? "N/A" : ImageToBase64(picBoxUserImage.Image, System.Drawing.Imaging.ImageFormat.Png);
+
+                    //Dashboard Permissions
+
+                    string DashboardValue = "";
+
+                    if (chkboxA1.Checked)
+                    {
+                        DashboardValue += "A";
+                    }
+
+                    if (chkboxC1.Checked)
+                    {
+                        DashboardValue += "C";
+                    }
+
+                    if (chkboxD1.Checked)
+                    {
+                        DashboardValue += "D";
+                    }
+
+                    if (chkboxM1.Checked)
+                    {
+                        DashboardValue += "M";
+                    }
+
+                    if (string.IsNullOrEmpty(DashboardValue))
+                    {
+                        DashboardValue += "DENIED";
+                    }
+
+                    //Patient Permissions
+
+                    string PatientValue = "";
+
+                    if (chkboxA2.Checked)
+                    {
+                        PatientValue += "A";
+                    }
+
+                    if (chkboxC2.Checked)
+                    {
+                        PatientValue += "C";
+                    }
+
+                    if (chkboxD2.Checked)
+                    {
+                        PatientValue += "D";
+                    }
+
+                    if (chkboxM2.Checked)
+                    {
+                        PatientValue += "M";
+                    }
+
+                    if (string.IsNullOrEmpty(PatientValue))
+                    {
+                        PatientValue += "DENIED";
+                    }
+
+                    //Visitors Permissions
+
+                    string VisitorsValue = "";
+
+                    if (chkboxA3.Checked)
+                    {
+                        VisitorsValue += "A";
+                    }
+
+                    if (chkboxC3.Checked)
+                    {
+                        VisitorsValue += "C";
+                    }
+
+                    if (chkboxD3.Checked)
+                    {
+                        VisitorsValue += "D";
+                    }
+
+                    if (chkboxM3.Checked)
+                    {
+                        VisitorsValue += "M";
+                    }
+
+                    if (string.IsNullOrEmpty(VisitorsValue))
+                    {
+                        VisitorsValue += "DENIED";
+                    }
+
+                    //Appointment Permissions
+
+                    string AppointmentValue = "";
+
+                    if (chkboxA4.Checked)
+                    {
+                        AppointmentValue += "A";
+                    }
+
+                    if (chkboxC4.Checked)
+                    {
+                        AppointmentValue += "C";
+                    }
+
+                    if (chkboxD4.Checked)
+                    {
+                        AppointmentValue += "D";
+                    }
+
+                    if (chkboxM4.Checked)
+                    {
+                        AppointmentValue += "M";
+                    }
+
+                    if (string.IsNullOrEmpty(AppointmentValue))
+                    {
+                        AppointmentValue += "DENIED";
+                    }
+
+                    //Postal Permissions
+
+                    string PostalValue = "";
+
+                    if (chkboxA5.Checked)
+                    {
+                        PostalValue += "A";
+                    }
+
+                    if (chkboxC5.Checked)
+                    {
+                        PostalValue += "C";
+                    }
+
+                    if (chkboxD5.Checked)
+                    {
+                        PostalValue += "D";
+                    }
+
+                    if (chkboxM5.Checked)
+                    {
+                        PostalValue += "M";
+                    }
+
+                    if (string.IsNullOrEmpty(PostalValue))
+                    {
+                        PostalValue += "DENIED";
+                    }
+
+                    //Complaints Permissions
+
+                    string ComplaintsValue = "";
+
+                    if (chkboxA6.Checked)
+                    {
+                        ComplaintsValue += "A";
+                    }
+
+                    if (chkboxC6.Checked)
+                    {
+                        ComplaintsValue += "C";
+                    }
+
+                    if (chkboxD6.Checked)
+                    {
+                        ComplaintsValue += "D";
+                    }
+
+                    if (chkboxM6.Checked)
+                    {
+                        ComplaintsValue += "M";
+                    }
+
+                    if (string.IsNullOrEmpty(ComplaintsValue))
+                    {
+                        ComplaintsValue += "DENIED";
+                    }
+
+                    //Report Permissions
+
+                    string ReportsValue = "";
+
+                    if (chkboxA7.Checked)
+                    {
+                        ReportsValue += "A";
+                    }
+
+                    if (chkboxC7.Checked)
+                    {
+                        ReportsValue += "C";
+                    }
+
+                    if (chkboxD7.Checked)
+                    {
+                        ReportsValue += "D";
+                    }
+
+                    if (chkboxM7.Checked)
+                    {
+                        ReportsValue += "M";
+                    }
+
+                    if (string.IsNullOrEmpty(ReportsValue))
+                    {
+                        ReportsValue += "DENIED";
+                    }
+
+                    //Staff Permissions
+
+                    string StaffValue = "";
+
+                    if (chkboxA8.Checked)
+                    {
+                        StaffValue += "A";
+                    }
+
+                    if (chkboxC8.Checked)
+                    {
+                        StaffValue += "C";
+                    }
+
+                    if (chkboxD8.Checked)
+                    {
+                        StaffValue += "D";
+                    }
+
+                    if (chkboxM8.Checked)
+                    {
+                        StaffValue += "M";
+                    }
+
+                    if (string.IsNullOrEmpty(StaffValue))
+                    {
+                        StaffValue += "DENIED";
+                    }
+
+                    staffModel.DashboardValue = DashboardValue;
+                    staffModel.PatientValue = PatientValue;
+                    staffModel.VistorsValue = VisitorsValue;
+                    staffModel.AppointmentValue = AppointmentValue;
+                    staffModel.PostalValue = PostalValue;
+                    staffModel.ComplaintsValue = ComplaintsValue;
+                    staffModel.ReportsValue = ReportsValue;
+                    staffModel.StaffValue = StaffValue;
+
+
+
+                    return _staff_BLL.AddStaff(staffModel);
                 }
-                
-
-                //Dashboard Permissions
-
-                string DashboardValue = "";
-
-                if (chkboxA1.Checked)
-                {
-                    DashboardValue += "A";
-                }
-
-                if (chkboxC1.Checked)
-                {
-                    DashboardValue += "C";
-                }
-
-                if (chkboxD1.Checked)
-                {
-                    DashboardValue += "D";
-                }
-
-                if (chkboxM1.Checked)
-                {
-                    DashboardValue += "M";
-                }
-                
-                if (string.IsNullOrEmpty(DashboardValue))
-                {
-                    DashboardValue += "DENIED";
-                }
-
-                //Patient Permissions
-
-                string PatientValue = "";
-
-                if (chkboxA2.Checked)
-                {
-                    PatientValue += "A";
-                }
-
-                if (chkboxC2.Checked)
-                {
-                    PatientValue += "C";
-                }
-
-                if (chkboxD2.Checked)
-                {
-                    PatientValue += "D";
-                }
-
-                if (chkboxM2.Checked)
-                {
-                    PatientValue += "M";
-                }
-
-                if (string.IsNullOrEmpty(PatientValue))
-                {
-                    PatientValue += "DENIED";
-                }
-
-                //Visitors Permissions
-
-                string VisitorsValue = "";
-
-                if (chkboxA3.Checked)
-                {
-                    VisitorsValue += "A";
-                }
-
-                if (chkboxC3.Checked)
-                {
-                    VisitorsValue += "C";
-                }
-
-                if (chkboxD3.Checked)
-                {
-                    VisitorsValue += "D";
-                }
-
-                if (chkboxM3.Checked)
-                {
-                    VisitorsValue += "M";
-                }
-                
-                if (string.IsNullOrEmpty(VisitorsValue))
-                {
-                    VisitorsValue += "DENIED";
-                }
-
-                //Appointment Permissions
-
-                string AppointmentValue = "";
-
-                if (chkboxA4.Checked)
-                {
-                    AppointmentValue += "A";
-                }
-
-                if (chkboxC4.Checked)
-                {
-                    AppointmentValue += "C";
-                }
-
-                if (chkboxD4.Checked)
-                {
-                    AppointmentValue += "D";
-                }
-
-                if (chkboxM4.Checked)
-                {
-                    AppointmentValue += "M";
-                }
-                
-                if (string.IsNullOrEmpty(AppointmentValue))
-                {
-                    AppointmentValue += "DENIED";
-                }
-
-                //Postal Permissions
-
-                string PostalValue = "";
-
-                if (chkboxA5.Checked)
-                {
-                    PostalValue += "A";
-                }
-
-                if (chkboxC5.Checked)
-                {
-                    PostalValue += "C";
-                }
-
-                if (chkboxD5.Checked)
-                {
-                    PostalValue += "D";
-                }
-
-                if (chkboxM5.Checked)
-                {
-                    PostalValue += "M";
-                }
-                
-                if (string.IsNullOrEmpty(PostalValue))
-                {
-                    PostalValue += "DENIED";
-                }
-
-                //Complaints Permissions
-
-                string ComplaintsValue = "";
-
-                if (chkboxA6.Checked)
-                {
-                    ComplaintsValue += "A";
-                }
-
-                if (chkboxC6.Checked)
-                {
-                    ComplaintsValue += "C";
-                }
-
-                if (chkboxD6.Checked)
-                {
-                    ComplaintsValue += "D";
-                }
-
-                if (chkboxM6.Checked)
-                {
-                    ComplaintsValue += "M";
-                }
-                
-                if (string.IsNullOrEmpty(ComplaintsValue))
-                {
-                    ComplaintsValue += "DENIED";
-                }
-
-                //Report Permissions
-
-                string ReportsValue = "";
-
-                if (chkboxA7.Checked)
-                {
-                    ReportsValue += "A";
-                }
-
-                if (chkboxC7.Checked)
-                {
-                    ReportsValue += "C";
-                }
-
-                if (chkboxD7.Checked)
-                {
-                    ReportsValue += "D";
-                }
-
-                if (chkboxM7.Checked)
-                {
-                    ReportsValue += "M";
-                }
-                
-                if (string.IsNullOrEmpty(ReportsValue))
-                {
-                    ReportsValue += "DENIED";
-                }
-
-                //Staff Permissions
-
-                string StaffValue = "";
-
-                if (chkboxA8.Checked)
-                {
-                    StaffValue += "A";
-                }
-
-                if (chkboxC8.Checked)
-                {
-                    StaffValue += "C";
-                }
-
-                if (chkboxD8.Checked)
-                {
-                    StaffValue += "D";
-                }
-
-                if (chkboxM8.Checked)
-                {
-                    StaffValue += "M";
-                }
-
-                if (string.IsNullOrEmpty(StaffValue))
-                {
-                    StaffValue += "DENIED";
-                }
-
-                staffModel.DashboardValue = DashboardValue;
-                staffModel.PatientValue = PatientValue;
-                staffModel.VistorsValue = VisitorsValue;
-                staffModel.AppointmentValue = AppointmentValue;
-                staffModel.PostalValue = PostalValue;
-                staffModel.ComplaintsValue = ComplaintsValue;
-                staffModel.ReportsValue = ReportsValue;
-                staffModel.StaffValue = StaffValue;
-
-                
-
-                return _staff_BLL.AddStaff(staffModel);              
+                return 0;
             }
             catch (Exception)
             {
@@ -639,9 +639,19 @@ namespace HospitalInformationManagementSystem.PL
 
                 picBoxUserImage.Image = Base64ToImage(dgvStaff.Rows[e.RowIndex].Cells["photo_data"].FormattedValue.ToString());
                 picBoxUserImage.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                if(SetStaffPermissions(Int32.Parse(txtUserID.Text.Trim())))
+                {
+
+                }
+                
             }
         }
 
+        private bool SetStaffPermissions(int user_id)
+        {
+            _staff_BLL.GetStaffPermissions(user_id);
+        }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
@@ -654,12 +664,6 @@ namespace HospitalInformationManagementSystem.PL
 
                 throw;
             }
-        }
-
-        private void btnAttach_Click(object sender, EventArgs e)
-        {
-            
-
         }
 
         private void cmbUserType_SelectedValueChanged(object sender, EventArgs e)
@@ -770,7 +774,7 @@ namespace HospitalInformationManagementSystem.PL
             using (OpenFileDialog ofd = new OpenFileDialog() {Multiselect = false })
             {
                 
-                ofd.Filter = "Image File(*.jpe;*.jpeg;*.bmp) | *.jpg;*jpeg;*.bmp";
+                ofd.Filter = "Image File(*.jpe;*.jpeg;*.bmp;*.png) | *.jpg;*jpeg;*.bmp;*.png";
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     try

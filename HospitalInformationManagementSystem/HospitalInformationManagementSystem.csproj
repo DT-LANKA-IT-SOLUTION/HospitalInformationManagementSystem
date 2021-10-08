@@ -109,6 +109,7 @@
     <Compile Include="Other\GrantUserPermission.cs" />
     <Compile Include="Other\ODBC.cs" />
     <Compile Include="Other\SqlParameterFormat.cs" />
+    <Compile Include="Other\StaffPermission.cs" />
     <Compile Include="Other\ValidationLab.cs" />
     <Compile Include="PL\Dashboard_PL.cs">
       <SubType>Form</SubType>

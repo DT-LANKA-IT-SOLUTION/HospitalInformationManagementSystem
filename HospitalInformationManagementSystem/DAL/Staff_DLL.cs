@@ -169,7 +169,23 @@ namespace HospitalInformationManagementSystem.DAL
             }
             catch (Exception)
             {
+                throw;
+            }
+        }
 
+        public static SqlDataReader GetStaffPermissions(int user_id)
+        {
+            try
+            {
+                string sql = string.Format("SELECT permision_id, user_id, status FROM User_Permisions WHERE user_id = @user_id");
+
+                SqlParameter[] _sql = new SqlParameter[1];
+                _sql[0] = SqlParameterFormat.Format("@user_id", user_id);
+
+                return ODBC.GetData_reader(sql, _sql);
+            }
+            catch (Exception)
+            {
                 throw;
             }
         }
