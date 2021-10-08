@@ -8,6 +8,7 @@ namespace HospitalInformationManagementSystem.Other
 {
     class StaffPermission
     {
-        public 
+        public void asadf()
+        { }
     }
 }

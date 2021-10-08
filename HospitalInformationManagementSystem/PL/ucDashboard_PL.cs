@@ -16,7 +16,6 @@ namespace HospitalInformationManagementSystem.PL
         public ucDashboard_PL()
         {
             InitializeComponent();
-
         }
 
         private void ucDashboard_PL_Load(object sender, EventArgs e)
@@ -37,14 +36,7 @@ namespace HospitalInformationManagementSystem.PL
             CT_Dashboard.DataSource = dTable;
             CT_Dashboard.Series["Appointment"].XValueMember = "AppDate";
             CT_Dashboard.Series["Appointment"].YValueMembers = "  Appcount";
-            CT_Dashboard.Titles.Add("Appointment Chart").ForeColor = Color.BlueViolet;    
-            
-
-
-
-
+            CT_Dashboard.Titles.Add("Appointment Chart").ForeColor = Color.BlueViolet;
         }
-
-
     }
 }
