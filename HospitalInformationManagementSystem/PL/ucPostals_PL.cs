@@ -52,16 +52,6 @@ namespace HospitalInformationManagementSystem.PL
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_postal_add_Click(object sender, EventArgs e)
         {
             try
@@ -172,11 +162,6 @@ namespace HospitalInformationManagementSystem.PL
                 //txtPassword.Text = EncryptionLab.DecryptText(dgvPatient.Rows[e.RowIndex].Cells["password"].FormattedValue.ToString());
                 //btnAddPostal.Enabled = false;
             }
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
