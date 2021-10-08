@@ -300,7 +300,7 @@ namespace HospitalInformationManagementSystem.PL
             this.label1.Size = new System.Drawing.Size(97, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Postal Type";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            
             // 
             // groupBox2
             // 
@@ -355,7 +355,7 @@ namespace HospitalInformationManagementSystem.PL
             this.label11.Size = new System.Drawing.Size(94, 18);
             this.label11.TabIndex = 1;
             this.label11.Text = "Enter Ref No";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
+            
             // 
             // dgvPostal
             // 
