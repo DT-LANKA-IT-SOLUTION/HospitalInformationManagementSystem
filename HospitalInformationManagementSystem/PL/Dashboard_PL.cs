@@ -21,7 +21,8 @@ namespace HospitalInformationManagementSystem.PL
         { 
             InitializeComponent();
             _GrantUserPermission.GrantMenuPermission(btnDashboard, btnPatient, btnVisitors, btnAppointment, btnPostal, btnComplaints, btnReports, btnStaff);
-            
+
+            timer1.Start();
             //this.ucReport_PL.ParentForm = this;
         }
 
@@ -113,6 +114,8 @@ namespace HospitalInformationManagementSystem.PL
 
             ucDashboard_PL ucDashboard = new ucDashboard_PL();
             FormControl.showControls(ucDashboard, pnlContent);
+
+            
         }
 
         private void btnAppointment_Click(object sender, EventArgs e)
@@ -131,6 +134,12 @@ namespace HospitalInformationManagementSystem.PL
         {
             ucReport_PL ucReport = new ucReport_PL();
             FormControl.showControls(ucReport, pnlContent);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime d = DateTime.Now;
+            lbldate.Text = d.ToString();
         }
     }
 }

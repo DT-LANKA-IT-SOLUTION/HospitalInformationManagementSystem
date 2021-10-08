@@ -77,6 +77,7 @@
     <Compile Include="BLL\Report_BLL.cs" />
     <Compile Include="BLL\Staff_BLL.cs" />
     <Compile Include="DAL\Complaint_DLL.cs" />
+    <Compile Include="DAL\Dashboard_DLL.cs" />
     <Compile Include="DAL\Reference_DLL.cs" />
     <Compile Include="DAL\Report_DLL.cs" />
     <!--<Compile Include="DAL\Auth_DLL.cs" />
