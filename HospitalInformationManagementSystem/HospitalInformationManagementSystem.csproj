@@ -97,11 +97,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="PL\InformationPL\frmSuccess.cs">
+    <Compile Include="PL\InformationPL\frmNotification.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PL\InformationPL\frmSuccess.Designer.cs">
-      <DependentUpon>frmSuccess.cs</DependentUpon>
+    <Compile Include="PL\InformationPL\frmNotification.Designer.cs">
+      <DependentUpon>frmNotification.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\AppointmentModel.cs" />
     <Compile Include="Model\AuthModel.cs" />
@@ -228,8 +228,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PL\InformationPL\frmSuccess.resx">
-      <DependentUpon>frmSuccess.cs</DependentUpon>
+    <EmbeddedResource Include="PL\InformationPL\frmNotification.resx">
+      <DependentUpon>frmNotification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\Dashboard_PL.resx">
       <DependentUpon>Dashboard_PL.cs</DependentUpon>
