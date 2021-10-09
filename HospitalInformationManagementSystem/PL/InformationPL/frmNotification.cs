@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HospitalInformationManagementSystem.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace HospitalInformationManagementSystem.InformationPL
 {
-    public partial class frmSuccess : Form
+    public partial class frmNotification : Form
     {
-        public frmSuccess()
+        public frmNotification()
         {
             InitializeComponent();
         }
@@ -22,7 +23,14 @@ namespace HospitalInformationManagementSystem.InformationPL
             start,
             close
         }
-        private frmSuccess.enmAction action;
+        public enum enmType
+        {
+            Success,
+            Warning,
+            Error,
+            Info
+        }
+        private frmNotification.enmAction action;
 
         int x, y;
 
@@ -68,7 +76,7 @@ namespace HospitalInformationManagementSystem.InformationPL
             }
         }
 
-        public void showAlert(string msg)
+        public void showAlert(string msg, enmType type)
         {
             this.Opacity = 0.0;
             this.StartPosition = FormStartPosition.Manual;
@@ -77,7 +85,7 @@ namespace HospitalInformationManagementSystem.InformationPL
             for (int i = 0; i < 10; i++)
             {
                 fname = "alert" + i.ToString();
-                frmSuccess frm = (frmSuccess)Application.OpenForms[fname];
+                frmNotification frm = (frmNotification)Application.OpenForms[fname];
 
                 if(frm == null)
                 {
@@ -89,6 +97,27 @@ namespace HospitalInformationManagementSystem.InformationPL
                 }
             }
             this.x = Screen.PrimaryScreen.WorkingArea.Width - base.Width - 5;
+
+            switch(type)
+            {
+                case enmType.Success:
+                    this.pbNotification.Image = Resources.Success;
+                    this.BackColor = Color.SeaGreen;
+                    break;
+                case enmType.Error:
+                    this.pbNotification.Image = Resources.Error;
+                    this.BackColor = Color.DarkRed;
+                    break;
+                case enmType.Info:
+                    this.pbNotification.Image = Resources.Information;
+                    this.BackColor = Color.RoyalBlue;
+                    break;
+                case enmType.Warning:
+                    this.pbNotification.Image = Resources.Warning;
+                    this.BackColor = Color.DarkOrange;
+                    break;
+            }
+
 
             this.lblMessage.Text = msg;
             this.Show();
