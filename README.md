@@ -5,6 +5,16 @@ This is compatible with Visual Studio 2019 and SQL Server 2018.
 <h2>About</h2>
 <img src="https://user-images.githubusercontent.com/74907049/136707197-3af26c9b-1807-41db-9c13-3357746ec77c.png">
 
+<h2>Configuration</h2>
+Database Configuration
+Add you database path to App.config file
+
+Download Database <a href="">Here</a></br>
+
+Login Data</br>
+username : admin</br>
+password : 123456789
+
 <h2>Nuget Package</h2>
 Install <a href="https://www.nuget.org/packages/MetroModernUI/">MetroModernUI</a> Nuget Package
 
@@ -23,5 +33,4 @@ D.B.M.A.Kalani<br />
 Y.G.C.K.Yapa Bandara
 
 <h2>License & Copyright </h2>
-Hospital Information Management System
-Copyright (C) 2021
+© 2021 KWC Technologies. All Rights Reserved.
