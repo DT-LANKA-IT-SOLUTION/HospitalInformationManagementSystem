@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HospitalInformationManagementSystem.DAL;
+using HospitalInformationManagementSystem.BLL;
 
 namespace HospitalInformationManagementSystem.PL
 {
     public partial class ucDashboard_PL : UserControl
     {
+        Dashboard_BLL _dashboard_BLL = new Dashboard_BLL();
         public ucDashboard_PL()
         {
             InitializeComponent();
@@ -20,23 +22,23 @@ namespace HospitalInformationManagementSystem.PL
 
         private void ucDashboard_PL_Load(object sender, EventArgs e)
         {
-            Dashboard_DLL dashboard = new Dashboard_DLL();
-            DataTable PTable = dashboard.GetPatientCount();
-            lblPatientCount.Text = PTable.Rows[0]["PCount"].ToString();
+            this.LoadDashboardData();
+        }
 
-            DataTable ATable = dashboard.GetAppointmentCount();
-            lblAppointmentCount.Text = ATable.Rows[0]["ACount"].ToString();
-
-            DataTable CTable = dashboard.GetComplaintCount();
-            lblComplaintCount.Text = CTable.Rows[0]["CCount"].ToString();
-
-
-
-            DataTable dTable = dashboard.FillChart();
-            CT_Dashboard.DataSource = dTable;
-            CT_Dashboard.Series["Appointment"].XValueMember = "AppDate";
-            CT_Dashboard.Series["Appointment"].YValueMembers = "  Appcount";
-            CT_Dashboard.Titles.Add("Appointment Chart").ForeColor = Color.BlueViolet;
+        private void LoadDashboardData()
+        {
+            try
+            {
+                _dashboard_BLL.GetPatientCount(lblPatientCount);
+                _dashboard_BLL.GetAppointmentCount(lblAppointmentCount);
+                _dashboard_BLL.GetComplaintCount(lblComplaintCount);
+                _dashboard_BLL.GetDoctorCount(lblDoctorCount);
+                _dashboard_BLL.FillChart(CT_Dashboard);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

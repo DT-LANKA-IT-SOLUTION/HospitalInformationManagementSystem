@@ -17,7 +17,20 @@ namespace HospitalInformationManagementSystem.DAL
         {
             try
             {
-                string sql = string.Format("SELECT * FROM Appointments");
+                string sql = "";
+
+                if (PermisionsModel.user_type == "patient")
+                {
+                    sql = string.Format("SELECT * FROM Appointments");
+                }
+                else if (PermisionsModel.user_type == "Medical Officer")
+                {
+                    sql = string.Format("SELECT * FROM Appointments");
+                }
+                else
+                {
+                    sql = string.Format("SELECT * FROM Appointments");
+                }
 
                 return ODBC.GetData(sql);
             }

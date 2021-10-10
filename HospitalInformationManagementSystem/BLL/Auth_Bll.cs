@@ -33,12 +33,15 @@ namespace HospitalInformationManagementSystem.BLL
                         while (sdr.Read())
                         {
                             PermisionsModel.user_id = sdr[0].ToString();
-                            PermisionsModel.first_name = sdr[0].ToString();
-                            PermisionsModel.last_name = sdr[0].ToString();
-                            PermisionsModel.gender = sdr[0].ToString();
-                            PermisionsModel.nic = sdr[0].ToString();
-                            PermisionsModel.birth_day = sdr[0].ToString();
-                            PermisionsModel.address = sdr[0].ToString();
+                            PermisionsModel.first_name = sdr[3].ToString();
+                            PermisionsModel.last_name = sdr[4].ToString();
+                            PermisionsModel.gender = sdr[5].ToString();
+                            PermisionsModel.nic = sdr[7].ToString();
+                            PermisionsModel.birth_day = sdr[8].ToString();
+                            PermisionsModel.address = sdr[9].ToString();
+                            PermisionsModel.marital_status = sdr[10].ToString();
+                            PermisionsModel.user_type = sdr[11].ToString();
+                            PermisionsModel.IsActive = sdr[12].ToString();
                         }
                         PermisionsModel.islogin = true;
 

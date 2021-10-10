@@ -73,6 +73,7 @@
     <Compile Include="BLL\Appointment_BLL.cs" />
     <Compile Include="BLL\Auth_BLL.cs" />
     <Compile Include="BLL\Complaint_BLL.cs" />
+    <Compile Include="BLL\Dashboard_BLL.cs" />
     <Compile Include="BLL\Patient_BLL.cs" />
     <Compile Include="BLL\Reference_BLL.cs" />
     <Compile Include="BLL\Report_BLL.cs" />

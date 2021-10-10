@@ -12,7 +12,7 @@ namespace HospitalInformationManagementSystem.DAL
 {
     class Dashboard_DLL
     {
-        public DataTable GetPatientCount()
+        public static DataTable GetPatientCount()
         {
             try
             {
@@ -29,7 +29,7 @@ namespace HospitalInformationManagementSystem.DAL
             }
         }
 
-        public DataTable GetAppointmentCount()
+        public static DataTable GetAppointmentCount()
         {
             try
             {
@@ -49,7 +49,7 @@ namespace HospitalInformationManagementSystem.DAL
         }
 
 
-        public DataTable GetComplaintCount()
+        public static DataTable GetComplaintCount()
         {
             try
             {
@@ -68,11 +68,31 @@ namespace HospitalInformationManagementSystem.DAL
 
         }
 
-        public DataTable FillChart()
+        public static DataTable GetDoctorCount()
         {
             try
             {
-                string sql = string.Format("  select app_date as AppDate,count(isnull(app_id,0)) as Appcount from Appointments WHERE status=@IsActive group by app_date ");
+                string sql = string.Format("SELECT Count(isnull(user_type,0)) AS DCount FROM Users WHERE IsActive=@IsActive AND user_type=@user_type");
+
+                SqlParameter[] _sql = new SqlParameter[2];
+                _sql[0] = SqlParameterFormat.Format("@IsActive", true);
+                _sql[1] = SqlParameterFormat.Format("@user_type", "Medical Officer");
+
+                return ODBC.GetData(sql, _sql);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+
+        }
+
+        public static DataTable FillChart()
+        {
+            try
+            {
+                string sql = string.Format("SELECT app_date as AppDate,count(isnull(app_id,0)) as Appcount FROM Appointments WHERE status=@IsActive group by app_date ");
 
                 SqlParameter[] _sql = new SqlParameter[1];
                 _sql[0] = SqlParameterFormat.Format("@IsActive", true);
