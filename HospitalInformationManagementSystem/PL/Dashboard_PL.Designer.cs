@@ -73,7 +73,7 @@
             // 
             // pnlHeadder
             // 
-            this.pnlHeadder.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlHeadder.BackColor = System.Drawing.Color.White;
             this.pnlHeadder.Controls.Add(this.lbldate);
             this.pnlHeadder.Controls.Add(this.btnMaximizer);
             this.pnlHeadder.Controls.Add(this.btnMin);

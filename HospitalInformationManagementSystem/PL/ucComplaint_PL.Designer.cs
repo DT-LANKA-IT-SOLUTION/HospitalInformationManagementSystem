@@ -30,15 +30,14 @@ namespace HospitalInformationManagementSystem.PL
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvComplaints = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.grbComplaintForm = new System.Windows.Forms.GroupBox();
+            this.btnComplaintViewFile = new MetroFramework.Controls.MetroButton();
             this.txtCompID = new System.Windows.Forms.TextBox();
             this.btnComplaintBrowse = new MetroFramework.Controls.MetroButton();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnDeleteComplaint = new System.Windows.Forms.Button();
-            this.btnEditComplaint = new System.Windows.Forms.Button();
-            this.btnAddComplaint = new System.Windows.Forms.Button();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
@@ -60,106 +59,82 @@ namespace HospitalInformationManagementSystem.PL
             this.ofdComplaints = new System.Windows.Forms.OpenFileDialog();
             this.epComplaints = new System.Windows.Forms.ErrorProvider(this.components);
             this.sfdComplaints = new System.Windows.Forms.SaveFileDialog();
-            this.btnComplaintViewFile = new MetroFramework.Controls.MetroButton();
-            this.comp_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.complaint_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.attachment_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.attachment_data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nic_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comp_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comp_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.action_taken = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grbComplaintData = new System.Windows.Forms.GroupBox();
+            this.dgvComplaints = new MetroFramework.Controls.MetroGrid();
             this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvComplaints)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.action_taken = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comp_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comp_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nic_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.attachment_data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.attachment_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.complaint_category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comp_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAddComplaint = new MetroFramework.Controls.MetroButton();
+            this.btnEditComplaint = new MetroFramework.Controls.MetroButton();
+            this.btnDeleteComplaint = new MetroFramework.Controls.MetroButton();
+            this.grbComplaintForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epComplaints)).BeginInit();
+            this.grbComplaintData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComplaints)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox2
+            // grbComplaintForm
             // 
-            this.groupBox2.Controls.Add(this.dgvComplaints);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(516, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(505, 685);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Complaint Data";
+            this.grbComplaintForm.BackColor = System.Drawing.Color.White;
+            this.grbComplaintForm.Controls.Add(this.btnDeleteComplaint);
+            this.grbComplaintForm.Controls.Add(this.btnEditComplaint);
+            this.grbComplaintForm.Controls.Add(this.btnAddComplaint);
+            this.grbComplaintForm.Controls.Add(this.btnComplaintViewFile);
+            this.grbComplaintForm.Controls.Add(this.txtCompID);
+            this.grbComplaintForm.Controls.Add(this.btnComplaintBrowse);
+            this.grbComplaintForm.Controls.Add(this.label10);
+            this.grbComplaintForm.Controls.Add(this.dtpDate);
+            this.grbComplaintForm.Controls.Add(this.txtNote);
+            this.grbComplaintForm.Controls.Add(this.txtDescription);
+            this.grbComplaintForm.Controls.Add(this.txtNIC);
+            this.grbComplaintForm.Controls.Add(this.label7);
+            this.grbComplaintForm.Controls.Add(this.label2);
+            this.grbComplaintForm.Controls.Add(this.label6);
+            this.grbComplaintForm.Controls.Add(this.label9);
+            this.grbComplaintForm.Controls.Add(this.label5);
+            this.grbComplaintForm.Controls.Add(this.label4);
+            this.grbComplaintForm.Controls.Add(this.cmbComplaintCategory);
+            this.grbComplaintForm.Controls.Add(this.cmbComplaintType);
+            this.grbComplaintForm.Controls.Add(this.txtActionTaken);
+            this.grbComplaintForm.Controls.Add(this.txtPhone);
+            this.grbComplaintForm.Controls.Add(this.label8);
+            this.grbComplaintForm.Controls.Add(this.txtComplaintBy);
+            this.grbComplaintForm.Controls.Add(this.label3);
+            this.grbComplaintForm.Controls.Add(this.label1);
+            this.grbComplaintForm.Dock = System.Windows.Forms.DockStyle.Left;
+            this.grbComplaintForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbComplaintForm.ForeColor = System.Drawing.Color.Black;
+            this.grbComplaintForm.Location = new System.Drawing.Point(0, 0);
+            this.grbComplaintForm.Name = "grbComplaintForm";
+            this.grbComplaintForm.Size = new System.Drawing.Size(510, 691);
+            this.grbComplaintForm.TabIndex = 3;
+            this.grbComplaintForm.TabStop = false;
+            this.grbComplaintForm.Text = "Complaint Form";
             // 
-            // dgvComplaints
+            // btnComplaintViewFile
             // 
-            this.dgvComplaints.AllowUserToAddRows = false;
-            this.dgvComplaints.AllowUserToDeleteRows = false;
-            this.dgvComplaints.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvComplaints.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvComplaints.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.comp_id,
-            this.complaint_category,
-            this.attachment_type,
-            this.attachment_data,
-            this.nic_no,
-            this.comp_by,
-            this.comp_type,
-            this.phone_no,
-            this.date,
-            this.description,
-            this.action_taken,
-            this.note,
-            this.user_id});
-            this.dgvComplaints.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvComplaints.Location = new System.Drawing.Point(3, 25);
-            this.dgvComplaints.Name = "dgvComplaints";
-            this.dgvComplaints.ReadOnly = true;
-            this.dgvComplaints.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvComplaints.Size = new System.Drawing.Size(499, 657);
-            this.dgvComplaints.TabIndex = 0;
-            this.dgvComplaints.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvComplaints_CellClick);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnComplaintViewFile);
-            this.groupBox1.Controls.Add(this.txtCompID);
-            this.groupBox1.Controls.Add(this.btnComplaintBrowse);
-            this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.btnDeleteComplaint);
-            this.groupBox1.Controls.Add(this.btnEditComplaint);
-            this.groupBox1.Controls.Add(this.btnAddComplaint);
-            this.groupBox1.Controls.Add(this.dtpDate);
-            this.groupBox1.Controls.Add(this.txtNote);
-            this.groupBox1.Controls.Add(this.txtDescription);
-            this.groupBox1.Controls.Add(this.txtNIC);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.cmbComplaintCategory);
-            this.groupBox1.Controls.Add(this.cmbComplaintType);
-            this.groupBox1.Controls.Add(this.txtActionTaken);
-            this.groupBox1.Controls.Add(this.txtPhone);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.txtComplaintBy);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(510, 685);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Complaint Form";
+            this.btnComplaintViewFile.Location = new System.Drawing.Point(310, 573);
+            this.btnComplaintViewFile.Name = "btnComplaintViewFile";
+            this.btnComplaintViewFile.Size = new System.Drawing.Size(120, 32);
+            this.btnComplaintViewFile.TabIndex = 17;
+            this.btnComplaintViewFile.Text = "View File";
+            this.btnComplaintViewFile.UseSelectable = true;
+            this.btnComplaintViewFile.Visible = false;
+            this.btnComplaintViewFile.Click += new System.EventHandler(this.BtnComplaintViewFile_Click);
             // 
             // txtCompID
             // 
-            this.txtCompID.Location = new System.Drawing.Point(17, 527);
+            this.txtCompID.Location = new System.Drawing.Point(9, 527);
             this.txtCompID.Name = "txtCompID";
             this.txtCompID.Size = new System.Drawing.Size(100, 29);
             this.txtCompID.TabIndex = 16;
@@ -185,45 +160,6 @@ namespace HospitalInformationManagementSystem.PL
             this.label10.Size = new System.Drawing.Size(82, 18);
             this.label10.TabIndex = 14;
             this.label10.Text = "Attachment";
-            // 
-            // btnDeleteComplaint
-            // 
-            this.btnDeleteComplaint.BackColor = System.Drawing.Color.Red;
-            this.btnDeleteComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteComplaint.ForeColor = System.Drawing.Color.Black;
-            this.btnDeleteComplaint.Location = new System.Drawing.Point(347, 625);
-            this.btnDeleteComplaint.Name = "btnDeleteComplaint";
-            this.btnDeleteComplaint.Size = new System.Drawing.Size(141, 47);
-            this.btnDeleteComplaint.TabIndex = 13;
-            this.btnDeleteComplaint.Text = "Delete Complaint";
-            this.btnDeleteComplaint.UseVisualStyleBackColor = false;
-            this.btnDeleteComplaint.Click += new System.EventHandler(this.BtnDeleteComplaint_Click);
-            // 
-            // btnEditComplaint
-            // 
-            this.btnEditComplaint.BackColor = System.Drawing.Color.Yellow;
-            this.btnEditComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditComplaint.ForeColor = System.Drawing.Color.Black;
-            this.btnEditComplaint.Location = new System.Drawing.Point(183, 625);
-            this.btnEditComplaint.Name = "btnEditComplaint";
-            this.btnEditComplaint.Size = new System.Drawing.Size(141, 47);
-            this.btnEditComplaint.TabIndex = 13;
-            this.btnEditComplaint.Text = "Edit Complaint";
-            this.btnEditComplaint.UseVisualStyleBackColor = false;
-            this.btnEditComplaint.Click += new System.EventHandler(this.BtnEditComplaint_Click);
-            // 
-            // btnAddComplaint
-            // 
-            this.btnAddComplaint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAddComplaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddComplaint.ForeColor = System.Drawing.Color.Black;
-            this.btnAddComplaint.Location = new System.Drawing.Point(19, 625);
-            this.btnAddComplaint.Name = "btnAddComplaint";
-            this.btnAddComplaint.Size = new System.Drawing.Size(141, 47);
-            this.btnAddComplaint.TabIndex = 13;
-            this.btnAddComplaint.Text = "Add Complaint";
-            this.btnAddComplaint.UseVisualStyleBackColor = false;
-            this.btnAddComplaint.Click += new System.EventHandler(this.BtnAddComplaint_Click);
             // 
             // dtpDate
             // 
@@ -420,100 +356,85 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.sfdComplaints.Filter = "PDF document (*.pdf)|*.pdf";
             // 
-            // btnComplaintViewFile
+            // grbComplaintData
             // 
-            this.btnComplaintViewFile.Location = new System.Drawing.Point(310, 573);
-            this.btnComplaintViewFile.Name = "btnComplaintViewFile";
-            this.btnComplaintViewFile.Size = new System.Drawing.Size(120, 32);
-            this.btnComplaintViewFile.TabIndex = 17;
-            this.btnComplaintViewFile.Text = "View File";
-            this.btnComplaintViewFile.UseSelectable = true;
-            this.btnComplaintViewFile.Visible = false;
-            this.btnComplaintViewFile.Click += new System.EventHandler(this.BtnComplaintViewFile_Click);
+            this.grbComplaintData.BackColor = System.Drawing.Color.White;
+            this.grbComplaintData.Controls.Add(this.dgvComplaints);
+            this.grbComplaintData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grbComplaintData.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.grbComplaintData.Location = new System.Drawing.Point(510, 0);
+            this.grbComplaintData.Name = "grbComplaintData";
+            this.grbComplaintData.Size = new System.Drawing.Size(514, 691);
+            this.grbComplaintData.TabIndex = 0;
+            this.grbComplaintData.TabStop = false;
+            this.grbComplaintData.Text = "Complaint Data";
             // 
-            // comp_id
+            // dgvComplaints
             // 
-            this.comp_id.DataPropertyName = "comp_id";
-            this.comp_id.HeaderText = "Complaint ID";
-            this.comp_id.Name = "comp_id";
-            this.comp_id.ReadOnly = true;
-            this.comp_id.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvComplaints.AllowUserToResizeRows = false;
+            this.dgvComplaints.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvComplaints.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvComplaints.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvComplaints.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvComplaints.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvComplaints.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.comp_id,
+            this.complaint_category,
+            this.attachment_type,
+            this.attachment_data,
+            this.nic_no,
+            this.comp_by,
+            this.comp_type,
+            this.phone_no,
+            this.date,
+            this.description,
+            this.action_taken,
+            this.note,
+            this.user_id});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvComplaints.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvComplaints.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvComplaints.EnableHeadersVisualStyles = false;
+            this.dgvComplaints.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgvComplaints.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvComplaints.Location = new System.Drawing.Point(3, 25);
+            this.dgvComplaints.Name = "dgvComplaints";
+            this.dgvComplaints.ReadOnly = true;
+            this.dgvComplaints.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvComplaints.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvComplaints.RowHeadersWidth = 45;
+            this.dgvComplaints.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvComplaints.Size = new System.Drawing.Size(508, 663);
+            this.dgvComplaints.TabIndex = 0;
+            this.dgvComplaints.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvComplaints_CellClick);
             // 
-            // complaint_category
+            // user_id
             // 
-            this.complaint_category.DataPropertyName = "complaint_category";
-            this.complaint_category.HeaderText = "complaint_category";
-            this.complaint_category.Name = "complaint_category";
-            this.complaint_category.ReadOnly = true;
-            this.complaint_category.Visible = false;
-            // 
-            // attachment_type
-            // 
-            this.attachment_type.DataPropertyName = "attachment_type";
-            this.attachment_type.HeaderText = "attachment_type";
-            this.attachment_type.Name = "attachment_type";
-            this.attachment_type.ReadOnly = true;
-            this.attachment_type.Visible = false;
-            // 
-            // attachment_data
-            // 
-            this.attachment_data.DataPropertyName = "attachment_data";
-            this.attachment_data.HeaderText = "attachment_data";
-            this.attachment_data.Name = "attachment_data";
-            this.attachment_data.ReadOnly = true;
-            this.attachment_data.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.attachment_data.Visible = false;
-            // 
-            // nic_no
-            // 
-            this.nic_no.DataPropertyName = "nic_no";
-            this.nic_no.HeaderText = "NIC";
-            this.nic_no.Name = "nic_no";
-            this.nic_no.ReadOnly = true;
-            this.nic_no.Visible = false;
-            // 
-            // comp_by
-            // 
-            this.comp_by.DataPropertyName = "comp_by";
-            this.comp_by.HeaderText = "Complaint By";
-            this.comp_by.Name = "comp_by";
-            this.comp_by.ReadOnly = true;
-            // 
-            // comp_type
-            // 
-            this.comp_type.DataPropertyName = "comp_type";
-            this.comp_type.HeaderText = "Complaint Type";
-            this.comp_type.Name = "comp_type";
-            this.comp_type.ReadOnly = true;
-            // 
-            // phone_no
-            // 
-            this.phone_no.DataPropertyName = "phone_no";
-            this.phone_no.HeaderText = "Phone No";
-            this.phone_no.Name = "phone_no";
-            this.phone_no.ReadOnly = true;
-            this.phone_no.Visible = false;
-            // 
-            // date
-            // 
-            this.date.DataPropertyName = "date";
-            this.date.HeaderText = "Date";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "description";
-            this.description.HeaderText = "Description";
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
-            // 
-            // action_taken
-            // 
-            this.action_taken.DataPropertyName = "action_taken";
-            this.action_taken.HeaderText = "Action Taken";
-            this.action_taken.Name = "action_taken";
-            this.action_taken.ReadOnly = true;
+            this.user_id.DataPropertyName = "user_id";
+            this.user_id.HeaderText = "User ID";
+            this.user_id.Name = "user_id";
+            this.user_id.ReadOnly = true;
+            this.user_id.Visible = false;
             // 
             // note
             // 
@@ -523,39 +444,144 @@ namespace HospitalInformationManagementSystem.PL
             this.note.ReadOnly = true;
             this.note.Visible = false;
             // 
-            // user_id
+            // action_taken
             // 
-            this.user_id.HeaderText = "User ID";
-            this.user_id.Name = "user_id";
-            this.user_id.ReadOnly = true;
-            this.user_id.Visible = false;
+            this.action_taken.DataPropertyName = "action_taken";
+            this.action_taken.HeaderText = "Action Taken";
+            this.action_taken.Name = "action_taken";
+            this.action_taken.ReadOnly = true;
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "description";
+            this.description.HeaderText = "Description";
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            // 
+            // date
+            // 
+            this.date.DataPropertyName = "date";
+            this.date.HeaderText = "Date";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            // 
+            // phone_no
+            // 
+            this.phone_no.DataPropertyName = "phone_no";
+            this.phone_no.HeaderText = "Phone No";
+            this.phone_no.Name = "phone_no";
+            this.phone_no.ReadOnly = true;
+            this.phone_no.Visible = false;
+            // 
+            // comp_type
+            // 
+            this.comp_type.DataPropertyName = "comp_type";
+            this.comp_type.HeaderText = "Complaint Type";
+            this.comp_type.Name = "comp_type";
+            this.comp_type.ReadOnly = true;
+            // 
+            // comp_by
+            // 
+            this.comp_by.DataPropertyName = "comp_by";
+            this.comp_by.HeaderText = "Complaint By";
+            this.comp_by.Name = "comp_by";
+            this.comp_by.ReadOnly = true;
+            // 
+            // nic_no
+            // 
+            this.nic_no.DataPropertyName = "nic_no";
+            this.nic_no.HeaderText = "Nic";
+            this.nic_no.Name = "nic_no";
+            this.nic_no.ReadOnly = true;
+            this.nic_no.Visible = false;
+            // 
+            // attachment_data
+            // 
+            this.attachment_data.DataPropertyName = "attachment_data";
+            this.attachment_data.HeaderText = "Attachment Data";
+            this.attachment_data.Name = "attachment_data";
+            this.attachment_data.ReadOnly = true;
+            this.attachment_data.Visible = false;
+            // 
+            // attachment_type
+            // 
+            this.attachment_type.DataPropertyName = "attachment_type";
+            this.attachment_type.HeaderText = "Attachment Type";
+            this.attachment_type.Name = "attachment_type";
+            this.attachment_type.ReadOnly = true;
+            this.attachment_type.Visible = false;
+            // 
+            // complaint_category
+            // 
+            this.complaint_category.DataPropertyName = "complaint_category";
+            this.complaint_category.HeaderText = "Complaint Category";
+            this.complaint_category.Name = "complaint_category";
+            this.complaint_category.ReadOnly = true;
+            this.complaint_category.Visible = false;
+            // 
+            // comp_id
+            // 
+            this.comp_id.DataPropertyName = "comp_id";
+            this.comp_id.HeaderText = "Complaint ID";
+            this.comp_id.Name = "comp_id";
+            this.comp_id.ReadOnly = true;
+            // 
+            // btnAddComplaint
+            // 
+            this.btnAddComplaint.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btnAddComplaint.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnAddComplaint.Location = new System.Drawing.Point(6, 625);
+            this.btnAddComplaint.Name = "btnAddComplaint";
+            this.btnAddComplaint.Size = new System.Drawing.Size(141, 47);
+            this.btnAddComplaint.TabIndex = 18;
+            this.btnAddComplaint.Text = "Add Complaint";
+            this.btnAddComplaint.UseSelectable = true;
+            this.btnAddComplaint.Click += new System.EventHandler(this.BtnAddComplaint_Click);
+            // 
+            // btnEditComplaint
+            // 
+            this.btnEditComplaint.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btnEditComplaint.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnEditComplaint.Location = new System.Drawing.Point(177, 625);
+            this.btnEditComplaint.Name = "btnEditComplaint";
+            this.btnEditComplaint.Size = new System.Drawing.Size(141, 47);
+            this.btnEditComplaint.TabIndex = 19;
+            this.btnEditComplaint.Text = "Edit Complaint";
+            this.btnEditComplaint.UseSelectable = true;
+            this.btnEditComplaint.Click += new System.EventHandler(this.BtnEditComplaint_Click);
+            // 
+            // btnDeleteComplaint
+            // 
+            this.btnDeleteComplaint.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btnDeleteComplaint.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnDeleteComplaint.Location = new System.Drawing.Point(347, 625);
+            this.btnDeleteComplaint.Name = "btnDeleteComplaint";
+            this.btnDeleteComplaint.Size = new System.Drawing.Size(141, 47);
+            this.btnDeleteComplaint.TabIndex = 20;
+            this.btnDeleteComplaint.Text = "Delete Complaint";
+            this.btnDeleteComplaint.UseSelectable = true;
+            this.btnDeleteComplaint.Click += new System.EventHandler(this.BtnDeleteComplaint_Click);
             // 
             // ucComplaint_PL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grbComplaintData);
+            this.Controls.Add(this.grbComplaintForm);
             this.Name = "ucComplaint_PL";
             this.Size = new System.Drawing.Size(1024, 691);
             this.Load += new System.EventHandler(this.ucComplaint_PL_Load);
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvComplaints)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grbComplaintForm.ResumeLayout(false);
+            this.grbComplaintForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epComplaints)).EndInit();
+            this.grbComplaintData.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvComplaints)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgvComplaints;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnDeleteComplaint;
-        private System.Windows.Forms.Button btnEditComplaint;
-        private System.Windows.Forms.Button btnAddComplaint;
+        private System.Windows.Forms.GroupBox grbComplaintForm;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.TextBox txtNote;
         private System.Windows.Forms.TextBox txtDescription;
@@ -581,6 +607,8 @@ namespace HospitalInformationManagementSystem.PL
         private System.Windows.Forms.TextBox txtCompID;
         private System.Windows.Forms.SaveFileDialog sfdComplaints;
         private MetroFramework.Controls.MetroButton btnComplaintViewFile;
+        private System.Windows.Forms.GroupBox grbComplaintData;
+        private MetroFramework.Controls.MetroGrid dgvComplaints;
         private System.Windows.Forms.DataGridViewTextBoxColumn comp_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn complaint_category;
         private System.Windows.Forms.DataGridViewTextBoxColumn attachment_type;
@@ -594,5 +622,8 @@ namespace HospitalInformationManagementSystem.PL
         private System.Windows.Forms.DataGridViewTextBoxColumn action_taken;
         private System.Windows.Forms.DataGridViewTextBoxColumn note;
         private System.Windows.Forms.DataGridViewTextBoxColumn user_id;
+        private MetroFramework.Controls.MetroButton btnAddComplaint;
+        private MetroFramework.Controls.MetroButton btnDeleteComplaint;
+        private MetroFramework.Controls.MetroButton btnEditComplaint;
     }
 }
