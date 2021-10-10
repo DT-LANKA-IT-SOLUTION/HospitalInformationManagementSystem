@@ -22,9 +22,12 @@ namespace HospitalInformationManagementSystem.PL
 
         ComplaintModel complaintModel = new ComplaintModel();
 
+        GrantUserPermission _grantUserPermission = new GrantUserPermission();
+
         public ucComplaint_PL()
         {
             InitializeComponent();
+            _grantUserPermission.GrantButtonPermission("complaints", btnAddComplaint, btnAddComplaint, btnAddComplaint);
         }
 
         private void ucComplaint_PL_Load(object sender, EventArgs e)

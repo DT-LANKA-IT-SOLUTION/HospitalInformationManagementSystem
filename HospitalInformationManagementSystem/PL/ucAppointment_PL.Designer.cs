@@ -74,6 +74,8 @@ namespace HospitalInformationManagementSystem.PL
             this.app_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.epAppointment = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cmbSerarchStatus = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -115,10 +117,11 @@ namespace HospitalInformationManagementSystem.PL
             // 
             // cmb_medical_officer
             // 
+            this.cmb_medical_officer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_medical_officer.FormattingEnabled = true;
             this.cmb_medical_officer.Location = new System.Drawing.Point(179, 248);
             this.cmb_medical_officer.Name = "cmb_medical_officer";
-            this.cmb_medical_officer.Size = new System.Drawing.Size(312, 32);
+            this.cmb_medical_officer.Size = new System.Drawing.Size(312, 26);
             this.cmb_medical_officer.TabIndex = 15;
             this.cmb_medical_officer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_medical_officer_KeyPress);
             // 
@@ -166,7 +169,8 @@ namespace HospitalInformationManagementSystem.PL
             "Available",
             "Pending",
             "Confirmed",
-            "Rejected"});
+            "Rejected",
+            "Completed"});
             this.comboBox_status.Location = new System.Drawing.Point(179, 409);
             this.comboBox_status.Name = "comboBox_status";
             this.comboBox_status.Size = new System.Drawing.Size(143, 28);
@@ -362,13 +366,15 @@ namespace HospitalInformationManagementSystem.PL
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cmbSerarchStatus);
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.txtSearchByAppNo);
             this.panel1.Controls.Add(this.label11);
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(6, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(493, 43);
+            this.panel1.Size = new System.Drawing.Size(493, 86);
             this.panel1.TabIndex = 3;
             // 
             // btnSearch
@@ -376,7 +382,7 @@ namespace HospitalInformationManagementSystem.PL
             this.btnSearch.BackColor = System.Drawing.Color.Silver;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
-            this.btnSearch.Location = new System.Drawing.Point(357, 3);
+            this.btnSearch.Location = new System.Drawing.Point(371, 46);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(119, 33);
             this.btnSearch.TabIndex = 3;
@@ -417,10 +423,10 @@ namespace HospitalInformationManagementSystem.PL
             this.app_date,
             this.app_time,
             this.status});
-            this.dgvAppointment.Location = new System.Drawing.Point(5, 80);
+            this.dgvAppointment.Location = new System.Drawing.Point(5, 120);
             this.dgvAppointment.Name = "dgvAppointment";
             this.dgvAppointment.ReadOnly = true;
-            this.dgvAppointment.Size = new System.Drawing.Size(493, 602);
+            this.dgvAppointment.Size = new System.Drawing.Size(493, 562);
             this.dgvAppointment.TabIndex = 1;
             this.dgvAppointment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAppointment_CellClick);
             // 
@@ -500,6 +506,32 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.epAppointment.ContainerControl = this;
             // 
+            // cmbSerarchStatus
+            // 
+            this.cmbSerarchStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSerarchStatus.FormattingEnabled = true;
+            this.cmbSerarchStatus.Items.AddRange(new object[] {
+            "Available",
+            "Pending",
+            "Confirmed",
+            "Rejected",
+            "Completed"});
+            this.cmbSerarchStatus.Location = new System.Drawing.Point(173, 49);
+            this.cmbSerarchStatus.Name = "cmbSerarchStatus";
+            this.cmbSerarchStatus.Size = new System.Drawing.Size(178, 28);
+            this.cmbSerarchStatus.TabIndex = 14;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(12, 51);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(59, 26);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Status";
+            // 
             // ucAppointment_PL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -559,5 +591,7 @@ namespace HospitalInformationManagementSystem.PL
         private System.Windows.Forms.DataGridViewTextBoxColumn app_time;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.ComboBox cmb_medical_officer;
+        private System.Windows.Forms.ComboBox cmbSerarchStatus;
+        private System.Windows.Forms.Label label8;
     }
 }

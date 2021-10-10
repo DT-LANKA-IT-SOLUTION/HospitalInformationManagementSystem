@@ -24,12 +24,12 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
-        public void GetAppointmentByAppointmentNo(DataGridView dgvAppointment, string appno)
+        public void GetAppointmentByAppointmentNo(DataGridView dgvAppointment, string appno,string status)
         {
             try
             {
                 dgvAppointment.AutoGenerateColumns = false;
-                dgvAppointment.DataSource = Appointment_DLL.GetAppointmentByAppointmentNo(appno);
+                dgvAppointment.DataSource = Appointment_DLL.GetAppointmentByAppointmentNo(appno,status);
             }
             catch (Exception)
             {
