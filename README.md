@@ -9,7 +9,7 @@ This is compatible with Visual Studio 2019 and SQL Server 2018.
 Install <a href="https://www.nuget.org/packages/MetroModernUI/">MetroModernUI</a> Nuget Package
 
 <h2>Reporting Tools</h2>
-Install <a href="https://www.crystalreports.com/">Crystal Reports 2020</a>
+Install <a href="https://www.crystalreports.com/">Crystal Reports 2020</a><br />
 Change Report_BLL.cs Load function to your full path of report 
 
 <h2>PDF Viewer</h2>
