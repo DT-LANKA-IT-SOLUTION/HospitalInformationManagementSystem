@@ -49,6 +49,24 @@ namespace HospitalInformationManagementSystem.DAL
             }
         }
 
+        public static DataTable GetUserByNIC(string nic)
+        {
+            try
+            {
+                string sql = string.Format("SELECT * FROM Users,Staff_Members WHERE Users.user_id = Staff_Members.user_id AND Users.nic_no LIKE @nic");
+
+                SqlParameter[] _sql = new SqlParameter[1];
+                _sql[0] = SqlParameterFormat.Format("@nic", "%"+nic+"%");
+
+                return ODBC.GetData(sql,_sql);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public static int AddStaff(StaffModel staffModel)
         {
             try

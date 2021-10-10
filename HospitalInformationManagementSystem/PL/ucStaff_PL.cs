@@ -594,7 +594,6 @@ namespace HospitalInformationManagementSystem.PL
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -795,6 +794,45 @@ namespace HospitalInformationManagementSystem.PL
                     }
                     
                 }
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtSearchByNIC.Text))
+            {
+                epStaff.SetError(txtSearchByNIC, "Please fill nic no");
+                txtSearchByNIC.Focus();
+            }
+            else
+            {
+                epStaff.Clear();
+                this.FilDGVSearchStaff(txtSearchByNIC.Text.Trim());
+            }
+        }
+
+        private void FilDGVSearchStaff(string nic)
+        {
+            try
+            {
+                _staff_BLL.LoadStaffByNICGridView(dgvStaff, nic);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtSearchByNIC_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.FilDGVSearchStaff(txtSearchByNIC.Text.Trim());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);                
             }
         }
     }
