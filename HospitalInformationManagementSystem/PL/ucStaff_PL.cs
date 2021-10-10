@@ -1,6 +1,7 @@
 ﻿using HospitalInformationManagementSystem.BLL;
 using HospitalInformationManagementSystem.Model;
 using HospitalInformationManagementSystem.Other;
+using HospitalInformationManagementSystem.Properties;
 using System;
 using System.ComponentModel;
 using System.Data;
@@ -185,7 +186,44 @@ namespace HospitalInformationManagementSystem.PL
             cmbGender.SelectedIndex = -1;
             cmbStatus.SelectedIndex = -1;
 
-            picBoxUserImage.Image = null;
+            picBoxUserImage.Image = Resources.user;
+
+            chkboxA1.Checked = false;
+            chkboxA2.Checked = false;
+            chkboxA3.Checked = false;
+            chkboxA4.Checked = false;
+            chkboxA5.Checked = false;
+            chkboxA6.Checked = false;
+            chkboxA7.Checked = false;
+            chkboxA8.Checked = false;
+
+            chkboxC1.Checked = false;
+            chkboxC2.Checked = false;
+            chkboxC3.Checked = false;
+            chkboxC4.Checked = false;
+            chkboxC5.Checked = false;
+            chkboxC6.Checked = false;
+            chkboxC7.Checked = false;
+            chkboxC8.Checked = false;
+
+            chkboxD1.Checked = false;
+            chkboxD2.Checked = false;
+            chkboxD3.Checked = false;
+            chkboxD4.Checked = false;
+            chkboxD5.Checked = false;
+            chkboxD6.Checked = false;
+            chkboxD7.Checked = false;
+            chkboxD8.Checked = false;
+            
+            chkboxM1.Checked = false;
+            chkboxM2.Checked = false;
+            chkboxM3.Checked = false;
+            chkboxM4.Checked = false;
+            chkboxM5.Checked = false;
+            chkboxM6.Checked = false;
+            chkboxM7.Checked = false;
+            chkboxM8.Checked = false;
+
         }
 
         private void btnAddStaff_Click(object sender, EventArgs e)
@@ -546,33 +584,41 @@ namespace HospitalInformationManagementSystem.PL
             {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            btnAddStaff.Enabled = true;
         }
 
         public int UpdateStaff()
         {
             try
             {
-                staffModel.user_name = (string.IsNullOrEmpty(txtUserName.Text)) ? txtFirstName.Text.Trim() + txtLastName.Text.Trim() : txtUserName.Text.Trim();
-                staffModel.password = EncryptionLab.EncryptText(string.IsNullOrEmpty(txtPassword.Text) ? txtNIC.Text.Trim() : txtPassword.Text.Trim());
-                staffModel.first_name = (string.IsNullOrEmpty(txtFirstName.Text)) ? "N/A" : txtFirstName.Text.Trim();
-                staffModel.last_name = (string.IsNullOrEmpty(txtLastName.Text)) ? "N/A" : txtLastName.Text.Trim();
-                staffModel.gender = (cmbGender.SelectedItem == null) ? "N/A" : cmbGender.SelectedItem.ToString();
-                staffModel.phone_no = (string.IsNullOrEmpty(txtPhone.Text)) ? 00000000 : Int32.Parse(txtPhone.Text.Trim());
-                staffModel.nic_no = (string.IsNullOrEmpty(txtNIC.Text)) ? "N/A" : txtNIC.Text.Trim();
-                staffModel.birth_date = (string.IsNullOrEmpty(dtpBirthDay.Text)) ? DateTime.Now : Convert.ToDateTime(dtpBirthDay.Text.Trim());
-                staffModel.address = (string.IsNullOrEmpty(txtAddress.Text)) ? "N/A" : txtAddress.Text.Trim();
-                staffModel.marital_status = (string.IsNullOrEmpty(cmbStatus.Text)) ? "N/A" : cmbStatus.SelectedItem.ToString();
-                staffModel.user_type = (string.IsNullOrEmpty(cmbUserType.Text)) ? "N/A" : cmbUserType.SelectedItem.ToString();
+                if (IsValid())
+                {
+                    staffModel.user_name = (string.IsNullOrEmpty(txtUserName.Text)) ? txtFirstName.Text.Trim() + txtLastName.Text.Trim() : txtUserName.Text.Trim();
+                    staffModel.password = EncryptionLab.EncryptText(string.IsNullOrEmpty(txtPassword.Text) ? txtNIC.Text.Trim() : txtPassword.Text.Trim());
+                    staffModel.first_name = (string.IsNullOrEmpty(txtFirstName.Text)) ? "N/A" : txtFirstName.Text.Trim();
+                    staffModel.last_name = (string.IsNullOrEmpty(txtLastName.Text)) ? "N/A" : txtLastName.Text.Trim();
+                    staffModel.gender = (cmbGender.SelectedItem == null) ? "N/A" : cmbGender.SelectedItem.ToString();
+                    staffModel.phone_no = (string.IsNullOrEmpty(txtPhone.Text)) ? 00000000 : Int32.Parse(txtPhone.Text.Trim());
+                    staffModel.nic_no = (string.IsNullOrEmpty(txtNIC.Text)) ? "N/A" : txtNIC.Text.Trim();
+                    staffModel.birth_date = (string.IsNullOrEmpty(dtpBirthDay.Text)) ? DateTime.Now : Convert.ToDateTime(dtpBirthDay.Text.Trim());
+                    staffModel.address = (string.IsNullOrEmpty(txtAddress.Text)) ? "N/A" : txtAddress.Text.Trim();
+                    staffModel.marital_status = (string.IsNullOrEmpty(cmbStatus.Text)) ? "N/A" : cmbStatus.SelectedItem.ToString();
+                    staffModel.user_type = (string.IsNullOrEmpty(cmbUserType.Text)) ? "N/A" : cmbUserType.SelectedItem.ToString();
 
-                staffModel.staff_id = (string.IsNullOrEmpty(txtStaffID.Text)) ? "N/A" : txtStaffID.Text.Trim();
-                staffModel.staff_email = (string.IsNullOrEmpty(txtStaffEmail.Text)) ? "N/A" : txtStaffEmail.Text.Trim();
-                staffModel.join_date = (string.IsNullOrEmpty(dtpJoinedDate.Text)) ? DateTime.Now : Convert.ToDateTime(dtpJoinedDate.Text.Trim());
-                staffModel.speciality_area = (string.IsNullOrEmpty(cmbSpeciality.Text)) ? "" : cmbSpeciality.SelectedItem.ToString();
-                staffModel.photo_data = string.IsNullOrEmpty(ImageToBase64(picBoxUserImage.Image, System.Drawing.Imaging.ImageFormat.Png)) ? "N/A" : ImageToBase64(picBoxUserImage.Image, System.Drawing.Imaging.ImageFormat.Png);
-                
-                staffModel.user_id = Int32.Parse(txtUserID.Text.Trim());
+                    staffModel.staff_id = (string.IsNullOrEmpty(txtStaffID.Text)) ? "N/A" : txtStaffID.Text.Trim();
+                    staffModel.staff_email = (string.IsNullOrEmpty(txtStaffEmail.Text)) ? "N/A" : txtStaffEmail.Text.Trim();
+                    staffModel.join_date = (string.IsNullOrEmpty(dtpJoinedDate.Text)) ? DateTime.Now : Convert.ToDateTime(dtpJoinedDate.Text.Trim());
+                    staffModel.speciality_area = (string.IsNullOrEmpty(cmbSpeciality.Text)) ? "" : cmbSpeciality.SelectedItem.ToString();
+                    staffModel.photo_data = string.IsNullOrEmpty(ImageToBase64(picBoxUserImage.Image, System.Drawing.Imaging.ImageFormat.Png)) ? "N/A" : ImageToBase64(picBoxUserImage.Image, System.Drawing.Imaging.ImageFormat.Png);
 
-                return _staff_BLL.UpdateStaff(staffModel);
+                    staffModel.user_id = Int32.Parse(txtUserID.Text.Trim());
+
+                    return _staff_BLL.UpdateStaff(staffModel);
+                }
+                else
+                {
+                    return 0;
+                }            
             }
             catch (Exception)
             {
@@ -613,6 +659,7 @@ namespace HospitalInformationManagementSystem.PL
 
         private void dgvStaff_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
             if(dgvStaff.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
                 dgvStaff.CurrentRow.Selected = true;
@@ -637,11 +684,12 @@ namespace HospitalInformationManagementSystem.PL
                 dtpJoinedDate.Text = dgvStaff.Rows[e.RowIndex].Cells["join_date"].FormattedValue.ToString();
 
                 picBoxUserImage.Image = Base64ToImage(dgvStaff.Rows[e.RowIndex].Cells["photo_data"].FormattedValue.ToString());
-                picBoxUserImage.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                btnAddStaff.Enabled = false;
 
                 if (SetStaffPermissions(Int32.Parse(txtUserID.Text.Trim())))
                 {
-
+                    
                 }
 
             }
@@ -661,6 +709,7 @@ namespace HospitalInformationManagementSystem.PL
             try
             {
                 Clear();
+                btnAddStaff.Enabled = true;
             }
             catch (Exception)
             {
@@ -785,7 +834,6 @@ namespace HospitalInformationManagementSystem.PL
                         fileName = ofd.FileName;
                         //label1.Text = fileName;
                         picBoxUserImage.Image = Image.FromFile(fileName);
-                        picBoxUserImage.SizeMode = PictureBoxSizeMode.StretchImage;
                     }
                     catch (Exception ex)
                     {
