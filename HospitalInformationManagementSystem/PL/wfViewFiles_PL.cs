@@ -13,14 +13,16 @@ namespace HospitalInformationManagementSystem.PL
 {
     public partial class wfViewFiles_PL : Form
     {
-        public wfViewFiles_PL()
+        public static string file = "";
+        public wfViewFiles_PL(string viewFile)
         {
             InitializeComponent();
+            file = viewFile;
         }
 
         private void WfViewFiles_PL_Load(object sender, EventArgs e)
         {
-            axAcroPDF.src = ComplaintModel.viewFile;
+            axAcroPDF.src = file;
         }
     }
 }

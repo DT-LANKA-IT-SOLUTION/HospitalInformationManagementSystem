@@ -275,7 +275,7 @@ namespace HospitalInformationManagementSystem.PL
         {
             if (CreateFile())
             {
-                wfViewFiles_PL wfViewFiles_PL = new wfViewFiles_PL();
+                wfViewFiles_PL wfViewFiles_PL = new wfViewFiles_PL(ComplaintModel.viewFile);
                 wfViewFiles_PL.Show();
             }
         }

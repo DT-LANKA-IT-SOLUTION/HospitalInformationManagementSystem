@@ -33,7 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grpBVisitor = new System.Windows.Forms.GroupBox();
-            this.btnDownload = new MetroFramework.Controls.MetroButton();
+            this.txtVisitorID = new System.Windows.Forms.TextBox();
+            this.btnView = new MetroFramework.Controls.MetroButton();
             this.cmbAttachmentType = new MetroFramework.Controls.MetroComboBox();
             this.btnBrowse = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
@@ -68,9 +69,10 @@
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.attachment_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.visitor_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.epVisitor = new System.Windows.Forms.ErrorProvider(this.components);
             this.ofdVisitor = new System.Windows.Forms.OpenFileDialog();
-            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
+            this.sfdVisitor = new System.Windows.Forms.SaveFileDialog();
             this.grpBVisitor.SuspendLayout();
             this.grpBVisitorGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitor)).BeginInit();
@@ -80,8 +82,8 @@
             // grpBVisitor
             // 
             this.grpBVisitor.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.grpBVisitor.Controls.Add(this.metroDateTime1);
-            this.grpBVisitor.Controls.Add(this.btnDownload);
+            this.grpBVisitor.Controls.Add(this.txtVisitorID);
+            this.grpBVisitor.Controls.Add(this.btnView);
             this.grpBVisitor.Controls.Add(this.cmbAttachmentType);
             this.grpBVisitor.Controls.Add(this.btnBrowse);
             this.grpBVisitor.Controls.Add(this.btnDelete);
@@ -114,17 +116,27 @@
             this.grpBVisitor.TabStop = false;
             this.grpBVisitor.Text = "Visitor";
             // 
-            // btnDownload
+            // txtVisitorID
             // 
-            this.btnDownload.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDownload.BackgroundImage = global::HospitalInformationManagementSystem.Properties.Resources.Download;
-            this.btnDownload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDownload.Location = new System.Drawing.Point(415, 501);
-            this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(55, 43);
-            this.btnDownload.TabIndex = 23;
-            this.btnDownload.UseSelectable = true;
-            this.btnDownload.Visible = false;
+            this.txtVisitorID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVisitorID.Location = new System.Drawing.Point(21, 393);
+            this.txtVisitorID.Name = "txtVisitorID";
+            this.txtVisitorID.Size = new System.Drawing.Size(63, 20);
+            this.txtVisitorID.TabIndex = 24;
+            this.txtVisitorID.Visible = false;
+            // 
+            // btnView
+            // 
+            this.btnView.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnView.BackgroundImage = global::HospitalInformationManagementSystem.Properties.Resources.Download;
+            this.btnView.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnView.Location = new System.Drawing.Point(415, 501);
+            this.btnView.Name = "btnView";
+            this.btnView.Size = new System.Drawing.Size(55, 43);
+            this.btnView.TabIndex = 23;
+            this.btnView.UseSelectable = true;
+            this.btnView.Visible = false;
+            this.btnView.Click += new System.EventHandler(this.btnView_Click);
             // 
             // cmbAttachmentType
             // 
@@ -163,6 +175,7 @@
             this.btnDelete.Text = "Delete Visitor";
             this.btnDelete.UseCustomBackColor = true;
             this.btnDelete.UseSelectable = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -239,6 +252,7 @@
             this.dtpOutTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpOutTime.Location = new System.Drawing.Point(139, 207);
             this.dtpOutTime.Name = "dtpOutTime";
+            this.dtpOutTime.ShowUpDown = true;
             this.dtpOutTime.Size = new System.Drawing.Size(358, 24);
             this.dtpOutTime.TabIndex = 6;
             this.dtpOutTime.Value = new System.DateTime(2021, 10, 1, 12, 0, 0, 0);
@@ -410,7 +424,8 @@
             this.purpose,
             this.date,
             this.Note,
-            this.attachment_type});
+            this.attachment_type,
+            this.visitor_id});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -461,6 +476,7 @@
             this.lname.HeaderText = "Last Name";
             this.lname.Name = "lname";
             this.lname.ReadOnly = true;
+            this.lname.Visible = false;
             // 
             // nic_no
             // 
@@ -503,6 +519,7 @@
             this.Note.HeaderText = "Note";
             this.Note.Name = "Note";
             this.Note.ReadOnly = true;
+            this.Note.Visible = false;
             // 
             // attachment_type
             // 
@@ -510,6 +527,15 @@
             this.attachment_type.HeaderText = "Attachment Type";
             this.attachment_type.Name = "attachment_type";
             this.attachment_type.ReadOnly = true;
+            this.attachment_type.Visible = false;
+            // 
+            // visitor_id
+            // 
+            this.visitor_id.DataPropertyName = "visitor_id";
+            this.visitor_id.HeaderText = "Visitor ID";
+            this.visitor_id.Name = "visitor_id";
+            this.visitor_id.ReadOnly = true;
+            this.visitor_id.Visible = false;
             // 
             // epVisitor
             // 
@@ -518,16 +544,11 @@
             // ofdVisitor
             // 
             this.ofdVisitor.FileName = "ofdVisitor";
+            this.ofdVisitor.Filter = "PDF document (*.pdf)|*.pdf";
             // 
-            // metroDateTime1
+            // sfdVisitor
             // 
-            this.metroDateTime1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.metroDateTime1.Location = new System.Drawing.Point(279, 295);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
-            this.metroDateTime1.Name = "metroDateTime1";
-            this.metroDateTime1.Size = new System.Drawing.Size(200, 29);
-            this.metroDateTime1.TabIndex = 24;
-            this.metroDateTime1.Value = new System.DateTime(2022, 4, 27, 0, 0, 0, 0);
+            this.sfdVisitor.Filter = "PDF document (*.pdf)|*.pdf";
             // 
             // ucVisitors_PL
             // 
@@ -539,7 +560,6 @@
             this.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.Name = "ucVisitors_PL";
             this.Size = new System.Drawing.Size(1024, 691);
-            this.Style = MetroFramework.MetroColorStyle.Red;
             this.Load += new System.EventHandler(this.ucVisitors_PL_Load);
             this.grpBVisitor.ResumeLayout(false);
             this.grpBVisitor.PerformLayout();
@@ -580,7 +600,8 @@
         private System.Windows.Forms.OpenFileDialog ofdVisitor;
         private MetroFramework.Controls.MetroComboBox cmbAttachmentType;
         private MetroFramework.Controls.MetroGrid dgvVisitor;
-        private MetroFramework.Controls.MetroButton btnDownload;
+        private MetroFramework.Controls.MetroButton btnView;
+        private System.Windows.Forms.TextBox txtVisitorID;
         private System.Windows.Forms.DataGridViewTextBoxColumn fname;
         private System.Windows.Forms.DataGridViewTextBoxColumn lname;
         private System.Windows.Forms.DataGridViewTextBoxColumn nic_no;
@@ -590,6 +611,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Note;
         private System.Windows.Forms.DataGridViewTextBoxColumn attachment_type;
-        private MetroFramework.Controls.MetroDateTime metroDateTime1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn visitor_id;
+        private System.Windows.Forms.SaveFileDialog sfdVisitor;
     }
 }
