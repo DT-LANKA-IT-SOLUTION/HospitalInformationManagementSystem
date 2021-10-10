@@ -92,7 +92,7 @@ namespace HospitalInformationManagementSystem.DAL
         {
             try
             {
-                string sql = string.Format("SELECT app_date as AppDate,count(isnull(app_id,0)) as Appcount FROM Appointments WHERE status=@IsActive group by app_date ");
+                string sql = string.Format("SELECT app_date as AppDate,count(isnull(app_id,0)) as Appcount FROM Appointments WHERE IsActive=@IsActive group by app_date ");
 
                 SqlParameter[] _sql = new SqlParameter[1];
                 _sql[0] = SqlParameterFormat.Format("@IsActive", true);

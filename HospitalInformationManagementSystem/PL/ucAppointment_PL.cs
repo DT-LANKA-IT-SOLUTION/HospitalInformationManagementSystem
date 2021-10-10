@@ -74,7 +74,7 @@ namespace HospitalInformationManagementSystem.PL
                 //appointmentModel.app_time = Convert.ToDateTime(dateTimePicker_date.Text.Trim());
                 appointmentModel.patient = txt_patient_name.Text.Trim();
                 appointmentModel.symptoms = txt_symptoms.Text.Trim();
-                appointmentModel.medical_officer = txt_medical_officer.Text.Trim();
+                appointmentModel.medical_officer = Int32.Parse(cmb_medical_officer.SelectedValue.ToString());
                 appointmentModel.status = comboBox_status.Text.Trim();
                 appointmentModel.user_id = 1;
 
@@ -99,12 +99,6 @@ namespace HospitalInformationManagementSystem.PL
       
             
         }
-
-        private void dgvAppointment_CellContentClick(object sender, DataGridViewCellEventArgs ea)
-        {
-            
-        }
-
 
         private void btn_edit_appointment_Click(object sender, EventArgs e)
         {
@@ -132,7 +126,7 @@ namespace HospitalInformationManagementSystem.PL
                 appointmentModel.appointment_no = Convert.ToInt32(txt_appointment_no.Text.Trim());
                 appointmentModel.patient = (string.IsNullOrEmpty(txt_patient_name.Text)) ? "N/A" : txt_patient_name.Text.Trim();
                 appointmentModel.symptoms = (string.IsNullOrEmpty(txt_symptoms.Text)) ? "N/A" : txt_symptoms.Text.Trim();
-                appointmentModel.medical_officer = (string.IsNullOrEmpty(txt_medical_officer.Text)) ? "N/A" : txt_medical_officer.Text.Trim();
+                appointmentModel.medical_officer = (string.IsNullOrEmpty(cmb_medical_officer.Text)) ? 00000 : Int32.Parse(cmb_medical_officer.SelectedValue.ToString());
                 appointmentModel.app_date = (string.IsNullOrEmpty(dateTimePicker_date.Text)) ? DateTime.Now : Convert.ToDateTime(dateTimePicker_date.Text.Trim());
                 appointmentModel.app_time = (string.IsNullOrEmpty(dateTimePicker_time.Text)) ? DateTime.Now : Convert.ToDateTime(dateTimePicker_time.Text.Trim());
                 appointmentModel.status = (comboBox_status.SelectedItem == null) ? "N/A" : comboBox_status.SelectedItem.ToString();
@@ -208,6 +202,20 @@ namespace HospitalInformationManagementSystem.PL
         private void ucAppointment_PL_Load(object sender, EventArgs e)
         {
             FilDGVAppointment();
+            LoadComboboxDoctor();
+        }
+
+        private void LoadComboboxDoctor()
+        {
+            try
+            {
+                _appointment_BLL.LoadAllDoctors(cmb_medical_officer);
+                cmb_medical_officer.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dgvAppointment_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -222,11 +230,37 @@ namespace HospitalInformationManagementSystem.PL
                 dateTimePicker_time.Text = dgvAppointment.Rows[e.RowIndex].Cells["app_time"].FormattedValue.ToString();
                 txt_patient_name.Text = dgvAppointment.Rows[e.RowIndex].Cells["patient"].FormattedValue.ToString();
                 txt_symptoms.Text = dgvAppointment.Rows[e.RowIndex].Cells["symptoms"].FormattedValue.ToString();
-                txt_medical_officer.Text = dgvAppointment.Rows[e.RowIndex].Cells["medical_officer"].FormattedValue.ToString();
+                cmb_medical_officer.SelectedValue = Int32.Parse(dgvAppointment.Rows[e.RowIndex].Cells["medical_officer"].FormattedValue.ToString());
                 comboBox_status.Text = dgvAppointment.Rows[e.RowIndex].Cells["status"].FormattedValue.ToString();
 
                 //txtPassword.Text = EncryptionLab.DecryptText(dgvPatient.Rows[e.RowIndex].Cells["password"].FormattedValue.ToString());
                 //btn_add_appointment.Enabled = false;
+            }
+        }
+
+        private void Cmb_medical_officer_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                cmb_medical_officer.DroppedDown = true;
+                if (char.IsControl(e.KeyChar))
+                {
+                    return;
+                }
+                string str = cmb_medical_officer.Text.Substring(0, cmb_medical_officer.SelectionStart) + e.KeyChar;
+                Int32 index = cmb_medical_officer.FindStringExact(str);
+                if (index == -1)
+                {
+                    index = cmb_medical_officer.FindString(str);
+                }
+                this.cmb_medical_officer.SelectedIndex = index;
+                this.cmb_medical_officer.SelectionStart = str.Length;
+                this.cmb_medical_officer.SelectionLength = this.cmb_medical_officer.Text.Length - this.cmb_medical_officer.SelectionStart;
+                e.Handled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

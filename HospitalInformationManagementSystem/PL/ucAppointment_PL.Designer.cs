@@ -30,15 +30,16 @@ namespace HospitalInformationManagementSystem.PL
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmb_medical_officer = new System.Windows.Forms.ComboBox();
             this.txt_app_id = new System.Windows.Forms.TextBox();
             this.txt_medical_officer = new System.Windows.Forms.TextBox();
             this.btn_clear_appointment = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@ namespace HospitalInformationManagementSystem.PL
             this.txt_symptoms = new System.Windows.Forms.TextBox();
             this.txt_patient_name = new System.Windows.Forms.TextBox();
             this.txt_appointment_no = new System.Windows.Forms.TextBox();
-
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -84,6 +84,7 @@ namespace HospitalInformationManagementSystem.PL
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(150)))));
+            this.groupBox1.Controls.Add(this.cmb_medical_officer);
             this.groupBox1.Controls.Add(this.txt_app_id);
             this.groupBox1.Controls.Add(this.txt_medical_officer);
             this.groupBox1.Controls.Add(this.btn_clear_appointment);
@@ -111,7 +112,15 @@ namespace HospitalInformationManagementSystem.PL
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Appointment Form";
-
+            // 
+            // cmb_medical_officer
+            // 
+            this.cmb_medical_officer.FormattingEnabled = true;
+            this.cmb_medical_officer.Location = new System.Drawing.Point(179, 248);
+            this.cmb_medical_officer.Name = "cmb_medical_officer";
+            this.cmb_medical_officer.Size = new System.Drawing.Size(312, 32);
+            this.cmb_medical_officer.TabIndex = 15;
+            this.cmb_medical_officer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cmb_medical_officer_KeyPress);
             // 
             // txt_app_id
             // 
@@ -127,10 +136,11 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.txt_medical_officer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_medical_officer.Font = new System.Drawing.Font("Poppins", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_medical_officer.Location = new System.Drawing.Point(179, 253);
+            this.txt_medical_officer.Location = new System.Drawing.Point(178, 458);
             this.txt_medical_officer.Name = "txt_medical_officer";
             this.txt_medical_officer.Size = new System.Drawing.Size(313, 30);
             this.txt_medical_officer.TabIndex = 13;
+            this.txt_medical_officer.Visible = false;
             // 
             // btn_clear_appointment
             // 
@@ -157,7 +167,6 @@ namespace HospitalInformationManagementSystem.PL
             "Pending",
             "Confirmed",
             "Rejected"});
-
             this.comboBox_status.Location = new System.Drawing.Point(179, 409);
             this.comboBox_status.Name = "comboBox_status";
             this.comboBox_status.Size = new System.Drawing.Size(143, 28);
@@ -259,7 +268,6 @@ namespace HospitalInformationManagementSystem.PL
             this.txt_appointment_no.Name = "txt_appointment_no";
             this.txt_appointment_no.Size = new System.Drawing.Size(313, 30);
             this.txt_appointment_no.TabIndex = 1;
-
             // 
             // label7
             // 
@@ -271,7 +279,6 @@ namespace HospitalInformationManagementSystem.PL
             this.label7.Size = new System.Drawing.Size(59, 26);
             this.label7.TabIndex = 0;
             this.label7.Text = "Status";
-
             // 
             // label6
             // 
@@ -283,7 +290,6 @@ namespace HospitalInformationManagementSystem.PL
             this.label6.Size = new System.Drawing.Size(48, 26);
             this.label6.TabIndex = 0;
             this.label6.Text = "Time";
-
             // 
             // label5
             // 
@@ -306,7 +312,6 @@ namespace HospitalInformationManagementSystem.PL
             this.label4.Size = new System.Drawing.Size(125, 26);
             this.label4.TabIndex = 0;
             this.label4.Text = "Medical Officer";
-
             // 
             // label3
             // 
@@ -329,7 +334,6 @@ namespace HospitalInformationManagementSystem.PL
             this.label2.Size = new System.Drawing.Size(113, 26);
             this.label2.TabIndex = 0;
             this.label2.Text = "Patient Name";
-
             // 
             // label1
             // 
@@ -423,8 +427,8 @@ namespace HospitalInformationManagementSystem.PL
             // app_id
             // 
             this.app_id.DataPropertyName = "app_id";
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            this.app_id.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.app_id.DefaultCellStyle = dataGridViewCellStyle1;
             this.app_id.HeaderText = "App ID";
             this.app_id.Name = "app_id";
             this.app_id.ReadOnly = true;
@@ -432,8 +436,8 @@ namespace HospitalInformationManagementSystem.PL
             // appointment_no
             // 
             this.appointment_no.DataPropertyName = "appointment_no";
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            this.appointment_no.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.appointment_no.DefaultCellStyle = dataGridViewCellStyle2;
             this.appointment_no.HeaderText = "Appointment No";
             this.appointment_no.Name = "appointment_no";
             this.appointment_no.ReadOnly = true;
@@ -441,8 +445,8 @@ namespace HospitalInformationManagementSystem.PL
             // patient
             // 
             this.patient.DataPropertyName = "patient";
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            this.patient.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.patient.DefaultCellStyle = dataGridViewCellStyle3;
             this.patient.HeaderText = "Patient";
             this.patient.Name = "patient";
             this.patient.ReadOnly = true;
@@ -450,8 +454,8 @@ namespace HospitalInformationManagementSystem.PL
             // symptoms
             // 
             this.symptoms.DataPropertyName = "symptoms";
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            this.symptoms.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.symptoms.DefaultCellStyle = dataGridViewCellStyle4;
             this.symptoms.HeaderText = "Symptoms";
             this.symptoms.Name = "symptoms";
             this.symptoms.ReadOnly = true;
@@ -459,8 +463,8 @@ namespace HospitalInformationManagementSystem.PL
             // medical_officer
             // 
             this.medical_officer.DataPropertyName = "medical_officer";
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            this.medical_officer.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.medical_officer.DefaultCellStyle = dataGridViewCellStyle5;
             this.medical_officer.HeaderText = "Medical Officer";
             this.medical_officer.Name = "medical_officer";
             this.medical_officer.ReadOnly = true;
@@ -468,8 +472,8 @@ namespace HospitalInformationManagementSystem.PL
             // app_date
             // 
             this.app_date.DataPropertyName = "app_date";
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            this.app_date.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.app_date.DefaultCellStyle = dataGridViewCellStyle6;
             this.app_date.HeaderText = "Date";
             this.app_date.Name = "app_date";
             this.app_date.ReadOnly = true;
@@ -477,8 +481,8 @@ namespace HospitalInformationManagementSystem.PL
             // app_time
             // 
             this.app_time.DataPropertyName = "app_time";
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            this.app_time.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.app_time.DefaultCellStyle = dataGridViewCellStyle7;
             this.app_time.HeaderText = "Time";
             this.app_time.Name = "app_time";
             this.app_time.ReadOnly = true;
@@ -486,8 +490,8 @@ namespace HospitalInformationManagementSystem.PL
             // status
             // 
             this.status.DataPropertyName = "status";
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            this.status.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.status.DefaultCellStyle = dataGridViewCellStyle8;
             this.status.HeaderText = "Status";
             this.status.Name = "status";
             this.status.ReadOnly = true;
@@ -554,5 +558,6 @@ namespace HospitalInformationManagementSystem.PL
         private System.Windows.Forms.DataGridViewTextBoxColumn app_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn app_time;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.ComboBox cmb_medical_officer;
     }
 }

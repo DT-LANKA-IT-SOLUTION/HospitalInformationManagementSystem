@@ -128,5 +128,23 @@ namespace HospitalInformationManagementSystem.DAL
                 throw;
             }
         }
+
+        public static DataTable GetDoctors()
+        {
+            try
+            {
+                string sql = string.Format("SELECT * FROM Users WHERE user_type=@user_type AND IsActive=@IsActive");
+
+                SqlParameter[] _sql = new SqlParameter[2];
+                _sql[0] = SqlParameterFormat.Format("@user_type", "Medical Officer");
+                _sql[1] = SqlParameterFormat.Format("@IsActive", true);
+
+                return ODBC.GetData(sql, _sql);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

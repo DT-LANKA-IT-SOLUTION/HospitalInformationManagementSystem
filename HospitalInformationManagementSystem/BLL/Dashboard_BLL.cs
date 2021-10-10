@@ -42,7 +42,7 @@ namespace HospitalInformationManagementSystem.BLL
             DataTable dTable = Dashboard_DLL.FillChart();
             chart.DataSource = dTable;
             chart.Series["Appointment"].XValueMember = "AppDate";
-            chart.Series["Appointment"].YValueMembers = "  Appcount";
+            chart.Series["Appointment"].YValueMembers = "Appcount";
             chart.Titles.Add("Appointment Chart").ForeColor = Color.BlueViolet;
         }
     }

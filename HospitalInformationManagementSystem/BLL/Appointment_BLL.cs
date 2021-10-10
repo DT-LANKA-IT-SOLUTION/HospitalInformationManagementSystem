@@ -72,5 +72,19 @@ namespace HospitalInformationManagementSystem.BLL
                 throw;
             }
         }
+
+        public void LoadAllDoctors(ComboBox comboBox)
+        {
+            try
+            {
+                comboBox.DataSource = Appointment_DLL.GetDoctors();
+                comboBox.DisplayMember = "f_name";
+                comboBox.ValueMember = "user_id";
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

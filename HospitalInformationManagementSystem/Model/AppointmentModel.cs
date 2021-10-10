@@ -14,7 +14,7 @@ namespace HospitalInformationManagementSystem.Model
         public DateTime app_time { get; set; }
         public string patient { get; set; }
         public string symptoms { get; set; }
-        public string medical_officer { get; set; }
+        public int medical_officer { get; set; }
         public string status { get; set; }
         public int user_id { get; set; }
     }
