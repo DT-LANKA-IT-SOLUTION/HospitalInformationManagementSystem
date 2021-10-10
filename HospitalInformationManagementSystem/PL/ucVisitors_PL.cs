@@ -313,5 +313,18 @@ namespace HospitalInformationManagementSystem.PL
                 wfViewFiles_PL.Show();
             }
         }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Clear();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
