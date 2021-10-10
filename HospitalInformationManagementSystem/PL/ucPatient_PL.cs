@@ -179,7 +179,7 @@ namespace HospitalInformationManagementSystem.PL
             {
                 if (type == "add")
                 {
-                    if (string.IsNullOrEmpty(_patient_BLL.CheckPatientByUsername(patientModel)))
+                    if (string.IsNullOrEmpty(_patient_BLL.CheckPatientByUsername(txtUsername.Text.Trim())))
                     {
                         epPatient.Clear();
                     }
@@ -331,7 +331,7 @@ namespace HospitalInformationManagementSystem.PL
         {
             try
             {
-                if (string.IsNullOrEmpty(_patient_BLL.CheckPatientByUsername(patientModel)))
+                if (string.IsNullOrEmpty(_patient_BLL.CheckPatientByUsername(txtUsername.Text.Trim())))
                 {
                     epPatient.Clear();
                 }

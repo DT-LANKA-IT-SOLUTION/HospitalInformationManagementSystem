@@ -38,12 +38,12 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
-        public string CheckPatientByUsername(PatientModel patientModel)
+        public string CheckPatientByUsername(string username)
         {
             try
             {
                
-                return Patient_DLL.GetPatientByUsername(patientModel);
+                return Patient_DLL.GetPatientByUsername(username);
             }
             catch (Exception)
             {

@@ -33,12 +33,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
-      <HintPath>packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -54,8 +67,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\Appointment_BLL.cs" />
     <Compile Include="BLL\Auth_BLL.cs" />
+    <Compile Include="BLL\Complaint_BLL.cs" />
+    <Compile Include="BLL\Dashboard_BLL.cs" />
     <Compile Include="BLL\Patient_BLL.cs" />
+    <Compile Include="BLL\Reference_BLL.cs" />
+    <Compile Include="BLL\Report_BLL.cs" />
+    <Compile Include="BLL\Staff_BLL.cs" />
+    <Compile Include="DAL\Appointment_DLL.cs" />
+    <Compile Include="DAL\Complaint_DLL.cs" />
+    <Compile Include="DAL\Dashboard_DLL.cs" />
+    <Compile Include="DAL\Reference_DLL.cs" />
+    <Compile Include="DAL\Report_DLL.cs" />
+    <!--<Compile Include="DAL\Auth_DLL.cs" />
+    <Compile Include="DAL\Patient_DLL.cs" />-->
+    <Compile Include="DAL\Staff_DLL.cs" />
     <Compile Include="BLL\Postal_BLL.cs" />
     <Compile Include="BLL\Visitor_BLL.cs" />
     <Compile Include="DAL\Auth_DLL.cs" />
@@ -68,27 +95,53 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\InformationPL\frmNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\InformationPL\frmNotification.Designer.cs">
+      <DependentUpon>frmNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\AppointmentModel.cs" />
     <Compile Include="Model\AuthModel.cs" />
+    <Compile Include="Model\ComplaintModel.cs" />
     <Compile Include="Model\PatientModel.cs" />
     <Compile Include="Model\PermisionsModel.cs" />
+    <Compile Include="Model\ReferenceModel.cs" />
+    <Compile Include="Model\ReportModel.cs" />
+    <Compile Include="Model\StaffModel.cs" />
     <Compile Include="Model\PostalModel.cs" />
     <Compile Include="Model\VisitorModel.cs" />
+    <Compile Include="Other\DatabaseConnectionCheck.cs" />
     <Compile Include="Other\EncryptionLab.cs" />
     <Compile Include="Other\FormControl.cs" />
     <Compile Include="Other\GrantUserPermission.cs" />
     <Compile Include="Other\ODBC.cs" />
     <Compile Include="Other\SqlParameterFormat.cs" />
+    <Compile Include="Other\StaffPermission.cs" />
+    <Compile Include="Other\ValidationLab.cs" />
     <Compile Include="PL\Dashboard_PL.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PL\Dashboard_PL.Designer.cs">
       <DependentUpon>Dashboard_PL.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\Login_PL.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PL\Login_PL.Designer.cs">
       <DependentUpon>Login_PL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\rptAppointment.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptAppointment.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="PL\ucAppointment_PL.cs">
       <SubType>UserControl</SubType>
@@ -120,6 +173,18 @@
     <Compile Include="PL\ucPostals_PL.Designer.cs">
       <DependentUpon>ucPostals_PL.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\ucReportViwer_PL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\ucReportViwer_PL.Designer.cs">
+      <DependentUpon>ucReportViwer_PL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\ucReport_PL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\ucReport_PL.Designer.cs">
+      <DependentUpon>ucReport_PL.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\ucSendEmail_PL.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -138,22 +203,44 @@
     <Compile Include="PL\ucStaff_PL.Designer.cs">
       <DependentUpon>ucStaff_PL.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\ucTest_PL.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\ucTest_PL.Designer.cs">
+      <DependentUpon>ucTest_PL.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\ucVisitors_PL.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="PL\ucVisitors_PL.Designer.cs">
       <DependentUpon>ucVisitors_PL.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\wfViewFiles_PL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\wfViewFiles_PL.Designer.cs">
+      <DependentUpon>wfViewFiles_PL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\InformationPL\frmNotification.resx">
+      <DependentUpon>frmNotification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Dashboard_PL.resx">
       <DependentUpon>Dashboard_PL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\Login_PL.resx">
       <DependentUpon>Login_PL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\rptAppointment.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptAppointment.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\ucAppointment_PL.resx">
       <DependentUpon>ucAppointment_PL.cs</DependentUpon>
@@ -170,6 +257,12 @@
     <EmbeddedResource Include="PL\ucPostals_PL.resx">
       <DependentUpon>ucPostals_PL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\ucReportViwer_PL.resx">
+      <DependentUpon>ucReportViwer_PL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\ucReport_PL.resx">
+      <DependentUpon>ucReport_PL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\ucSendEmail_PL.resx">
       <DependentUpon>ucSendEmail_PL.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,8 +272,14 @@
     <EmbeddedResource Include="PL\ucStaff_PL.resx">
       <DependentUpon>ucStaff_PL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PL\ucTest_PL.resx">
+      <DependentUpon>ucTest_PL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\ucVisitors_PL.resx">
       <DependentUpon>ucVisitors_PL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\wfViewFiles_PL.resx">
+      <DependentUpon>wfViewFiles_PL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -277,6 +376,77 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Complaints100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+    <None Include="Resources\Logonew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spinner170px.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spinner197px.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spinner200px.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spinner190px.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Spinner191px.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pulse200px.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pulse171px.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="AxAcroPDFLib">
+      <Guid>{05BFD3F1-6319-4F30-B752-C7A22889BCC4}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancel_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Patient.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Patient2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

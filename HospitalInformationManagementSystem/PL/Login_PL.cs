@@ -39,6 +39,10 @@ namespace HospitalInformationManagementSystem.PL
                         Dashboard_PL dashboard = new Dashboard_PL();
                         dashboard.Show();
                     }
+                    else
+                    {
+                        MessageBox.Show("Authentication failed. Please check your username/password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             catch (Exception ex)
