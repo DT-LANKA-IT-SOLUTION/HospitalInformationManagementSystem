@@ -13,7 +13,9 @@ Download Database <a href="https://www.dropbox.com/s/8dcrlptysu3wiw8/HMSDB.bacpa
 
 Login Data</br>
 username : admin</br>
-password : 123456789
+password : 123456789</br>
+
+github <a href="https://github.com/nsbweerasingha/HospitalInformationManagementSystem">repositories</a>
 
 <h2>Nuget Package</h2>
 Install <a href="https://www.nuget.org/packages/MetroModernUI/">MetroModernUI</a> Nuget Package
