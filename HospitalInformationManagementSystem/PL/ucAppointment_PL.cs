@@ -25,6 +25,7 @@ namespace HospitalInformationManagementSystem.PL
         public ucAppointment_PL()
         {
             InitializeComponent();
+            _grantUserPermission.GrantButtonPermission("appointment", btn_add_appointment, btn_edit_appointment, btn_delete_appointment);
         }
 
         private void UcAppointent_PL_Load(object sender, EventArgs e)
@@ -165,6 +166,7 @@ namespace HospitalInformationManagementSystem.PL
             {
                 //int appno = 1009;
                 int appno = Int32.Parse(txt_app_id.Text.Trim());
+                
                 return _appointment_BLL.DeleteAppointment(appno);
             }
             catch (Exception)
@@ -183,15 +185,17 @@ namespace HospitalInformationManagementSystem.PL
             else
             {
                 epAppointment.Clear();
-                this.FilDGVSearchAppointments(txtSearchByAppNo.Text.Trim());
+                string status = cmbSerarchStatus.Text.Trim();
+                string AppNo = txtSearchByAppNo.Text.Trim();
+                this.FilDGVSearchAppointments(AppNo,status);
             }
         }
 
-        private void FilDGVSearchAppointments(string appno)
+        private void FilDGVSearchAppointments(string appno,string status)
         {
             try
             {
-                _appointment_BLL.GetAppointmentByAppointmentNo(dgvAppointment, appno);
+                _appointment_BLL.GetAppointmentByAppointmentNo(dgvAppointment, appno,status);
             }
             catch (Exception ex)
             {

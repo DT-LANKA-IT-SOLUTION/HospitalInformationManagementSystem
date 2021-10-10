@@ -31,7 +31,7 @@ namespace HospitalInformationManagementSystem.PL
         public ucPostals_PL()
         {
             InitializeComponent();
-            //_grantUserPermission.GrantButtonPermission("receptionist", btn_postal_add, btn_postal_edit, btn_postal_delete);
+            _grantUserPermission.GrantButtonPermission("postal", btn_postal_add, btn_postal_edit, btn_postal_delete);
         }
 
         private void UcPostal_PL_Load(object sender, EventArgs e)
