@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbReportType = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnAppointmentReport = new MetroFramework.Controls.MetroButton();
             this.dtpAppointmentTo = new MetroFramework.Controls.MetroDateTime();
@@ -37,15 +37,15 @@
             this.dtpAppointmentFrom = new MetroFramework.Controls.MetroDateTime();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.rptReportViewer = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.bgWorkerReport = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbReportType);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.btnAppointmentReport);
             this.groupBox1.Controls.Add(this.dtpAppointmentTo);
@@ -60,18 +60,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Report";
             // 
-            // comboBox1
+            // cmbReportType
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbReportType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbReportType.FormattingEnabled = true;
+            this.cmbReportType.Items.AddRange(new object[] {
             "Appointment Report",
             "User Log",
             "Patient Login Credential"});
-            this.comboBox1.Location = new System.Drawing.Point(111, 36);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(185, 26);
-            this.comboBox1.TabIndex = 6;
+            this.cmbReportType.Location = new System.Drawing.Point(111, 36);
+            this.cmbReportType.Name = "cmbReportType";
+            this.cmbReportType.Size = new System.Drawing.Size(185, 26);
+            this.cmbReportType.TabIndex = 6;
             // 
             // label7
             // 
@@ -138,23 +138,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.crystalReportViewer1);
             this.panel1.Controls.Add(this.rptReportViewer);
             this.panel1.Location = new System.Drawing.Point(13, 109);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(999, 569);
             this.panel1.TabIndex = 1;
-            // 
-            // crystalReportViewer1
-            // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(999, 569);
-            this.crystalReportViewer1.TabIndex = 1;
             // 
             // rptReportViewer
             // 
@@ -166,6 +154,10 @@
             this.rptReportViewer.Name = "rptReportViewer";
             this.rptReportViewer.Size = new System.Drawing.Size(999, 569);
             this.rptReportViewer.TabIndex = 0;
+            // 
+            // bgWorkerReport
+            // 
+            this.bgWorkerReport.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BgWorkerReport_DoWork);
             // 
             // ucReport_PL
             // 
@@ -190,10 +182,10 @@
         private System.Windows.Forms.Label label2;
         private MetroFramework.Controls.MetroDateTime dtpAppointmentFrom;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbReportType;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer rptReportViewer;
+        private System.ComponentModel.BackgroundWorker bgWorkerReport;
     }
 }

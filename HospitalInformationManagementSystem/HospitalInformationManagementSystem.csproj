@@ -146,6 +146,12 @@
       <DependentUpon>rptAppointment.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="PL\rptPatient.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptPatient.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="PL\ucAppointment_PL.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -244,6 +250,10 @@
     <EmbeddedResource Include="PL\rptAppointment.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptAppointment.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\rptPatient.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptPatient.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\ucAppointment_PL.resx">
       <DependentUpon>ucAppointment_PL.cs</DependentUpon>

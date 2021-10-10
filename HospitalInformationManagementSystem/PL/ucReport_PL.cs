@@ -30,6 +30,10 @@ namespace HospitalInformationManagementSystem.PL
         {
             try
             {
+                //bgWorkerReport.WorkerSupportsCancellation = true;
+
+                //if (!bgWorkerReport.IsBusy)
+                //    bgWorkerReport.RunWorkerAsync();
                 GetAppointment();
             }
             catch (Exception ex)
@@ -44,8 +48,21 @@ namespace HospitalInformationManagementSystem.PL
             {
                 reportModel.AppointmentFormDate = Convert.ToDateTime(dtpAppointmentFrom.Text.Trim());
                 reportModel.AppointmentToDate = Convert.ToDateTime(dtpAppointmentTo.Text.Trim());
+
+                if (cmbReportType.Text == "Appointment Report")
+                {
+                    report_BLL.GetAppointmentReport(reportModel, rptReportViewer);
+                }
+                else if (cmbReportType.Text == "User Log")
+                {
+                    report_BLL.GetUserReport(reportModel, rptReportViewer);
+                }
+                else
+                {
+                    report_BLL.GetPatientReport(reportModel, rptReportViewer);
+                }
                 
-                report_BLL.GetAppointmentReport(reportModel, rptReportViewer);
+                
 
                 
             }
@@ -54,6 +71,18 @@ namespace HospitalInformationManagementSystem.PL
                 throw;
             }
 
+        }
+
+        private void BgWorkerReport_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                GetAppointment();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

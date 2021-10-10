@@ -20,36 +20,48 @@ namespace HospitalInformationManagementSystem.BLL
 
         public void GetAppointmentReport(ReportModel reportModel,CrystalReportViewer crystalReportViewer)
         {
-           /*try
+           try
             {
-                //rptAppointment rptAppointment = new rptAppointment();
-                //rptAppointment.Load(@"D:\uovt\C# 2\Project\HospitalInformationManagementSystem\PL\rptAppointment.rpt");
-                //rptAppointment.SetDataSource(report_DLL.GetAppointmentReport(reportModel));
+                
 
-                //crystalReportViewer.ReportSource = rptAppointment;
+                ReportDocument Report = new ReportDocument();
+                Report.Load(@"D:\uovt\C# 2\Project\HospitalInformationManagementSystem\PL\rptAppointment.rpt");
+                //Report.SetDatabaseLogon("sa", "sa123", "Rakesh-PC", "RakeshData");
+                Report.SetDataSource(report_DLL.GetAppointmentReport(reportModel));
+                crystalReportViewer.ReportSource = Report;
                 crystalReportViewer.Refresh();
             }
             catch (Exception)
             {
                 throw;
-            }*/
+            }
         }
-        public void GetUserReport(ReportModel reportModel)
+        public void GetUserReport(ReportModel reportModel, CrystalReportViewer crystalReportViewer)
         {
             try
             {
-
+                ReportDocument Report = new ReportDocument();
+                Report.Load(@"PL\rptAppointment.rpt");
+                //Report.SetDatabaseLogon("sa", "sa123", "Rakesh-PC", "RakeshData");
+                Report.SetDataSource(report_DLL.GetUserReport(reportModel));
+                crystalReportViewer.ReportSource = Report;
+                crystalReportViewer.Refresh();
             }
             catch (Exception)
             {
                 throw;
             }
         }
-        public void GetPatientReport(ReportModel reportModel)
+        public void GetPatientReport(ReportModel reportModel, CrystalReportViewer crystalReportViewer)
         {
             try
             {
-
+                ReportDocument Report = new ReportDocument();
+                Report.Load(@"D:\uovt\C# 2\Project\HospitalInformationManagementSystem\PL\rptPatient.rpt");
+                //Report.SetDatabaseLogon("sa", "sa123", "Rakesh-PC", "RakeshData");
+                Report.SetDataSource(report_DLL.GetPatientReport(reportModel));
+                crystalReportViewer.ReportSource = Report;
+                crystalReportViewer.Refresh();
             }
             catch (Exception)
             {
