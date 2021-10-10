@@ -196,24 +196,25 @@ namespace HospitalInformationManagementSystem.Other
                         }
                         else if (ch == 'C')
                         {
-                            x += 36;
-                            y += 549;
+                            x += 11;
+                            y += 560;
 
                             btnAdd.Visible = true;
                             btnAdd.Location = new Point(x, y);
                         }
-                        else if (ch == 'D')
-                        {
-                            x += 154;
-                            btnDelete.Visible = true;
-                            btnDelete.Location = new Point(x, y);
-                        }
                         else if (ch == 'M')
                         {
-                            x += 154;
+                            x += 122;
                             btnEdit.Visible = true;
                             btnEdit.Location = new Point(x, y);
                         }
+                        else if (ch == 'D')
+                        {
+                            x += 122;
+                            btnDelete.Visible = true;
+                            btnDelete.Location = new Point(x, y);
+                        }
+                        
                     }
 
                 }
@@ -386,21 +387,21 @@ namespace HospitalInformationManagementSystem.Other
                         }
                         else if (ch == 'C')
                         {
-                            x = 501;
-                            y = 641;
+                            x = 9;
+                            y = 634;
 
                             btnAdd.Visible = true;
                             btnAdd.Location = new Point(x, y);
                         }
                         else if (ch == 'D')
                         {
-                            x += 130;
+                            x += 281;
                             btnDelete.Visible = true;
                             btnDelete.Location = new Point(x, y);
                         }
                         else if (ch == 'M')
                         {
-                            x += 130;
+                            x -= 138;
                             btnEdit.Visible = true;
                             btnEdit.Location = new Point(x, y);
                         }

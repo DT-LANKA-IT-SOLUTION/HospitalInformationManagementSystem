@@ -30,6 +30,20 @@ namespace HospitalInformationManagementSystem.BLL
             }
         }
 
+        public void LoadStaffByNICGridView(DataGridView dgvStaff, string nic)
+        {
+            try
+            {
+                dgvStaff.AutoGenerateColumns = false;
+                dgvStaff.DataSource = Staff_DLL.GetUserByNIC(nic);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public int AddStaff(StaffModel staffModel)
         {
 

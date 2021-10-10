@@ -30,16 +30,14 @@ namespace HospitalInformationManagementSystem.PL
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ucStaff_PL));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.btnBrowse = new MetroFramework.Controls.MetroButton();
             this.label25 = new System.Windows.Forms.Label();
-            this.btnBrowse = new System.Windows.Forms.Button();
-            this.picBoxUserImage = new System.Windows.Forms.PictureBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -68,12 +66,11 @@ namespace HospitalInformationManagementSystem.PL
             this.label12 = new System.Windows.Forms.Label();
             this.txtStaffEmail = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnReset = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.btnCheck = new MetroFramework.Controls.MetroButton();
             this.label16 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUserName = new System.Windows.Forms.TextBox();
-            this.btnCheck = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
@@ -125,9 +122,6 @@ namespace HospitalInformationManagementSystem.PL
             this.chkboxM1 = new System.Windows.Forms.CheckBox();
             this.chkboxC1 = new System.Windows.Forms.CheckBox();
             this.chkboxA1 = new System.Windows.Forms.CheckBox();
-            this.btnDeleteStaff = new System.Windows.Forms.Button();
-            this.btnEditStaff = new System.Windows.Forms.Button();
-            this.btnAddStaff = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.txtSearchByNIC = new System.Windows.Forms.TextBox();
             this.dgvStaff = new MetroFramework.Controls.MetroGrid();
@@ -148,13 +142,18 @@ namespace HospitalInformationManagementSystem.PL
             this.staff_email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.join_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.photo_data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.btnSearch = new MetroFramework.Controls.MetroButton();
             this.epStaff = new System.Windows.Forms.ErrorProvider(this.components);
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnReset = new MetroFramework.Controls.MetroButton();
+            this.btnDeleteStaff = new MetroFramework.Controls.MetroButton();
+            this.btnEditStaff = new MetroFramework.Controls.MetroButton();
+            this.btnAddStaff = new MetroFramework.Controls.MetroButton();
+            this.picBoxUserImage = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxUserImage)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -169,10 +168,13 @@ namespace HospitalInformationManagementSystem.PL
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epStaff)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxUserImage)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -182,7 +184,6 @@ namespace HospitalInformationManagementSystem.PL
             this.groupBox1.Size = new System.Drawing.Size(464, 685);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Staff Form";
             // 
             // panel3
             // 
@@ -212,14 +213,26 @@ namespace HospitalInformationManagementSystem.PL
             // 
             // panel14
             // 
-            this.panel14.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel14.Controls.Add(this.label25);
+            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.panel14.Controls.Add(this.btnBrowse);
+            this.panel14.Controls.Add(this.label25);
             this.panel14.Controls.Add(this.picBoxUserImage);
             this.panel14.Location = new System.Drawing.Point(310, 16);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(119, 192);
             this.panel14.TabIndex = 19;
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.btnBrowse.Location = new System.Drawing.Point(7, 159);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(103, 23);
+            this.btnBrowse.TabIndex = 18;
+            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.UseCustomBackColor = true;
+            this.btnBrowse.UseSelectable = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // label25
             // 
@@ -231,28 +244,6 @@ namespace HospitalInformationManagementSystem.PL
             this.label25.Size = new System.Drawing.Size(84, 18);
             this.label25.TabIndex = 17;
             this.label25.Text = "User Image";
-            // 
-            // btnBrowse
-            // 
-            this.btnBrowse.BackColor = System.Drawing.Color.Orange;
-            this.btnBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnBrowse.Location = new System.Drawing.Point(20, 157);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(78, 30);
-            this.btnBrowse.TabIndex = 18;
-            this.btnBrowse.Text = "Browse";
-            this.btnBrowse.UseVisualStyleBackColor = false;
-            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
-            // 
-            // picBoxUserImage
-            // 
-            this.picBoxUserImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picBoxUserImage.Image = ((System.Drawing.Image)(resources.GetObject("picBoxUserImage.Image")));
-            this.picBoxUserImage.Location = new System.Drawing.Point(7, 29);
-            this.picBoxUserImage.Name = "picBoxUserImage";
-            this.picBoxUserImage.Size = new System.Drawing.Size(103, 124);
-            this.picBoxUserImage.TabIndex = 16;
-            this.picBoxUserImage.TabStop = false;
             // 
             // txtFirstName
             // 
@@ -440,7 +431,7 @@ namespace HospitalInformationManagementSystem.PL
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.txtStaffEmail);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Location = new System.Drawing.Point(12, 441);
+            this.panel1.Location = new System.Drawing.Point(12, 443);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(440, 229);
             this.panel1.TabIndex = 16;
@@ -552,30 +543,31 @@ namespace HospitalInformationManagementSystem.PL
             this.label11.TabIndex = 6;
             this.label11.Text = "Staff Email";
             // 
-            // btnReset
-            // 
-            this.btnReset.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnReset.Location = new System.Drawing.Point(893, 641);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(112, 46);
-            this.btnReset.TabIndex = 21;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = false;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.btnCheck);
             this.panel5.Controls.Add(this.label16);
             this.panel5.Controls.Add(this.txtPassword);
             this.panel5.Controls.Add(this.txtUserName);
-            this.panel5.Controls.Add(this.btnCheck);
             this.panel5.Controls.Add(this.label10);
-            this.panel5.Location = new System.Drawing.Point(483, 236);
+            this.panel5.Location = new System.Drawing.Point(483, 242);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(524, 88);
+            this.panel5.Size = new System.Drawing.Size(528, 88);
             this.panel5.TabIndex = 20;
+            // 
+            // btnCheck
+            // 
+            this.btnCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.btnCheck.Location = new System.Drawing.Point(425, 15);
+            this.btnCheck.Name = "btnCheck";
+            this.btnCheck.Size = new System.Drawing.Size(78, 24);
+            this.btnCheck.TabIndex = 18;
+            this.btnCheck.Text = "Check";
+            this.btnCheck.UseCustomBackColor = true;
+            this.btnCheck.UseSelectable = true;
+            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
             // 
             // label16
             // 
@@ -604,17 +596,6 @@ namespace HospitalInformationManagementSystem.PL
             this.txtUserName.Size = new System.Drawing.Size(296, 24);
             this.txtUserName.TabIndex = 2;
             // 
-            // btnCheck
-            // 
-            this.btnCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.btnCheck.Location = new System.Drawing.Point(425, 12);
-            this.btnCheck.Name = "btnCheck";
-            this.btnCheck.Size = new System.Drawing.Size(78, 30);
-            this.btnCheck.TabIndex = 17;
-            this.btnCheck.Text = "Check";
-            this.btnCheck.UseVisualStyleBackColor = true;
-            this.btnCheck.Click += new System.EventHandler(this.btnCheck_Click);
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -638,9 +619,9 @@ namespace HospitalInformationManagementSystem.PL
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Controls.Add(this.panel6);
-            this.panel2.Location = new System.Drawing.Point(483, 335);
+            this.panel2.Location = new System.Drawing.Point(483, 341);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(526, 287);
+            this.panel2.Size = new System.Drawing.Size(528, 287);
             this.panel2.TabIndex = 18;
             // 
             // label24
@@ -656,7 +637,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             // panel12
             // 
-            this.panel12.BackColor = System.Drawing.SystemColors.Control;
+            this.panel12.BackColor = System.Drawing.Color.White;
             this.panel12.Controls.Add(this.label23);
             this.panel12.Controls.Add(this.chkboxD8);
             this.panel12.Controls.Add(this.chkboxM8);
@@ -664,7 +645,7 @@ namespace HospitalInformationManagementSystem.PL
             this.panel12.Controls.Add(this.chkboxA8);
             this.panel12.Location = new System.Drawing.Point(0, 253);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(524, 31);
+            this.panel12.Size = new System.Drawing.Size(527, 31);
             this.panel12.TabIndex = 21;
             // 
             // label23
@@ -681,7 +662,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxD8.AutoSize = true;
             this.chkboxD8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxD8.Location = new System.Drawing.Point(366, 4);
+            this.chkboxD8.Location = new System.Drawing.Point(364, 4);
             this.chkboxD8.Name = "chkboxD8";
             this.chkboxD8.Size = new System.Drawing.Size(73, 22);
             this.chkboxD8.TabIndex = 0;
@@ -692,7 +673,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxM8.AutoSize = true;
             this.chkboxM8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxM8.Location = new System.Drawing.Point(445, 4);
+            this.chkboxM8.Location = new System.Drawing.Point(443, 4);
             this.chkboxM8.Name = "chkboxM8";
             this.chkboxM8.Size = new System.Drawing.Size(71, 22);
             this.chkboxM8.TabIndex = 0;
@@ -703,7 +684,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxC8.AutoSize = true;
             this.chkboxC8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxC8.Location = new System.Drawing.Point(287, 4);
+            this.chkboxC8.Location = new System.Drawing.Point(285, 4);
             this.chkboxC8.Name = "chkboxC8";
             this.chkboxC8.Size = new System.Drawing.Size(75, 22);
             this.chkboxC8.TabIndex = 0;
@@ -714,7 +695,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxA8.AutoSize = true;
             this.chkboxA8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxA8.Location = new System.Drawing.Point(205, 4);
+            this.chkboxA8.Location = new System.Drawing.Point(203, 4);
             this.chkboxA8.Name = "chkboxA8";
             this.chkboxA8.Size = new System.Drawing.Size(76, 22);
             this.chkboxA8.TabIndex = 0;
@@ -723,7 +704,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.SystemColors.Control;
+            this.panel8.BackColor = System.Drawing.Color.White;
             this.panel8.Controls.Add(this.label19);
             this.panel8.Controls.Add(this.chkboxD4);
             this.panel8.Controls.Add(this.chkboxM4);
@@ -731,7 +712,7 @@ namespace HospitalInformationManagementSystem.PL
             this.panel8.Controls.Add(this.chkboxA4);
             this.panel8.Location = new System.Drawing.Point(0, 129);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(524, 31);
+            this.panel8.Size = new System.Drawing.Size(527, 31);
             this.panel8.TabIndex = 21;
             // 
             // label19
@@ -748,7 +729,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxD4.AutoSize = true;
             this.chkboxD4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxD4.Location = new System.Drawing.Point(366, 4);
+            this.chkboxD4.Location = new System.Drawing.Point(364, 4);
             this.chkboxD4.Name = "chkboxD4";
             this.chkboxD4.Size = new System.Drawing.Size(73, 22);
             this.chkboxD4.TabIndex = 0;
@@ -759,7 +740,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxM4.AutoSize = true;
             this.chkboxM4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxM4.Location = new System.Drawing.Point(445, 4);
+            this.chkboxM4.Location = new System.Drawing.Point(443, 4);
             this.chkboxM4.Name = "chkboxM4";
             this.chkboxM4.Size = new System.Drawing.Size(71, 22);
             this.chkboxM4.TabIndex = 0;
@@ -770,7 +751,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxC4.AutoSize = true;
             this.chkboxC4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxC4.Location = new System.Drawing.Point(287, 4);
+            this.chkboxC4.Location = new System.Drawing.Point(285, 4);
             this.chkboxC4.Name = "chkboxC4";
             this.chkboxC4.Size = new System.Drawing.Size(75, 22);
             this.chkboxC4.TabIndex = 0;
@@ -781,7 +762,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxA4.AutoSize = true;
             this.chkboxA4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxA4.Location = new System.Drawing.Point(205, 4);
+            this.chkboxA4.Location = new System.Drawing.Point(203, 4);
             this.chkboxA4.Name = "chkboxA4";
             this.chkboxA4.Size = new System.Drawing.Size(76, 22);
             this.chkboxA4.TabIndex = 0;
@@ -790,7 +771,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             // panel11
             // 
-            this.panel11.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.panel11.Controls.Add(this.label22);
             this.panel11.Controls.Add(this.chkboxD7);
             this.panel11.Controls.Add(this.chkboxM7);
@@ -798,7 +779,7 @@ namespace HospitalInformationManagementSystem.PL
             this.panel11.Controls.Add(this.chkboxA7);
             this.panel11.Location = new System.Drawing.Point(0, 222);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(524, 31);
+            this.panel11.Size = new System.Drawing.Size(527, 31);
             this.panel11.TabIndex = 21;
             // 
             // label22
@@ -815,7 +796,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxD7.AutoSize = true;
             this.chkboxD7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxD7.Location = new System.Drawing.Point(366, 4);
+            this.chkboxD7.Location = new System.Drawing.Point(364, 4);
             this.chkboxD7.Name = "chkboxD7";
             this.chkboxD7.Size = new System.Drawing.Size(73, 22);
             this.chkboxD7.TabIndex = 0;
@@ -826,7 +807,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxM7.AutoSize = true;
             this.chkboxM7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxM7.Location = new System.Drawing.Point(445, 4);
+            this.chkboxM7.Location = new System.Drawing.Point(443, 4);
             this.chkboxM7.Name = "chkboxM7";
             this.chkboxM7.Size = new System.Drawing.Size(71, 22);
             this.chkboxM7.TabIndex = 0;
@@ -837,7 +818,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxC7.AutoSize = true;
             this.chkboxC7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxC7.Location = new System.Drawing.Point(287, 4);
+            this.chkboxC7.Location = new System.Drawing.Point(285, 4);
             this.chkboxC7.Name = "chkboxC7";
             this.chkboxC7.Size = new System.Drawing.Size(75, 22);
             this.chkboxC7.TabIndex = 0;
@@ -848,7 +829,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxA7.AutoSize = true;
             this.chkboxA7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxA7.Location = new System.Drawing.Point(205, 4);
+            this.chkboxA7.Location = new System.Drawing.Point(203, 4);
             this.chkboxA7.Name = "chkboxA7";
             this.chkboxA7.Size = new System.Drawing.Size(76, 22);
             this.chkboxA7.TabIndex = 0;
@@ -857,7 +838,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.panel7.Controls.Add(this.label14);
             this.panel7.Controls.Add(this.chkboxD3);
             this.panel7.Controls.Add(this.chkboxM3);
@@ -865,7 +846,7 @@ namespace HospitalInformationManagementSystem.PL
             this.panel7.Controls.Add(this.chkboxA3);
             this.panel7.Location = new System.Drawing.Point(0, 98);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(524, 31);
+            this.panel7.Size = new System.Drawing.Size(527, 31);
             this.panel7.TabIndex = 21;
             // 
             // label14
@@ -882,7 +863,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxD3.AutoSize = true;
             this.chkboxD3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxD3.Location = new System.Drawing.Point(366, 4);
+            this.chkboxD3.Location = new System.Drawing.Point(364, 4);
             this.chkboxD3.Name = "chkboxD3";
             this.chkboxD3.Size = new System.Drawing.Size(73, 22);
             this.chkboxD3.TabIndex = 0;
@@ -893,7 +874,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxM3.AutoSize = true;
             this.chkboxM3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxM3.Location = new System.Drawing.Point(445, 4);
+            this.chkboxM3.Location = new System.Drawing.Point(443, 4);
             this.chkboxM3.Name = "chkboxM3";
             this.chkboxM3.Size = new System.Drawing.Size(71, 22);
             this.chkboxM3.TabIndex = 0;
@@ -904,7 +885,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxC3.AutoSize = true;
             this.chkboxC3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxC3.Location = new System.Drawing.Point(287, 4);
+            this.chkboxC3.Location = new System.Drawing.Point(285, 4);
             this.chkboxC3.Name = "chkboxC3";
             this.chkboxC3.Size = new System.Drawing.Size(75, 22);
             this.chkboxC3.TabIndex = 0;
@@ -915,7 +896,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxA3.AutoSize = true;
             this.chkboxA3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxA3.Location = new System.Drawing.Point(205, 4);
+            this.chkboxA3.Location = new System.Drawing.Point(203, 4);
             this.chkboxA3.Name = "chkboxA3";
             this.chkboxA3.Size = new System.Drawing.Size(76, 22);
             this.chkboxA3.TabIndex = 0;
@@ -924,7 +905,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             // panel10
             // 
-            this.panel10.BackColor = System.Drawing.SystemColors.Control;
+            this.panel10.BackColor = System.Drawing.Color.White;
             this.panel10.Controls.Add(this.label21);
             this.panel10.Controls.Add(this.chkboxD6);
             this.panel10.Controls.Add(this.chkboxM6);
@@ -932,7 +913,7 @@ namespace HospitalInformationManagementSystem.PL
             this.panel10.Controls.Add(this.chkboxA6);
             this.panel10.Location = new System.Drawing.Point(0, 191);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(524, 31);
+            this.panel10.Size = new System.Drawing.Size(527, 31);
             this.panel10.TabIndex = 21;
             // 
             // label21
@@ -949,7 +930,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxD6.AutoSize = true;
             this.chkboxD6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxD6.Location = new System.Drawing.Point(366, 4);
+            this.chkboxD6.Location = new System.Drawing.Point(364, 4);
             this.chkboxD6.Name = "chkboxD6";
             this.chkboxD6.Size = new System.Drawing.Size(73, 22);
             this.chkboxD6.TabIndex = 0;
@@ -960,7 +941,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxM6.AutoSize = true;
             this.chkboxM6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxM6.Location = new System.Drawing.Point(445, 4);
+            this.chkboxM6.Location = new System.Drawing.Point(443, 4);
             this.chkboxM6.Name = "chkboxM6";
             this.chkboxM6.Size = new System.Drawing.Size(71, 22);
             this.chkboxM6.TabIndex = 0;
@@ -971,7 +952,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxC6.AutoSize = true;
             this.chkboxC6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxC6.Location = new System.Drawing.Point(287, 4);
+            this.chkboxC6.Location = new System.Drawing.Point(285, 4);
             this.chkboxC6.Name = "chkboxC6";
             this.chkboxC6.Size = new System.Drawing.Size(75, 22);
             this.chkboxC6.TabIndex = 0;
@@ -982,7 +963,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxA6.AutoSize = true;
             this.chkboxA6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxA6.Location = new System.Drawing.Point(205, 4);
+            this.chkboxA6.Location = new System.Drawing.Point(203, 4);
             this.chkboxA6.Name = "chkboxA6";
             this.chkboxA6.Size = new System.Drawing.Size(76, 22);
             this.chkboxA6.TabIndex = 0;
@@ -991,7 +972,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.Control;
+            this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.chkboxD2);
             this.panel4.Controls.Add(this.chkboxM2);
@@ -999,7 +980,7 @@ namespace HospitalInformationManagementSystem.PL
             this.panel4.Controls.Add(this.chkboxA2);
             this.panel4.Location = new System.Drawing.Point(0, 67);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(524, 31);
+            this.panel4.Size = new System.Drawing.Size(527, 31);
             this.panel4.TabIndex = 21;
             // 
             // label13
@@ -1016,7 +997,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxD2.AutoSize = true;
             this.chkboxD2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxD2.Location = new System.Drawing.Point(366, 4);
+            this.chkboxD2.Location = new System.Drawing.Point(364, 4);
             this.chkboxD2.Name = "chkboxD2";
             this.chkboxD2.Size = new System.Drawing.Size(73, 22);
             this.chkboxD2.TabIndex = 0;
@@ -1027,7 +1008,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxM2.AutoSize = true;
             this.chkboxM2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxM2.Location = new System.Drawing.Point(445, 4);
+            this.chkboxM2.Location = new System.Drawing.Point(443, 4);
             this.chkboxM2.Name = "chkboxM2";
             this.chkboxM2.Size = new System.Drawing.Size(71, 22);
             this.chkboxM2.TabIndex = 0;
@@ -1038,7 +1019,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxC2.AutoSize = true;
             this.chkboxC2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxC2.Location = new System.Drawing.Point(287, 4);
+            this.chkboxC2.Location = new System.Drawing.Point(285, 4);
             this.chkboxC2.Name = "chkboxC2";
             this.chkboxC2.Size = new System.Drawing.Size(75, 22);
             this.chkboxC2.TabIndex = 0;
@@ -1049,7 +1030,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxA2.AutoSize = true;
             this.chkboxA2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxA2.Location = new System.Drawing.Point(205, 4);
+            this.chkboxA2.Location = new System.Drawing.Point(203, 4);
             this.chkboxA2.Name = "chkboxA2";
             this.chkboxA2.Size = new System.Drawing.Size(76, 22);
             this.chkboxA2.TabIndex = 0;
@@ -1058,7 +1039,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             // panel9
             // 
-            this.panel9.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.panel9.Controls.Add(this.label20);
             this.panel9.Controls.Add(this.chkboxD5);
             this.panel9.Controls.Add(this.chkboxM5);
@@ -1066,7 +1047,7 @@ namespace HospitalInformationManagementSystem.PL
             this.panel9.Controls.Add(this.chkboxA5);
             this.panel9.Location = new System.Drawing.Point(0, 160);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(524, 31);
+            this.panel9.Size = new System.Drawing.Size(527, 31);
             this.panel9.TabIndex = 21;
             // 
             // label20
@@ -1083,7 +1064,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxD5.AutoSize = true;
             this.chkboxD5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxD5.Location = new System.Drawing.Point(366, 4);
+            this.chkboxD5.Location = new System.Drawing.Point(364, 4);
             this.chkboxD5.Name = "chkboxD5";
             this.chkboxD5.Size = new System.Drawing.Size(73, 22);
             this.chkboxD5.TabIndex = 0;
@@ -1094,7 +1075,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxM5.AutoSize = true;
             this.chkboxM5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxM5.Location = new System.Drawing.Point(445, 4);
+            this.chkboxM5.Location = new System.Drawing.Point(443, 4);
             this.chkboxM5.Name = "chkboxM5";
             this.chkboxM5.Size = new System.Drawing.Size(71, 22);
             this.chkboxM5.TabIndex = 0;
@@ -1105,7 +1086,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxC5.AutoSize = true;
             this.chkboxC5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxC5.Location = new System.Drawing.Point(287, 4);
+            this.chkboxC5.Location = new System.Drawing.Point(285, 4);
             this.chkboxC5.Name = "chkboxC5";
             this.chkboxC5.Size = new System.Drawing.Size(75, 22);
             this.chkboxC5.TabIndex = 0;
@@ -1116,7 +1097,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxA5.AutoSize = true;
             this.chkboxA5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxA5.Location = new System.Drawing.Point(205, 4);
+            this.chkboxA5.Location = new System.Drawing.Point(203, 4);
             this.chkboxA5.Name = "chkboxA5";
             this.chkboxA5.Size = new System.Drawing.Size(76, 22);
             this.chkboxA5.TabIndex = 0;
@@ -1125,7 +1106,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.panel6.Controls.Add(this.label5);
             this.panel6.Controls.Add(this.chkboxD1);
             this.panel6.Controls.Add(this.chkboxM1);
@@ -1133,7 +1114,7 @@ namespace HospitalInformationManagementSystem.PL
             this.panel6.Controls.Add(this.chkboxA1);
             this.panel6.Location = new System.Drawing.Point(0, 36);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(524, 31);
+            this.panel6.Size = new System.Drawing.Size(527, 31);
             this.panel6.TabIndex = 21;
             // 
             // label5
@@ -1150,7 +1131,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxD1.AutoSize = true;
             this.chkboxD1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxD1.Location = new System.Drawing.Point(366, 4);
+            this.chkboxD1.Location = new System.Drawing.Point(364, 4);
             this.chkboxD1.Name = "chkboxD1";
             this.chkboxD1.Size = new System.Drawing.Size(73, 22);
             this.chkboxD1.TabIndex = 0;
@@ -1161,7 +1142,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxM1.AutoSize = true;
             this.chkboxM1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxM1.Location = new System.Drawing.Point(445, 4);
+            this.chkboxM1.Location = new System.Drawing.Point(443, 4);
             this.chkboxM1.Name = "chkboxM1";
             this.chkboxM1.Size = new System.Drawing.Size(71, 22);
             this.chkboxM1.TabIndex = 0;
@@ -1172,7 +1153,7 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxC1.AutoSize = true;
             this.chkboxC1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxC1.Location = new System.Drawing.Point(287, 4);
+            this.chkboxC1.Location = new System.Drawing.Point(285, 4);
             this.chkboxC1.Name = "chkboxC1";
             this.chkboxC1.Size = new System.Drawing.Size(75, 22);
             this.chkboxC1.TabIndex = 0;
@@ -1183,51 +1164,12 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.chkboxA1.AutoSize = true;
             this.chkboxA1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.chkboxA1.Location = new System.Drawing.Point(205, 4);
+            this.chkboxA1.Location = new System.Drawing.Point(203, 4);
             this.chkboxA1.Name = "chkboxA1";
             this.chkboxA1.Size = new System.Drawing.Size(76, 22);
             this.chkboxA1.TabIndex = 0;
             this.chkboxA1.Text = "Access";
             this.chkboxA1.UseVisualStyleBackColor = true;
-            // 
-            // btnDeleteStaff
-            // 
-            this.btnDeleteStaff.BackColor = System.Drawing.Color.Red;
-            this.btnDeleteStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteStaff.ForeColor = System.Drawing.Color.Black;
-            this.btnDeleteStaff.Location = new System.Drawing.Point(762, 641);
-            this.btnDeleteStaff.Name = "btnDeleteStaff";
-            this.btnDeleteStaff.Size = new System.Drawing.Size(112, 47);
-            this.btnDeleteStaff.TabIndex = 13;
-            this.btnDeleteStaff.Text = "Delete Staff";
-            this.btnDeleteStaff.UseVisualStyleBackColor = false;
-            this.btnDeleteStaff.Click += new System.EventHandler(this.btnDeleteStaff_Click);
-            // 
-            // btnEditStaff
-            // 
-            this.btnEditStaff.BackColor = System.Drawing.Color.Yellow;
-            this.btnEditStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditStaff.ForeColor = System.Drawing.Color.Black;
-            this.btnEditStaff.Location = new System.Drawing.Point(631, 641);
-            this.btnEditStaff.Name = "btnEditStaff";
-            this.btnEditStaff.Size = new System.Drawing.Size(112, 47);
-            this.btnEditStaff.TabIndex = 13;
-            this.btnEditStaff.Text = "Edit Staff";
-            this.btnEditStaff.UseVisualStyleBackColor = false;
-            this.btnEditStaff.Click += new System.EventHandler(this.btnEditStaff_Click);
-            // 
-            // btnAddStaff
-            // 
-            this.btnAddStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAddStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddStaff.ForeColor = System.Drawing.Color.Black;
-            this.btnAddStaff.Location = new System.Drawing.Point(501, 641);
-            this.btnAddStaff.Name = "btnAddStaff";
-            this.btnAddStaff.Size = new System.Drawing.Size(112, 47);
-            this.btnAddStaff.TabIndex = 13;
-            this.btnAddStaff.Text = "Add Staff";
-            this.btnAddStaff.UseVisualStyleBackColor = false;
-            this.btnAddStaff.Click += new System.EventHandler(this.btnAddStaff_Click);
             // 
             // label15
             // 
@@ -1247,6 +1189,7 @@ namespace HospitalInformationManagementSystem.PL
             this.txtSearchByNIC.Name = "txtSearchByNIC";
             this.txtSearchByNIC.Size = new System.Drawing.Size(296, 24);
             this.txtSearchByNIC.TabIndex = 2;
+            this.txtSearchByNIC.TextChanged += new System.EventHandler(this.txtSearchByNIC_TextChanged);
             // 
             // dgvStaff
             // 
@@ -1307,7 +1250,7 @@ namespace HospitalInformationManagementSystem.PL
             this.dgvStaff.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvStaff.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStaff.Size = new System.Drawing.Size(521, 157);
+            this.dgvStaff.Size = new System.Drawing.Size(525, 142);
             this.dgvStaff.TabIndex = 2;
             this.dgvStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellClick);
             // 
@@ -1441,44 +1384,125 @@ namespace HospitalInformationManagementSystem.PL
             this.photo_data.ReadOnly = true;
             this.photo_data.Visible = false;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.Location = new System.Drawing.Point(424, 14);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(78, 30);
-            this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
             // panel13
             // 
             this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel13.Controls.Add(this.dgvStaff);
             this.panel13.Controls.Add(this.btnSearch);
+            this.panel13.Controls.Add(this.dgvStaff);
             this.panel13.Controls.Add(this.txtSearchByNIC);
             this.panel13.Controls.Add(this.label15);
-            this.panel13.Location = new System.Drawing.Point(484, 14);
+            this.panel13.Location = new System.Drawing.Point(10, 31);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(521, 210);
+            this.panel13.Size = new System.Drawing.Size(528, 196);
             this.panel13.TabIndex = 22;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(189)))), ((int)(((byte)(189)))));
+            this.btnSearch.Location = new System.Drawing.Point(425, 16);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(78, 25);
+            this.btnSearch.TabIndex = 18;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseCustomBackColor = true;
+            this.btnSearch.UseSelectable = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // epStaff
             // 
             this.epStaff.ContainerControl = this;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.btnReset);
+            this.groupBox2.Controls.Add(this.btnDeleteStaff);
+            this.groupBox2.Controls.Add(this.btnEditStaff);
+            this.groupBox2.Controls.Add(this.btnAddStaff);
+            this.groupBox2.Controls.Add(this.panel13);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.groupBox2.Location = new System.Drawing.Point(473, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(548, 685);
+            this.groupBox2.TabIndex = 23;
+            this.groupBox2.TabStop = false;
+            // 
+            // btnReset
+            // 
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(201)))));
+            this.btnReset.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btnReset.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnReset.Location = new System.Drawing.Point(428, 634);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(110, 38);
+            this.btnReset.TabIndex = 23;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseCustomBackColor = true;
+            this.btnReset.UseSelectable = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnDeleteStaff
+            // 
+            this.btnDeleteStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(244)))), ((int)(((byte)(179)))));
+            this.btnDeleteStaff.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btnDeleteStaff.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnDeleteStaff.Location = new System.Drawing.Point(290, 634);
+            this.btnDeleteStaff.Name = "btnDeleteStaff";
+            this.btnDeleteStaff.Size = new System.Drawing.Size(110, 38);
+            this.btnDeleteStaff.TabIndex = 23;
+            this.btnDeleteStaff.Text = "Delete Staff";
+            this.btnDeleteStaff.UseCustomBackColor = true;
+            this.btnDeleteStaff.UseSelectable = true;
+            this.btnDeleteStaff.Click += new System.EventHandler(this.btnDeleteStaff_Click);
+            // 
+            // btnEditStaff
+            // 
+            this.btnEditStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.btnEditStaff.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btnEditStaff.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnEditStaff.Location = new System.Drawing.Point(151, 634);
+            this.btnEditStaff.Name = "btnEditStaff";
+            this.btnEditStaff.Size = new System.Drawing.Size(110, 38);
+            this.btnEditStaff.TabIndex = 23;
+            this.btnEditStaff.Text = "Edit Staff";
+            this.btnEditStaff.UseCustomBackColor = true;
+            this.btnEditStaff.UseSelectable = true;
+            this.btnEditStaff.Click += new System.EventHandler(this.btnEditStaff_Click);
+            // 
+            // btnAddStaff
+            // 
+            this.btnAddStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(246)))));
+            this.btnAddStaff.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btnAddStaff.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnAddStaff.Location = new System.Drawing.Point(9, 634);
+            this.btnAddStaff.Name = "btnAddStaff";
+            this.btnAddStaff.Size = new System.Drawing.Size(110, 38);
+            this.btnAddStaff.TabIndex = 23;
+            this.btnAddStaff.Text = "Add Staff";
+            this.btnAddStaff.UseCustomBackColor = true;
+            this.btnAddStaff.UseSelectable = true;
+            this.btnAddStaff.Click += new System.EventHandler(this.btnAddStaff_Click);
+            // 
+            // picBoxUserImage
+            // 
+            this.picBoxUserImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picBoxUserImage.Image = global::HospitalInformationManagementSystem.Properties.Resources.user;
+            this.picBoxUserImage.Location = new System.Drawing.Point(7, 29);
+            this.picBoxUserImage.Name = "picBoxUserImage";
+            this.picBoxUserImage.Size = new System.Drawing.Size(103, 124);
+            this.picBoxUserImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picBoxUserImage.TabIndex = 16;
+            this.picBoxUserImage.TabStop = false;
+            // 
             // ucStaff_PL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel13);
-            this.Controls.Add(this.btnReset);
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btnDeleteStaff);
             this.Controls.Add(this.panel5);
-            this.Controls.Add(this.btnEditStaff);
-            this.Controls.Add(this.btnAddStaff);
+            this.Controls.Add(this.groupBox2);
             this.Name = "ucStaff_PL";
             this.Size = new System.Drawing.Size(1024, 691);
             this.Load += new System.EventHandler(this.ucStaff_PL_Load);
@@ -1487,7 +1511,6 @@ namespace HospitalInformationManagementSystem.PL
             this.panel3.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxUserImage)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -1514,15 +1537,14 @@ namespace HospitalInformationManagementSystem.PL
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epStaff)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxUserImage)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnDeleteStaff;
-        private System.Windows.Forms.Button btnEditStaff;
-        private System.Windows.Forms.Button btnAddStaff;
         private System.Windows.Forms.DateTimePicker dtpJoinedDate;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -1561,9 +1583,7 @@ namespace HospitalInformationManagementSystem.PL
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUserName;
-        private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.ComboBox cmbUserType;
-        private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label24;
@@ -1612,12 +1632,10 @@ namespace HospitalInformationManagementSystem.PL
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtSearchByNIC;
         private MetroFramework.Controls.MetroGrid dgvStaff;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.ErrorProvider epStaff;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.PictureBox picBoxUserImage;
         private System.Windows.Forms.DataGridViewTextBoxColumn user_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn user_name;
@@ -1636,5 +1654,13 @@ namespace HospitalInformationManagementSystem.PL
         private System.Windows.Forms.DataGridViewTextBoxColumn staff_email;
         private System.Windows.Forms.DataGridViewTextBoxColumn join_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn photo_data;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private MetroFramework.Controls.MetroButton btnBrowse;
+        private MetroFramework.Controls.MetroButton btnSearch;
+        private MetroFramework.Controls.MetroButton btnCheck;
+        private MetroFramework.Controls.MetroButton btnEditStaff;
+        private MetroFramework.Controls.MetroButton btnAddStaff;
+        private MetroFramework.Controls.MetroButton btnReset;
+        private MetroFramework.Controls.MetroButton btnDeleteStaff;
     }
 }

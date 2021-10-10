@@ -29,31 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlPatient = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearchByNIC = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.dgvPatient = new System.Windows.Forms.DataGridView();
-            this.f_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.User_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.l_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nic_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.allergies = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.blood_group = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marital_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnClear = new System.Windows.Forms.Button();
             this.txtUserID = new System.Windows.Forms.TextBox();
             this.btnCheck = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -64,9 +49,6 @@
             this.txtAllergies = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnDeletePatient = new System.Windows.Forms.Button();
-            this.btnEditPatient = new System.Windows.Forms.Button();
-            this.btnAddPatient = new System.Windows.Forms.Button();
             this.cmbMaritalStatus = new System.Windows.Forms.ComboBox();
             this.dtpBirthDay = new System.Windows.Forms.DateTimePicker();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -84,12 +66,36 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.epPatient = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dgvPatient = new MetroFramework.Controls.MetroGrid();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnAddPatient = new MetroFramework.Controls.MetroButton();
+            this.btnEditPatient = new MetroFramework.Controls.MetroButton();
+            this.btnDeletePatient = new MetroFramework.Controls.MetroButton();
+            this.btnClear = new MetroFramework.Controls.MetroButton();
+            this.f_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.l_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nic_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.allergies = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.blood_group = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.user_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marital_status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlPatient.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epPatient)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlPatient
@@ -104,13 +110,14 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.panel1);
-            this.groupBox2.Controls.Add(this.dgvPatient);
+            this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.panel2);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(516, 3);
+            this.groupBox2.Location = new System.Drawing.Point(507, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(505, 685);
+            this.groupBox2.Size = new System.Drawing.Size(517, 691);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Patient Data";
@@ -120,20 +127,22 @@
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Controls.Add(this.txtSearchByNIC);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Location = new System.Drawing.Point(6, 28);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(493, 43);
+            this.panel1.Size = new System.Drawing.Size(511, 43);
             this.panel1.TabIndex = 1;
             // 
             // btnSearch
             // 
+            this.btnSearch.BackColor = System.Drawing.Color.White;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.Location = new System.Drawing.Point(357, 3);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(119, 33);
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // txtSearchByNIC
@@ -156,160 +165,14 @@
             this.label11.TabIndex = 1;
             this.label11.Text = "Enter NIC";
             // 
-            // dgvPatient
-            // 
-            this.dgvPatient.AllowUserToAddRows = false;
-            this.dgvPatient.AllowUserToDeleteRows = false;
-            this.dgvPatient.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPatient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.f_name,
-            this.User_ID,
-            this.l_name,
-            this.nic_no,
-            this.allergies,
-            this.blood_group,
-            this.Username,
-            this.password,
-            this.gender,
-            this.phone_no,
-            this.dob,
-            this.address,
-            this.marital_status});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPatient.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvPatient.Location = new System.Drawing.Point(6, 77);
-            this.dgvPatient.Name = "dgvPatient";
-            this.dgvPatient.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPatient.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvPatient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPatient.Size = new System.Drawing.Size(493, 602);
-            this.dgvPatient.TabIndex = 0;
-            this.dgvPatient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPatient_CellClick);
-            // 
-            // f_name
-            // 
-            this.f_name.DataPropertyName = "f_name";
-            this.f_name.HeaderText = "First Name";
-            this.f_name.Name = "f_name";
-            this.f_name.ReadOnly = true;
-            // 
-            // User_ID
-            // 
-            this.User_ID.DataPropertyName = "user_id";
-            this.User_ID.HeaderText = "User ID";
-            this.User_ID.Name = "User_ID";
-            this.User_ID.ReadOnly = true;
-            this.User_ID.Visible = false;
-            // 
-            // l_name
-            // 
-            this.l_name.DataPropertyName = "l_name";
-            this.l_name.HeaderText = "Last Name";
-            this.l_name.Name = "l_name";
-            this.l_name.ReadOnly = true;
-            // 
-            // nic_no
-            // 
-            this.nic_no.DataPropertyName = "nic_no";
-            this.nic_no.HeaderText = "NIC";
-            this.nic_no.Name = "nic_no";
-            this.nic_no.ReadOnly = true;
-            // 
-            // allergies
-            // 
-            this.allergies.DataPropertyName = "allergies";
-            this.allergies.HeaderText = "Allergies";
-            this.allergies.Name = "allergies";
-            this.allergies.ReadOnly = true;
-            // 
-            // blood_group
-            // 
-            this.blood_group.DataPropertyName = "blood_group";
-            this.blood_group.HeaderText = "Blood Group";
-            this.blood_group.Name = "blood_group";
-            this.blood_group.ReadOnly = true;
-            // 
-            // Username
-            // 
-            this.Username.DataPropertyName = "user_name";
-            this.Username.HeaderText = "Username";
-            this.Username.Name = "Username";
-            this.Username.ReadOnly = true;
-            this.Username.Visible = false;
-            // 
-            // password
-            // 
-            this.password.DataPropertyName = "password";
-            this.password.HeaderText = "Password";
-            this.password.Name = "password";
-            this.password.ReadOnly = true;
-            this.password.Visible = false;
-            // 
-            // gender
-            // 
-            this.gender.DataPropertyName = "gender";
-            this.gender.HeaderText = "Gender";
-            this.gender.Name = "gender";
-            this.gender.ReadOnly = true;
-            this.gender.Visible = false;
-            // 
-            // phone_no
-            // 
-            this.phone_no.DataPropertyName = "phone_no";
-            this.phone_no.HeaderText = "Phone No";
-            this.phone_no.Name = "phone_no";
-            this.phone_no.ReadOnly = true;
-            this.phone_no.Visible = false;
-            // 
-            // dob
-            // 
-            this.dob.DataPropertyName = "dob";
-            this.dob.HeaderText = "Birth Day";
-            this.dob.Name = "dob";
-            this.dob.ReadOnly = true;
-            this.dob.Visible = false;
-            // 
-            // address
-            // 
-            this.address.DataPropertyName = "address";
-            this.address.HeaderText = "Address";
-            this.address.Name = "address";
-            this.address.ReadOnly = true;
-            this.address.Visible = false;
-            // 
-            // marital_status
-            // 
-            this.marital_status.DataPropertyName = "marital_status";
-            this.marital_status.HeaderText = "Marital Status";
-            this.marital_status.Name = "marital_status";
-            this.marital_status.ReadOnly = true;
-            this.marital_status.Visible = false;
-            // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.btnClear);
+            this.groupBox1.Controls.Add(this.btnDeletePatient);
+            this.groupBox1.Controls.Add(this.btnEditPatient);
+            this.groupBox1.Controls.Add(this.btnAddPatient);
             this.groupBox1.Controls.Add(this.txtUserID);
             this.groupBox1.Controls.Add(this.btnCheck);
             this.groupBox1.Controls.Add(this.label13);
@@ -320,9 +183,6 @@
             this.groupBox1.Controls.Add(this.txtAllergies);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.btnDeletePatient);
-            this.groupBox1.Controls.Add(this.btnEditPatient);
-            this.groupBox1.Controls.Add(this.btnAddPatient);
             this.groupBox1.Controls.Add(this.cmbMaritalStatus);
             this.groupBox1.Controls.Add(this.dtpBirthDay);
             this.groupBox1.Controls.Add(this.txtAddress);
@@ -339,25 +199,15 @@
             this.groupBox1.Controls.Add(this.txtFirstName);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(507, 685);
+            this.groupBox1.Size = new System.Drawing.Size(507, 691);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Patient Form";
-            // 
-            // btnClear
-            // 
-            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(344, 626);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(112, 47);
-            this.btnClear.TabIndex = 22;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
             // txtUserID
             // 
@@ -467,48 +317,6 @@
             this.label9.Size = new System.Drawing.Size(93, 18);
             this.label9.TabIndex = 14;
             this.label9.Text = "Blood Group";
-            // 
-            // btnDeletePatient
-            // 
-            this.btnDeletePatient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDeletePatient.BackColor = System.Drawing.Color.Red;
-            this.btnDeletePatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeletePatient.ForeColor = System.Drawing.Color.Black;
-            this.btnDeletePatient.Location = new System.Drawing.Point(344, 573);
-            this.btnDeletePatient.Name = "btnDeletePatient";
-            this.btnDeletePatient.Size = new System.Drawing.Size(112, 47);
-            this.btnDeletePatient.TabIndex = 13;
-            this.btnDeletePatient.Text = "Delete Patient";
-            this.btnDeletePatient.UseVisualStyleBackColor = false;
-            this.btnDeletePatient.Click += new System.EventHandler(this.BtnDeletePatient_Click);
-            // 
-            // btnEditPatient
-            // 
-            this.btnEditPatient.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnEditPatient.BackColor = System.Drawing.Color.Yellow;
-            this.btnEditPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditPatient.ForeColor = System.Drawing.Color.Black;
-            this.btnEditPatient.Location = new System.Drawing.Point(190, 573);
-            this.btnEditPatient.Name = "btnEditPatient";
-            this.btnEditPatient.Size = new System.Drawing.Size(112, 47);
-            this.btnEditPatient.TabIndex = 12;
-            this.btnEditPatient.Text = "Edit Patient";
-            this.btnEditPatient.UseVisualStyleBackColor = false;
-            this.btnEditPatient.Click += new System.EventHandler(this.BtnEditPatient_Click);
-            // 
-            // btnAddPatient
-            // 
-            this.btnAddPatient.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAddPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnAddPatient.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddPatient.ForeColor = System.Drawing.Color.Black;
-            this.btnAddPatient.Location = new System.Drawing.Point(36, 573);
-            this.btnAddPatient.Name = "btnAddPatient";
-            this.btnAddPatient.Size = new System.Drawing.Size(112, 47);
-            this.btnAddPatient.TabIndex = 11;
-            this.btnAddPatient.Text = "Add Patient";
-            this.btnAddPatient.UseVisualStyleBackColor = false;
-            this.btnAddPatient.Click += new System.EventHandler(this.BtnAddPatient_Click);
             // 
             // cmbMaritalStatus
             // 
@@ -677,6 +485,235 @@
             // 
             this.epPatient.ContainerControl = this;
             // 
+            // dgvPatient
+            // 
+            this.dgvPatient.AllowUserToResizeRows = false;
+            this.dgvPatient.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvPatient.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPatient.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvPatient.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPatient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.f_name,
+            this.user_id,
+            this.l_name,
+            this.nic_no,
+            this.allergies,
+            this.blood_group,
+            this.user_name,
+            this.password,
+            this.gender,
+            this.phone_no,
+            this.dob,
+            this.address,
+            this.marital_status});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPatient.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPatient.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPatient.EnableHeadersVisualStyles = false;
+            this.dgvPatient.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgvPatient.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvPatient.Location = new System.Drawing.Point(0, 0);
+            this.dgvPatient.Name = "dgvPatient";
+            this.dgvPatient.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPatient.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPatient.RowHeadersWidth = 45;
+            this.dgvPatient.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvPatient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPatient.Size = new System.Drawing.Size(511, 620);
+            this.dgvPatient.TabIndex = 2;
+            this.dgvPatient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPatient_CellClick);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 25);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(511, 663);
+            this.panel2.TabIndex = 3;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dgvPatient);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 43);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(511, 620);
+            this.panel3.TabIndex = 3;
+            // 
+            // btnAddPatient
+            // 
+            this.btnAddPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(246)))));
+            this.btnAddPatient.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btnAddPatient.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnAddPatient.Location = new System.Drawing.Point(11, 560);
+            this.btnAddPatient.Name = "btnAddPatient";
+            this.btnAddPatient.Size = new System.Drawing.Size(112, 47);
+            this.btnAddPatient.TabIndex = 23;
+            this.btnAddPatient.Text = "Add Patient";
+            this.btnAddPatient.UseCustomBackColor = true;
+            this.btnAddPatient.UseSelectable = true;
+            this.btnAddPatient.Click += new System.EventHandler(this.BtnAddPatient_Click);
+            // 
+            // btnEditPatient
+            // 
+            this.btnEditPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
+            this.btnEditPatient.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btnEditPatient.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnEditPatient.Location = new System.Drawing.Point(133, 560);
+            this.btnEditPatient.Name = "btnEditPatient";
+            this.btnEditPatient.Size = new System.Drawing.Size(112, 47);
+            this.btnEditPatient.TabIndex = 24;
+            this.btnEditPatient.Text = "Edit Patient";
+            this.btnEditPatient.UseCustomBackColor = true;
+            this.btnEditPatient.UseSelectable = true;
+            this.btnEditPatient.Click += new System.EventHandler(this.BtnEditPatient_Click);
+            // 
+            // btnDeletePatient
+            // 
+            this.btnDeletePatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(244)))), ((int)(((byte)(179)))));
+            this.btnDeletePatient.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btnDeletePatient.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnDeletePatient.Location = new System.Drawing.Point(255, 560);
+            this.btnDeletePatient.Name = "btnDeletePatient";
+            this.btnDeletePatient.Size = new System.Drawing.Size(112, 47);
+            this.btnDeletePatient.TabIndex = 25;
+            this.btnDeletePatient.Text = "Delete Patient";
+            this.btnDeletePatient.UseCustomBackColor = true;
+            this.btnDeletePatient.UseSelectable = true;
+            this.btnDeletePatient.Click += new System.EventHandler(this.BtnDeletePatient_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(200)))));
+            this.btnClear.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btnClear.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnClear.Location = new System.Drawing.Point(375, 560);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(112, 47);
+            this.btnClear.TabIndex = 26;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseCustomBackColor = true;
+            this.btnClear.UseSelectable = true;
+            this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
+            // 
+            // f_name
+            // 
+            this.f_name.DataPropertyName = "f_name";
+            this.f_name.HeaderText = "First Name";
+            this.f_name.Name = "f_name";
+            // 
+            // user_id
+            // 
+            this.user_id.DataPropertyName = "user_id";
+            this.user_id.HeaderText = "User ID";
+            this.user_id.Name = "user_id";
+            this.user_id.Visible = false;
+            // 
+            // l_name
+            // 
+            this.l_name.DataPropertyName = "l_name";
+            this.l_name.HeaderText = "Last Name";
+            this.l_name.Name = "l_name";
+            // 
+            // nic_no
+            // 
+            this.nic_no.DataPropertyName = "nic_no";
+            this.nic_no.HeaderText = "Nic";
+            this.nic_no.Name = "nic_no";
+            // 
+            // allergies
+            // 
+            this.allergies.DataPropertyName = "allergies";
+            this.allergies.HeaderText = "Allergies";
+            this.allergies.Name = "allergies";
+            // 
+            // blood_group
+            // 
+            this.blood_group.DataPropertyName = "blood_group";
+            this.blood_group.HeaderText = "Blood Group";
+            this.blood_group.Name = "blood_group";
+            // 
+            // user_name
+            // 
+            this.user_name.DataPropertyName = "user_name";
+            this.user_name.HeaderText = "User Name";
+            this.user_name.Name = "user_name";
+            this.user_name.Visible = false;
+            // 
+            // password
+            // 
+            this.password.DataPropertyName = "password";
+            this.password.HeaderText = "Password";
+            this.password.Name = "password";
+            this.password.Visible = false;
+            // 
+            // gender
+            // 
+            this.gender.DataPropertyName = "gender";
+            this.gender.HeaderText = "Gender";
+            this.gender.Name = "gender";
+            this.gender.Visible = false;
+            // 
+            // phone_no
+            // 
+            this.phone_no.DataPropertyName = "phone_no";
+            this.phone_no.HeaderText = "Phone No";
+            this.phone_no.Name = "phone_no";
+            // 
+            // dob
+            // 
+            this.dob.DataPropertyName = "dob";
+            this.dob.HeaderText = "Birth Date";
+            this.dob.Name = "dob";
+            this.dob.Visible = false;
+            // 
+            // address
+            // 
+            this.address.DataPropertyName = "address";
+            this.address.HeaderText = "Address";
+            this.address.Name = "address";
+            this.address.Visible = false;
+            // 
+            // marital_status
+            // 
+            this.marital_status.DataPropertyName = "marital_status";
+            this.marital_status.HeaderText = "Marital Status";
+            this.marital_status.Name = "marital_status";
+            this.marital_status.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HospitalInformationManagementSystem.Properties.Resources.Patient2;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 618);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(507, 70);
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
             // ucPatient_PL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -690,10 +727,13 @@
             this.groupBox2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epPatient)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPatient)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -703,7 +743,6 @@
         private System.Windows.Forms.Panel pnlPatient;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgvPatient;
         private System.Windows.Forms.DateTimePicker dtpBirthDay;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtPhone;
@@ -720,9 +759,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbMaritalStatus;
-        private System.Windows.Forms.Button btnDeletePatient;
-        private System.Windows.Forms.Button btnEditPatient;
-        private System.Windows.Forms.Button btnAddPatient;
         private System.Windows.Forms.TextBox txtAllergies;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -738,19 +774,26 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtUserID;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private MetroFramework.Controls.MetroGrid dgvPatient;
         private System.Windows.Forms.DataGridViewTextBoxColumn f_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn User_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn user_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn l_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn nic_no;
         private System.Windows.Forms.DataGridViewTextBoxColumn allergies;
         private System.Windows.Forms.DataGridViewTextBoxColumn blood_group;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn user_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
         private System.Windows.Forms.DataGridViewTextBoxColumn gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone_no;
         private System.Windows.Forms.DataGridViewTextBoxColumn dob;
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.DataGridViewTextBoxColumn marital_status;
-        private System.Windows.Forms.Button btnClear;
+        private MetroFramework.Controls.MetroButton btnClear;
+        private MetroFramework.Controls.MetroButton btnDeletePatient;
+        private MetroFramework.Controls.MetroButton btnEditPatient;
+        private MetroFramework.Controls.MetroButton btnAddPatient;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

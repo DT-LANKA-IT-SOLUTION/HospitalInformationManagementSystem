@@ -73,15 +73,20 @@
             this.epVisitor = new System.Windows.Forms.ErrorProvider(this.components);
             this.ofdVisitor = new System.Windows.Forms.OpenFileDialog();
             this.sfdVisitor = new System.Windows.Forms.SaveFileDialog();
+            this.btnClear = new MetroFramework.Controls.MetroButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grpBVisitor.SuspendLayout();
             this.grpBVisitorGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.epVisitor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // grpBVisitor
             // 
             this.grpBVisitor.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.grpBVisitor.Controls.Add(this.pictureBox1);
+            this.grpBVisitor.Controls.Add(this.btnClear);
             this.grpBVisitor.Controls.Add(this.txtVisitorID);
             this.grpBVisitor.Controls.Add(this.btnView);
             this.grpBVisitor.Controls.Add(this.cmbAttachmentType);
@@ -164,13 +169,13 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.Snow;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(244)))), ((int)(((byte)(179)))));
             this.btnDelete.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btnDelete.FontWeight = MetroFramework.MetroButtonWeight.Regular;
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
-            this.btnDelete.Location = new System.Drawing.Point(345, 577);
+            this.btnDelete.Location = new System.Drawing.Point(258, 560);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(117, 48);
+            this.btnDelete.Size = new System.Drawing.Size(112, 47);
             this.btnDelete.TabIndex = 20;
             this.btnDelete.Text = "Delete Visitor";
             this.btnDelete.UseCustomBackColor = true;
@@ -179,12 +184,12 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.Snow;
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(212)))), ((int)(((byte)(212)))));
             this.btnEdit.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btnEdit.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.btnEdit.Location = new System.Drawing.Point(192, 577);
+            this.btnEdit.Location = new System.Drawing.Point(136, 560);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(117, 48);
+            this.btnEdit.Size = new System.Drawing.Size(112, 47);
             this.btnEdit.TabIndex = 19;
             this.btnEdit.Text = "Edit Visitor";
             this.btnEdit.UseCustomBackColor = true;
@@ -193,12 +198,12 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Snow;
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(194)))), ((int)(((byte)(246)))));
             this.btnAdd.FontSize = MetroFramework.MetroButtonSize.Tall;
             this.btnAdd.FontWeight = MetroFramework.MetroButtonWeight.Regular;
-            this.btnAdd.Location = new System.Drawing.Point(36, 577);
+            this.btnAdd.Location = new System.Drawing.Point(14, 560);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(117, 48);
+            this.btnAdd.Size = new System.Drawing.Size(112, 47);
             this.btnAdd.TabIndex = 18;
             this.btnAdd.Text = "Add Visitor";
             this.btnAdd.UseCustomBackColor = true;
@@ -550,6 +555,30 @@
             // 
             this.sfdVisitor.Filter = "PDF document (*.pdf)|*.pdf";
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(246)))), ((int)(((byte)(201)))));
+            this.btnClear.FontSize = MetroFramework.MetroButtonSize.Tall;
+            this.btnClear.FontWeight = MetroFramework.MetroButtonWeight.Regular;
+            this.btnClear.ForeColor = System.Drawing.Color.Black;
+            this.btnClear.Location = new System.Drawing.Point(380, 560);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(112, 47);
+            this.btnClear.TabIndex = 25;
+            this.btnClear.Text = "Reset";
+            this.btnClear.UseCustomBackColor = true;
+            this.btnClear.UseSelectable = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HospitalInformationManagementSystem.Properties.Resources.Patient2;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 616);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(507, 70);
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
             // ucVisitors_PL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,6 +595,7 @@
             this.grpBVisitorGridView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisitor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.epVisitor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -613,5 +643,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn attachment_type;
         private System.Windows.Forms.DataGridViewTextBoxColumn visitor_id;
         private System.Windows.Forms.SaveFileDialog sfdVisitor;
+        private MetroFramework.Controls.MetroButton btnClear;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
