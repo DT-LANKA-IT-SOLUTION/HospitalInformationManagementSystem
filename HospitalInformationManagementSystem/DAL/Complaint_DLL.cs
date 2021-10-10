@@ -20,6 +20,18 @@ namespace HospitalInformationManagementSystem.DAL
                 string sql = string.Format("SELECT * FROM Complaints WHERE IsActive=@IsActive");
 
                 SqlParameter[] _sql = new SqlParameter[1];
+
+                if (PermisionsModel.user_type == "patient")
+                {
+                    sql = string.Format("SELECT * FROM Complaints WHERE user_id = @user_id");
+
+                    _sql = new SqlParameter[2];
+                    _sql[0] = SqlParameterFormat.Format("@user_id", PermisionsModel.user_id);
+                    _sql[1] = SqlParameterFormat.Format("@IsActive", true);
+
+                    return ODBC.GetData(sql, _sql);
+                }
+
                 _sql[0] = SqlParameterFormat.Format("@IsActive",true);
 
                 return ODBC.GetData(sql, _sql);

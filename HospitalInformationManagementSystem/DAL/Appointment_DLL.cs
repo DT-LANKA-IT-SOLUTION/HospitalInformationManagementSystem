@@ -17,21 +17,27 @@ namespace HospitalInformationManagementSystem.DAL
         {
             try
             {
-                string sql = "";
+                string sql = string.Format("SELECT * FROM Appointments");
 
                 if (PermisionsModel.user_type == "patient")
                 {
-                    sql = string.Format("SELECT * FROM Appointments");
-                }
-                else if (PermisionsModel.user_type == "Medical Officer")
-                {
-                    sql = string.Format("SELECT * FROM Appointments");
-                }
-                else
-                {
-                    sql = string.Format("SELECT * FROM Appointments");
-                }
+                    sql = string.Format("SELECT * FROM Appointments WHERE user_id = @user_id");
 
+                    SqlParameter[] _sql = new SqlParameter[1];
+                    _sql[0] = SqlParameterFormat.Format("@user_id", PermisionsModel.user_id);
+
+                    return ODBC.GetData(sql,_sql);
+                }
+                else if(PermisionsModel.user_type == "Medical Officer")
+                {
+                    sql = string.Format("SELECT * FROM Appointments WHERE medical_officer = @user_id");
+
+                    SqlParameter[] _sql = new SqlParameter[1];
+                    _sql[0] = SqlParameterFormat.Format("@user_id", PermisionsModel.user_id);
+
+                    return ODBC.GetData(sql, _sql);
+                }
+                
                 return ODBC.GetData(sql);
             }
             catch (Exception)
@@ -40,14 +46,25 @@ namespace HospitalInformationManagementSystem.DAL
             }
         }
 
-        public static DataTable GetAppointmentByAppointmentNo(string appno)
+        public static DataTable GetAppointmentByAppointmentNo(string appno,string status = null)
         {
             int appointmentno = Convert.ToInt32(appno);
             try
             {
                 string sql = string.Format("SELECT * FROM Appointments WHERE Appointments.appointment_no LIKE @appno");
-
                 SqlParameter[] _sql = new SqlParameter[1];
+                if (status != null)
+                {
+                    sql = string.Format("SELECT * FROM Appointments WHERE Appointments.appointment_no LIKE @appno AND status = @status");
+
+                    _sql = new SqlParameter[2];
+
+                    _sql[0] = SqlParameterFormat.Format("@appno", "%" + appointmentno + "%");
+                    _sql[1] = SqlParameterFormat.Format("@status", status);
+
+                    return ODBC.GetData(sql, _sql);
+                }
+                
                 _sql[0] = SqlParameterFormat.Format("@appno", "%" + appointmentno + "%");
 
                 return ODBC.GetData(sql, _sql);
