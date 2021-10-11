@@ -30,9 +30,9 @@ namespace HospitalInformationManagementSystem.PL
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmb_medical_officer = new System.Windows.Forms.ComboBox();
             this.txt_app_id = new System.Windows.Forms.TextBox();
@@ -55,13 +55,6 @@ namespace HospitalInformationManagementSystem.PL
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.cmbSerarchStatus = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearchByAppNo = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.epAppointment = new System.Windows.Forms.ErrorProvider(this.components);
             this.dgvAppointment = new MetroFramework.Controls.MetroGrid();
             this.app_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.appointment_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,11 +64,18 @@ namespace HospitalInformationManagementSystem.PL
             this.app_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.app_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbSerarchStatus = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearchByAppNo = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.epAppointment = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointment)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epAppointment)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointment)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -148,9 +148,9 @@ namespace HospitalInformationManagementSystem.PL
             this.btn_reset_appointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_reset_appointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btn_reset_appointment.ForeColor = System.Drawing.Color.Black;
-            this.btn_reset_appointment.Location = new System.Drawing.Point(184, 590);
+            this.btn_reset_appointment.Location = new System.Drawing.Point(183, 608);
             this.btn_reset_appointment.Name = "btn_reset_appointment";
-            this.btn_reset_appointment.Size = new System.Drawing.Size(162, 38);
+            this.btn_reset_appointment.Size = new System.Drawing.Size(152, 55);
             this.btn_reset_appointment.TabIndex = 11;
             this.btn_reset_appointment.Text = "Reset";
             this.btn_reset_appointment.UseVisualStyleBackColor = false;
@@ -181,7 +181,7 @@ namespace HospitalInformationManagementSystem.PL
             this.btn_add_appointment.ForeColor = System.Drawing.Color.Black;
             this.btn_add_appointment.Location = new System.Drawing.Point(14, 533);
             this.btn_add_appointment.Name = "btn_add_appointment";
-            this.btn_add_appointment.Size = new System.Drawing.Size(162, 38);
+            this.btn_add_appointment.Size = new System.Drawing.Size(152, 55);
             this.btn_add_appointment.TabIndex = 10;
             this.btn_add_appointment.Text = "Add Appointment";
             this.btn_add_appointment.UseVisualStyleBackColor = false;
@@ -197,7 +197,7 @@ namespace HospitalInformationManagementSystem.PL
             this.btn_edit_appointment.ForeColor = System.Drawing.Color.Black;
             this.btn_edit_appointment.Location = new System.Drawing.Point(183, 533);
             this.btn_edit_appointment.Name = "btn_edit_appointment";
-            this.btn_edit_appointment.Size = new System.Drawing.Size(162, 38);
+            this.btn_edit_appointment.Size = new System.Drawing.Size(152, 55);
             this.btn_edit_appointment.TabIndex = 9;
             this.btn_edit_appointment.Text = "Edit Appointment";
             this.btn_edit_appointment.UseVisualStyleBackColor = false;
@@ -211,9 +211,9 @@ namespace HospitalInformationManagementSystem.PL
             this.btn_delete_appointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete_appointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btn_delete_appointment.ForeColor = System.Drawing.Color.Black;
-            this.btn_delete_appointment.Location = new System.Drawing.Point(352, 533);
+            this.btn_delete_appointment.Location = new System.Drawing.Point(362, 533);
             this.btn_delete_appointment.Name = "btn_delete_appointment";
-            this.btn_delete_appointment.Size = new System.Drawing.Size(162, 38);
+            this.btn_delete_appointment.Size = new System.Drawing.Size(152, 55);
             this.btn_delete_appointment.TabIndex = 8;
             this.btn_delete_appointment.Text = "Delete Appointment";
             this.btn_delete_appointment.UseVisualStyleBackColor = false;
@@ -366,6 +366,123 @@ namespace HospitalInformationManagementSystem.PL
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Appointment Schedule";
             // 
+            // dgvAppointment
+            // 
+            this.dgvAppointment.AllowUserToAddRows = false;
+            this.dgvAppointment.AllowUserToDeleteRows = false;
+            this.dgvAppointment.AllowUserToResizeRows = false;
+            this.dgvAppointment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvAppointment.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAppointment.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvAppointment.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAppointment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAppointment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.app_id,
+            this.appointment_no,
+            this.patient,
+            this.symptoms,
+            this.medical_officer,
+            this.app_date,
+            this.app_time,
+            this.status});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAppointment.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvAppointment.EnableHeadersVisualStyles = false;
+            this.dgvAppointment.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgvAppointment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvAppointment.Location = new System.Drawing.Point(6, 185);
+            this.dgvAppointment.Name = "dgvAppointment";
+            this.dgvAppointment.ReadOnly = true;
+            this.dgvAppointment.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAppointment.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvAppointment.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvAppointment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAppointment.Size = new System.Drawing.Size(471, 494);
+            this.dgvAppointment.TabIndex = 4;
+            this.dgvAppointment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAppointment_CellClick);
+            // 
+            // app_id
+            // 
+            this.app_id.DataPropertyName = "app_id";
+            this.app_id.HeaderText = "App ID";
+            this.app_id.Name = "app_id";
+            this.app_id.ReadOnly = true;
+            this.app_id.Width = 85;
+            // 
+            // appointment_no
+            // 
+            this.appointment_no.DataPropertyName = "appointment_no";
+            this.appointment_no.HeaderText = "Appointment No";
+            this.appointment_no.Name = "appointment_no";
+            this.appointment_no.ReadOnly = true;
+            this.appointment_no.Width = 120;
+            // 
+            // patient
+            // 
+            this.patient.DataPropertyName = "patient";
+            this.patient.HeaderText = "Patient";
+            this.patient.Name = "patient";
+            this.patient.ReadOnly = true;
+            // 
+            // symptoms
+            // 
+            this.symptoms.DataPropertyName = "symptoms";
+            this.symptoms.HeaderText = "Symptoms";
+            this.symptoms.Name = "symptoms";
+            this.symptoms.ReadOnly = true;
+            // 
+            // medical_officer
+            // 
+            this.medical_officer.DataPropertyName = "medical_officer";
+            this.medical_officer.HeaderText = "Medical Officer";
+            this.medical_officer.Name = "medical_officer";
+            this.medical_officer.ReadOnly = true;
+            this.medical_officer.Width = 115;
+            // 
+            // app_date
+            // 
+            this.app_date.DataPropertyName = "app_date";
+            this.app_date.HeaderText = "Date";
+            this.app_date.Name = "app_date";
+            this.app_date.ReadOnly = true;
+            this.app_date.Width = 90;
+            // 
+            // app_time
+            // 
+            this.app_time.DataPropertyName = "app_time";
+            this.app_time.HeaderText = "Time";
+            this.app_time.Name = "app_time";
+            this.app_time.ReadOnly = true;
+            this.app_time.Width = 85;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "status";
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.cmbSerarchStatus);
@@ -443,123 +560,6 @@ namespace HospitalInformationManagementSystem.PL
             // 
             this.epAppointment.ContainerControl = this;
             // 
-            // dgvAppointment
-            // 
-            this.dgvAppointment.AllowUserToAddRows = false;
-            this.dgvAppointment.AllowUserToDeleteRows = false;
-            this.dgvAppointment.AllowUserToResizeRows = false;
-            this.dgvAppointment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvAppointment.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvAppointment.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvAppointment.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAppointment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvAppointment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAppointment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.app_id,
-            this.appointment_no,
-            this.patient,
-            this.symptoms,
-            this.medical_officer,
-            this.app_date,
-            this.app_time,
-            this.status});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAppointment.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvAppointment.EnableHeadersVisualStyles = false;
-            this.dgvAppointment.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.dgvAppointment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvAppointment.Location = new System.Drawing.Point(6, 185);
-            this.dgvAppointment.Name = "dgvAppointment";
-            this.dgvAppointment.ReadOnly = true;
-            this.dgvAppointment.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAppointment.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvAppointment.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvAppointment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAppointment.Size = new System.Drawing.Size(471, 494);
-            this.dgvAppointment.TabIndex = 4;
-            this.dgvAppointment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAppointment_CellClick);
-            // 
-            // app_id
-            // 
-            this.app_id.DataPropertyName = "app_id";
-            this.app_id.HeaderText = "App ID";
-            this.app_id.Name = "app_id";
-            this.app_id.ReadOnly = true;
-            this.app_id.Width = 85;
-            // 
-            // appointment_no
-            // 
-            this.appointment_no.DataPropertyName = "appointment_no";
-            this.appointment_no.HeaderText = "Appointment No";
-            this.appointment_no.Name = "appointment_no";
-            this.appointment_no.ReadOnly = true;
-            this.appointment_no.Width = 120;
-            // 
-            // patient
-            // 
-            this.patient.DataPropertyName = "patient";
-            this.patient.HeaderText = "Patient";
-            this.patient.Name = "patient";
-            this.patient.ReadOnly = true;
-            // 
-            // symptoms
-            // 
-            this.symptoms.DataPropertyName = "symptoms";
-            this.symptoms.HeaderText = "Symptoms";
-            this.symptoms.Name = "symptoms";
-            this.symptoms.ReadOnly = true;
-            // 
-            // medical_officer
-            // 
-            this.medical_officer.DataPropertyName = "medical_officer";
-            this.medical_officer.HeaderText = "Medical Officer";
-            this.medical_officer.Name = "medical_officer";
-            this.medical_officer.ReadOnly = true;
-            this.medical_officer.Width = 115;
-            // 
-            // app_date
-            // 
-            this.app_date.DataPropertyName = "app_date";
-            this.app_date.HeaderText = "Date";
-            this.app_date.Name = "app_date";
-            this.app_date.ReadOnly = true;
-            this.app_date.Width = 90;
-            // 
-            // app_time
-            // 
-            this.app_time.DataPropertyName = "app_time";
-            this.app_time.HeaderText = "Time";
-            this.app_time.Name = "app_time";
-            this.app_time.ReadOnly = true;
-            this.app_time.Width = 85;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "status";
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            // 
             // ucAppointment_PL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -573,10 +573,10 @@ namespace HospitalInformationManagementSystem.PL
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointment)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epAppointment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAppointment)).EndInit();
             this.ResumeLayout(false);
 
         }
