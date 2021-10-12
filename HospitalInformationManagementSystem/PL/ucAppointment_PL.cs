@@ -267,5 +267,10 @@ namespace HospitalInformationManagementSystem.PL
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btn_reset_appointment_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
