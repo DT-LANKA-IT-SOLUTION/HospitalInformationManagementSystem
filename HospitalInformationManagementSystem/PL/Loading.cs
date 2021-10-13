@@ -48,17 +48,36 @@ namespace HospitalInformationManagementSystem.PL
                 
                 else if (counter > 200 && counter <= 325)
                 {
-                    
-                   
-                    if (dbconnection.CheckDbConnection(ConfigurationManager.ConnectionStrings["HIMS"].ConnectionString))
-                    {
-                        lblProgressInformation.Text = "Database Connected";
-                    }
-                    else
-                    {
-                        lblProgressInformation.Text = "Database Connection faild";
 
+                    try
+                    {
+                        if (dbconnection.CheckDbConnection(ConfigurationManager.ConnectionStrings["HIMS"].ConnectionString))
+                        {
+                            lblProgressInformation.Text = "Database Connected";
+                        }
                     }
+                    catch (Exception)
+                    {
+                        this.Opacity = 0.25;
+                        tmrLoading.Stop();
+                        DialogResult dialogResult = MessageBox.Show("Database Connection faild", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (dialogResult == DialogResult.OK)
+                        {
+                            Application.Exit();
+                        }
+                        else
+                        {
+                            Application.Exit();
+                        }
+
+                        //MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    
+                    //else
+                    //{
+                    //    lblProgressInformation.Text = "Database Connection faild";
+                    //
+                    //}
 
                 }
                 else if (counter > 326 && counter <= 400)
